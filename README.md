@@ -1,2 +1,2 @@
 # Python Training
-Training repo for python programming
+Training repo for data engineering and python programming
