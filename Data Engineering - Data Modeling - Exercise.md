@@ -16,15 +16,29 @@ Design an Entity-Relationship (ER) diagram for this application. Identify the pr
 
 <details>
   <summary><strong>View answer</strong></summary>
-Answer to Exercise 1
+
+<div> 
+<h4>Answer to Exercise 1</h4>
+
 For the given exercise, the ER diagram would have the following entities and relationships:
 
-Entities:
+<b>Entities:</b>
+
 Author: id (primary key), first_name, last_name, date_of_birth
+
 Book: id (primary key), title, publication_date, price, author_id (foreign key)
+
 Category: id (primary key), name
+
+<hr>
+<hr size="3" width="50%" color="red" align="center">
+
 Book_Category: book_id (foreign key), category_id (foreign key) [This is a junction table to store the many-to-many relationship between books and categories]
+
 Relationships:
 Author (1) --- (M) Book: One-to-many relationship between Author and Book, with the foreign key author_id in the Book table.
+
 Book (M) --- (M) Category: Many-to-many relationship between Book and Category, represented by the junction table Book_Category, which has foreign keys book_id and category_id.
+
 </details>
+
