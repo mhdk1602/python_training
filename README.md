@@ -15,6 +15,8 @@ This training repository provides an introduction to data engineering in `python
     * Relational databases and schema design
     * NoSQL databases and data modeling
     * Entity-Relationship (ER) diagrams and normalization
+
+    https://mhdk1602.github.io/python_training/Data%20Engineering%20-%20Data%20Modeling%20-%20Exercise.html
     
 3. Data Storage and Retrieval
 
