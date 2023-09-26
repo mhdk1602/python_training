@@ -2,7 +2,7 @@
 
 This training repository provides an introduction to data engineering in `python`, covering topics such as data modeling, schema design, storage and retrieval, data processing and transformation, and data pipelines and ETL processes. Participants will also learn how to use Python to interact with cloud-based data engineering services, such as AWS Glue, Google Cloud Dataflow, or Azure Data Factory. The repository includes hands-on exercises and examples, as well as resources for further learning and exploration.
 
-## Propsed Syllabus 
+## Propsed Syllabus
 
 1. Introduction to Data Engineering
 
@@ -16,8 +16,8 @@ This training repository provides an introduction to data engineering in `python
     * NoSQL databases and data modeling
     * Entity-Relationship (ER) diagrams and normalization
 
-    https://mhdk1602.github.io/python_training/Data%20Engineering%20-%20Data%20Modeling%20-%20Exercise.html
-    
+    <https://mhdk1602.github.io/python_training/Data%20Engineering%20-%20Data%20Modeling%20-%20Exercise.html>
+
 3. Data Storage and Retrieval
 
     * Overview of different types of data storage systems (e.g. file systems, databases, data lakes)
@@ -26,22 +26,52 @@ This training repository provides an introduction to data engineering in `python
 
 4. Data Processing and Transformation
 
-    * Overview of data processing and transformation tasks (e.g. cleaning, filtering, aggregation)
-    * Tools and libraries for data processing and transformation in Python (e.g. Pandas, NumPy, Dask)
-    * Best practices for optimizing data processing and transformation pipelines
-    
+    * Introduction to Data Processing and Transformation
+
+        * Definition
+        * Importance in Data Engineering
+
+    * Data Cleaning
+
+        * Handling Missing Values
+        * Removing Duplicates
+        * Code examples
+
+    * Data Filtering
+
+        * Definition and Importance
+        * Techniques for Data Filtering
+        * Code examples: Basic and Advanced
+
+    * Data Aggregation
+
+        * Definition and Importance
+        * Techniques for Data Aggregation
+        * Code examples
+
+    * Tools and Libraries
+
+        * Pandas: Overview and Code examples
+        * NumPy: Overview and Code examples
+        * Dask: Overview and Code examples
+
+    * Optimizing Data Processing and Transformation Pipelines
+
+        * Best Practices
+        * Code examples
+
 5. Data Streaming and Real-time Processing
 
     * Introduction to data streaming and real-time processing
     * Tools and libraries for real-time data processing in Python (e.g., Apache Kafka, Apache Flink, Faust)
     * Best practices for implementing real-time data processing pipelines
-    
+
 6. Data Integration and APIs
 
     * Introduction to data integration and APIs in data engineering
     * Working with APIs in Python (e.g., REST, GraphQL)
     * Techniques for integrating data from multiple sources
-    
+
 7. Data Quality and Validation
 
     * Importance of data quality and validation in data engineering
