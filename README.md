@@ -2,7 +2,7 @@
 
 This training repository provides an introduction to data engineering in `python`, covering topics such as data modeling, schema design, storage and retrieval, data processing and transformation, and data pipelines and ETL processes. Participants will also learn how to use Python to interact with cloud-based data engineering services, such as AWS Glue, Google Cloud Dataflow, or Azure Data Factory. The repository includes hands-on exercises and examples, as well as resources for further learning and exploration.
 
-## Propsed Syllabus
+## Proposed Syllabus
 
 1. Introduction to Data Engineering
 
