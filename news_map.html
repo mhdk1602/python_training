@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c3791de343a7090b2218d9de0e7be275 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c3791de343a7090b2218d9de0e7be275" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c3791de343a7090b2218d9de0e7be275 = L.map(
+                "map_c3791de343a7090b2218d9de0e7be275",
+                {
+                    center: [36.45142022387298, 15.051298322477912],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7062f8202e2c946cc5b9c0ef10ec0116 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_7062f8202e2c946cc5b9c0ef10ec0116.addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+            var circle_marker_415ee233e6d3ee301f380fd96305fec9 = L.circleMarker(
+                [41.141353306048785, 20.03242643144321],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_9aca4bcbdd71cc4a78c74ecf7e6f055e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62e2b574bc62acc6da9edf9481e61b7d = $(`<div id="html_62e2b574bc62acc6da9edf9481e61b7d" style="width: 100.0%; height: 100.0%;">Country: Albania Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_9aca4bcbdd71cc4a78c74ecf7e6f055e.setContent(html_62e2b574bc62acc6da9edf9481e61b7d);
+            
+        
+
+        circle_marker_415ee233e6d3ee301f380fd96305fec9.bindPopup(popup_9aca4bcbdd71cc4a78c74ecf7e6f055e)
+        ;
+
+        
+    
+    
+            var circle_marker_ad52cb6a325aed448115ace7b1c90fb4 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_86bb60e49a1325ac47b664ed34bb836a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a151990941000900be880fea03be734 = $(`<div id="html_4a151990941000900be880fea03be734" style="width: 100.0%; height: 100.0%;">Country: Andorra Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_86bb60e49a1325ac47b664ed34bb836a.setContent(html_4a151990941000900be880fea03be734);
+            
+        
+
+        circle_marker_ad52cb6a325aed448115ace7b1c90fb4.bindPopup(popup_86bb60e49a1325ac47b664ed34bb836a)
+        ;
+
+        
+    
+    
+            var circle_marker_c3189d1edcb9217348d518fcac2384c8 = L.circleMarker(
+                [-25.730654779726077, 134.50277547536595],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_85c8c779b4be98fe098b33f1e33641ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16ac9e03bbcb86a41740d0cbf742f38c = $(`<div id="html_16ac9e03bbcb86a41740d0cbf742f38c" style="width: 100.0%; height: 100.0%;">Country: Australia Average Sentiment: 0.04545454545454545 Article Count: 1</div>`)[0];
+                popup_85c8c779b4be98fe098b33f1e33641ea.setContent(html_16ac9e03bbcb86a41740d0cbf742f38c);
+            
+        
+
+        circle_marker_c3189d1edcb9217348d518fcac2384c8.bindPopup(popup_85c8c779b4be98fe098b33f1e33641ea)
+        ;
+
+        
+    
+    
+            var circle_marker_513e642417b841827fa9d2bc20ef51ef = L.circleMarker(
+                [47.6139487927463, 14.076158884337072],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_a2aeae4c10b4d972ecad71a228a0aa54 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b00c9d126c5427d2896aa7d8a22f9082 = $(`<div id="html_b00c9d126c5427d2896aa7d8a22f9082" style="width: 100.0%; height: 100.0%;">Country: Austria Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_a2aeae4c10b4d972ecad71a228a0aa54.setContent(html_b00c9d126c5427d2896aa7d8a22f9082);
+            
+        
+
+        circle_marker_513e642417b841827fa9d2bc20ef51ef.bindPopup(popup_a2aeae4c10b4d972ecad71a228a0aa54)
+        ;
+
+        
+    
+    
+            var circle_marker_bd0004b425d158e1f1769bcdf2396139 = L.circleMarker(
+                [53.50634479481114, 27.98135261544803],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_799d703e1bda6221ec901c3a0c9a4fc9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce0c26076afe70cca78fd99dca5c21ff = $(`<div id="html_ce0c26076afe70cca78fd99dca5c21ff" style="width: 100.0%; height: 100.0%;">Country: Belarus Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_799d703e1bda6221ec901c3a0c9a4fc9.setContent(html_ce0c26076afe70cca78fd99dca5c21ff);
+            
+        
+
+        circle_marker_bd0004b425d158e1f1769bcdf2396139.bindPopup(popup_799d703e1bda6221ec901c3a0c9a4fc9)
+        ;
+
+        
+    
+    
+            var circle_marker_a7610e28fbd815f3ff3b3501e9f803a5 = L.circleMarker(
+                [50.65244095902296, 4.580834113854935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_4fe569e2e92e789ccd4a91e18624d6e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_83b22f53ae7d78d3635078a6d10e2731 = $(`<div id="html_83b22f53ae7d78d3635078a6d10e2731" style="width: 100.0%; height: 100.0%;">Country: Belgium Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_4fe569e2e92e789ccd4a91e18624d6e4.setContent(html_83b22f53ae7d78d3635078a6d10e2731);
+            
+        
+
+        circle_marker_a7610e28fbd815f3ff3b3501e9f803a5.bindPopup(popup_4fe569e2e92e789ccd4a91e18624d6e4)
+        ;
+
+        
+    
+    
+            var circle_marker_eddfb060608e4850ac5e51586ca3045f = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_7187ce892215723cc18ae2933f00ef09 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5aa744c1eafbd01ecc1fd0b0dbdd9d5c = $(`<div id="html_5aa744c1eafbd01ecc1fd0b0dbdd9d5c" style="width: 100.0%; height: 100.0%;">Country: Bosnia And Herzegovina Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_7187ce892215723cc18ae2933f00ef09.setContent(html_5aa744c1eafbd01ecc1fd0b0dbdd9d5c);
+            
+        
+
+        circle_marker_eddfb060608e4850ac5e51586ca3045f.bindPopup(popup_7187ce892215723cc18ae2933f00ef09)
+        ;
+
+        
+    
+    
+            var circle_marker_99e523205e95445386343b2595433885 = L.circleMarker(
+                [42.7531187620217, 25.19511095327711],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_a09886ce62df7c3d467b69b05f9c6321 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dbc0e328a2503e10a67b40e39a6d102e = $(`<div id="html_dbc0e328a2503e10a67b40e39a6d102e" style="width: 100.0%; height: 100.0%;">Country: Bulgaria Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_a09886ce62df7c3d467b69b05f9c6321.setContent(html_dbc0e328a2503e10a67b40e39a6d102e);
+            
+        
+
+        circle_marker_99e523205e95445386343b2595433885.bindPopup(popup_a09886ce62df7c3d467b69b05f9c6321)
+        ;
+
+        
+    
+    
+            var circle_marker_e633022f7c02c0907edeac9b0fe1f428 = L.circleMarker(
+                [45.01623399593114, 16.566189771645533],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_db9263b519f759b005c394d96ef4af7c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_80348ed32669b7c9dcf77671656bffd6 = $(`<div id="html_80348ed32669b7c9dcf77671656bffd6" style="width: 100.0%; height: 100.0%;">Country: Croatia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_db9263b519f759b005c394d96ef4af7c.setContent(html_80348ed32669b7c9dcf77671656bffd6);
+            
+        
+
+        circle_marker_e633022f7c02c0907edeac9b0fe1f428.bindPopup(popup_db9263b519f759b005c394d96ef4af7c)
+        ;
+
+        
+    
+    
+            var circle_marker_edfffb58cd3674e817fdea38535b3a43 = L.circleMarker(
+                [34.90706085094344, 33.03955380295407],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_9cd8b8f828c9148a734e05621e3efe0d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d0e800a7725cdfdfec4819448ea1aa9 = $(`<div id="html_2d0e800a7725cdfdfec4819448ea1aa9" style="width: 100.0%; height: 100.0%;">Country: Cyprus Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_9cd8b8f828c9148a734e05621e3efe0d.setContent(html_2d0e800a7725cdfdfec4819448ea1aa9);
+            
+        
+
+        circle_marker_edfffb58cd3674e817fdea38535b3a43.bindPopup(popup_9cd8b8f828c9148a734e05621e3efe0d)
+        ;
+
+        
+    
+    
+            var circle_marker_df684ad81bff16daab599367f1ed7c7b = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_39da625dc67b74729df2aa16568923df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_97f60d0892a1ac2dcef87fd79d0ab2ed = $(`<div id="html_97f60d0892a1ac2dcef87fd79d0ab2ed" style="width: 100.0%; height: 100.0%;">Country: Czech Republic Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_39da625dc67b74729df2aa16568923df.setContent(html_97f60d0892a1ac2dcef87fd79d0ab2ed);
+            
+        
+
+        circle_marker_df684ad81bff16daab599367f1ed7c7b.bindPopup(popup_39da625dc67b74729df2aa16568923df)
+        ;
+
+        
+    
+    
+            var circle_marker_cef5c35b4174631f68d3766009fdb17b = L.circleMarker(
+                [56.06393446179454, 9.876372937675002],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_583bfc09dd4820782bf1a4bc73db6b5f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2dd84ded97df03b6cb4ffdaa471acd4 = $(`<div id="html_d2dd84ded97df03b6cb4ffdaa471acd4" style="width: 100.0%; height: 100.0%;">Country: Denmark Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_583bfc09dd4820782bf1a4bc73db6b5f.setContent(html_d2dd84ded97df03b6cb4ffdaa471acd4);
+            
+        
+
+        circle_marker_cef5c35b4174631f68d3766009fdb17b.bindPopup(popup_583bfc09dd4820782bf1a4bc73db6b5f)
+        ;
+
+        
+    
+    
+            var circle_marker_befd1478e5bf54777147b28d6b4d6111 = L.circleMarker(
+                [58.643695426630906, 25.824725613026608],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_faf33ede883c9546c59d25a85572451a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4502c1ac9e5e8dec78c5ac181a07a2bc = $(`<div id="html_4502c1ac9e5e8dec78c5ac181a07a2bc" style="width: 100.0%; height: 100.0%;">Country: Estonia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_faf33ede883c9546c59d25a85572451a.setContent(html_4502c1ac9e5e8dec78c5ac181a07a2bc);
+            
+        
+
+        circle_marker_befd1478e5bf54777147b28d6b4d6111.bindPopup(popup_faf33ede883c9546c59d25a85572451a)
+        ;
+
+        
+    
+    
+            var circle_marker_c1aaa23041ab9dc9712134e355870c6b = L.circleMarker(
+                [64.50409403963651, 26.211764610296353],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_97a8587b9eeeea0302e06dd5f7e3049f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c03c150a2e142757564f3e1f2f1e7b72 = $(`<div id="html_c03c150a2e142757564f3e1f2f1e7b72" style="width: 100.0%; height: 100.0%;">Country: Finland Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_97a8587b9eeeea0302e06dd5f7e3049f.setContent(html_c03c150a2e142757564f3e1f2f1e7b72);
+            
+        
+
+        circle_marker_c1aaa23041ab9dc9712134e355870c6b.bindPopup(popup_97a8587b9eeeea0302e06dd5f7e3049f)
+        ;
+
+        
+    
+    
+            var circle_marker_64158eb2bea953bfde4bc56c17ca94bc = L.circleMarker(
+                [42.46070432663372, -2.8766966992706267],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_025094ae0131f022e10f8cdb612754d2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc00b6e4582daa8e8d416f01f64f149c = $(`<div id="html_bc00b6e4582daa8e8d416f01f64f149c" style="width: 100.0%; height: 100.0%;">Country: France Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_025094ae0131f022e10f8cdb612754d2.setContent(html_bc00b6e4582daa8e8d416f01f64f149c);
+            
+        
+
+        circle_marker_64158eb2bea953bfde4bc56c17ca94bc.bindPopup(popup_025094ae0131f022e10f8cdb612754d2)
+        ;
+
+        
+    
+    
+            var circle_marker_911472cdac9e7a4967dd7a44ca0586ed = L.circleMarker(
+                [51.13372269040778, 10.288485092742851],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_6cdde08f34192d4aee5a39c6e7c9cce4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fdba7f0a4d618a48835f0565ae5bd85 = $(`<div id="html_8fdba7f0a4d618a48835f0565ae5bd85" style="width: 100.0%; height: 100.0%;">Country: Germany Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_6cdde08f34192d4aee5a39c6e7c9cce4.setContent(html_8fdba7f0a4d618a48835f0565ae5bd85);
+            
+        
+
+        circle_marker_911472cdac9e7a4967dd7a44ca0586ed.bindPopup(popup_6cdde08f34192d4aee5a39c6e7c9cce4)
+        ;
+
+        
+    
+    
+            var circle_marker_35ba2175f0138a1fcb9f944030828a9b = L.circleMarker(
+                [39.066715899713955, 22.719813447095053],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_6ec0d6ef92bd119899077699b3ba8334 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_715612a19377a1b0f4d92eb1acfc06a2 = $(`<div id="html_715612a19377a1b0f4d92eb1acfc06a2" style="width: 100.0%; height: 100.0%;">Country: Greece Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_6ec0d6ef92bd119899077699b3ba8334.setContent(html_715612a19377a1b0f4d92eb1acfc06a2);
+            
+        
+
+        circle_marker_35ba2175f0138a1fcb9f944030828a9b.bindPopup(popup_6ec0d6ef92bd119899077699b3ba8334)
+        ;
+
+        
+    
+    
+            var circle_marker_6a56db9186f9e0180415fd561261e394 = L.circleMarker(
+                [47.19995117195427, 19.357628627745918],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_12a6edbab5fa6b4281f5f26f1894c7a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_658e13266549ab6031e9807f27798d17 = $(`<div id="html_658e13266549ab6031e9807f27798d17" style="width: 100.0%; height: 100.0%;">Country: Hungary Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_12a6edbab5fa6b4281f5f26f1894c7a8.setContent(html_658e13266549ab6031e9807f27798d17);
+            
+        
+
+        circle_marker_6a56db9186f9e0180415fd561261e394.bindPopup(popup_12a6edbab5fa6b4281f5f26f1894c7a8)
+        ;
+
+        
+    
+    
+            var circle_marker_791d619cb56b5617332c644ed964094c = L.circleMarker(
+                [65.07427633529105, -18.761028770831768],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_980394e312e3812c6f03a4b3b6bbbc33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ce7d470a917a53ce9575497658859cc = $(`<div id="html_9ce7d470a917a53ce9575497658859cc" style="width: 100.0%; height: 100.0%;">Country: Iceland Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_980394e312e3812c6f03a4b3b6bbbc33.setContent(html_9ce7d470a917a53ce9575497658859cc);
+            
+        
+
+        circle_marker_791d619cb56b5617332c644ed964094c.bindPopup(popup_980394e312e3812c6f03a4b3b6bbbc33)
+        ;
+
+        
+    
+    
+            var circle_marker_12d6dc850c9759241c44b6d5f7b91e43 = L.circleMarker(
+                [22.92500640740852, 79.59370376325381],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_39c6bf2d3e7bd931c695af834ff572da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc6e2b801844028efbe9ea11a4b25ae8 = $(`<div id="html_fc6e2b801844028efbe9ea11a4b25ae8" style="width: 100.0%; height: 100.0%;">Country: India Average Sentiment: 0.11769441867656152 Article Count: 5</div>`)[0];
+                popup_39c6bf2d3e7bd931c695af834ff572da.setContent(html_fc6e2b801844028efbe9ea11a4b25ae8);
+            
+        
+
+        circle_marker_12d6dc850c9759241c44b6d5f7b91e43.bindPopup(popup_39c6bf2d3e7bd931c695af834ff572da)
+        ;
+
+        
+    
+    
+            var circle_marker_426d6faaa334eb21d9a4233d53074579 = L.circleMarker(
+                [53.18059120995006, -8.010236544877012],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_2013c7cadd315aba1d120669f1126d81 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e850fbda46d5136fd537c6be6ac0834c = $(`<div id="html_e850fbda46d5136fd537c6be6ac0834c" style="width: 100.0%; height: 100.0%;">Country: Ireland Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_2013c7cadd315aba1d120669f1126d81.setContent(html_e850fbda46d5136fd537c6be6ac0834c);
+            
+        
+
+        circle_marker_426d6faaa334eb21d9a4233d53074579.bindPopup(popup_2013c7cadd315aba1d120669f1126d81)
+        ;
+
+        
+    
+    
+            var circle_marker_63cd14029eeb2ce5f9bc7c23e6becb5f = L.circleMarker(
+                [42.751183052964265, 12.140788372235871],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_e7c5c9a1598b08c6df9c529d122a7990 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_747babab44f733ee857edcddaf48e396 = $(`<div id="html_747babab44f733ee857edcddaf48e396" style="width: 100.0%; height: 100.0%;">Country: Italy Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_e7c5c9a1598b08c6df9c529d122a7990.setContent(html_747babab44f733ee857edcddaf48e396);
+            
+        
+
+        circle_marker_63cd14029eeb2ce5f9bc7c23e6becb5f.bindPopup(popup_e7c5c9a1598b08c6df9c529d122a7990)
+        ;
+
+        
+    
+    
+            var circle_marker_4e750ede8587432dca327b65ab3ab29f = L.circleMarker(
+                [42.579367131816994, 20.895355721342227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_8f941a60a124f48677e20c1f0867b4e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7eb2d0a47dff3ef9fa6d1f98a17f5b81 = $(`<div id="html_7eb2d0a47dff3ef9fa6d1f98a17f5b81" style="width: 100.0%; height: 100.0%;">Country: Kosovo Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_8f941a60a124f48677e20c1f0867b4e8.setContent(html_7eb2d0a47dff3ef9fa6d1f98a17f5b81);
+            
+        
+
+        circle_marker_4e750ede8587432dca327b65ab3ab29f.bindPopup(popup_8f941a60a124f48677e20c1f0867b4e8)
+        ;
+
+        
+    
+    
+            var circle_marker_9ca75deef9878ca72ed43a24615e87c9 = L.circleMarker(
+                [56.80717513427924, 24.833296149803438],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_b3cb60ad2d231a078bf26405a108c905 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f29b37a44ada420621f0f75356fb8579 = $(`<div id="html_f29b37a44ada420621f0f75356fb8579" style="width: 100.0%; height: 100.0%;">Country: Latvia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_b3cb60ad2d231a078bf26405a108c905.setContent(html_f29b37a44ada420621f0f75356fb8579);
+            
+        
+
+        circle_marker_9ca75deef9878ca72ed43a24615e87c9.bindPopup(popup_b3cb60ad2d231a078bf26405a108c905)
+        ;
+
+        
+    
+    
+            var circle_marker_9b089317b715721561828bf1969ee49a = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_6e769a5de62878ebfd93e0c83f982bb3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b1e903949a818e4f6f89fa77b0f6e6f0 = $(`<div id="html_b1e903949a818e4f6f89fa77b0f6e6f0" style="width: 100.0%; height: 100.0%;">Country: Liechtenstein Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_6e769a5de62878ebfd93e0c83f982bb3.setContent(html_b1e903949a818e4f6f89fa77b0f6e6f0);
+            
+        
+
+        circle_marker_9b089317b715721561828bf1969ee49a.bindPopup(popup_6e769a5de62878ebfd93e0c83f982bb3)
+        ;
+
+        
+    
+    
+            var circle_marker_1659065f3faf9acddc0ea8bd2126a5e7 = L.circleMarker(
+                [55.284319484766066, 23.88064027584349],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_47cc09692707f586af03d41319b826d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_629b043418fa7020337d2c8b6768ed02 = $(`<div id="html_629b043418fa7020337d2c8b6768ed02" style="width: 100.0%; height: 100.0%;">Country: Lithuania Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_47cc09692707f586af03d41319b826d1.setContent(html_629b043418fa7020337d2c8b6768ed02);
+            
+        
+
+        circle_marker_1659065f3faf9acddc0ea8bd2126a5e7.bindPopup(popup_47cc09692707f586af03d41319b826d1)
+        ;
+
+        
+    
+    
+            var circle_marker_439704f0a1b5460f6497d6cfc2c24f30 = L.circleMarker(
+                [49.76570507415103, 5.965223432343999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_0b05ceb0bacad402aa0e1e61b1d92f7a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1aec2b445c62ecb01cd4b554f1796606 = $(`<div id="html_1aec2b445c62ecb01cd4b554f1796606" style="width: 100.0%; height: 100.0%;">Country: Luxembourg Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_0b05ceb0bacad402aa0e1e61b1d92f7a.setContent(html_1aec2b445c62ecb01cd4b554f1796606);
+            
+        
+
+        circle_marker_439704f0a1b5460f6497d6cfc2c24f30.bindPopup(popup_0b05ceb0bacad402aa0e1e61b1d92f7a)
+        ;
+
+        
+    
+    
+            var circle_marker_c82250c95eea4643f12c3c2957b4ab5b = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_3bce4972d5a65cf8207c6c02f4f2ff58 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a376075475779263ae65997d4d0a579 = $(`<div id="html_4a376075475779263ae65997d4d0a579" style="width: 100.0%; height: 100.0%;">Country: Macedonia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_3bce4972d5a65cf8207c6c02f4f2ff58.setContent(html_4a376075475779263ae65997d4d0a579);
+            
+        
+
+        circle_marker_c82250c95eea4643f12c3c2957b4ab5b.bindPopup(popup_3bce4972d5a65cf8207c6c02f4f2ff58)
+        ;
+
+        
+    
+    
+            var circle_marker_a255b225bfa54cce742402fb050a888e = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_c4ddb52fa9320baabea254c2577cbcbe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b7390b6d5d9be3c8b77aff6e76a28085 = $(`<div id="html_b7390b6d5d9be3c8b77aff6e76a28085" style="width: 100.0%; height: 100.0%;">Country: Malta Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_c4ddb52fa9320baabea254c2577cbcbe.setContent(html_b7390b6d5d9be3c8b77aff6e76a28085);
+            
+        
+
+        circle_marker_a255b225bfa54cce742402fb050a888e.bindPopup(popup_c4ddb52fa9320baabea254c2577cbcbe)
+        ;
+
+        
+    
+    
+            var circle_marker_d67176069b2eaf3dcb8f9740e713ea2e = L.circleMarker(
+                [47.20367642606752, 28.41048279080328],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_8b04be92aa66f0fbf26ecc59787e847e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_007034488f8ea3327d409a2d8b3a7aa6 = $(`<div id="html_007034488f8ea3327d409a2d8b3a7aa6" style="width: 100.0%; height: 100.0%;">Country: Moldova Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_8b04be92aa66f0fbf26ecc59787e847e.setContent(html_007034488f8ea3327d409a2d8b3a7aa6);
+            
+        
+
+        circle_marker_d67176069b2eaf3dcb8f9740e713ea2e.bindPopup(popup_8b04be92aa66f0fbf26ecc59787e847e)
+        ;
+
+        
+    
+    
+            var circle_marker_a1d8d37b41c2cc20bf489ce6f0a3c1a5 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_2034c348735a6c14b0b1b7e51521de11 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a4eba1d0ea353c61fcfa1adee9aa6c70 = $(`<div id="html_a4eba1d0ea353c61fcfa1adee9aa6c70" style="width: 100.0%; height: 100.0%;">Country: Monaco Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_2034c348735a6c14b0b1b7e51521de11.setContent(html_a4eba1d0ea353c61fcfa1adee9aa6c70);
+            
+        
+
+        circle_marker_a1d8d37b41c2cc20bf489ce6f0a3c1a5.bindPopup(popup_2034c348735a6c14b0b1b7e51521de11)
+        ;
+
+        
+    
+    
+            var circle_marker_7be12e5704c9857ca2ea5e57d7fa1843 = L.circleMarker(
+                [42.78903960655908, 19.2861817215929],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_d2b3779663730586b56a9f68f0243d4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_24c059d5985b08ecf132570827a61bf2 = $(`<div id="html_24c059d5985b08ecf132570827a61bf2" style="width: 100.0%; height: 100.0%;">Country: Montenegro Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_d2b3779663730586b56a9f68f0243d4c.setContent(html_24c059d5985b08ecf132570827a61bf2);
+            
+        
+
+        circle_marker_7be12e5704c9857ca2ea5e57d7fa1843.bindPopup(popup_d2b3779663730586b56a9f68f0243d4c)
+        ;
+
+        
+    
+    
+            var circle_marker_2dc4375ebefb3e1dd7b0335fe417c0f2 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_1cc90746d906a89c8ef7f8ce4d4e9943 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f023df5ff1609672152eb6b64be604c0 = $(`<div id="html_f023df5ff1609672152eb6b64be604c0" style="width: 100.0%; height: 100.0%;">Country: Netherland Average Sentiment: 0.021666666666666667 Article Count: 5</div>`)[0];
+                popup_1cc90746d906a89c8ef7f8ce4d4e9943.setContent(html_f023df5ff1609672152eb6b64be604c0);
+            
+        
+
+        circle_marker_2dc4375ebefb3e1dd7b0335fe417c0f2.bindPopup(popup_1cc90746d906a89c8ef7f8ce4d4e9943)
+        ;
+
+        
+    
+    
+            var circle_marker_a972e2bc43c899c9127af2d45d15d5dd = L.circleMarker(
+                [69.15685630975351, 15.468119955206761],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_692b57facf20f18058d7cb9d2134b67f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f4eee46e5c935f98bf73e8157502658 = $(`<div id="html_4f4eee46e5c935f98bf73e8157502658" style="width: 100.0%; height: 100.0%;">Country: Norway Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_692b57facf20f18058d7cb9d2134b67f.setContent(html_4f4eee46e5c935f98bf73e8157502658);
+            
+        
+
+        circle_marker_a972e2bc43c899c9127af2d45d15d5dd.bindPopup(popup_692b57facf20f18058d7cb9d2134b67f)
+        ;
+
+        
+    
+    
+            var circle_marker_b27b2966abcc7244dd450193fb3f4604 = L.circleMarker(
+                [52.14826021933187, 19.31101430844868],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_3ecdc938f248ef316aef2ced45cb7927 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ce8fa14fc09f360202328ea8166ed60 = $(`<div id="html_6ce8fa14fc09f360202328ea8166ed60" style="width: 100.0%; height: 100.0%;">Country: Poland Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_3ecdc938f248ef316aef2ced45cb7927.setContent(html_6ce8fa14fc09f360202328ea8166ed60);
+            
+        
+
+        circle_marker_b27b2966abcc7244dd450193fb3f4604.bindPopup(popup_3ecdc938f248ef316aef2ced45cb7927)
+        ;
+
+        
+    
+    
+            var circle_marker_60dc6e558926f384c1576db5cb4abbea = L.circleMarker(
+                [39.63404977497817, -8.055765588295687],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_7677b5602cbd196e02d7f20b539623aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43458a3952de25f90ba71469caa7e585 = $(`<div id="html_43458a3952de25f90ba71469caa7e585" style="width: 100.0%; height: 100.0%;">Country: Portugal Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_7677b5602cbd196e02d7f20b539623aa.setContent(html_43458a3952de25f90ba71469caa7e585);
+            
+        
+
+        circle_marker_60dc6e558926f384c1576db5cb4abbea.bindPopup(popup_7677b5602cbd196e02d7f20b539623aa)
+        ;
+
+        
+    
+    
+            var circle_marker_3df80e7d745c5d9e332a36b02b96d854 = L.circleMarker(
+                [25.32185097420669, 51.1835025789133],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_57a2a419ca22d6da513d8619cc02f9ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ee8dea557f43b8243400ba767a8cc1a = $(`<div id="html_5ee8dea557f43b8243400ba767a8cc1a" style="width: 100.0%; height: 100.0%;">Country: Qatar Average Sentiment: 0.0 Article Count: 1</div>`)[0];
+                popup_57a2a419ca22d6da513d8619cc02f9ad.setContent(html_5ee8dea557f43b8243400ba767a8cc1a);
+            
+        
+
+        circle_marker_3df80e7d745c5d9e332a36b02b96d854.bindPopup(popup_57a2a419ca22d6da513d8619cc02f9ad)
+        ;
+
+        
+    
+    
+            var circle_marker_49325fdafd588aeed62b181024e05ffa = L.circleMarker(
+                [45.857101035738005, 24.943252494635377],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_a6f6c52fd8402acae354faa121c2bb48 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2933195ca7ef89ac61fb8f933a396ba = $(`<div id="html_f2933195ca7ef89ac61fb8f933a396ba" style="width: 100.0%; height: 100.0%;">Country: Romania Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_a6f6c52fd8402acae354faa121c2bb48.setContent(html_f2933195ca7ef89ac61fb8f933a396ba);
+            
+        
+
+        circle_marker_49325fdafd588aeed62b181024e05ffa.bindPopup(popup_a6f6c52fd8402acae354faa121c2bb48)
+        ;
+
+        
+    
+    
+            var circle_marker_6f3658c78f6efa955cc9e2212b7e3907 = L.circleMarker(
+                [61.98084075071274, 96.87522325596434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_f159ff461cd721219667bf6de0b728cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_403141a98fd8c2f1bae520b3c89086eb = $(`<div id="html_403141a98fd8c2f1bae520b3c89086eb" style="width: 100.0%; height: 100.0%;">Country: Russia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_f159ff461cd721219667bf6de0b728cb.setContent(html_403141a98fd8c2f1bae520b3c89086eb);
+            
+        
+
+        circle_marker_6f3658c78f6efa955cc9e2212b7e3907.bindPopup(popup_f159ff461cd721219667bf6de0b728cb)
+        ;
+
+        
+    
+    
+            var circle_marker_e6f7cf1fa2f4e50975da241c75ebbc84 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_1c8a40a9e9c3629f9f53a4b97ea3fb43 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7b0729af4dc4d876f122a9ab90e9f40 = $(`<div id="html_a7b0729af4dc4d876f122a9ab90e9f40" style="width: 100.0%; height: 100.0%;">Country: San Marino Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_1c8a40a9e9c3629f9f53a4b97ea3fb43.setContent(html_a7b0729af4dc4d876f122a9ab90e9f40);
+            
+        
+
+        circle_marker_e6f7cf1fa2f4e50975da241c75ebbc84.bindPopup(popup_1c8a40a9e9c3629f9f53a4b97ea3fb43)
+        ;
+
+        
+    
+    
+            var circle_marker_27c5e8e5309c912e997b2fbfa3fb59fd = L.circleMarker(
+                [44.23303653365162, 20.819651926382583],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_c88b428e4a18be52e5d6f0622b88edef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aac04aa8606764c2cae3c950c7cb4100 = $(`<div id="html_aac04aa8606764c2cae3c950c7cb4100" style="width: 100.0%; height: 100.0%;">Country: Serbia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_c88b428e4a18be52e5d6f0622b88edef.setContent(html_aac04aa8606764c2cae3c950c7cb4100);
+            
+        
+
+        circle_marker_27c5e8e5309c912e997b2fbfa3fb59fd.bindPopup(popup_c88b428e4a18be52e5d6f0622b88edef)
+        ;
+
+        
+    
+    
+            var circle_marker_5e831b220d7b0b591bff2dba741494a6 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_1c35ddd9f3e0eb404aae034d4ed8cf15 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ccb21056f9ed001566069aad5d07e465 = $(`<div id="html_ccb21056f9ed001566069aad5d07e465" style="width: 100.0%; height: 100.0%;">Country: Singapore Average Sentiment: 0.08306212636569779 Article Count: 3</div>`)[0];
+                popup_1c35ddd9f3e0eb404aae034d4ed8cf15.setContent(html_ccb21056f9ed001566069aad5d07e465);
+            
+        
+
+        circle_marker_5e831b220d7b0b591bff2dba741494a6.bindPopup(popup_1c35ddd9f3e0eb404aae034d4ed8cf15)
+        ;
+
+        
+    
+    
+            var circle_marker_1df6783096895a7433cd6a0f12b2ffe8 = L.circleMarker(
+                [48.7267113517275, 19.507657147433708],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_143d48dabca057c5e79ee0f6be7b2994 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b47b6b092cff26e21d485df69fc46228 = $(`<div id="html_b47b6b092cff26e21d485df69fc46228" style="width: 100.0%; height: 100.0%;">Country: Slovakia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_143d48dabca057c5e79ee0f6be7b2994.setContent(html_b47b6b092cff26e21d485df69fc46228);
+            
+        
+
+        circle_marker_1df6783096895a7433cd6a0f12b2ffe8.bindPopup(popup_143d48dabca057c5e79ee0f6be7b2994)
+        ;
+
+        
+    
+    
+            var circle_marker_5e71a2039ee1de86ca0ab4f69e28794e = L.circleMarker(
+                [46.12542205901039, 14.938152320795732],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_f35f97d7f2b7330589a986131bfff06f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a73d88f941b550b2f211b4b418db1e36 = $(`<div id="html_a73d88f941b550b2f211b4b418db1e36" style="width: 100.0%; height: 100.0%;">Country: Slovenia Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_f35f97d7f2b7330589a986131bfff06f.setContent(html_a73d88f941b550b2f211b4b418db1e36);
+            
+        
+
+        circle_marker_5e71a2039ee1de86ca0ab4f69e28794e.bindPopup(popup_f35f97d7f2b7330589a986131bfff06f)
+        ;
+
+        
+    
+    
+            var circle_marker_48a163684fbcd673ce027ac57af38391 = L.circleMarker(
+                [40.348656106226734, -3.6170206023873743],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_763f1ea2e86fd260e595b5bcb1ffd7a2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0cacc030d4595137b93d75c2c0441bdd = $(`<div id="html_0cacc030d4595137b93d75c2c0441bdd" style="width: 100.0%; height: 100.0%;">Country: Spain Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_763f1ea2e86fd260e595b5bcb1ffd7a2.setContent(html_0cacc030d4595137b93d75c2c0441bdd);
+            
+        
+
+        circle_marker_48a163684fbcd673ce027ac57af38391.bindPopup(popup_763f1ea2e86fd260e595b5bcb1ffd7a2)
+        ;
+
+        
+    
+    
+            var circle_marker_3ff36c76cd2bba271cba7fb5f8c857f5 = L.circleMarker(
+                [62.811484968080336, 16.59626584684802],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_ecbdbaaadbb462b2ea09b8875aa0bccb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_638c931c0c9e8083fc01c51866137bb9 = $(`<div id="html_638c931c0c9e8083fc01c51866137bb9" style="width: 100.0%; height: 100.0%;">Country: Sweden Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_ecbdbaaadbb462b2ea09b8875aa0bccb.setContent(html_638c931c0c9e8083fc01c51866137bb9);
+            
+        
+
+        circle_marker_3ff36c76cd2bba271cba7fb5f8c857f5.bindPopup(popup_ecbdbaaadbb462b2ea09b8875aa0bccb)
+        ;
+
+        
+    
+    
+            var circle_marker_e364e915ef652fdb675aa9665a3398d8 = L.circleMarker(
+                [46.79173768366762, 8.118300613385486],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_50918fe86814b176e25958711d317a3f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72773bcf5b75a0d3b3552099bebbb5e6 = $(`<div id="html_72773bcf5b75a0d3b3552099bebbb5e6" style="width: 100.0%; height: 100.0%;">Country: Switzerland Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_50918fe86814b176e25958711d317a3f.setContent(html_72773bcf5b75a0d3b3552099bebbb5e6);
+            
+        
+
+        circle_marker_e364e915ef652fdb675aa9665a3398d8.bindPopup(popup_50918fe86814b176e25958711d317a3f)
+        ;
+
+        
+    
+    
+            var circle_marker_22375f2990ef39df143100b501f6e26d = L.circleMarker(
+                [48.97301760592337, 31.369528906580406],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_6fcf8eb5acddb6869b70670fdbe4bf53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c59709ada2649da7d8a4ed199489a46 = $(`<div id="html_9c59709ada2649da7d8a4ed199489a46" style="width: 100.0%; height: 100.0%;">Country: Ukraine Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_6fcf8eb5acddb6869b70670fdbe4bf53.setContent(html_9c59709ada2649da7d8a4ed199489a46);
+            
+        
+
+        circle_marker_22375f2990ef39df143100b501f6e26d.bindPopup(popup_6fcf8eb5acddb6869b70670fdbe4bf53)
+        ;
+
+        
+    
+    
+            var circle_marker_b3fdc78669e65371533a96bf1f108a43 = L.circleMarker(
+                [53.91477348053706, -2.8531353951805545],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_a53899226301db20d49a36ef95a57287 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d8bb2a521edae23ab44cf162cea571d = $(`<div id="html_9d8bb2a521edae23ab44cf162cea571d" style="width: 100.0%; height: 100.0%;">Country: United Kingdom Average Sentiment: 0.07008355951808333 Article Count: 9</div>`)[0];
+                popup_a53899226301db20d49a36ef95a57287.setContent(html_9d8bb2a521edae23ab44cf162cea571d);
+            
+        
+
+        circle_marker_b3fdc78669e65371533a96bf1f108a43.bindPopup(popup_a53899226301db20d49a36ef95a57287)
+        ;
+
+        
+    
+    
+            var circle_marker_1f39fc6ef77e7430eee014b96e74f13d = L.circleMarker(
+                [45.70562800215178, -112.5994359115045],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_a5bc482c9683174e68a5b599c9a5f640 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5914268a76fc3f995ee6a27660233308 = $(`<div id="html_5914268a76fc3f995ee6a27660233308" style="width: 100.0%; height: 100.0%;">Country: United States of America Average Sentiment: 0.09732375304919948 Article Count: 24</div>`)[0];
+                popup_a5bc482c9683174e68a5b599c9a5f640.setContent(html_5914268a76fc3f995ee6a27660233308);
+            
+        
+
+        circle_marker_1f39fc6ef77e7430eee014b96e74f13d.bindPopup(popup_a5bc482c9683174e68a5b599c9a5f640)
+        ;
+
+        
+    
+    
+            var circle_marker_4c2daabaaa6ce0b22585302f12b81738 = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.4, "stroke": true, "weight": 3}
+            ).addTo(map_c3791de343a7090b2218d9de0e7be275);
+        
+    
+        var popup_8056151ae9c5e4124d3451009c73b8df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_57a08fdd97697c65e0792d445b12355f = $(`<div id="html_57a08fdd97697c65e0792d445b12355f" style="width: 100.0%; height: 100.0%;">Country: Vatican Average Sentiment: 0.0 Article Count: 4</div>`)[0];
+                popup_8056151ae9c5e4124d3451009c73b8df.setContent(html_57a08fdd97697c65e0792d445b12355f);
+            
+        
+
+        circle_marker_4c2daabaaa6ce0b22585302f12b81738.bindPopup(popup_8056151ae9c5e4124d3451009c73b8df)
+        ;
+
+        
+    
+</script>
+</html>
