@@ -1,0 +1,17 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "dependencies": {
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.8.0",
+    "graphql-subscriptions": "^2.0.0"
+  },
+  "description": "Node setup for Apollo graphql server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
