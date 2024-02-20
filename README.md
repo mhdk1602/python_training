@@ -72,26 +72,34 @@ This training repository provides an introduction to data engineering in `python
     * Working with APIs in Python (e.g., REST, GraphQL)
     * Techniques for integrating data from multiple sources
 
-7. Data Quality and Validation
+
+7. Text Comparison
+
+    * Fuzzy Matching
+    * Levenshtein Distance
+    * Other text comparison algorithms
+    *
+
+8. Data Quality and Validation
 
     * Importance of data quality and validation in data engineering
     * Techniques for validating and ensuring data quality in Python (e.g., data profiling, data validation frameworks)
     * Best practices for incorporating data quality checks in data pipelines
 
-8. Data Pipelines and ETL
+9. Data Pipelines and ETL
 
     * Overview of data pipelines and ETL (Extract, Transform, Load) processes
     * Building data pipelines in Python using tools such as Apache Airflow, Luigi, or Prefect
     * Best practices for designing and managing data pipelines
 
-9. Data Engineering in the Cloud
+10. Data Engineering in the Cloud
 
     * Overview of cloud computing and its benefits for data engineering
     * Common cloud-based data engineering services (e.g. AWS Glue, Google Cloud Dataflow, Azure Data Factory)
     * Using Python to interact with cloud-based data engineering services
     * Best practices for designing and managing cloud-based data engineering pipelines
 
-10. Conclusion and Next Steps
+11. Conclusion and Next Steps
 
     * Recap of key concepts and tools covered in the training
     * Discussion of potential next steps for participants (e.g. advanced topics, hands-on projects)
