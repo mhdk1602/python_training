@@ -1,21 +1,25 @@
-let messages = [];
+const { getUserById } = require('./data');
+const { pubsub } = require('./pubsub');
+
+let transactions = [];
 let idCount = 0;
 
 const resolvers = {
   Query: {
-    messages: () => messages,
+    transactions: () => transactions,
   },
   Mutation: {
-    addMessage: (_, { user, content }) => {
-      const message = { id: idCount++, user, content };
-      messages.push(message);
-      pubsub.publish('MESSAGE_ADDED', { messageAdded: message });
-      return message;
+    addTransaction: (_, { userId, amount }) => {
+      const user = getUserById(userId);
+      const transaction = { id: idCount++, userId, amount, user };
+      transactions.push(transaction);
+      pubsub.publish('TRANSACTION_ADDED', { transactionAdded: transaction });
+      return transaction;
     },
   },
   Subscription: {
-    messageAdded: {
-      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator(['MESSAGE_ADDED']),
+    transactionAdded: {
+      subscribe: () => pubsub.asyncIterator(['TRANSACTION_ADDED']),
     },
   },
 };
