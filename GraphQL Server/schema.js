@@ -1,22 +1,29 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type Message {
+  type User {
     id: ID!
-    user: String!
-    content: String!
+    name: String!
+    age: Int!
+  }
+
+  type Transaction {
+    id: ID!
+    userId: ID!
+    amount: Float!
+    user: User!
   }
 
   type Subscription {
-    messageAdded: Message
+    transactionAdded: Transaction
   }
 
   type Query {
-    messages: [Message]
+    transactions: [Transaction]
   }
 
   type Mutation {
-    addMessage(user: String!, content: String!): Message
+    addTransaction(userId: ID!, amount: Float!): Transaction
   }
 `;
 
