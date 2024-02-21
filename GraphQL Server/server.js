@@ -1,14 +1,38 @@
-const { ApolloServer } = require('apollo-server');
+const express = require('express');
+const { execute, subscribe } = require('graphql');
+const { SubscriptionServer } = require('subscriptions-transport-ws');
+const { makeExecutableSchema } = require('@graphql-tools/schema');
+const { graphqlHTTP } = require('express-graphql');
 const { PubSub } = require('graphql-subscriptions');
-
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
+const http = require('http');
 
 const pubsub = new PubSub();
+const schema = makeExecutableSchema({ typeDefs, resolvers });
+const app = express();
 
-const server = new ApolloServer({ typeDefs, resolvers, context: { pubsub } });
+app.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: {
+    subscriptionEndpoint: 'ws://localhost:4000/graphql'
+  }
+}));
 
-server.listen().then(({ url, subscriptionsUrl }) => {
-  console.log(`🚀  Server ready at ${url}`);
-  console.log(`🚀  Subscriptions ready at ${subscriptionsUrl}`);
+const httpServer = http.createServer(app);
+
+SubscriptionServer.create(
+  {
+    execute,
+    subscribe,
+    schema
+  },
+  {
+    server: httpServer,
+    path: '/graphql'
+  }
+);
+
+httpServer.listen(4000, () => {
+  console.log(`🚀 Server ready at http://localhost:4000/graphql`);
 });
