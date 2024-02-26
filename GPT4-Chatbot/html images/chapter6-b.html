@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fine-tuning GPT-4 Process Flowchart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .flowchart-item {
+            background-color: #5B9BD5;
+            border-radius: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+        .flowchart-icon {
+            font-size: 24px;
+            color: white;
+        }
+        .flowchart-text {
+            font-size: 12px;
+            color: white;
+            margin-top: 5px;
+        }
+        .arrow {
+            font-size: 24px;
+            color: #333;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="flowchart">
+        <div class="flowchart-item">
+            <i class="flowchart-icon fas fa-file-alt"></i>
+            <div class="flowchart-text">Prepare Documents</div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item">
+            <i class="flowchart-icon fas fa-upload"></i>
+            <div class="flowchart-text">Upload & Fine-tune</div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item">
+            <i class="flowchart-icon fas fa-sync-alt"></i>
+            <div class="flowchart-text">Integrate Model</div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item">
+            <i class="flowchart-icon fas fa-robot"></i>
+            <div class="flowchart-text">Chatbot Testing</div>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item">
+            <i class="flowchart-icon fas fa-search"></i>
+            <div class="flowchart-text">Monitor & Update</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
