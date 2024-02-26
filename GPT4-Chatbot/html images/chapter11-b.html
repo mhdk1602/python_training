@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Interaction Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .interaction-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .chat-container {
+      width: 40%;
+      padding: 20px;
+      background-color: #DCE6F1;
+      border-radius: 10px;
+      margin: 10px;
+      text-align: left;
+    }
+    .chat-title {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .chat-message {
+      background-color: #e7f1fc;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 5px 0;
+      position: relative;
+    }
+    .chat-message:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -10px;
+      top: 10px;
+      border: 10px solid;
+      border-color: transparent #e7f1fc transparent transparent;
+    }
+    .user, .bot {
+      margin-bottom: 5px;
+    }
+    .user:before {
+      left: auto;
+      right: -10px;
+      border-color: transparent transparent transparent #e7f1fc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Chatbot Interaction Comparison</h1>
+
+  <!-- Before Integration -->
+  <div class="interaction-section">
+    <div class="chat-container">
+      <div class="chat-title">Before Document Insights Integration</div>
+      <div class="chat-message user">"Can you provide more details on our refund policy?"</div>
+      <div class="chat-message bot">"Our refund policy includes a 30-day money-back guarantee."</div>
+    </div>
+
+    <!-- After Integration -->
+    <div class="chat-container">
+      <div class="chat-title">After Document Insights Integration</div>
+      <div class="chat-message user">"Can you provide more details on our refund policy?"</div>
+      <div class="chat-message bot">"Certainly! Based on your purchase date and the product you've bought, our policy offers a full refund within 30 days. Additionally, for premium members, we provide a pro-rated refund for up to 90 days."</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

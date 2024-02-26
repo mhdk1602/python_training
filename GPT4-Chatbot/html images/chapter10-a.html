@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backend Architecture for Document Processing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .architecture-section {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .architecture-step {
+      display: inline-block;
+      background-color: #DCE6F1;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin: 5px;
+      vertical-align: middle;
+    }
+    .architecture-arrow {
+      display: inline-block;
+      margin: 0 20px;
+      font-size: 24px;
+      color: #333;
+      vertical-align: middle;
+    }
+    .icon {
+      margin-right: 5px;
+      color: #5B9BD5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Backend Architecture Diagram</h1>
+  
+  <div class="architecture-section">
+    <div class="architecture-step">
+      <i class="icon fas fa-upload"></i>
+      <div>Document Upload</div>
+    </div>
+    <i class="fas fa-arrow-right architecture-arrow"></i>
+    <div class="architecture-step">
+      <i class="icon fas fa-server"></i>
+      <div>File Storage</div>
+    </div>
+    <i class="fas fa-arrow-right architecture-arrow"></i>
+    <div class="architecture-step">
+      <i class="icon fas fa-file-code"></i>
+      <div>Data Validation</div>
+    </div>
+    <i class="fas fa-arrow-right architecture-arrow"></i>
+    <div class="architecture-step">
+      <i class="icon fas fa-search"></i>
+      <div>Text Extraction</div>
+    </div>
+    <i class="fas fa-arrow-right architecture-arrow"></i>
+    <div class="architecture-step">
+      <i class="icon fas fa-brain"></i>
+      <div>GPT-4 Processing</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

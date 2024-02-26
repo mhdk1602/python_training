@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Upload Feature for GPT-4 Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .upload-area {
+      border: 2px dashed #5B9BD5;
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px 0;
+    }
+    .upload-area:hover {
+      background-color: #e7f1fc;
+    }
+    .upload-area input[type='file'] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #5B9BD5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .button:hover {
+      background-color: #3a9dd9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Document Upload for GPT-4 Chatbot</h1>
+  
+  <div class="upload-area">
+    <h2>Select or drag-and-drop a document</h2>
+    <input type="file" id="docUpload" name="docUpload" accept=".pdf, .doc, .docx, .xlsx" />
+    <label for="docUpload" class="button">Choose File</label>
+  </div>
+
+  <!-- Instructions or additional UI elements can go here -->
+
+</div>
+
+</body>
+</html>
