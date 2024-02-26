@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Personality Examples</title>
+<style>
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+  }
+  .chat-section {
+      margin-bottom: 40px;
+  }
+  .chat-heading {
+      font-size: 28px;
+      color: #333;
+      text-align: left;
+      margin-left: 20px;
+  }
+  .chat-bubble {
+      position: relative;
+      background-color: #DCE6F1;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px 20px;
+      text-align: left;
+      display: inline-block;
+      max-width: 80%;
+  }
+  .chat-bubble:after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 15px 15px 15px 0;
+      border-color: transparent #DCE6F1;
+      display: block;
+      width: 0;
+      z-index: 1;
+      left: -15px;
+      top: 18px;
+  }
+  .chat-text {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+
+<div class="chat-section">
+    <h2 class="chat-heading">Friendly and Casual</h2>
+    <div class="chat-bubble">
+        <p class="chat-text">"Hey there! 😊 I'm here to help you with whatever you need. Just ask away, and let's make this fun!"</p>
+    </div>
+</div>
+
+<div class="chat-section">
+    <h2 class="chat-heading">Professional and Formal</h2>
+    <div class="chat-bubble">
+        <p class="chat-text">"Good day. How may I assist you with your inquiries today? Please provide the necessary details for accurate assistance."</p>
+    </div>
+</div>
+
+<div class="chat-section">
+    <h2 class="chat-heading">Witty and Humorous</h2>
+    <div class="chat-bubble">
+        <p class="chat-text">"Why did the chatbot cross the road? To get to the other side of your questions! Fire away, and let's crack this nut."</p>
+    </div>
+</div>
+
+</body>
+</html>
