@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integration and Testing Process Flow</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .flow-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .flow-step {
+      background-color: #DCE6F1;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .flow-arrow {
+      margin: 0 20px;
+    }
+    .icon {
+      margin-right: 5px;
+      color: #5B9BD5;
+    }
+    .title {
+      text-align: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="title">
+    <h1>Integration and Testing Process Flow</h1>
+  </div>
+  
+  <!-- Integration Process Flow -->
+  <div class="flow-section">
+    <div class="flow-step">
+      <i class="icon fas fa-cogs"></i>
+      <div>Backend Preparation</div>
+    </div>
+    <i class="fas fa-arrow-right flow-arrow"></i>
+    <div class="flow-step">
+      <i class="icon fas fa-code-branch"></i>
+      <div>API Modification</div>
+    </div>
+    <i class="fas fa-arrow-right flow-arrow"></i>
+    <div class="flow-step">
+      <i class="icon fas fa-check-double"></i>
+      <div>Integration Testing</div>
+    </div>
+  </div>
+
+  <!-- Testing Process Flow -->
+  <div class="flow-section" style="flex-direction: column;">
+    <div class="flow-step">
+      <i class="icon fas fa-desktop"></i>
+      <div>User Interface Testing</div>
+    </div>
+    <i class="fas fa-arrow-down flow-arrow"></i>
+    <div class="flow-step">
+      <i class="icon fas fa-user-check"></i>
+      <div>User Acceptance Testing</div>
+    </div>
+    <i class="fas fa-arrow-down flow-arrow"></i>
+    <div class="flow-step">
+      <i class="icon fas fa-chart-line"></i>
+      <div>Performance Evaluation</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

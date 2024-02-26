@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Data Integration Flow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .integration-flow-section {
+        margin: 20px 0;
+      }
+      .integration-step {
+        background-color: #dce6f1;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 5px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .integration-arrow {
+        margin: 0 10px;
+        font-size: 24px;
+        color: #333;
+        align-self: center;
+      }
+      .icon {
+        margin-right: 5px;
+        color: #5b9bd5;
+      }
+      .code-snippet {
+        background-color: #eaeaea;
+        border-left: 3px solid #5b9bd5;
+        padding: 10px;
+        font-family: monospace;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Document Data Integration Flow</h1>
+
+      <!-- Data Extraction and Formatting -->
+      <div class="integration-flow-section">
+        <div class="integration-step">
+          <i class="icon fas fa-file-upload"></i>
+          <div>Document Upload</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-text-width"></i>
+          <div>Text Extraction</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-edit"></i>
+          <div>Data Formatting</div>
+        </div>
+      </div>
+
+      <!-- GPT-4 and Anthropic Integration -->
+      <div class="integration-flow-section">
+        <div class="integration-step">
+          <i class="icon fas fa-brain"></i>
+          <div>Anthropic Analysis</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-sync"></i>
+          <div>GPT-4 Integration</div>
+        </div>
+      </div>
+
+      <!-- Context and Prompt Generation -->
+      <div class="integration-flow-section">
+        <div class="integration-step">
+          <i class="icon fas fa-database"></i>
+          <div>Context Management</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-terminal"></i>
+          <div>Dynamic Prompt Generation</div>
+        </div>
+        <div class="code-snippet">
+          # Python code snippet for dynamic prompt generation def
+          generate_dynamic_prompt(document_data): # Logic to create prompt based
+          on document data prompt = "Relevant information: " +
+          document_data['extracted_text'] return prompt
+        </div>
+      </div>
+
+      <!-- Response Generation and User Interaction -->
+      <div class="integration-flow-section">
+        <div class="integration-step">
+          <i class="icon fas fa-robot"></i>
+          <div>Response Generation</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-user-circle"></i>
+          <div>User Interaction</div>
+        </div>
+      </div>
+
+      <!-- Feedback and Improvement -->
+      <div class="integration-flow-section">
+        <div class="integration-step">
+          <i class="icon fas fa-comments"></i>
+          <div>User Feedback</div>
+        </div>
+        <i class="fas fa-arrow-right integration-arrow"></i>
+        <div class="integration-step">
+          <i class="icon fas fa-tools"></i>
+          <div>Continuous Improvement</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
