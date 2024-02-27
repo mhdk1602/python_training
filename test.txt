@@ -1,0 +1,62 @@
+erDiagram
+    portfolio {
+        int portfolio_id PK "Unique portfolio identifier"
+        string ticker FK "Stock symbol, references stocks"
+        date transaction_date "Date of transaction"
+        string action "Transaction action (Buy/Sell)"
+        int volume "Number of shares"
+        time time "Time of transaction"
+        float close "Transaction price per share (optional)"
+        float total_transaction_amount "Total value of transaction (optional)"
+    }
+
+    stocks {
+        string ticker PK "Unique stock symbol"
+        string name "Company name"
+    }
+
+    company_overview {
+        string ticker PK,FK "Stock symbol, foreign key to stocks"
+        string sector "Business sector"
+        string industry "Industry category"
+        string market_cap "Market capitalization, formatted"
+        string description "Company description"
+        date as_of_date "Data as of date"
+    }
+
+    earnings {
+        int earnings_id PK "Unique earnings data identifier"
+        string ticker FK "Stock symbol, foreign key to stocks"
+        int fiscal_year "Fiscal year"
+        string fiscal_period "Fiscal quarter"
+        float eps "Earnings per share"
+        date as_of_date "Earnings data as of date"
+    }
+
+    ticker_daily {
+        int daily_price_id PK "Unique daily stock price identifier"
+        string ticker FK "Stock symbol, foreign key to stocks"
+        date date "Date of the stock price"
+        float open "Opening price"
+        float high "Highest price of the day"
+        float low "Lowest price of the day"
+        float close "Closing price"
+        int volume "Number of shares traded"
+    }
+
+    ticker_intraday {
+        int intraday_price_id PK "Unique intraday price identifier"
+        int daily_price_id FK "Foreign key to ticker_daily"
+        datetime date_time "Date and time of the price data"
+        float open "Opening price"
+        float high "Highest price in the interval"
+        float low "Lowest price in the interval"
+        float close "Closing price at the end of the interval"
+        int volume "Number of shares traded in the interval"
+    }
+
+    stocks ||--o{ portfolio : "includes"
+    stocks ||--|| company_overview : "has"
+    stocks ||--o{ earnings : "reports on"
+    stocks ||--o{ ticker_daily : "records"
+    ticker_daily ||--o{ ticker_intraday : "details"

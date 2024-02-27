@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  postgres:
+    build: 
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: godzilla
+      POSTGRES_PASSWORD: Mrawww
+      POSTGRES_DB: monsterverse
+      DATABASE_URL: postgres://godzilla:Mrawww@postgres/monsterverse
+      SHADOW_DATABASE_URL: postgres://godzilla:Mrawww@postgres/monsterverse_shadow
+      ROOT_DATABASE_URL: postgres://godzilla:Mrawww@postgres/postgres
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d/
+    networks:
+      - my-network
+    restart: on-failure:10
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U godzilla -d monsterverse -q && psql -U godzilla -d monsterverse -c 'SELECT 1' | grep 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  my-network:
+    driver: bridge
