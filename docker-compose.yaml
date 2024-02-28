@@ -21,10 +21,26 @@ services:
       - my-network
     restart: on-failure:10
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U godzilla -d monsterverse -q && psql -U godzilla -d monsterverse -c 'SELECT 1' | grep 1"]
+      test: ["CMD-SHELL", "pg_isready -U godzilla -d monsterverse"]
       interval: 10s
       timeout: 5s
       retries: 5
+
+  postgraphile:
+    image: graphile/postgraphile
+    ports:
+      - "5001:5000"
+    environment: 
+      - DATABASE_URL=postgres://godzilla:Mrawww@postgres:5432/monsterverse
+      - POSTGRES_USER=godzilla
+      - POSTGRES_PASSWORD=Mrawww
+      - SCHEMA=public
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - my-network
+    command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
 
 networks:
   my-network:
