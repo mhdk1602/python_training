@@ -71,14 +71,14 @@ This training repository provides an introduction to data engineering in `python
     * Introduction to data integration and APIs in data engineering
     * Working with APIs in Python (e.g., REST, GraphQL)
     * Techniques for integrating data from multiple sources
-
+    * Postgres/Postgraphile Setup
 
 7. Text Comparison
 
     * Fuzzy Matching
     * Levenshtein Distance
     * Other text comparison algorithms
-    *
+    * Text Embeddings
 
 8. Data Quality and Validation
 
