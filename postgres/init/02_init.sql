@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS ticker_daily (
 -- Create ticker_intraday table
 CREATE TABLE IF NOT EXISTS ticker_intraday (
     intraday_price_id SERIAL PRIMARY KEY,
-    daily_price_id INT REFERENCES ticker_daily(daily_price_id),
+    ticker VARCHAR(50) REFERENCES stocks(ticker),
     date_time TIMESTAMP,
     open FLOAT,
     high FLOAT,
