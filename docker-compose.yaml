@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.8'
 
 services:
   postgres:
@@ -40,7 +40,24 @@ services:
         condition: service_healthy
     networks:
       - my-network
-    command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
+    command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "--cors", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
+
+  nextjs:
+    image: node:latest
+    container_name: nextjs_app
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./react-app:/app
+    command: bash -c "cd /app && npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    depends_on:
+      postgraphile:
+        condition: service_started
 
 networks:
   my-network:
