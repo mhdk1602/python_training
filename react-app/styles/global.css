@@ -1,0 +1,55 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .header {
+    background-color: #20232a;
+    color: #61dafb;
+    text-align: center;
+    padding: 20px;
+  }
+  .title {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .main {
+    flex: 1;
+    padding: 20px;
+  }
+  .footer {
+    background-color: #20232a;
+    color: #61dafb;
+    text-align: center;
+    padding: 10px;
+  }
+  .content-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .stocks-section, .portfolio-summary-section {
+    width: 45%;
+  }
+  .table-style {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .table-style th, .table-style td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .table-style th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f4f4f4;
+    color: black;
+  }
+  

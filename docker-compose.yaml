@@ -59,6 +59,18 @@ services:
       postgraphile:
         condition: service_started
 
+  flask_app:
+    build: 
+      context: .
+      dockerfile: flask-app/Dockerfile
+    ports:
+      - "5002:5000"
+    networks:
+      - my-network
+    depends_on:
+      postgraphile:
+        condition: service_started
+
 networks:
   my-network:
     driver: bridge
