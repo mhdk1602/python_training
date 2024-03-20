@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  postgres:
+    build: 
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: godzilla
+      POSTGRES_PASSWORD: Mrawww
+      POSTGRES_DB: monsterverse
+      DATABASE_URL: postgres://godzilla:Mrawww@postgres/monsterverse
+      SHADOW_DATABASE_URL: postgres://godzilla:Mrawww@postgres/monsterverse_shadow
+      ROOT_DATABASE_URL: postgres://godzilla:Mrawww@postgres/postgres
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d/
+    networks:
+      - my-network
+    restart: on-failure:10
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U godzilla -d monsterverse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgraphile:
+    image: graphile/postgraphile
+    ports:
+      - "5001:5000"
+    environment: 
+      - DATABASE_URL=postgres://godzilla:Mrawww@postgres:5432/monsterverse
+      - POSTGRES_USER=godzilla
+      - POSTGRES_PASSWORD=Mrawww
+      - SCHEMA=public
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - my-network
+    command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "--cors", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
+
+  nextjs:
+    image: node:latest
+    container_name: nextjs_app
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./react-app:/app
+    command: bash -c "cd /app && npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    depends_on:
+      postgraphile:
+        condition: service_started
+
+  flask_app:
+    build: 
+      context: .
+      dockerfile: flask-app/Dockerfile
+    ports:
+      - "5002:5000"
+    networks:
+      - my-network
+    depends_on:
+      postgraphile:
+        condition: service_started
+
+networks:
+  my-network:
+    driver: bridge

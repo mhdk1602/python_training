@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continuous Improvement Cycle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cycle-title {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .cycle-step {
+            width: 100px;
+            height: 100px;
+            background-color: #DCE6F1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            flex: 0 0 100px;
+            position: absolute;
+        }
+        .icon {
+            font-size: 24px;
+            color: #5B9BD5;
+        }
+        .text {
+            display: block; /* Make sure the text appears under the icon */
+            margin-top: 8px; /* Space between icon and text */
+            margin-right: px;
+            font-size: 10px; /* Adjust text size as needed */
+        }
+        /* Position the steps in a circle */
+        .step-1 { top: 0; left: 50%; transform: translate(-50%, 0%); }
+        .step-2 { top: 25%; left: 75%; transform: translate(-50%, -50%); }
+        .step-3 { top: 50%; left: 100%; transform: translate(-100%, -50%); }
+        .step-4 { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+        .step-5 { top: 100%; left: 50%; transform: translate(-50%, -100%); }
+        .step-6 { top: 75%; left: 25%; transform: translate(-50%, -50%); }
+        .step-7 { top: 50%; left: 0%; transform: translate(0%, -50%); }
+        .step-8 { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cycle-title">Continuous Improvement Cycle</div>
+        <div class="cycle-step step-1"><i class="icon fas fa-search"></i><span class="text">Objective</span></div>
+        <div class="cycle-step step-2"><i class="icon fas fa-tachometer-alt"></i><span class="text">KPIs</span></div>
+        <div class="cycle-step step-3"><i class="icon fas fa-user-check"></i><span class="text">Analyze Data</span></div>
+        <div class="cycle-step step-4"><i class="icon fas fa-comments"></i><span class="text">Feedback</span></div>
+        <div class="cycle-step step-5"><i class="icon fas fa-sync-alt"></i><span class="text">Iterate Insights</span></div>
+        <div class="cycle-step step-6"><i class="icon fas fa-wrench"></i><span class="text">Update & Test</span></div>
+        <div class="cycle-step step-7"><i class="icon fas fa-clipboard-check"></i><span class="text">Training</span></div>
+        <!-- Assuming "Training" is the last step and "Iterate" is the repeat step, linking back to "Objective" -->
+        <div class="cycle-step step-8"><i class="icon fas fa-redo"></i><span class="text">Iterate</span></div>
+    </div>
+
+</body>
+</html>
