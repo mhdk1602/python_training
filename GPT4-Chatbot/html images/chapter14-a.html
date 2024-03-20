@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Response Presentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .response-header {
+      font-size: 18px;
+      color: #333;
+      margin: 20px 0;
+    }
+    .chat-response {
+      background-color: #DCE6F1;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: left;
+      position: relative;
+      min-height: 50px;
+    }
+    .chat-response p {
+      margin: 5px;
+      padding: 0;
+    }
+    .good-response {
+      background-color: #D4EAD8;
+    }
+    .poor-response {
+      background-color: #F6D1D1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Chatbot Response Examples</h1>
+
+  <!-- Poorly Presented Response -->
+  <div class="response-header">Poorly Presented Response</div>
+  <div class="chat-response poor-response">
+    <p>"Based on the document, the information you are looking for pertains to data that is complex and not easy to understand without the proper background. For more details, refer to the document."</p>
+  </div>
+
+  <!-- Well-Presented Response -->
+  <div class="response-header">Well-Presented Response</div>
+  <div class="chat-response good-response">
+    <p>"I've reviewed the document and here's a summary for you: Our refund policy allows for returns within 30 days, given the product is unused and in its original packaging. If you have a premium account, you have an extended period of 90 days. Would you like more detailed information on this?"</p>
+  </div>
+
+</div>
+
+</body>
+</html>
