@@ -1,4 +1,4 @@
+.env
 postgres/data
 gitignore-files
-GPT4-Chatbot/summary-results
-.env
+GPT4-Chatbot/summary-results/*
