@@ -1,5 +1,5 @@
 .env
 postgres/data
 gitignore-files
-GPT4-Chatbot/summary-results/*
+GPT4-Chatbot/summary-results
 .ipynb_checkpoints
