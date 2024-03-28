@@ -2,16 +2,14 @@ import { gql } from "@apollo/client";
 
 export const GET_PORTFOLIO_TRANSACTIONS = gql`
   query GetPortfolioTransactions($ticker: String!) {
-    allPortfolioTransactions(condition: {ticker: $ticker}) {
-      nodes {
-        transactionDate
-        action
-        volume
-        close
-        totalTransactionAmount
-        stockByTicker {
-          name
-        }
+    portfolio_transactions(where: { ticker: { _eq: $ticker } }) {
+      transaction_date
+      action
+      volume
+      close
+      total_transaction_amount
+      stock {
+        name
       }
     }
   }

@@ -26,21 +26,39 @@ services:
       timeout: 5s
       retries: 5
 
-  postgraphile:
-    image: graphile/postgraphile
+  # postgraphile:
+  #   image: graphile/postgraphile
+  #   ports:
+  #     - "5001:5000"
+  #   environment: 
+  #     - DATABASE_URL=postgres://godzilla:Mrawww@postgres:5432/monsterverse
+  #     - POSTGRES_USER=godzilla
+  #     - POSTGRES_PASSWORD=Mrawww
+  #     - SCHEMA=public
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #   networks:
+  #     - my-network
+  #   command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "--cors", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
+
+  hasura:
+    image: hasura/graphql-engine:v2.34.0
+    platform: linux/arm64/v8
     ports:
-      - "5001:5000"
-    environment: 
-      - DATABASE_URL=postgres://godzilla:Mrawww@postgres:5432/monsterverse
-      - POSTGRES_USER=godzilla
-      - POSTGRES_PASSWORD=Mrawww
-      - SCHEMA=public
+      - "8080:8080"
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://godzilla:Mrawww@postgres:5432/monsterverse
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_ADMIN_SECRET}"
     depends_on:
       postgres:
         condition: service_healthy
     networks:
       - my-network
-    command: ["-n", "0.0.0.0", "--enhance-graphiql", "--watch", "--cors", "-c", "postgres://godzilla:Mrawww@postgres:5432/monsterverse", "-s", "public"]
+    command:
+      - graphql-engine
+      - serve
 
   nextjs:
     image: node:latest
@@ -56,8 +74,7 @@ services:
     networks:
       - my-network
     depends_on:
-      postgraphile:
-        condition: service_started
+      - hasura
 
   flask_app:
     build: 
@@ -65,11 +82,15 @@ services:
       dockerfile: flask-app/Dockerfile
     ports:
       - "5002:5000"
+    environment:
+      - HASURA_ADMIN_SECRET="${HASURA_ADMIN_SECRET}"
+      - FLASK_ENV=development
     networks:
       - my-network
+    volumes:
+      - ./flask-app:/usr/src/app # Adjusted path to point to your Flask application directory
     depends_on:
-      postgraphile:
-        condition: service_started
+      - hasura
 
 networks:
   my-network:

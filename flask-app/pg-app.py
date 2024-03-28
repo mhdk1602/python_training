@@ -3,16 +3,11 @@ from datetime import datetime
 import yfinance as yf
 import requests
 from flask_cors import CORS
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-GRAPHQL_ENDPOINT = "http://hasura:8080/v1/graphql"
-HASURA_ADMIN_SECRET = os.getenv('HASURA_ADMIN_SECRET').strip('"')
+GRAPHQL_ENDPOINT = "http://postgraphile:5000/graphql"
 
 def get_stock_price(symbol):
     now = datetime.utcnow()
@@ -48,6 +43,7 @@ def fetch_yfinance_overview(symbol):
     
     return {
         "ticker": symbol,
+        "name": info.get("longName", "N/A"),
         "sector": info.get("sector", "N/A"),
         "industry": info.get("industry", "N/A"),
         "market_cap": formatted_market_cap,
@@ -59,16 +55,9 @@ def execute_graphql(query, variables=None):
     response = requests.post(
         GRAPHQL_ENDPOINT, 
         json={'query': query, 'variables': variables},
-        headers={
-            'Content-Type': 'application/json',
-            'x-hasura-admin-secret': HASURA_ADMIN_SECRET
-        }
+        headers={'Content-Type': 'application/json'}
     )
-    response_json = response.json()
-    if 'errors' in response_json:
-        app.logger.error(f"GraphQL Error: {response_json['errors']}")
-        raise ValueError(f"GraphQL Error: {response_json['errors']}")
-    return response_json
+    return response.json()
 
 @app.route('/stock-price', methods=['GET'])
 def stock_price_endpoint():
@@ -92,15 +81,17 @@ def trade_endpoint():
     price = get_stock_price(symbol)
     stock_overview = fetch_yfinance_overview(symbol)
 
-    check_stock_query = 'query ($ticker: String!) { stocks(where: {ticker: {_eq: $ticker}}) { ticker name } }'
+    check_stock_query = 'query ($ticker: String!) { allStocks(condition: {ticker: $ticker}) { nodes { ticker name } } }'
     stock_response = execute_graphql(check_stock_query, variables={"ticker": symbol})
-    stock_exists = stock_response['data']['stocks']
+    stock_exists = stock_response['data']['allStocks']['nodes']
 
     update_stock_query = """
     mutation ($ticker: String!, $name: String!) {
-        insert_stocks_one(object: { ticker: $ticker, name: $name }) {
-            ticker
-            name
+        createStock(input: { stock: { ticker: $ticker, name: $name } }) {
+            stock {
+                ticker
+                name
+            }
         }
     }
     """
@@ -112,42 +103,50 @@ def trade_endpoint():
         $industry: String, 
         $marketCap: String, 
         $description: String, 
-        $asOfDate: date
+        $asOfDate: Date
     ) {
-        insert_company_overviews_one(object: { 
-            ticker: $ticker, 
-            sector: $sector, 
-            industry: $industry, 
-            market_cap: $marketCap, 
-            description: $description, 
-            as_of_date: $asOfDate 
+        createCompanyOverview(input: { 
+            companyOverview: { 
+                ticker: $ticker, 
+                sector: $sector, 
+                industry: $industry, 
+                marketCap: $marketCap, 
+                description: $description, 
+                asOfDate: $asOfDate 
+            } 
         }) {
-            ticker
-            sector
+            companyOverview {
+                ticker
+                sector
+            }
         }
     }
     """
 
     update_portfolio_transaction_query = """
     mutation (
-        $ticker: String!, 
-        $transactionDate: timestamp, 
-        $action: String!, 
-        $volume: bigint, 
-        $close: float8, 
-        $totalTransactionAmount: float8
+    $ticker: String!, 
+    $transactionDate: Datetime!, 
+    $action: String!, 
+    $volume: BigInt!, 
+    $close: Float!, 
+    $totalTransactionAmount: Float!
     ) {
-        insert_portfolio_transactions_one(object: { 
-            ticker: $ticker, 
-            transaction_date: $transactionDate, 
-            action: $action, 
-            volume: $volume, 
-            close: $close, 
-            total_transaction_amount: $totalTransactionAmount 
-        }) {
-            ticker
-            transaction_date
+    createPortfolioTransaction(input: { 
+        portfolioTransaction: { 
+        ticker: $ticker, 
+        transactionDate: $transactionDate, 
+        action: $action, 
+        volume: $volume, 
+        close: $close, 
+        totalTransactionAmount: $totalTransactionAmount 
+        } 
+    }) {
+        portfolioTransaction {
+        ticker
+        transactionDate
         }
+    }
     }
     """
 
