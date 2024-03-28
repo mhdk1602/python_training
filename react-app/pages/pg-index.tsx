@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { useQuery } from "@apollo/client";
 import { GET_STOCKS } from "../graphql/getStocks";
 import { GET_PORTFOLIO_SUMMARY } from "../graphql/getPortfolioSummaries";
 import { GET_PORTFOLIO_TRANSACTIONS } from "graphql/getPortfolioTransactions";
-import { GET_MAX_AS_OF_DATE } from "../graphql/getPortfolioSummaries";
 import Layout from "../components/Layout";
 import { useState } from "react";
 
@@ -15,34 +14,24 @@ const HomePage: React.FC = () => {
   const [selectedTicker, setSelectedTicker] = useState(null);
 
   const {
+    loading: stocksLoading,
+    error: stocksError,
     data: stocksData,
-    refetch: refetchStocks, // Add this line to get the refetch function
+    refetch: refetchStocks,  // Add this line to get the refetch function
   } = useQuery(GET_STOCKS);
-
+  
   const {
-    data: maxDateData,
-    refetch: refetchMaxDate, 
-  } = useQuery(GET_MAX_AS_OF_DATE);
-
-  const [maxAsOfDate, setMaxAsOfDate] = useState(null);
-
-  useEffect(() => {
-    if (maxDateData) {
-      setMaxAsOfDate(maxDateData.portfolio_summary_aggregate.aggregate.max.as_of_date);
-    }
-  }, [maxDateData]);
-
-  const {
+    loading: portfolioLoading,
+    error: portfolioError,
     data: portfolioData,
-    refetch: refetchPortfolio,
-  } = useQuery(GET_PORTFOLIO_SUMMARY, {
-    skip: !maxAsOfDate,  // Skip this query until maxAsOfDate is available
-    variables: { maxAsOfDate },
-  });
-
+    refetch: refetchPortfolio,  // Add this line to get the refetch function
+  } = useQuery(GET_PORTFOLIO_SUMMARY);
+  
   const {
+    loading: transactionsLoading,
+    error: transactionsError,
     data: transactionsData,
-    refetch: refetchTransactions, // Add this line to get the refetch function
+    refetch: refetchTransactions,  // Add this line to get the refetch function
   } = useQuery(GET_PORTFOLIO_TRANSACTIONS, {
     skip: !selectedTicker,
     variables: { ticker: selectedTicker },
@@ -96,7 +85,7 @@ const HomePage: React.FC = () => {
             trade_type: tradeType,
           }),
         });
-
+  
         const result = await response.json();
         if (result.error) {
           console.error("Trade Error:", result.error);
@@ -105,10 +94,9 @@ const HomePage: React.FC = () => {
           console.log("Trade Successful:", result.message);
           setTradeFeedback("Trade Successful: " + result.message);
           closeTradeModal();
-
+  
           // Trigger refetches to update your data
           refetchStocks();
-          refetchMaxDate();
           refetchPortfolio();
           refetchTransactions({ ticker: selectedTicker });
         }
@@ -121,6 +109,12 @@ const HomePage: React.FC = () => {
       setTradeFeedback("Please enter valid inputs for stock ticker and volume");
     }
   };
+
+  if (stocksLoading || portfolioLoading || transactionsLoading)
+    return <p>Loading...</p>;
+  if (stocksError) return <p>Error: {stocksError.message}</p>;
+  if (portfolioError) return <p>Error: {portfolioError.message}</p>;
+  if (transactionsError) return <p>Error: {transactionsError.message}</p>;
 
   return (
     <Layout>
@@ -143,7 +137,7 @@ const HomePage: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {stocksData?.stocks.map((stock: any) => (
+              {stocksData?.allStocks?.nodes.map((stock: any) => (
                 <tr key={stock.ticker}>
                   <td>{stock.ticker}</td>
                   <td>{stock.name}</td>
@@ -173,23 +167,25 @@ const HomePage: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {portfolioData?.portfolio_summary.map((summary: any) => (
-                <tr
-                  key={summary.ticker}
-                  onClick={() => openModal(summary.ticker)}
-                >
-                  <td>{summary.ticker}</td>
-                  <td>{summary.stock.name}</td>
-                  <td>{summary.total_shares}</td>
-                  <td>
-                    $
-                    {summary.total_asset_value
-                      ? Number(summary.total_asset_value).toFixed(2)
-                      : "N/A"}
-                  </td>
-                  <td>{new Date(summary.as_of_date).toLocaleDateString()}</td>
-                </tr>
-              ))}
+              {portfolioData?.allPortfolioSummaries?.nodes.map(
+                (summary: any) => (
+                  <tr
+                    key={summary.ticker}
+                    onClick={() => openModal(summary.ticker)}
+                  >
+                    <td>{summary.ticker}</td>
+                    <td>{summary.stockByTicker.name}</td>
+                    <td>{summary.totalShares}</td>
+                    <td>
+                      $
+                      {summary.totalAssetValue
+                        ? Number(summary.totalAssetValue).toFixed(2)
+                        : "N/A"}
+                    </td>
+                    <td>{new Date(summary.asOfDate).toLocaleDateString()}</td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
@@ -256,10 +252,10 @@ const HomePage: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-            {transactionsData?.portfolio_transactions.map(
+              {transactionsData.allPortfolioTransactions.nodes.map(
                 (
                   transaction: {
-                    transaction_date: string | number | Date;
+                    transactionDate: string | number | Date;
                     action:
                       | string
                       | number
@@ -299,7 +295,7 @@ const HomePage: React.FC = () => {
                       | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
-                    total_transaction_amount:
+                    totalTransactionAmount:
                       | string
                       | number
                       | boolean
@@ -312,7 +308,7 @@ const HomePage: React.FC = () => {
                       | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
-                    stock: {
+                    stockByTicker: {
                       name:
                         | string
                         | number
@@ -333,13 +329,13 @@ const HomePage: React.FC = () => {
                   <tr key={index}>
                     <td>
                       {new Date(
-                        transaction.transaction_date
+                        transaction.transactionDate
                       ).toLocaleDateString()}
                     </td>
                     <td>{transaction.action}</td>
                     <td>{transaction.volume}</td>
                     <td>{transaction.close}</td>
-                    <td>{transaction.total_transaction_amount}</td>
+                    <td>{transaction.totalTransactionAmount}</td>
                   </tr>
                 )
               )}

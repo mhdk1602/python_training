@@ -4,3 +4,4 @@ psycopg2-binary
 Flask-GraphQL
 graphene
 flask-cors
+python-dotenv
