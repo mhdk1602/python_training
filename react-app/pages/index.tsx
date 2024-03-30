@@ -19,26 +19,26 @@ const HomePage: React.FC = () => {
     refetch: refetchStocks, // Add this line to get the refetch function
   } = useQuery(GET_STOCKS);
 
-  const {
-    data: maxDateData,
-    refetch: refetchMaxDate, 
-  } = useQuery(GET_MAX_AS_OF_DATE);
+  const { data: maxDateData, refetch: refetchMaxDate } =
+    useQuery(GET_MAX_AS_OF_DATE);
 
   const [maxAsOfDate, setMaxAsOfDate] = useState(null);
 
   useEffect(() => {
     if (maxDateData) {
-      setMaxAsOfDate(maxDateData.portfolio_summary_aggregate.aggregate.max.as_of_date);
+      setMaxAsOfDate(
+        maxDateData.portfolio_summary_aggregate.aggregate.max.as_of_date
+      );
     }
   }, [maxDateData]);
 
-  const {
-    data: portfolioData,
-    refetch: refetchPortfolio,
-  } = useQuery(GET_PORTFOLIO_SUMMARY, {
-    skip: !maxAsOfDate,  // Skip this query until maxAsOfDate is available
-    variables: { maxAsOfDate },
-  });
+  const { data: portfolioData, refetch: refetchPortfolio } = useQuery(
+    GET_PORTFOLIO_SUMMARY,
+    {
+      skip: !maxAsOfDate, // Skip this query until maxAsOfDate is available
+      variables: { maxAsOfDate },
+    }
+  );
 
   const {
     data: transactionsData,
@@ -65,6 +65,13 @@ const HomePage: React.FC = () => {
   const [volume, setVolume] = useState<number | null>(null);
 
   const [tradeFeedback, setTradeFeedback] = useState<string | null>(null);
+
+  interface StockPrices {
+    [key: string]: number | string;
+  }
+
+  const [stockPrices, setStockPrices] = useState<StockPrices>({});
+  const [prevStockPrices, setPrevStockPrices] = useState<StockPrices>({});
 
   const openBuyModal = () => {
     setTradeType("Buy");
@@ -122,6 +129,156 @@ const HomePage: React.FC = () => {
     }
   };
 
+  const getColor = (
+    ticker: string,
+    currentPrice: number | string,
+    prevPrice: number | string
+  ) => {
+    if (
+      currentPrice === "Error" ||
+      prevPrice === "Error" ||
+      currentPrice === "N/A" ||
+      prevPrice === "N/A"
+    ) {
+      return "black";
+    }
+    if (Number(currentPrice) > Number(prevPrice)) {
+      return "green";
+    }
+    if (Number(currentPrice) < Number(prevPrice)) {
+      return "red";
+    }
+    return "black";
+  };
+
+  const [warrenModalIsOpen, setWarrenModalIsOpen] = useState(false);
+  const [userQuestion, setUserQuestion] = useState<string>("");
+  const [chatHistory, setChatHistory] = useState<
+    Array<{ role: string; content: string }>
+  >([]);
+
+  const openWarrenModal = () => {
+    setWarrenModalIsOpen(true);
+  };
+
+  const closeWarrenModal = () => {
+    setWarrenModalIsOpen(false);
+    setUserQuestion("");
+    setChatHistory([]);
+  };
+
+  const handleQuestionSubmit = async () => {
+    setChatHistory([...chatHistory, { role: "user", content: userQuestion }]);
+
+    try {
+      const response = await fetch("http://localhost:5002/ask_warren", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userQuestion }),
+      });
+      const data = await response.json();
+      setChatHistory([
+        ...chatHistory,
+        { role: "user", content: userQuestion },
+        { role: "warren", content: data.response },
+      ]);
+      setUserQuestion("");
+    } catch (error) {
+      console.error("Error fetching Warren's response:", error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchPrices = async () => {
+      if (stocksData) {
+        const prices: Record<string, number | string> = {};
+        setPrevStockPrices(stockPrices); // Set the previous prices before fetching new ones
+        const fetchPricePromises = stocksData.stocks.map(async (stock: any) => {
+          try {
+            const response = await fetch(
+              `http://localhost:5002/intraday-price?symbol=${stock.ticker}&interval=1m`
+            );
+            if (!response.ok) {
+              console.error(
+                `Error fetching price for ${stock.ticker}:`,
+                response
+              );
+              prices[stock.ticker] = "Error";
+            } else {
+              const data = await response.json();
+              if (data.price) {
+                prices[stock.ticker] = data.price;
+              } else {
+                prices[stock.ticker] = "N/A";
+              }
+            }
+          } catch (error) {
+            console.error(`Error fetching price for ${stock.ticker}:`, error);
+            prices[stock.ticker] = "Error";
+          }
+        });
+
+        await Promise.all(fetchPricePromises);
+        setStockPrices(prices);
+      }
+    };
+
+    fetchPrices();
+    const intervalId = setInterval(fetchPrices, 60000); // Fetches prices every 60 seconds
+
+    return () => clearInterval(intervalId); // Clears the interval on component unmount
+  }, [stocksData]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch("http://localhost:5002/get-news");
+        if (response.ok) {
+          console.log("News data successfully fetched");
+        } else {
+          console.log("Failed to fetch news data");
+        }
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch("http://localhost:5002/get-news");
+        if (response.ok) {
+          console.log("News data successfully fetched");
+        } else {
+          console.log("Failed to fetch news data");
+        }
+      } catch (error) {
+        console.error("Error fetching news data:", error);
+      }
+    };
+
+    const populateDatabase = async () => {
+      try {
+        const response = await fetch("http://localhost:5002/populate_db");
+        if (response.ok) {
+          console.log("Database populated successfully");
+        } else {
+          console.log("Failed to populate database");
+        }
+      } catch (error) {
+        console.error("Error populating database:", error);
+      }
+    };
+
+    fetchNews();
+    populateDatabase();
+  }, []);
+
   return (
     <Layout>
       <div className="content-section">
@@ -140,6 +297,7 @@ const HomePage: React.FC = () => {
               <tr>
                 <th>Ticker</th>
                 <th>Name</th>
+                <th>Price</th>
               </tr>
             </thead>
             <tbody>
@@ -147,6 +305,17 @@ const HomePage: React.FC = () => {
                 <tr key={stock.ticker}>
                   <td>{stock.ticker}</td>
                   <td>{stock.name}</td>
+                  <td
+                    style={{
+                      color: getColor(
+                        stock.ticker,
+                        stockPrices[stock.ticker],
+                        prevStockPrices[stock.ticker]
+                      ),
+                    }}
+                  >
+                    {Number(stockPrices[stock.ticker]).toFixed(2)}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -209,6 +378,9 @@ const HomePage: React.FC = () => {
           />
           Sell
         </button>
+        <button onClick={openWarrenModal} className="trade-button">
+          Ask Warren
+        </button>
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -256,7 +428,7 @@ const HomePage: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-            {transactionsData?.portfolio_transactions.map(
+              {transactionsData?.portfolio_transactions.map(
                 (
                   transaction: {
                     transaction_date: string | number | Date;
@@ -270,7 +442,6 @@ const HomePage: React.FC = () => {
                         >
                       | Iterable<React.ReactNode>
                       | React.ReactPortal
-                      | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
                     volume:
@@ -283,7 +454,6 @@ const HomePage: React.FC = () => {
                         >
                       | Iterable<React.ReactNode>
                       | React.ReactPortal
-                      | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
                     close:
@@ -296,7 +466,6 @@ const HomePage: React.FC = () => {
                         >
                       | Iterable<React.ReactNode>
                       | React.ReactPortal
-                      | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
                     total_transaction_amount:
@@ -309,7 +478,6 @@ const HomePage: React.FC = () => {
                         >
                       | Iterable<React.ReactNode>
                       | React.ReactPortal
-                      | React.PromiseLikeOfReactNode
                       | null
                       | undefined;
                     stock: {
@@ -323,7 +491,6 @@ const HomePage: React.FC = () => {
                           >
                         | Iterable<React.ReactNode>
                         | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
                         | null
                         | undefined;
                     };
@@ -433,6 +600,108 @@ const HomePage: React.FC = () => {
             <p>{tradeFeedback}</p>
           </div>
         )}
+      </Modal>
+      <Modal
+        isOpen={warrenModalIsOpen}
+        onRequestClose={closeWarrenModal}
+        contentLabel="Ask Warren Modal"
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            width: "40%",
+            border: "1px solid #ccc",
+            borderRadius: "10px",
+            padding: "20px",
+            backgroundColor: "#f8f9fa",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+          },
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h2>Ask Warren</h2>
+          <button
+            onClick={closeWarrenModal}
+            style={{ background: "none", border: "none", fontSize: "1.5rem" }}
+          >
+            ×
+          </button>
+        </div>
+        <div
+          style={{
+            height: "200px",
+            overflowY: "scroll",
+            marginBottom: "10px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            padding: "10px",
+          }}
+        >
+          {chatHistory.map((chat, index) => (
+            <div
+              key={index}
+              style={{
+                marginBottom: "10px",
+                display: "flex",
+                flexDirection: chat.role === "user" ? "row-reverse" : "row",
+              }}
+            >
+              <div
+                style={{
+                  maxWidth: "70%",
+                  padding: "10px",
+                  borderRadius: "15px",
+                  backgroundColor: chat.role === "user" ? "#00aaff" : "#f1f1f1",
+                  color: chat.role === "user" ? "#fff" : "#000",
+                }}
+              >
+                {chat.content}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="text"
+            value={userQuestion}
+            onChange={(e) => setUserQuestion(e.target.value)}
+            style={{
+              flex: 1,
+              padding: "8px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              marginRight: "10px",
+            }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                handleQuestionSubmit();
+              }
+            }}
+          />
+          <button
+            onClick={handleQuestionSubmit}
+            style={{
+              padding: "10px 20px",
+              borderRadius: "5px",
+              border: "none",
+              backgroundColor: "#28a745",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            Submit
+          </button>
+        </div>
       </Modal>
       <style jsx>{`
         .content-section {
