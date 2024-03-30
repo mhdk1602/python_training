@@ -72,6 +72,8 @@ This training repository provides an introduction to data engineering in `python
     * Working with APIs in Python (e.g., REST, GraphQL)
     * Techniques for integrating data from multiple sources
     * Postgres/Postgraphile Setup
+    * Migration to Hasura
+    * Implementing a chatbot on our Stock Trading Platform Application
 
 7. Text Comparison
 
