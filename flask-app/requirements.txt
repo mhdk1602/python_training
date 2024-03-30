@@ -5,3 +5,7 @@ Flask-GraphQL
 graphene
 flask-cors
 python-dotenv
+tqdm
+beautifulsoup4
+flask_sqlalchemy
+anthropic
