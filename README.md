@@ -19,8 +19,8 @@ The repository includes hands-on exercises and examples, as well as resources fo
 1. Introduction to Data Engineering
 
     * [Overview of data engineering and its role in the data pipeline](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/1.%20Fundamentals.ipynb)
-    * Key concepts and terminology in data engineering - Link to be updated
-    * Common data formats and structures - Link to be updated
+    * [Key concepts and terminology in data engineering](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/81652be86eb2a7531da426574d4ef9d3aee4b8fc/1.2%20Key%20concepts%20and%20terminology.ipynb)
+    * [Common data formats and structures](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/81652be86eb2a7531da426574d4ef9d3aee4b8fc/1.3%20Data%20Formats%20%26%20Structures.ipynb)
 
 2. Data Modeling and Schema Design
 
