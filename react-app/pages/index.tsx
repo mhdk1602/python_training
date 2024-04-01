@@ -156,7 +156,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     if (stocksData) {
       const newPriceClasses: Record<string, string> = {};
-      stocksData.stocks.forEach((stock) => {
+      stocksData.stocks.forEach((stock: { ticker: string }) => {
         newPriceClasses[stock.ticker] = getColor(
           stock.ticker,
           stockPrices[stock.ticker],
