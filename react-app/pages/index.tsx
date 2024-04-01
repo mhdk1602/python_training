@@ -151,6 +151,22 @@ const HomePage: React.FC = () => {
     return "black";
   };
 
+  const [priceClasses, setPriceClasses] = useState({});
+
+  useEffect(() => {
+    if (stocksData) {
+      const newPriceClasses: Record<string, string> = {};
+      stocksData.stocks.forEach((stock: { ticker: string }) => {
+        newPriceClasses[stock.ticker] = getColor(
+          stock.ticker,
+          stockPrices[stock.ticker],
+          prevStockPrices[stock.ticker]
+        );
+      });
+      setPriceClasses(newPriceClasses);
+    }
+  }, [stocksData, stockPrices, prevStockPrices]);
+
   const [warrenModalIsOpen, setWarrenModalIsOpen] = useState(false);
   const [userQuestion, setUserQuestion] = useState<string>("");
   const [chatHistory, setChatHistory] = useState<
@@ -306,13 +322,9 @@ const HomePage: React.FC = () => {
                   <td>{stock.ticker}</td>
                   <td>{stock.name}</td>
                   <td
-                    style={{
-                      color: getColor(
-                        stock.ticker,
-                        stockPrices[stock.ticker],
-                        prevStockPrices[stock.ticker]
-                      ),
-                    }}
+                    className={`price-cell ${
+                      (priceClasses as Record<string, string>)[stock.ticker]
+                    }`}
                   >
                     {Number(stockPrices[stock.ticker]).toFixed(2)}
                   </td>
@@ -765,6 +777,18 @@ const HomePage: React.FC = () => {
         .trade-button img {
           width: 24px;
           height: 24px;
+        }
+        .price-cell {
+          transition: color 0.5s ease-in-out;
+        }
+        .price-cell.black {
+          color: black;
+        }
+        .price-cell.green {
+          color: green;
+        }
+        .price-cell.red {
+          color: red;
         }
       `}</style>
     </Layout>

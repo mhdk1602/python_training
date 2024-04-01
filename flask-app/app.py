@@ -179,6 +179,11 @@ def insert_news_to_db():
                     db.session.add(new_entry)
                     db.session.commit()
 
+def get_ticker_info(symbol):
+    ticker = yf.Ticker(symbol)
+    return ticker.info
+
+
 @app.route('/populate_db', methods=['GET'])
 def populate_db():
     insert_news_to_db()
@@ -228,9 +233,12 @@ def ask_warren():
                 for news_item in news_data:
                     ticker_news += news_item['Content'] + " "
 
+    # Get all information about the ticker
+    ticker_info = get_ticker_info(ticker)
+
     # Create prompt template
     with open('prompts/base_prompt.txt', 'r') as file:
-        base_prompt = file.read().format(ticker=ticker, ticker_news=ticker_news, user_question=user_question)
+        base_prompt = file.read().format(ticker=ticker, ticker_news=ticker_news, user_question=user_question, ticker_info=ticker_info)
 
     # Interact with Anthropic API
     response = client.messages.create(
@@ -240,7 +248,7 @@ def ask_warren():
             {"role": "assistant", "content": ""}
         ],
         temperature=0.7,
-        max_tokens=2048
+        max_tokens=4096
     )
     
     # Updated response content extraction
