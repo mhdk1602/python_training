@@ -5,3 +5,4 @@ GPT4-Chatbot/summary-results
 .ipynb_checkpoints
 .vscode
 **/apollo-client.ts
+flask-app/news/*
