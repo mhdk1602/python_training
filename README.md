@@ -9,33 +9,33 @@ The repository includes hands-on exercises and examples, as well as resources fo
 ## Proposed Syllabus
 
 0. Fundamentals
-    * [Introduction to Github](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.%20Git%20Fundamentals.ipynb)
-    * [Getting Started with Python](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.1%20Getting%20Started%20-%20Python.ipynb)
-        * [Functions](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.3%20Functions.ipynb)
-        * [Looping](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.4%20Looping.ipynb)
-        * [Reading Data](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.5%20Reading-Data.ipynb)
-    * [Getting Started with Jupyter Notebooks](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/0.2%20Jupyter%20-%20Intro.ipynb)
+    * [Introduction to Github](https://github.com/mhdk1602/python_training/blob/main/0.1%20Getting%20Started%20-%20Python.ipynb)
+    * [Getting Started with Python](https://github.com/mhdk1602/python_training/blob/79820385ea90e32157e0852bfbdc109b0b0aa0e7/0.2%20Jupyter%20-%20Intro.ipynb)
+        * [Functions](https://github.com/mhdk1602/python_training/blob/79820385ea90e32157e0852bfbdc109b0b0aa0e7/0.3%20Functions.ipynb)
+        * [Looping](https://github.com/mhdk1602/python_training/blob/79820385ea90e32157e0852bfbdc109b0b0aa0e7/0.4%20Looping.ipynb)
+        * [Reading Data](https://github.com/mhdk1602/python_training/blob/79820385ea90e32157e0852bfbdc109b0b0aa0e7/0.5%20Reading-Data.ipynb)
+    * [Getting Started with Jupyter Notebooks](https://github.com/mhdk1602/python_training/blob/79820385ea90e32157e0852bfbdc109b0b0aa0e7/1.1%20Fundamentals.ipynb)
 
 1. Introduction to Data Engineering
 
-    * [Overview of data engineering and its role in the data pipeline](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/1.%20Fundamentals.ipynb)
-    * [Key concepts and terminology in data engineering](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/81652be86eb2a7531da426574d4ef9d3aee4b8fc/1.2%20Key%20concepts%20and%20terminology.ipynb)
-    * [Common data formats and structures](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/81652be86eb2a7531da426574d4ef9d3aee4b8fc/1.3%20Data%20Formats%20%26%20Structures.ipynb)
+    * [Overview of data engineering and its role in the data pipeline](https://github.com/mhdk1602/python_training/blob/main/1.1%20Fundamentals.ipynb)
+    * [Key concepts and terminology in data engineering](https://github.com/mhdk1602/python_training/blob/main/1.2%20Key%20concepts%20and%20terminology.ipynb)
+    * [Common data formats and structures](https://github.com/mhdk1602/python_training/blob/main/1.3%20Data%20Formats%20%26%20Structures.ipynb)
 
 2. Data Modeling and Schema Design
 
-    * [Introduction](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/2.1%20Data%20Modeling.ipynb)
-    * [NoSQL databases and data modeling](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/2.2%20NoSQL%20DB.ipynb)
-    * [Schema Modeling](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/2.3%20Schema%20Modeling.ipynb)
-    * [Data Modeling Exercise](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/2.4%20Data%20Modeling%20-%20Exercise.ipynb)
+    * [Introduction](https://github.com/mhdk1602/python_training/blob/main/2.1%20Data%20Modeling.ipynb)
+    * [NoSQL databases and data modeling](https://github.com/mhdk1602/python_training/blob/main/2.2%20NoSQL%20DB.ipynb)
+    * [Schema Modeling](https://github.com/mhdk1602/python_training/blob/main/2.3%20Schema%20Modeling.ipynb)
+    * [Data Modeling Exercise](https://github.com/mhdk1602/python_training/blob/main/2.4%20Data%20Modeling%20-%20Exercise.ipynb)
 
-3. [Data Storage and Retrieval](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/3.%20Data%20Storage%20and%20Retrieval.ipynb)
+3. [Data Storage and Retrieval](https://github.com/mhdk1602/python_training/blob/main/3.%20Data%20Storage%20and%20Retrieval.ipynb)
 
     * Overview of different types of data storage systems (e.g. file systems, databases, data lakes)
     * Reading and writing data from various storage systems in Python (e.g. CSV, JSON, Parquet)
     * Best practices for managing data storage and retrieval
 
-4. [Data Processing and Transformation](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/4.%20Data%20Processing%20and%20Transformation.ipynb)
+4. [Data Processing and Transformation](https://github.com/mhdk1602/python_training/blob/main/4.%20Data%20Processing%20and%20Transformation.ipynb)
 
     * Introduction to Data Processing and Transformation
 
@@ -71,7 +71,7 @@ The repository includes hands-on exercises and examples, as well as resources fo
         * Best Practices
         * Code examples
 
-5. [Data Streaming and Real-time Processing](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/5.%20Data%20Streaming%20and%20Real-time%20Processing.ipynb)
+5. [Data Streaming and Real-time Processing](https://github.com/mhdk1602/python_training/blob/main/5.%20Data%20Streaming%20and%20Real-time%20Processing.ipynb)
 
     * Introduction to data streaming and real-time processing
     * Tools and libraries for real-time data processing in Python (e.g., Apache Kafka, Apache Flink, Faust)
@@ -79,20 +79,21 @@ The repository includes hands-on exercises and examples, as well as resources fo
 
 6. Data Integration and APIs
 
-    * [Introduction to data integration and APIs in data engineering](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.1%20Data%20Integrations%20with%20APIs.ipynb)
-    * [Working with APIs in Python (e.g., REST, GraphQL)](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.2%20Data%20Integrations%20with%20APIs%20-%20contd.ipynb)
-    * [Introduction to GraphQL](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.3%20GraphQL.ipynb)
-    * [Postgres/Postgraphile Setup](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.4.1%20Postgres%20Postgraphile%20setup.ipynb)
-    * [NextJS front-end application for GraphQL](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.4.2%20NextJS%20Implementation.ipynb)
-    * [Migration to Hasura](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.5%20Hasura%20-%20GraphQL.ipynb)
-    * [Implementing a chatbot on our Stock Trading Platform Application](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/6.6%20Frontend%20Chatbot%20App.ipynb)
+    * [Introduction to data integration and APIs in data engineering](https://github.com/mhdk1602/python_training/blob/main/6.1%20Data%20Integrations%20with%20APIs.ipynb)
+    * [Working with APIs in Python (e.g., REST, GraphQL)](https://github.com/mhdk1602/python_training/blob/main/6.2%20Data%20Integrations%20with%20APIs%20-%20contd.ipynb)
+    * [Introduction to GraphQL](https://github.com/mhdk1602/python_training/blob/main/6.3%20GraphQL.ipynb)
+    * [Postgres/Postgraphile Setup](https://github.com/mhdk1602/python_training/blob/main/6.4.1%20Postgres%20Postgraphile%20setup.ipynb)
+    * [NextJS front-end application for GraphQL](https://github.com/mhdk1602/python_training/blob/main/6.4.2%20NextJS%20Implementation.ipynb)
+    * [Migration to Hasura](https://github.com/mhdk1602/python_training/blob/main/6.5%20Hasura%20-%20GraphQL.ipynb)
+    * [Implementing a chatbot on our Stock Trading Platform Application](https://github.com/mhdk1602/python_training/blob/main/6.6%20Frontend%20Chatbot%20App.ipynb)
         * Recommended after Chapter 7
 
 7. Text Comparison
 
-    * [Fuzzy Matching, Levenshtein Distance, & Other text comparison algorithms](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/7.%20Text%20Comparison.ipynb)
-    * [Text Embeddings](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/7.1%20Embeddings.ipynb)
-    * [Embeddings in Data Engineering](https://github.com/bcg-x-engineering/bcg-x-DE-training/blob/80942cd46b9de84dc296bf62ec94d981acbd57bc/7.2%20Embeddings%20-%20Contd.ipynb)
+    * [Fuzzy Matching, Levenshtein Distance, & Other text comparison algorithms](https://github.com/mhdk1602/python_training/blob/main/7.%20Text%20Comparison.ipynb)
+    * [Text Embeddings](https://github.com/mhdk1602/python_training/blob/main/7.1%20Embeddings.ipynb)
+    * [Embeddings in Data Engineering](https://github.com/mhdk1602/python_training/blob/main/7.2%20Embeddings%20-%20Contd.ipynb)
+    * [Embeddings with Elastisearch](https://github.com/mhdk1602/python_training/blob/main/7.3%20Embeddings%20-%20Elasticsearch.ipynb)
 
 8. Data Quality and Validation
 
