@@ -97,7 +97,7 @@ The repository includes hands-on exercises and examples, as well as resources fo
 
 8. Generative AI/LLMs
 
-    * GPT4 - Primer
-    * Anthropic Setup
-    * Anthropic Chatbot
-    * Langchain
+    * [GPT4 - Primer](https://github.com/mhdk1602/python_training/blob/main/GPT4-Chatbot/Chatbot%20-%20GPT4-%20Primer.docx)
+    * [Anthropic Setup](https://github.com/mhdk1602/python_training/blob/main/8.2%20Anthropic%20setup.ipynb)
+    * [Anthropic Chatbot](https://github.com/mhdk1602/python_training/blob/main/8.3%20Chatbot%20-%20Anthropic%20-%20Playbook.ipynb)
+    * [Langchain](https://github.com/mhdk1602/python_training/blob/main/8.4%20Langchain.ipynb)
