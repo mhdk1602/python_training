@@ -101,3 +101,6 @@ The repository includes hands-on exercises and examples, as well as resources fo
     * [Anthropic Setup](https://github.com/mhdk1602/python_training/blob/main/8.2%20Anthropic%20setup.ipynb)
     * [Anthropic Chatbot](https://github.com/mhdk1602/python_training/blob/main/8.3%20Chatbot%20-%20Anthropic%20-%20Playbook.ipynb)
     * [Langchain](https://github.com/mhdk1602/python_training/blob/main/8.4%20Langchain.ipynb)
+
+9. Data Quality & Validation
+    * [Importance, Techniques, & Frameworks](https://github.com/mhdk1602/python_training/blob/main/9.1%20Data%20Quality%20and%20Validation.ipynb)
