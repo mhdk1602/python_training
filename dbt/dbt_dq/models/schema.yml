@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: nyc_taxi_data
+    description: "The raw NYC Taxi data ingested into the database"
+    columns:
+      - name: vendorid
+        description: "The unique identifier for the vendor"
+        tests:
+          - not_null
+      - name: tpep_pickup_datetime
+        description: "The pickup datetime for the taxi trip"
+        tests:
+          - not_null
+      - name: tpep_dropoff_datetime
+        description: "The dropoff datetime for the taxi trip"
+        tests:
+          - not_null
+      - name: passenger_count
+        description: "The number of passengers in the taxi trip"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      - name: trip_distance
+        description: "The trip distance of the taxi trip"
+        tests:
+          - not_null
+      - name: pulocationid
+        description: "The pickup location ID"
+        tests:
+          - not_null
+      - name: dolocationid
+        description: "The dropoff location ID"
+        tests:
+          - not_null
+      - name: fare_amount
+        description: "The fare amount for the taxi trip"
+        tests:
+          - not_null
+          - expression_is_greater_than_zero
+      - name: total_amount
+        description: "The total amount for the taxi trip"
+        tests:
+          - not_null
+          - expression_is_greater_than_zero
