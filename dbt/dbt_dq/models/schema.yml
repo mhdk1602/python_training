@@ -44,3 +44,79 @@ models:
         tests:
           - not_null
           - expression_is_greater_than_zero
+
+  - name: nyc_taxi_transform
+    description: "A transformed model combining nyc taxi data with calendar details"
+    
+    columns:
+      - name: vendorid
+        description: "ID of the vendor providing the service"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2]
+              
+      - name: tpep_pickup_datetime
+        description: "The pickup date and time of the taxi ride"
+        tests:
+          - not_null
+          
+      - name: tpep_dropoff_datetime
+        description: "The dropoff date and time of the taxi ride"
+        tests:
+          - not_null
+          
+      - name: passenger_count
+        description: "The number of passengers in the taxi ride"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+          - dbt_utils.at_least_one
+              
+      - name: trip_distance
+        description: "The distance of the trip in miles"
+        tests:
+          - not_null
+          - expression_is_greater_than_zero
+
+      - name: total_amount
+        description: "The total amount charged for the trip"
+        tests:
+          - not_null
+          - expression_is_greater_than_zero
+
+      - name: pickup_borough
+        description: "The borough where the pickup happened"
+        tests:
+          - not_null
+
+      - name: dropoff_borough
+        description: "The borough where the dropoff happened"
+        tests:
+          - not_null
+
+seeds:
+  - name: taxi_zone_lookup
+    columns:
+      - name: "\"LocationID\""
+        description: The ID of the location
+        tests:
+          - not_null
+          - unique
+        data_type: integer
+      - name: "\"Borough\""
+        description: The borough in which the taxi ride took place
+        tests:
+          - not_null
+        data_type: varchar(50)
+      - name: "\"Zone\""
+        description: The specific zone of the taxi ride
+        tests:
+          - not_null
+        data_type: varchar(255)
+      - name: service_zone
+        description: The service zone of the taxi ride
+        tests:
+          - not_null
+        data_type: varchar(50)

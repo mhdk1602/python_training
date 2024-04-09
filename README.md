@@ -104,3 +104,4 @@ The repository includes hands-on exercises and examples, as well as resources fo
 
 9. Data Quality & Validation
     * [Importance, Techniques, & Frameworks](https://github.com/mhdk1602/python_training/blob/main/9.1%20Data%20Quality%20and%20Validation.ipynb)
+    * [Data Quality implementation using DBT](https://github.com/mhdk1602/python_training/blob/main/9.2%20DQ%20-%20Dbt.ipynb)
