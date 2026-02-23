@@ -43,8 +43,9 @@
     <div class="arrow">↓</div>
     <div class="step">Use API Key in Application</div>
     <div class="code">
+        import os<br>
         import openai<br>
-        openai.api_key = 'your-api-key'
+        openai.api_key = os.getenv("OPENAI_API_KEY", "")
     </div>
     <div class="arrow">↓</div>
     <div class="step">Update API Key as Needed</div>

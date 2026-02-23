@@ -1,10 +1,12 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+const graphqlUri =
+  process.env.REACT_APP_HASURA_GRAPHQL_URL || 'http://localhost:8080/v1/graphql';
+const hasuraAdminSecret = process.env.REACT_APP_HASURA_ADMIN_SECRET || '';
+
 const apolloClient = new ApolloClient({
-  uri: 'http://localhost:8080/v1/graphql', // Using environment variable for endpoint
-  headers: {
-    'x-hasura-admin-secret': 'YOUR_HASURA_ADMIN_SECRET' ?? '', // Using environment variable for admin secret with default value
-  },
+  uri: graphqlUri,
+  headers: hasuraAdminSecret ? { 'x-hasura-admin-secret': hasuraAdminSecret } : {},
   cache: new InMemoryCache(),
 });
 

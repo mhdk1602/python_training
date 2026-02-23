@@ -89,10 +89,11 @@
     </div>
     <div class="code-snippet">
       # Python code to modify API calls
+      import os
       import openai
 
       def modify_api_calls(new_model_id):
-          openai.api_key = 'your-secured-api-key-here'
+          openai.api_key = os.getenv("OPENAI_API_KEY", "")
           response = openai.Completion.create(
             engine=new_model_id,
             prompt="Your prompt here",
