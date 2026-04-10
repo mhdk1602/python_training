@@ -123,12 +123,12 @@ Your starting point. Git, Python basics, Jupyter, and core programming patterns.
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 0.0 | Introduction to GitHub | [0. Git Fundamentals.ipynb](0.%20Git%20Fundamentals.ipynb) |
-| 0.1 | Getting Started with Python | [0.1 Getting Started - Python.ipynb](0.1%20Getting%20Started%20-%20Python.ipynb) |
-| 0.2 | Jupyter Notebooks | [0.2 Jupyter - Intro.ipynb](0.2%20Jupyter%20-%20Intro.ipynb) |
-| 0.3 | Functions | [0.3 Functions.ipynb](0.3%20Functions.ipynb) |
-| 0.4 | Looping | [0.4 Looping.ipynb](0.4%20Looping.ipynb) |
-| 0.5 | Reading Data | [0.5 Reading-Data.ipynb](0.5%20Reading-Data.ipynb) |
+| 0.0 | Introduction to GitHub | [0. Git Fundamentals.ipynb](notebooks/00-fundamentals/0.%20Git%20Fundamentals.ipynb) |
+| 0.1 | Getting Started with Python | [0.1 Getting Started - Python.ipynb](notebooks/00-fundamentals/0.1%20Getting%20Started%20-%20Python.ipynb) |
+| 0.2 | Jupyter Notebooks | [0.2 Jupyter - Intro.ipynb](notebooks/00-fundamentals/0.2%20Jupyter%20-%20Intro.ipynb) |
+| 0.3 | Functions | [0.3 Functions.ipynb](notebooks/00-fundamentals/0.3%20Functions.ipynb) |
+| 0.4 | Looping | [0.4 Looping.ipynb](notebooks/00-fundamentals/0.4%20Looping.ipynb) |
+| 0.5 | Reading Data | [0.5 Reading-Data.ipynb](notebooks/00-fundamentals/0.5%20Reading-Data.ipynb) |
 
 </details>
 
@@ -141,9 +141,9 @@ What data engineering is, the terminology you need, and the data formats you wil
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 1.1 | Overview & Role in the Data Pipeline | [1.1 Fundamentals.ipynb](1.1%20Fundamentals.ipynb) |
-| 1.2 | Key Concepts & Terminology | [1.2 Key concepts and terminology.ipynb](1.2%20Key%20concepts%20and%20terminology.ipynb) |
-| 1.3 | Common Data Formats & Structures | [1.3 Data Formats & Structures.ipynb](1.3%20Data%20Formats%20%26%20Structures.ipynb) |
+| 1.1 | Overview & Role in the Data Pipeline | [1.1 Fundamentals.ipynb](notebooks/01-intro-data-engineering/1.1%20Fundamentals.ipynb) |
+| 1.2 | Key Concepts & Terminology | [1.2 Key concepts and terminology.ipynb](notebooks/01-intro-data-engineering/1.2%20Key%20concepts%20and%20terminology.ipynb) |
+| 1.3 | Common Data Formats & Structures | [1.3 Data Formats & Structures.ipynb](notebooks/01-intro-data-engineering/1.3%20Data%20Formats%20%26%20Structures.ipynb) |
 
 </details>
 
@@ -156,10 +156,10 @@ Relational and NoSQL modeling patterns. You will design schemas for the trading 
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 2.1 | Data Modeling Introduction | [2.1 Data Modeling.ipynb](2.1%20Data%20Modeling.ipynb) |
-| 2.2 | NoSQL Databases | [2.2 NoSQL DB.ipynb](2.2%20NoSQL%20DB.ipynb) |
-| 2.3 | Schema Modeling | [2.3 Schema Modeling.ipynb](2.3%20Schema%20Modeling.ipynb) |
-| 2.4 | Data Modeling Exercise | [2.4 Data Modeling - Exercise.ipynb](2.4%20Data%20Modeling%20-%20Exercise.ipynb) |
+| 2.1 | Data Modeling Introduction | [2.1 Data Modeling.ipynb](notebooks/02-data-modeling/2.1%20Data%20Modeling.ipynb) |
+| 2.2 | NoSQL Databases | [2.2 NoSQL DB.ipynb](notebooks/02-data-modeling/2.2%20NoSQL%20DB.ipynb) |
+| 2.3 | Schema Modeling | [2.3 Schema Modeling.ipynb](notebooks/02-data-modeling/2.3%20Schema%20Modeling.ipynb) |
+| 2.4 | Data Modeling Exercise | [2.4 Data Modeling - Exercise.ipynb](notebooks/02-data-modeling/2.4%20Data%20Modeling%20-%20Exercise.ipynb) |
 
 </details>
 
@@ -172,7 +172,7 @@ File systems, databases, data lakes. Reading and writing CSV, JSON, Parquet in P
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 3 | Storage Systems & Best Practices | [3. Data Storage and Retrieval.ipynb](3.%20Data%20Storage%20and%20Retrieval.ipynb) |
+| 3 | Storage Systems & Best Practices | [3. Data Storage and Retrieval.ipynb](notebooks/03-data-storage/3.%20Data%20Storage%20and%20Retrieval.ipynb) |
 
 </details>
 
@@ -185,7 +185,7 @@ Data cleaning, filtering, aggregation. Hands-on with Pandas, NumPy, and Dask for
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 4 | Processing & Transformation | [4. Data Processing and Transformation.ipynb](4.%20Data%20Processing%20and%20Transformation.ipynb) |
+| 4 | Processing & Transformation | [4. Data Processing and Transformation.ipynb](notebooks/04-data-processing/4.%20Data%20Processing%20and%20Transformation.ipynb) |
 
 </details>
 
@@ -198,7 +198,7 @@ Apache Kafka, Apache Flink, Faust. Building real-time data processing pipelines 
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 5 | Streaming & Real-time Pipelines | [5. Data Streaming and Real-time Processing.ipynb](5.%20Data%20Streaming%20and%20Real-time%20Processing.ipynb) |
+| 5 | Streaming & Real-time Pipelines | [5. Data Streaming and Real-time Processing.ipynb](notebooks/05-data-streaming/5.%20Data%20Streaming%20and%20Real-time%20Processing.ipynb) |
 
 </details>
 
@@ -211,13 +211,13 @@ The largest chapter. Build the full trading platform: REST APIs, GraphQL with Ha
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 6.1 | Data Integration with APIs | [6.1 Data Integrations with APIs.ipynb](6.1%20Data%20Integrations%20with%20APIs.ipynb) |
-| 6.2 | APIs (continued) | [6.2 Data Integrations with APIs - contd.ipynb](6.2%20Data%20Integrations%20with%20APIs%20-%20contd.ipynb) |
-| 6.3 | Introduction to GraphQL | [6.3 GraphQL.ipynb](6.3%20GraphQL.ipynb) |
-| 6.4.1 | Postgres & Postgraphile Setup | [6.4.1 Postgres Postgraphile setup.ipynb](6.4.1%20Postgres%20Postgraphile%20setup.ipynb) |
-| 6.4.2 | NextJS Implementation | [6.4.2 NextJS Implementation.ipynb](6.4.2%20NextJS%20Implementation.ipynb) |
-| 6.5 | Migration to Hasura | [6.5 Hasura - GraphQL.ipynb](6.5%20Hasura%20-%20GraphQL.ipynb) |
-| 6.6 | Frontend Chatbot App | [6.6 Frontend Chatbot App.ipynb](6.6%20Frontend%20Chatbot%20App.ipynb) |
+| 6.1 | Data Integration with APIs | [6.1 Data Integrations with APIs.ipynb](notebooks/06-apis-and-frontend/6.1%20Data%20Integrations%20with%20APIs.ipynb) |
+| 6.2 | APIs (continued) | [6.2 Data Integrations with APIs - contd.ipynb](notebooks/06-apis-and-frontend/6.2%20Data%20Integrations%20with%20APIs%20-%20contd.ipynb) |
+| 6.3 | Introduction to GraphQL | [6.3 GraphQL.ipynb](notebooks/06-apis-and-frontend/6.3%20GraphQL.ipynb) |
+| 6.4.1 | Postgres & Postgraphile Setup | [6.4.1 Postgres Postgraphile setup.ipynb](notebooks/06-apis-and-frontend/6.4.1%20Postgres%20Postgraphile%20setup.ipynb) |
+| 6.4.2 | NextJS Implementation | [6.4.2 NextJS Implementation.ipynb](notebooks/06-apis-and-frontend/6.4.2%20NextJS%20Implementation.ipynb) |
+| 6.5 | Migration to Hasura | [6.5 Hasura - GraphQL.ipynb](notebooks/06-apis-and-frontend/6.5%20Hasura%20-%20GraphQL.ipynb) |
+| 6.6 | Frontend Chatbot App | [6.6 Frontend Chatbot App.ipynb](notebooks/06-apis-and-frontend/6.6%20Frontend%20Chatbot%20App.ipynb) |
 
 > **Note**: Section 6.6 is best completed after Chapter 7 (Text Comparison & Embeddings).
 
@@ -238,10 +238,10 @@ Fuzzy matching, Levenshtein distance, TF-IDF, vector embeddings, and Elasticsear
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 7.0 | Text Comparison Algorithms | [7. Text Comparison.ipynb](7.%20Text%20Comparison.ipynb) |
-| 7.1 | Text Embeddings | [7.1 Embeddings.ipynb](7.1%20Embeddings.ipynb) |
-| 7.2 | Embeddings in Data Engineering | [7.2 Embeddings - Contd.ipynb](7.2%20Embeddings%20-%20Contd.ipynb) |
-| 7.3 | Embeddings with Elasticsearch | [7.3 Embeddings - Elasticsearch.ipynb](7.3%20Embeddings%20-%20Elasticsearch.ipynb) |
+| 7.0 | Text Comparison Algorithms | [7. Text Comparison.ipynb](notebooks/07-text-and-embeddings/7.%20Text%20Comparison.ipynb) |
+| 7.1 | Text Embeddings | [7.1 Embeddings.ipynb](notebooks/07-text-and-embeddings/7.1%20Embeddings.ipynb) |
+| 7.2 | Embeddings in Data Engineering | [7.2 Embeddings - Contd.ipynb](notebooks/07-text-and-embeddings/7.2%20Embeddings%20-%20Contd.ipynb) |
+| 7.3 | Embeddings with Elasticsearch | [7.3 Embeddings - Elasticsearch.ipynb](notebooks/07-text-and-embeddings/7.3%20Embeddings%20-%20Elasticsearch.ipynb) |
 
 </details>
 
@@ -254,10 +254,10 @@ From GPT-4 fundamentals to building an Anthropic-powered chatbot with LangChain.
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 8.0 | GPT-4 Primer | [GPT4-Chatbot/Chatbot - GPT4- Primer.docx](GPT4-Chatbot/Chatbot%20-%20GPT4-%20Primer.docx) |
-| 8.2 | Anthropic Setup | [8.2 Anthropic setup.ipynb](8.2%20Anthropic%20setup.ipynb) |
-| 8.3 | Anthropic Chatbot Playbook | [8.3 Chatbot - Anthropic - Playbook.ipynb](8.3%20Chatbot%20-%20Anthropic%20-%20Playbook.ipynb) |
-| 8.4 | LangChain | [8.4 Langchain.ipynb](8.4%20Langchain.ipynb) |
+| 8.0 | GPT-4 Primer | [Chatbot - GPT4- Primer.docx](notebooks/08-genai-llms/GPT4-Chatbot/Chatbot%20-%20GPT4-%20Primer.docx) |
+| 8.2 | Anthropic Setup | [8.2 Anthropic setup.ipynb](notebooks/08-genai-llms/8.2%20Anthropic%20setup.ipynb) |
+| 8.3 | Anthropic Chatbot Playbook | [8.3 Chatbot - Anthropic - Playbook.ipynb](notebooks/08-genai-llms/8.3%20Chatbot%20-%20Anthropic%20-%20Playbook.ipynb) |
+| 8.4 | LangChain | [8.4 Langchain.ipynb](notebooks/08-genai-llms/8.4%20Langchain.ipynb) |
 
 </details>
 
@@ -270,8 +270,8 @@ Validation frameworks and implementing data quality checks with dbt.
 
 | # | Topic | Notebook |
 |---|-------|----------|
-| 9.1 | Importance, Techniques & Frameworks | [9.1 Data Quality and Validation.ipynb](9.1%20Data%20Quality%20and%20Validation.ipynb) |
-| 9.2 | Data Quality with dbt | [9.2 DQ - Dbt.ipynb](9.2%20DQ%20-%20Dbt.ipynb) |
+| 9.1 | Importance, Techniques & Frameworks | [9.1 Data Quality and Validation.ipynb](notebooks/09-data-quality/9.1%20Data%20Quality%20and%20Validation.ipynb) |
+| 9.2 | Data Quality with dbt | [9.2 DQ - Dbt.ipynb](notebooks/09-data-quality/9.2%20DQ%20-%20Dbt.ipynb) |
 
 **Sub-project:** `dbt/dbt_dq/` -- dbt project with NYC taxi data models and custom quality tests.
 
@@ -302,16 +302,30 @@ Validation frameworks and implementing data quality checks with dbt.
 
 ```
 python_training/
-  0.x - 9.x *.ipynb      # 34 Jupyter notebooks (the curriculum)
-  react-app/              # NextJS stock trading dashboard
-  flask-app/              # Flask API backend + AI chatbot
-  postgres/               # Database Dockerfile & init scripts
-  dbt/                    # dbt data quality project
-  GraphQL Server/         # Standalone Node.js GraphQL server
-  GPT4-Chatbot/           # GPT-4 primer materials
-  input_files/            # Sample data files for exercises
-  output_files/           # Generated output from notebooks
-  docker-compose.yaml     # Orchestrates the full platform
+  notebooks/
+    00-fundamentals/          # Git, Python basics, Jupyter, loops, I/O
+    01-intro-data-engineering/ # Data engineering overview & terminology
+    02-data-modeling/          # Relational & NoSQL schema design
+    03-data-storage/           # Storage systems, CSV/JSON/Parquet
+    04-data-processing/        # Pandas, NumPy, Dask pipelines
+    05-data-streaming/         # Kafka, Flink, real-time processing
+    06-apis-and-frontend/      # REST, GraphQL, NextJS, chatbot
+    07-text-and-embeddings/    # Fuzzy matching, TF-IDF, Elasticsearch
+    08-genai-llms/             # GPT-4, Anthropic, LangChain
+    09-data-quality/           # Validation frameworks, dbt
+    bonus/                     # Advent of Code, extra exercises
+  data/
+    input_files/               # Sample datasets for exercises
+    output_files/              # Generated charts and outputs
+    embeddings/                # TF-IDF matrices, vector DBs
+    qa/                        # Anthropic-generated Q&A datasets
+  react-app/                   # NextJS stock trading dashboard
+  flask-app/                   # Flask API + "Ask Warren" chatbot
+  postgres/                    # Database Dockerfile & init scripts
+  dbt/                         # dbt data quality project
+  GraphQL Server/              # Standalone Node.js GraphQL server
+  scripts/                     # Utility scripts (git-set-author.sh)
+  docker-compose.yaml          # Orchestrates the full platform
 ```
 
 ---

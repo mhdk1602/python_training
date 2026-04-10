@@ -33,17 +33,18 @@ Every notebook and module in this repository must meet these criteria:
 
 Examples: `0.3 Functions.ipynb`, `6.4.2 NextJS Implementation.ipynb`
 
-Chapters map to learning tracks:
-- 0.x: Python fundamentals
-- 1.x: Data engineering introduction
-- 2.x: Data modeling and schema design
-- 3: Data storage and retrieval
-- 4: Data processing and transformation
-- 5: Data streaming and real-time processing
-- 6.x: Data integration, APIs, and frontend
-- 7.x: Text comparison and embeddings
-- 8.x: Generative AI and LLMs
-- 9.x: Data quality and validation
+Notebooks live in `notebooks/` under chapter directories:
+- `notebooks/00-fundamentals/` -- 0.x: Python fundamentals
+- `notebooks/01-intro-data-engineering/` -- 1.x: Data engineering introduction
+- `notebooks/02-data-modeling/` -- 2.x: Data modeling and schema design
+- `notebooks/03-data-storage/` -- 3: Data storage and retrieval
+- `notebooks/04-data-processing/` -- 4: Data processing and transformation
+- `notebooks/05-data-streaming/` -- 5: Data streaming and real-time processing
+- `notebooks/06-apis-and-frontend/` -- 6.x: Data integration, APIs, and frontend
+- `notebooks/07-text-and-embeddings/` -- 7.x: Text comparison and embeddings
+- `notebooks/08-genai-llms/` -- 8.x: Generative AI and LLMs
+- `notebooks/09-data-quality/` -- 9.x: Data quality and validation
+- `notebooks/bonus/` -- Advent of Code, extra exercises
 
 ## Architecture Context
 
