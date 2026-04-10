@@ -1,0 +1,68 @@
+# Research Entity: Python Training Repository
+
+This repository operates as an open educational research entity. Its purpose is to upskill readers across five interconnected learning tracks through hands-on, production-grade examples.
+
+## Learning Tracks
+
+1. **Python & Data Engineering**: Fundamentals through advanced pipeline design (Pandas, Dask, Spark concepts, data modeling, schema design, storage patterns)
+2. **Backend & APIs**: REST, GraphQL (Hasura, Postgraphile), Flask, database design (Postgres), Docker orchestration
+3. **Frontend & UI**: NextJS/React, Apollo Client, Tailwind CSS, real-time data rendering, component architecture
+4. **GenAI & LLMs**: Anthropic Claude, LangChain, embeddings (TF-IDF, vector search, Elasticsearch), prompt engineering, chatbot implementation
+5. **Trading & Finance**: Stock portfolio management, market data integration (yfinance), news sentiment, AI-driven analysis ("Ask Warren" chatbot)
+
+## Content Standards
+
+Every notebook and module in this repository must meet these criteria:
+
+- **Clear objectives**: State what the reader will learn in the first cell/section
+- **Progressive complexity**: Start with the concept, build to a working example, end with a challenge
+- **Working code**: All code cells must execute without errors given the documented prerequisites
+- **Real-world connection**: Tie abstract concepts to the stock trading platform or a concrete engineering scenario
+- **Try It Yourself**: Each notebook should close with 2-3 exercises the reader can attempt independently
+
+## Voice & Tone
+
+- Authoritative yet accessible. Write as an experienced engineer teaching a motivated junior, not as a textbook.
+- Explain the "why" before the "how." Context makes knowledge stick.
+- Use inline comments sparingly. Let markdown cells carry the narrative; let code cells be clean.
+- Avoid jargon without definition. First use of a technical term should include a one-line explanation.
+
+## Notebook Naming Convention
+
+`{Chapter}.{Section} {Topic Name}.ipynb`
+
+Examples: `0.3 Functions.ipynb`, `6.4.2 NextJS Implementation.ipynb`
+
+Chapters map to learning tracks:
+- 0.x: Python fundamentals
+- 1.x: Data engineering introduction
+- 2.x: Data modeling and schema design
+- 3: Data storage and retrieval
+- 4: Data processing and transformation
+- 5: Data streaming and real-time processing
+- 6.x: Data integration, APIs, and frontend
+- 7.x: Text comparison and embeddings
+- 8.x: Generative AI and LLMs
+- 9.x: Data quality and validation
+
+## Architecture Context
+
+The repository builds toward a full-stack stock trading platform:
+
+```
+Postgres (data layer)
+  -> Hasura GraphQL Engine (API layer)
+    -> NextJS React App (frontend)
+    -> Flask API (backend services, yfinance, news scraping)
+      -> Anthropic Claude ("Ask Warren" chatbot)
+```
+
+All services are orchestrated via `docker-compose.yaml`. Notebooks teach the concepts; the sub-projects (`react-app/`, `flask-app/`, `postgres/`, `dbt/`) are the working implementation.
+
+## Quality Gates for New Content
+
+Before adding or modifying a notebook:
+1. Verify all code cells execute in order without errors
+2. Confirm prerequisites are documented (packages, env vars, running services)
+3. Check that the README syllabus reflects the new/updated content
+4. Ensure no credentials, API keys, or secrets appear in committed code

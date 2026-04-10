@@ -6,3 +6,19 @@ GPT4-Chatbot/summary-results
 .vscode
 **/apollo-client.ts
 flask-app/news/*
+
+# OS
+.DS_Store
+**/.DS_Store
+
+# IDE / Editor
+.cursor/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
