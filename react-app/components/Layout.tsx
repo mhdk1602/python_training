@@ -1,45 +1,24 @@
-import React from 'react';
+import React from "react";
+import Head from "next/head";
+import Header from "./Header";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="layout">
-      <header className="header">
-        <h1 className="title">Stock Trading Platform</h1>
-      </header>
-      <main className="main">
-        {children}
-      </main>
-      <footer className="footer">
-        <p>© 2024 Stock Trading Platform</p>
-      </footer>
-      <style jsx>{`
-        .layout {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
-        .header {
-          background-color: #20232a;
-          color: #61dafb;
-          text-align: center;
-          padding: 20px;
-        }
-        .title {
-          margin: 0;
-          font-size: 2rem;
-        }
-        .main {
-          flex: 1;
-          padding: 20px;
-        }
-        .footer {
-          background-color: #20232a;
-          color: #61dafb;
-          text-align: center;
-          padding: 10px;
-        }
-      `}</style>
-    </div>
+    <>
+      <Head>
+        <title>Stock Trading Platform</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+          {children}
+        </main>
+        <footer className="border-t border-terminal-border py-4 text-center text-xs text-terminal-muted">
+          Stock Trading Platform &middot; Built with NextJS, GraphQL, Flask &amp; Anthropic Claude
+        </footer>
+      </div>
+    </>
   );
 };
 

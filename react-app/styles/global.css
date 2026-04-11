@@ -1,55 +1,57 @@
-.layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@layer base {
+  body {
+    @apply bg-terminal-bg text-terminal-text font-sans antialiased;
   }
-  .header {
-    background-color: #20232a;
-    color: #61dafb;
-    text-align: center;
-    padding: 20px;
+
+  * {
+    @apply border-terminal-border;
   }
-  .title {
-    margin: 0;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+}
+
+@layer components {
+  .card {
+    @apply bg-terminal-card rounded-xl border border-terminal-border p-5;
   }
-  .main {
-    flex: 1;
-    padding: 20px;
+
+  .table-header {
+    @apply text-left text-xs font-semibold uppercase tracking-wider text-terminal-muted px-4 py-3;
   }
-  .footer {
-    background-color: #20232a;
-    color: #61dafb;
-    text-align: center;
-    padding: 10px;
+
+  .table-cell {
+    @apply px-4 py-3 text-sm text-terminal-text;
   }
-  .content-section {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+
+  .table-row-hover {
+    @apply transition-colors hover:bg-white/5 cursor-pointer;
   }
-  .stocks-section, .portfolio-summary-section {
-    width: 45%;
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/50;
   }
-  .table-style {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .btn-bull {
+    @apply inline-flex items-center gap-2 rounded-lg bg-bull/10 border border-bull/30 px-4 py-2.5 text-sm font-medium text-bull transition-colors hover:bg-bull/20 focus:outline-none;
   }
-  .table-style th, .table-style td {
-    border: 1px solid #ddd;
-    padding: 8px;
+
+  .btn-bear {
+    @apply inline-flex items-center gap-2 rounded-lg bg-bear/10 border border-bear/30 px-4 py-2.5 text-sm font-medium text-bear transition-colors hover:bg-bear/20 focus:outline-none;
   }
-  .table-style th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #f4f4f4;
-    color: black;
+
+  .input-field {
+    @apply w-full rounded-lg border border-terminal-border bg-terminal-bg px-3 py-2.5 text-sm text-terminal-text placeholder-terminal-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50;
   }
-  
+
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm;
+  }
+
+  .modal-content {
+    @apply relative w-full max-w-lg rounded-xl border border-terminal-border bg-terminal-card p-6 shadow-2xl;
+  }
+}
