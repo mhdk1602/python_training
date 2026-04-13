@@ -25,3 +25,4 @@ node_modules/
 
 # Streamlit
 streamlit-app/portfolio.db
+streamlit-app/.venv/

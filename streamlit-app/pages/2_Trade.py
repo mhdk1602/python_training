@@ -63,10 +63,11 @@ with col_spark:
     sparkline_data = get_sparkline(ticker, days=5)
     if sparkline_data and len(sparkline_data) > 1:
         color = "#00d4aa" if sparkline_data[-1] >= sparkline_data[0] else "#ef4444"
+        fill = "rgba(0,212,170,0.1)" if color == "#00d4aa" else "rgba(239,68,68,0.1)"
         fig = go.Figure(go.Scatter(
             y=sparkline_data, mode="lines",
             line=dict(color=color, width=2),
-            fill="tozeroy", fillcolor=color.replace(")", ",0.1)").replace("rgb", "rgba") if "rgb" in color else f"{color}18",
+            fill="tozeroy", fillcolor=fill,
         ))
         fig.update_layout(
             height=80, margin=dict(l=0, r=0, t=0, b=0),
@@ -95,7 +96,11 @@ with st.form("trade_form", clear_on_submit=True):
 
     total = round(price_data["price"] * quantity, 2)
 
-    st.markdown(f"**Order preview:** {action} {quantity} x {ticker} @ ${price_data['price']:.2f} = **${total:,.2f}**")
+    st.html(
+        f'<p style="margin:0;color:#e2e8f0"><strong>Order preview:</strong> '
+        f'{action} {quantity} x {ticker} @ ${price_data["price"]:.2f} = '
+        f'<strong>${total:,.2f}</strong></p>'
+    )
 
     if action == "Sell" and current_holding and quantity > current_holding["shares"]:
         st.warning(f"You only hold {current_holding['shares']} shares. This order would exceed your position.")
