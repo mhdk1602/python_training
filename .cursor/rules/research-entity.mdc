@@ -48,17 +48,23 @@ Notebooks live in `notebooks/` under chapter directories:
 
 ## Architecture Context
 
-The repository builds toward a full-stack stock trading platform:
+The repository builds toward a full-stack stock trading platform via two parallel tracks:
 
+**Full-Stack (Docker):**
 ```
-Postgres (data layer)
-  -> Hasura GraphQL Engine (API layer)
-    -> NextJS React App (frontend)
-    -> Flask API (backend services, yfinance, news scraping)
-      -> Anthropic Claude ("Ask Warren" chatbot)
+Postgres -> Hasura GraphQL -> NextJS React App
+                           -> Flask API -> Anthropic Claude / yfinance
 ```
 
-All services are orchestrated via `docker-compose.yaml`. Notebooks teach the concepts; the sub-projects (`react-app/`, `flask-app/`, `postgres/`, `dbt/`) are the working implementation.
+**Standalone (No Docker):**
+```
+SQLite -> Streamlit Dashboard -> yfinance (market data)
+                              -> Anthropic Claude ("Ask Warren")
+```
+
+The Docker stack is orchestrated via `docker-compose.yaml`. The Streamlit app (`streamlit-app/`) mirrors the same trading functionality using only Python stdlib + pip packages, making it accessible without infrastructure setup.
+
+Sub-projects: `react-app/`, `flask-app/`, `streamlit-app/`, `postgres/`, `dbt/`.
 
 ## Quality Gates for New Content
 

@@ -6,6 +6,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](streamlit-app/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/mhdk1602/python_training?style=for-the-badge&color=blue)](https://github.com/mhdk1602/python_training/commits/main)
 [![Stars](https://img.shields.io/github/stars/mhdk1602/python_training?style=for-the-badge&color=yellow)](https://github.com/mhdk1602/python_training/stargazers)
@@ -31,6 +32,7 @@ A practice-first curriculum that teaches Python, data engineering, backend APIs,
 | **Frontend & UI** | NextJS, React, Apollo Client, Tailwind CSS | 6 |
 | **GenAI & LLMs** | Anthropic Claude, LangChain, embeddings, vector search, Elasticsearch | 7 -- 8 |
 | **Trading & Finance** | Portfolio management, market data (yfinance), news sentiment, AI-driven analysis | 6, 8 |
+| **Streamlit & Visualization** | Interactive dashboards, Plotly charting, SQLite persistence, Streamlit deployment | `streamlit-app/` |
 
 ---
 
@@ -39,18 +41,31 @@ A practice-first curriculum that teaches Python, data engineering, backend APIs,
 ### Prerequisites
 
 - Python 3.10+
-- Docker & Docker Compose
-- Node.js 18+ (for the NextJS frontend)
 - Git
+- Docker & Docker Compose (for the full-stack platform)
+- Node.js 18+ (for the NextJS frontend)
 
-### Setup
+### Option A: Streamlit Dashboard (No Docker)
+
+The fastest way to see the trading platform in action. Zero infrastructure.
 
 ```bash
-# Clone the repository
+git clone https://github.com/mhdk1602/python_training.git
+cd python_training/streamlit-app
+
+pip install -r requirements.txt
+streamlit run app.py
+# Opens at localhost:8501 with live market data, portfolio tracking, and charts
+```
+
+### Option B: Full-Stack Docker Platform
+
+Launches Postgres, Hasura, NextJS, and Flask for the complete architecture experience.
+
+```bash
 git clone https://github.com/mhdk1602/python_training.git
 cd python_training
 
-# Launch the full trading platform stack
 docker compose up -d
 
 # Services available after startup:
@@ -63,14 +78,11 @@ docker compose up -d
 ### Running Notebooks
 
 ```bash
-# Install Jupyter (if not already available)
 pip install jupyter
-
-# Start Jupyter from the repo root
 jupyter notebook
 ```
 
-Open any notebook from the syllabus below. Chapters 0-5 and 7-9 are self-contained. Chapter 6 requires Docker services to be running.
+Chapters 0-5 and 7-9 are self-contained. Chapter 6 requires Docker services (Option B).
 
 ---
 
@@ -83,6 +95,7 @@ graph TB
     subgraph dataLayer [Data Layer]
         PG[Postgres DB]
         DBT[dbt Models]
+        SQLITE[SQLite - Standalone]
     end
 
     subgraph apiLayer [API Layer]
@@ -92,6 +105,7 @@ graph TB
 
     subgraph frontendLayer [Frontend]
         NEXT[NextJS React App]
+        STREAMLIT[Streamlit Dashboard]
     end
 
     subgraph aiLayer [AI Services]
@@ -106,6 +120,9 @@ graph TB
     FLASK --> CLAUDE
     FLASK --> YFIN
     NEXT -->|Ask Warren| FLASK
+    STREAMLIT --> SQLITE
+    STREAMLIT --> YFIN
+    STREAMLIT -->|Ask Warren| CLAUDE
 ```
 
 ---
@@ -223,6 +240,7 @@ The largest chapter. Build the full trading platform: REST APIs, GraphQL with Ha
 
 **Sub-projects built in this chapter:**
 - `react-app/` -- NextJS stock trading dashboard with Apollo Client and Tailwind CSS
+- `streamlit-app/` -- Standalone Python dashboard (same features, no Docker required)
 - `flask-app/` -- Flask API serving market data, news, and the "Ask Warren" AI chatbot
 - `postgres/` -- Database initialization scripts
 - `GraphQL Server/` -- Standalone Node.js GraphQL server
@@ -287,11 +305,12 @@ Validation frameworks and implementing data quality checks with dbt.
 |:---------|:-------------|
 | **Languages** | Python, TypeScript, JavaScript, SQL |
 | **Data** | Pandas, NumPy, Dask, dbt |
-| **Databases** | PostgreSQL, Elasticsearch |
+| **Databases** | PostgreSQL, SQLite, Elasticsearch |
 | **APIs** | Flask, GraphQL, Hasura, Postgraphile |
-| **Frontend** | Next.js 14, React 18, Apollo Client, Tailwind CSS |
+| **Frontend** | Next.js 14, React 18, Apollo Client, Tailwind CSS, Streamlit |
 | **AI/ML** | Anthropic Claude, LangChain, TF-IDF, Vector Embeddings |
 | **Infrastructure** | Docker, Docker Compose, GitHub Actions |
+| **Visualization** | Plotly, Matplotlib |
 | **Finance** | yfinance, News Sentiment Analysis |
 
 </div>
@@ -319,6 +338,11 @@ python_training/
     output_files/              # Generated charts and outputs
     embeddings/                # TF-IDF matrices, vector DBs
     qa/                        # Anthropic-generated Q&A datasets
+  streamlit-app/               # Standalone Python trading dashboard
+    pages/                     #   Dashboard, Trade, Analysis, Ask Warren, Learn
+    db.py                      #   SQLite persistence layer
+    market.py                  #   yfinance wrapper with caching
+    warren.py                  #   Anthropic Claude chat integration
   react-app/                   # NextJS stock trading dashboard
   flask-app/                   # Flask API + "Ask Warren" chatbot
   postgres/                    # Database Dockerfile & init scripts
