@@ -40,6 +40,32 @@ Without a key, the page shows setup instructions and the rest of the app works n
 3. Point it at `streamlit-app/app.py`
 4. Add `ANTHROPIC_API_KEY` in the Secrets panel (optional)
 
+## Teaching Architecture
+
+This app is designed as a teaching tool. Each module demonstrates a specific pattern:
+
+```
+ app.py (entry point)
+   │
+   ├── db.py         ─── SQLite CRUD, schema design, seed data
+   │                     Teaches: relational modeling without Docker
+   │
+   ├── market.py     ─── yfinance wrapper with @st.cache_data
+   │                     Teaches: external API integration, TTL caching
+   │
+   ├── warren.py     ─── Anthropic Claude with prompt reuse
+   │                     Teaches: LLM integration, prompt versioning
+   │
+   └── pages/
+       ├── 1_Dashboard.py  ─── st.metric, st.dataframe, column_config
+       ├── 2_Trade.py      ─── Forms, validation, sparkline charts
+       ├── 3_Analysis.py   ─── Plotly candlestick, SMA/EMA/RSI
+       ├── 4_Ask_Warren.py ─── Chat interface, session state
+       └── 5_Learn.py      ─── Tiered exercises with solutions
+```
+
+The `5_Learn.py` page contains 6 coding exercises at Beginner, Intermediate, and Advanced levels. Each exercise directly extends the dashboard's functionality, reinforcing the patterns used in the other pages.
+
 ## Relationship to Other Modules
 
 This is the **Python-native** learning track. The repo also contains:
