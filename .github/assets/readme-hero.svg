@@ -1,16 +1,16 @@
 <svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Python training repository hero</title>
-  <desc id="desc">An editorial banner showing the progression from notebooks to a stock platform and a retrieval lab.</desc>
+  <desc id="desc">An editorial banner showing the repository's progression from foundations to a stock platform and a retrieval lab.</desc>
   <defs>
     <linearGradient id="bg" x1="120" y1="40" x2="1060" y2="600" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F4EDE1"/>
       <stop offset="1" stop-color="#E5EFE7"/>
     </linearGradient>
-    <linearGradient id="accent" x1="183" y1="120" x2="1002" y2="494" gradientUnits="userSpaceOnUse">
+    <linearGradient id="stock" x1="730" y1="116" x2="1056" y2="258" gradientUnits="userSpaceOnUse">
       <stop stop-color="#24553F"/>
-      <stop offset="1" stop-color="#4E7A5D"/>
+      <stop offset="1" stop-color="#3E6A50"/>
     </linearGradient>
-    <filter id="shadow" x="80" y="70" width="1040" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <filter id="shadow" x="76" y="74" width="1048" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#49614F" flood-opacity="0.12"/>
     </filter>
   </defs>
@@ -59,6 +59,9 @@
     and a retrieval lab with grounded answers.
   </text>
 
+  <line x1="674" y1="126" x2="674" y2="510" stroke="#24553F" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="730" y="140" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">BUILT TOWARD TWO SURFACES</text>
+
   <g>
     <rect x="118" y="462" width="168" height="62" rx="18" fill="#244B37"/>
     <text x="148" y="488" fill="#F7F3EA" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">41 NOTEBOOKS</text>
@@ -69,23 +72,19 @@
     <text x="334" y="511" fill="#6B4E25" font-family="Inter, Arial, sans-serif" font-size="14">trading + retrieval</text>
   </g>
 
-  <g transform="translate(706 116)">
-    <rect width="318" height="116" rx="26" fill="url(#accent)"/>
-    <text x="28" y="38" fill="#F8F4EC" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM A</text>
-    <text x="28" y="74" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700">Stock Trading Platform</text>
-    <text x="28" y="100" fill="#D8E6DD" font-family="Inter, Arial, sans-serif" font-size="16">Next.js · GraphQL · Flask · Postgres</text>
+  <g transform="translate(730 164)">
+    <rect width="330" height="132" rx="28" fill="url(#stock)"/>
+    <text x="28" y="36" fill="#F8F4EC" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM A</text>
+    <text x="28" y="72" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Stock Trading</text>
+    <text x="28" y="102" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Platform</text>
+    <text x="28" y="122" fill="#D8E6DD" font-family="Inter, Arial, sans-serif" font-size="15">Next.js · GraphQL · Flask · Postgres</text>
   </g>
 
-  <g transform="translate(664 278)">
-    <rect width="360" height="168" rx="26" fill="#FFFDF7" stroke="#24553F" stroke-opacity="0.12"/>
-    <text x="28" y="42" fill="#5B6B60" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM B</text>
-    <text x="28" y="78" fill="#1C2D24" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700">Retrieval Lab</text>
-    <text x="28" y="108" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="17">FastAPI service, content tagging, Chroma,</text>
-    <text x="28" y="134" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="17">Ollama, bounded agents, traceable answers.</text>
+  <g transform="translate(730 326)">
+    <rect width="330" height="148" rx="28" fill="#FFFDF7" stroke="#24553F" stroke-opacity="0.12"/>
+    <text x="28" y="38" fill="#5B6B60" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM B</text>
+    <text x="28" y="80" fill="#1C2D24" font-family="Georgia, 'Times New Roman', serif" font-size="29" font-weight="700">Retrieval Lab</text>
+    <text x="28" y="112" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="16">FastAPI, tagging, Chroma, citations,</text>
+    <text x="28" y="136" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="16">traceable answers, bounded agents.</text>
   </g>
-
-  <path d="M618 472C694 472 718 474 760 462" stroke="#24553F" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="618" cy="472" r="10" fill="#244B37"/>
-  <circle cx="760" cy="462" r="10" fill="#244B37"/>
-  <text x="608" y="444" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.08em">FOUNDATIONS TO SYSTEMS</text>
 </svg>

@@ -28,53 +28,61 @@
   <rect x="732" y="218" width="240" height="54" rx="18" fill="#F6E4C8"/>
   <text x="852" y="252" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">09 quality + Chapter 10 contracts</text>
 
-  <g transform="translate(88 352)">
-    <rect width="470" height="320" rx="30" fill="url(#green)"/>
-    <text x="36" y="48" fill="#DDE9E1" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE A</text>
-    <text x="36" y="96" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Stock Trading Platform</text>
+  <text x="548" y="350" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLICATIONS</text>
+  <path d="M600 300V356" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="600" cy="300" r="10" fill="#24553F"/>
+  <circle cx="600" cy="356" r="10" fill="#24553F"/>
+  <path d="M600 356C560 356 510 360 318 360" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+  <path d="M600 356C640 356 690 360 882 360" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="318" cy="360" r="8" fill="#24553F"/>
+  <circle cx="882" cy="360" r="8" fill="#24553F"/>
 
-    <rect x="36" y="134" width="160" height="72" rx="20" fill="#F7F3EB"/>
-    <text x="56" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Data layer</text>
-    <text x="56" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Postgres · dbt · SQLite</text>
+  <g transform="translate(64 382)">
+    <rect width="500" height="304" rx="30" fill="url(#green)"/>
+    <text x="40" y="48" fill="#DDE9E1" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE A</text>
+    <text x="40" y="94" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Stock Trading Platform</text>
 
-    <rect x="214" y="134" width="104" height="72" rx="20" fill="#F7F3EB"/>
-    <text x="234" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">API</text>
-    <text x="234" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Flask · Hasura</text>
+    <rect x="40" y="132" width="178" height="80" rx="22" fill="#F7F3EB"/>
+    <text x="62" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Data layer</text>
+    <text x="62" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Postgres · dbt</text>
+    <text x="62" y="208" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">SQLite</text>
 
-    <rect x="336" y="134" width="98" height="72" rx="20" fill="#F7F3EB"/>
-    <text x="356" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">UI</text>
-    <text x="356" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Next.js</text>
+    <rect x="236" y="132" width="108" height="80" rx="22" fill="#F7F3EB"/>
+    <text x="258" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">API</text>
+    <text x="258" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Flask</text>
+    <text x="258" y="208" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Hasura</text>
 
-    <rect x="36" y="232" width="398" height="54" rx="18" fill="#E2EADF"/>
-    <text x="58" y="266" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Ask Warren</text>
-    <text x="194" y="266" fill="#506257" font-family="Inter, Arial, sans-serif" font-size="15">Anthropic prompts, market data, portfolio views</text>
+    <rect x="362" y="132" width="98" height="80" rx="22" fill="#F7F3EB"/>
+    <text x="384" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">UI</text>
+    <text x="384" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Next.js</text>
+
+    <rect x="40" y="236" width="420" height="68" rx="22" fill="#E2EADF"/>
+    <text x="62" y="265" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Ask Warren</text>
+    <text x="62" y="291" fill="#506257" font-family="Inter, Arial, sans-serif" font-size="14">Prompts, market data, portfolio views</text>
   </g>
 
-  <g transform="translate(642 352)">
-    <rect width="470" height="320" rx="30" fill="#FBF8F1" stroke="#24553F" stroke-opacity="0.14"/>
-    <text x="36" y="48" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE B</text>
-    <text x="36" y="96" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Retrieval Lab</text>
+  <g transform="translate(636 382)">
+    <rect width="500" height="304" rx="30" fill="#FBF8F1" stroke="#24553F" stroke-opacity="0.14"/>
+    <text x="40" y="48" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE B</text>
+    <text x="40" y="94" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Retrieval Lab</text>
 
-    <rect x="36" y="134" width="118" height="72" rx="20" fill="#E4EDE4"/>
-    <text x="56" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Sources</text>
-    <text x="56" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">NPS · Markdown</text>
+    <rect x="40" y="132" width="128" height="80" rx="22" fill="#E4EDE4"/>
+    <text x="62" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Sources</text>
+    <text x="62" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">NPS</text>
+    <text x="62" y="208" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Markdown</text>
 
-    <rect x="172" y="134" width="122" height="72" rx="20" fill="#E4EDE4"/>
-    <text x="192" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Pipeline</text>
-    <text x="192" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">normalize · tag · chunk</text>
+    <rect x="186" y="132" width="146" height="80" rx="22" fill="#E4EDE4"/>
+    <text x="208" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Pipeline</text>
+    <text x="208" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">normalize · tag</text>
+    <text x="208" y="208" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">chunk</text>
 
-    <rect x="312" y="134" width="122" height="72" rx="20" fill="#E4EDE4"/>
-    <text x="332" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Index</text>
-    <text x="332" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Chroma · local store</text>
+    <rect x="350" y="132" width="110" height="80" rx="22" fill="#E4EDE4"/>
+    <text x="372" y="162" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Index</text>
+    <text x="372" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Chroma</text>
+    <text x="372" y="208" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">local store</text>
 
-    <rect x="36" y="232" width="398" height="54" rx="18" fill="#F6E4C8"/>
-    <text x="58" y="266" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Answer surface</text>
-    <text x="206" y="266" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="15">FastAPI · citations · trace rail · bounded agent</text>
+    <rect x="40" y="236" width="420" height="68" rx="22" fill="#F6E4C8"/>
+    <text x="62" y="265" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Answer surface</text>
+    <text x="62" y="291" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="14">FastAPI, citations, trace rail, bounded agent</text>
   </g>
-
-  <path d="M606 302V355" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="606" cy="302" r="10" fill="#24553F"/>
-  <circle cx="606" cy="355" r="10" fill="#24553F"/>
-  <path d="M606 355C606 395 436 406 404 406" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
-  <path d="M606 355C606 395 777 406 808 406" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
 </svg>
