@@ -1,43 +1,86 @@
+<p align="center">
+  <img src=".github/assets/readme-hero.svg" alt="Data Engineering with Python hero banner" width="100%">
+</p>
+
 <div align="center">
 
 # Data Engineering with Python
 
-### From Fundamentals to Full-Stack Trading Platforms and Retrieval Labs
+[![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-41_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](streamlit-app/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/mhdk1602/python_training?style=for-the-badge&color=blue)](https://github.com/mhdk1602/python_training/commits/main)
-[![Stars](https://img.shields.io/github/stars/mhdk1602/python_training?style=for-the-badge&color=yellow)](https://github.com/mhdk1602/python_training/stargazers)
-
----
-
-**41 hands-on notebooks** | **6 learning tracks** | **2 applied demo surfaces**
-
-A practice-first curriculum that teaches Python, data engineering, backend APIs, frontend development, GenAI, and quantitative finance by building a real stock trading application and a modern retrieval systems capstone.
-
-[Get Started](#-quick-start) | [Syllabus](#-learning-roadmap) | [Architecture](#-platform-architecture) | [Contributing](#-contributing)
+[Quick Start](#quick-start) • [Build Arc](#build-arc) • [Roadmap](#learning-roadmap) • [Repository Structure](#repository-structure)
 
 </div>
 
----
+I built this repo the way I wish technical training had been handed to me: not as isolated syntax drills, but as a sequence of systems that keep accumulating weight. You start with Python and data modeling, move into APIs and frontend work, ship a stock platform, and finish by building a retrieval lab that can ingest content, tag it, index it, and answer with citations.
 
-## What You Will Learn
+Some chapters teach primitives. The later ones teach assembly.
 
-| Track | Skills | Chapters |
-|:------|:-------|:---------|
-| **Python & Data Engineering** | Pandas, NumPy, Dask, data modeling, schema design, ETL pipelines | 0 -- 5 |
-| **Backend & APIs** | Flask, REST, GraphQL, Postgres, Hasura, Docker | 3, 6 |
-| **Frontend & UI** | NextJS, React, Apollo Client, Tailwind CSS | 6 |
-| **GenAI & LLMs** | Anthropic Claude, LangChain, embeddings, vector search, Elasticsearch | 7 -- 8 |
-| **Retrieval Systems & Agents** | FastAPI, content tagging, Chroma, Ollama, grounded answers, bounded agents | 10 |
-| **Trading & Finance** | Portfolio management, market data (yfinance), news sentiment, AI-driven analysis | 6, 8 |
-| **Streamlit & Visualization** | Interactive dashboards, Plotly charting, SQLite persistence, Streamlit deployment | `streamlit-app/` |
+## What Lives Here
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>Notebook spine</strong><br>
+      41 notebooks across Python, data engineering, embeddings, LLMs, data quality, and retrieval systems.<br><br>
+      <code>notebooks/</code>
+    </td>
+    <td width="50%" valign="top">
+      <strong>Applied system A</strong><br>
+      A stock trading product with Next.js, GraphQL, Flask, Postgres, and Anthropic-backed analysis.<br><br>
+      <code>react-app/</code> · <code>flask-app/</code> · <code>postgres/</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong>Applied system B</strong><br>
+      A Chapter 10 retrieval lab with source adapters, tagging, Chroma, local-first answers, and bounded agents.<br><br>
+      <code>chapter-10-rag-lab/</code>
+    </td>
+    <td width="50%" valign="top">
+      <strong>Fast path for learners</strong><br>
+      Streamlit dashboard, Docker stack, generated notebooks, and direct routes into the parts worth studying first.<br><br>
+      <code>streamlit-app/</code> · <code>docker-compose.yaml</code>
+    </td>
+  </tr>
+</table>
+
+## Build Arc
+
+<p align="center">
+  <img src=".github/assets/architecture-map.svg" alt="Repository architecture map" width="100%">
+</p>
+
+The repo has two end states on purpose.
+
+- The trading platform teaches how data products behave once users, APIs, and persistence are all in the room.
+- The retrieval lab teaches how to turn raw content into answerable, inspectable evidence rather than another chat wrapper.
+- Chapter 10 uses NPS as the worked example, but the contracts stay generic so learners can swap the source without rewriting retrieval.
+
+## Tracks At A Glance
+
+| Track | What learners actually build | Chapters |
+|:------|:-----------------------------|:---------|
+| **Python and data engineering** | data pipelines, schema thinking, storage patterns | 0–5 |
+| **Backend and APIs** | REST endpoints, GraphQL layers, Docker orchestration | 3, 6 |
+| **Frontend and UI** | a Next.js dashboard and a Streamlit teaching surface | 6 |
+| **GenAI and retrieval** | embeddings, vector search, grounded answers, bounded agents | 7–8, 10 |
+| **Data quality** | validation checks and dbt models | 9 |
+| **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
 
 ## Quick Start
+
+<p align="center">
+  <img src=".github/assets/start-paths.svg" alt="Choose your entry point" width="100%">
+</p>
+
+If you only have thirty minutes, do the Streamlit route. If you want the repo as a system, run the Docker stack. If you care about retrieval, citations, and agent boundaries, jump straight to Chapter 10.
 
 ### Prerequisites
 
@@ -101,48 +144,14 @@ jupyter notebook
 
 Chapters 0-5 and 7-10 are self-contained. Chapter 6 requires Docker services (Option B).
 
----
+## If You Like To Learn By...
 
-## Platform Architecture
-
-The curriculum builds toward a full-stack stock trading platform. Each chapter teaches the concepts that power a piece of this system.
-
-```mermaid
-graph TB
-    subgraph dataLayer [Data Layer]
-        PG[Postgres DB]
-        DBT[dbt Models]
-        SQLITE[SQLite - Standalone]
-    end
-
-    subgraph apiLayer [API Layer]
-        HASURA[Hasura GraphQL]
-        FLASK[Flask API]
-    end
-
-    subgraph frontendLayer [Frontend]
-        NEXT[NextJS React App]
-        STREAMLIT[Streamlit Dashboard]
-    end
-
-    subgraph aiLayer [AI Services]
-        CLAUDE[Anthropic Claude]
-        YFIN[yfinance Market Data]
-    end
-
-    PG --> HASURA
-    PG --> DBT
-    HASURA --> NEXT
-    HASURA --> FLASK
-    FLASK --> CLAUDE
-    FLASK --> YFIN
-    NEXT -->|Ask Warren| FLASK
-    STREAMLIT --> SQLITE
-    STREAMLIT --> YFIN
-    STREAMLIT -->|Ask Warren| CLAUDE
-```
-
-Chapter 10 adds a second applied surface: a retrieval lab that ingests content, tags it, chunks it, indexes it, and exposes grounded answers through a separate FastAPI service and a dedicated frontend route.
+| Learning style | Start here | Then go next |
+|:---------------|:-----------|:-------------|
+| **Shipping something quickly** | `streamlit-app/` | Chapter 6, then Chapter 8 |
+| **Understanding architecture** | Docker stack + `react-app/` | Chapter 6, then Chapter 9 |
+| **Modern GenAI systems** | `chapter-10-rag-lab/` | Chapters 7, 8, and 10 together |
+| **Working from first principles** | Chapters 0–5 notebooks | then whichever product surface you want to dissect |
 
 ---
 

@@ -1,0 +1,80 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Repository architecture map</title>
+  <desc id="desc">A static architecture diagram showing the trading platform and retrieval lab surfaces built from the repo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="152" y1="32" x2="1044" y2="742" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5EFE4"/>
+      <stop offset="1" stop-color="#EEF3EB"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="250" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24553F"/>
+      <stop offset="1" stop-color="#4C775B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="780" rx="34" fill="url(#bg)"/>
+
+  <text x="88" y="104" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700">Repository Architecture</text>
+  <text x="88" y="144" fill="#516356" font-family="Inter, Arial, sans-serif" font-size="22">Two applied products grow out of the same notebook sequence.</text>
+
+  <rect x="88" y="190" width="1024" height="112" rx="28" fill="#FBF8F1" stroke="#24553F" stroke-opacity="0.12"/>
+  <text x="126" y="232" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">FOUNDATIONS</text>
+  <text x="126" y="270" fill="#1F2F26" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">00–05 notebooks</text>
+  <text x="126" y="296" fill="#516356" font-family="Inter, Arial, sans-serif" font-size="17">Python, data modeling, storage, processing, streaming.</text>
+
+  <rect x="520" y="218" width="170" height="54" rx="18" fill="#E4EDE4"/>
+  <text x="605" y="252" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">07–08 AI notebooks</text>
+
+  <rect x="732" y="218" width="240" height="54" rx="18" fill="#F6E4C8"/>
+  <text x="852" y="252" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">09 quality + Chapter 10 contracts</text>
+
+  <g transform="translate(88 352)">
+    <rect width="470" height="320" rx="30" fill="url(#green)"/>
+    <text x="36" y="48" fill="#DDE9E1" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE A</text>
+    <text x="36" y="96" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Stock Trading Platform</text>
+
+    <rect x="36" y="134" width="160" height="72" rx="20" fill="#F7F3EB"/>
+    <text x="56" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Data layer</text>
+    <text x="56" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Postgres · dbt · SQLite</text>
+
+    <rect x="214" y="134" width="104" height="72" rx="20" fill="#F7F3EB"/>
+    <text x="234" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">API</text>
+    <text x="234" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Flask · Hasura</text>
+
+    <rect x="336" y="134" width="98" height="72" rx="20" fill="#F7F3EB"/>
+    <text x="356" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">UI</text>
+    <text x="356" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Next.js</text>
+
+    <rect x="36" y="232" width="398" height="54" rx="18" fill="#E2EADF"/>
+    <text x="58" y="266" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Ask Warren</text>
+    <text x="194" y="266" fill="#506257" font-family="Inter, Arial, sans-serif" font-size="15">Anthropic prompts, market data, portfolio views</text>
+  </g>
+
+  <g transform="translate(642 352)">
+    <rect width="470" height="320" rx="30" fill="#FBF8F1" stroke="#24553F" stroke-opacity="0.14"/>
+    <text x="36" y="48" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SURFACE B</text>
+    <text x="36" y="96" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Retrieval Lab</text>
+
+    <rect x="36" y="134" width="118" height="72" rx="20" fill="#E4EDE4"/>
+    <text x="56" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Sources</text>
+    <text x="56" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">NPS · Markdown</text>
+
+    <rect x="172" y="134" width="122" height="72" rx="20" fill="#E4EDE4"/>
+    <text x="192" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Pipeline</text>
+    <text x="192" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">normalize · tag · chunk</text>
+
+    <rect x="312" y="134" width="122" height="72" rx="20" fill="#E4EDE4"/>
+    <text x="332" y="164" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Index</text>
+    <text x="332" y="188" fill="#5B6C61" font-family="Inter, Arial, sans-serif" font-size="14">Chroma · local store</text>
+
+    <rect x="36" y="232" width="398" height="54" rx="18" fill="#F6E4C8"/>
+    <text x="58" y="266" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Answer surface</text>
+    <text x="206" y="266" fill="#7C5A24" font-family="Inter, Arial, sans-serif" font-size="15">FastAPI · citations · trace rail · bounded agent</text>
+  </g>
+
+  <path d="M606 302V355" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="606" cy="302" r="10" fill="#24553F"/>
+  <circle cx="606" cy="355" r="10" fill="#24553F"/>
+  <path d="M606 355C606 395 436 406 404 406" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+  <path d="M606 355C606 395 777 406 808 406" stroke="#24553F" stroke-width="5" stroke-linecap="round"/>
+</svg>
