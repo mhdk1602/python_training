@@ -92,6 +92,20 @@ services:
     depends_on:
       - hasura
 
+  retrieval_lab_api:
+    build:
+      context: ./chapter-10-rag-lab
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - NPS_API_KEY=${NPS_API_KEY}
+      - RAG_LAB_VECTOR_BACKEND=chroma
+    volumes:
+      - ./chapter-10-rag-lab:/app
+    networks:
+      - my-network
+
 networks:
   my-network:
     driver: bridge

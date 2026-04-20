@@ -1,0 +1,44 @@
+[
+  {
+    "id": "nps-arch-delicate-arch",
+    "title": "Delicate Arch Viewpoints",
+    "shortDescription": "Two viewpoints give visitors a gentler way to experience Delicate Arch.",
+    "longDescription": "The lower viewpoint is a short walk with wide-open views. The upper viewpoint is steeper but still far shorter than the full arch trail. Families often use these stops when they want a high-value stop without committing to a half-day hike.",
+    "parkCode": "arch",
+    "parkName": "Arches National Park",
+    "state": "UT",
+    "duration": "45 minutes",
+    "petsAllowed": false,
+    "topics": ["views", "family", "photography"],
+    "url": "https://www.nps.gov/arch/planyourvisit/delicate-arch-viewpoints.htm",
+    "lastIndexedAt": "2026-04-20T09:00:00Z"
+  },
+  {
+    "id": "nps-zion-riverside",
+    "title": "Riverside Walk",
+    "shortDescription": "A paved route along the Virgin River that works well as an accessible first stop.",
+    "longDescription": "Riverside Walk is one of the park's most approachable experiences. The path is paved, the terrain is gentle, and many visitors treat it as a low-friction introduction before deciding whether they want a longer day on the trail system.",
+    "parkCode": "zion",
+    "parkName": "Zion National Park",
+    "state": "UT",
+    "duration": "1.5 hours",
+    "petsAllowed": false,
+    "topics": ["accessible", "river", "intro trail"],
+    "url": "https://www.nps.gov/zion/planyourvisit/riverside-walk.htm",
+    "lastIndexedAt": "2026-04-20T09:00:00Z"
+  },
+  {
+    "id": "nps-zion-ranger-program",
+    "title": "Evening Ranger Program",
+    "shortDescription": "A ranger-led program that pairs short talks with practical trip planning.",
+    "longDescription": "This evening program gives visitors current trail conditions, wildlife safety reminders, and a compact history of the canyon. It is useful for first-time visitors because the ranger usually flags shuttle timing, heat exposure, and common route mistakes.",
+    "parkCode": "zion",
+    "parkName": "Zion National Park",
+    "state": "UT",
+    "duration": "1 hour",
+    "petsAllowed": false,
+    "topics": ["ranger-led", "orientation", "safety"],
+    "url": "https://www.nps.gov/zion/planyourvisit/ranger-programs.htm",
+    "lastIndexedAt": "2026-04-20T09:00:00Z"
+  }
+]

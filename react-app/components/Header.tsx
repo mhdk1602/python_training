@@ -7,6 +7,7 @@
  * test and reuse across pages.
  */
 
+import Link from "next/link";
 import React from "react";
 
 const Header: React.FC = () => {
@@ -21,9 +22,14 @@ const Header: React.FC = () => {
             Stock Trading Platform
           </h1>
         </div>
-        <div className="flex items-center gap-2 text-xs text-terminal-muted">
-          <span className="inline-block h-2 w-2 rounded-full bg-bull animate-pulse-slow" />
-          Market Live
+        <div className="flex items-center gap-4 text-xs text-terminal-muted">
+          <Link href="/chapter-10" className="text-accent hover:text-white transition-colors">
+            Chapter 10 Lab
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-bull animate-pulse-slow" />
+            Market Live
+          </div>
         </div>
       </div>
     </header>

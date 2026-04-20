@@ -1,10 +1,10 @@
 import React from "react";
 import Modal from "react-modal";
 import { useQuery } from "@apollo/client";
-import { GET_STOCKS } from "../graphql/getStocks";
-import { GET_PORTFOLIO_SUMMARY } from "../graphql/getPortfolioSummaries";
-import { GET_PORTFOLIO_TRANSACTIONS } from "graphql/getPortfolioTransactions";
-import Layout from "../components/Layout";
+import { GET_STOCKS } from "../../graphql/getStocks";
+import { GET_PORTFOLIO_SUMMARY } from "../../graphql/getPortfolioSummaries";
+import { GET_PORTFOLIO_TRANSACTIONS } from "../../graphql/getPortfolioTransactions";
+import Layout from "../../components/Layout";
 import { useState } from "react";
 
 Modal.setAppElement("#__next"); // Set the app element for accessibility

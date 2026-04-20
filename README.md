@@ -2,7 +2,7 @@
 
 # Data Engineering with Python
 
-### From Fundamentals to Full-Stack Trading Platforms
+### From Fundamentals to Full-Stack Trading Platforms and Retrieval Labs
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
@@ -13,9 +13,9 @@
 
 ---
 
-**34 hands-on notebooks** | **5 learning tracks** | **1 production-grade trading platform**
+**41 hands-on notebooks** | **6 learning tracks** | **2 applied demo surfaces**
 
-A practice-first curriculum that teaches Python, data engineering, backend APIs, frontend development, GenAI, and quantitative finance by building a real stock trading application from scratch.
+A practice-first curriculum that teaches Python, data engineering, backend APIs, frontend development, GenAI, and quantitative finance by building a real stock trading application and a modern retrieval systems capstone.
 
 [Get Started](#-quick-start) | [Syllabus](#-learning-roadmap) | [Architecture](#-platform-architecture) | [Contributing](#-contributing)
 
@@ -31,6 +31,7 @@ A practice-first curriculum that teaches Python, data engineering, backend APIs,
 | **Backend & APIs** | Flask, REST, GraphQL, Postgres, Hasura, Docker | 3, 6 |
 | **Frontend & UI** | NextJS, React, Apollo Client, Tailwind CSS | 6 |
 | **GenAI & LLMs** | Anthropic Claude, LangChain, embeddings, vector search, Elasticsearch | 7 -- 8 |
+| **Retrieval Systems & Agents** | FastAPI, content tagging, Chroma, Ollama, grounded answers, bounded agents | 10 |
 | **Trading & Finance** | Portfolio management, market data (yfinance), news sentiment, AI-driven analysis | 6, 8 |
 | **Streamlit & Visualization** | Interactive dashboards, Plotly charting, SQLite persistence, Streamlit deployment | `streamlit-app/` |
 
@@ -75,6 +76,22 @@ docker compose up -d
 #   Flask API       -> localhost:5002
 ```
 
+### Option C: Retrieval Systems Capstone
+
+Run the Chapter 10 retrieval lab with its own FastAPI service and the dedicated Next.js teaching surface.
+
+```bash
+cd python_training/chapter-10-rag-lab
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
+uvicorn main:app --reload --port 8001
+
+# Open the demo route in the existing NextJS app:
+#   http://localhost:3000/chapter-10
+```
+
 ### Running Notebooks
 
 ```bash
@@ -82,7 +99,7 @@ pip install jupyter
 jupyter notebook
 ```
 
-Chapters 0-5 and 7-9 are self-contained. Chapter 6 requires Docker services (Option B).
+Chapters 0-5 and 7-10 are self-contained. Chapter 6 requires Docker services (Option B).
 
 ---
 
@@ -124,6 +141,8 @@ graph TB
     STREAMLIT --> YFIN
     STREAMLIT -->|Ask Warren| CLAUDE
 ```
+
+Chapter 10 adds a second applied surface: a retrieval lab that ingests content, tags it, chunks it, indexes it, and exposes grounded answers through a separate FastAPI service and a dedicated frontend route.
 
 ---
 
@@ -295,6 +314,28 @@ Validation frameworks and implementing data quality checks with dbt.
 
 </details>
 
+<details>
+<summary><b>Chapter 10: Retrieval Systems & Agents</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~8 hours</code></summary>
+
+<br>
+
+Build a full retrieval stack with generic contracts, NPS as the worked example, and a separate modern UI for tracing answers back to evidence.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 10.1 | System Frame: From Raw Content to Answer | [10.1 System Frame.ipynb](notebooks/10-retrieval-systems-and-agents/10.1%20System%20Frame.ipynb) |
+| 10.2 | Source Adapters and Ingestion | [10.2 Source Adapters and Ingestion.ipynb](notebooks/10-retrieval-systems-and-agents/10.2%20Source%20Adapters%20and%20Ingestion.ipynb) |
+| 10.3 | Content Normalization and Tagging | [10.3 Content Normalization and Tagging.ipynb](notebooks/10-retrieval-systems-and-agents/10.3%20Content%20Normalization%20and%20Tagging.ipynb) |
+| 10.4 | Embeddings and the Local Vector Store | [10.4 Embeddings and the Local Vector Store.ipynb](notebooks/10-retrieval-systems-and-agents/10.4%20Embeddings%20and%20the%20Local%20Vector%20Store.ipynb) |
+| 10.5 | Retrieval and Grounded Answers | [10.5 Retrieval and Grounded Answers.ipynb](notebooks/10-retrieval-systems-and-agents/10.5%20Retrieval%20and%20Grounded%20Answers.ipynb) |
+| 10.6 | Agentic Q&A | [10.6 Agentic Q&A.ipynb](notebooks/10-retrieval-systems-and-agents/10.6%20Agentic%20Q%26A.ipynb) |
+| 10.7 | Demo UI and Evaluation | [10.7 Demo UI and Evaluation.ipynb](notebooks/10-retrieval-systems-and-agents/10.7%20Demo%20UI%20and%20Evaluation.ipynb) |
+
+**Sub-project:** `chapter-10-rag-lab/` -- FastAPI retrieval lab with source adapters, content tagging, local-first embeddings, grounded answers, and a bounded agent.  
+**Demo route:** `react-app/pages/chapter-10.tsx`
+
+</details>
+
 ---
 
 ## Tech Stack
@@ -305,10 +346,10 @@ Validation frameworks and implementing data quality checks with dbt.
 |:---------|:-------------|
 | **Languages** | Python, TypeScript, JavaScript, SQL |
 | **Data** | Pandas, NumPy, Dask, dbt |
-| **Databases** | PostgreSQL, SQLite, Elasticsearch |
-| **APIs** | Flask, GraphQL, Hasura, Postgraphile |
+| **Databases** | PostgreSQL, SQLite, Elasticsearch, Chroma |
+| **APIs** | Flask, FastAPI, GraphQL, Hasura, Postgraphile |
 | **Frontend** | Next.js 14, React 18, Apollo Client, Tailwind CSS, Streamlit |
-| **AI/ML** | Anthropic Claude, LangChain, TF-IDF, Vector Embeddings |
+| **AI/ML** | Anthropic Claude, LangChain, Ollama, TF-IDF, Vector Embeddings, Bounded Agents |
 | **Infrastructure** | Docker, Docker Compose, GitHub Actions |
 | **Visualization** | Plotly, Matplotlib |
 | **Finance** | yfinance, News Sentiment Analysis |
@@ -332,6 +373,7 @@ python_training/
     07-text-and-embeddings/    # Fuzzy matching, TF-IDF, Elasticsearch
     08-genai-llms/             # GPT-4, Anthropic, LangChain
     09-data-quality/           # Validation frameworks, dbt
+    10-retrieval-systems-and-agents/ # Retrieval systems, tagging, vector stores, agents
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
@@ -345,6 +387,7 @@ python_training/
     warren.py                  #   Anthropic Claude chat integration
   react-app/                   # NextJS stock trading dashboard
   flask-app/                   # Flask API + "Ask Warren" chatbot
+  chapter-10-rag-lab/          # FastAPI retrieval lab + sample data + docs
   postgres/                    # Database Dockerfile & init scripts
   dbt/                         # dbt data quality project
   GraphQL Server/              # Standalone Node.js GraphQL server
@@ -367,7 +410,7 @@ Contributions are welcome. If you find an error in a notebook, want to add exerc
 
 ## About
 
-Built and maintained by [mhdk1602](https://github.com/mhdk1602). This repository started as internal training materials for data engineering and has grown into a comprehensive, practice-first curriculum spanning five technical domains.
+Built and maintained by [mhdk1602](https://github.com/mhdk1602). This repository started as internal training materials for data engineering and has grown into a comprehensive, practice-first curriculum spanning data systems, frontend delivery, GenAI workflows, retrieval systems, and applied finance.
 
 <div align="center">
 

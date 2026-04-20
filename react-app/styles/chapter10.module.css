@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+.pageShell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(214, 228, 208, 0.55), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(109, 139, 116, 0.24), transparent 30%),
+    linear-gradient(180deg, #f3efe7 0%, #e9e1d3 100%);
+  color: #1f2a22;
+  font-family: "Manrope", sans-serif;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(31, 42, 34, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 42, 34, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 96%);
+  pointer-events: none;
+}
+
+.hero,
+.controlDeck,
+.workbench {
+  position: relative;
+  z-index: 1;
+  width: min(1220px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+  gap: 1.5rem;
+  padding: 3rem 0 2rem;
+}
+
+.heroText h1 {
+  max-width: 12ch;
+  margin: 0 0 1rem;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.9rem, 7vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.eyebrow,
+.panelKicker,
+.heroCardLabel,
+.panelMeta,
+.metadataList span,
+.traceItem strong {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: #5f735d;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 58ch;
+  margin: 0;
+  color: #36453a;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.actionButton,
+.filterChip,
+.filterChipActive,
+.citationCard,
+.resultCard {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.primaryButton,
+.secondaryButton,
+.actionButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.25rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.primaryButton {
+  background: #204b37;
+  color: #f7f3eb;
+  box-shadow: 0 16px 32px rgba(32, 75, 55, 0.22);
+}
+
+.secondaryButton,
+.actionButton {
+  background: rgba(255, 251, 245, 0.85);
+  color: #204b37;
+  border: 1px solid rgba(32, 75, 55, 0.16);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.actionButton:hover,
+.filterChip:hover,
+.resultCard:hover,
+.citationCard:hover {
+  transform: translateY(-2px);
+}
+
+.inlineLink {
+  align-self: center;
+  color: #204b37;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.heroCard,
+.queryCard,
+.filterCard,
+.answerPanel,
+.resultsPanel,
+.sideCard {
+  background: rgba(255, 250, 243, 0.84);
+  border: 1px solid rgba(51, 75, 59, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 22px 60px rgba(83, 78, 56, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.heroCard {
+  align-self: end;
+  padding: 1.5rem;
+}
+
+.heroCard strong {
+  display: block;
+  margin: 0.25rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+.heroCard p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+  color: #425046;
+}
+
+.heroCard span {
+  color: #204b37;
+}
+
+.controlDeck {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.queryCard,
+.filterCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.25rem;
+}
+
+.queryCard span,
+.filterCard span {
+  color: #516255;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.queryInput {
+  width: 100%;
+  resize: none;
+  border: 0;
+  border-radius: 20px;
+  background: #f7f3eb;
+  padding: 1rem 1.1rem;
+  color: #1f2a22;
+  font: inherit;
+  line-height: 1.6;
+  box-shadow: inset 0 0 0 1px rgba(32, 75, 55, 0.12);
+}
+
+.queryInput:focus {
+  outline: 2px solid rgba(32, 75, 55, 0.22);
+  outline-offset: 2px;
+}
+
+.filterRow,
+.badgeRow,
+.metadataList,
+.citationList,
+.tagStack,
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.filterChip,
+.filterChipActive,
+.badge {
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.filterChip,
+.badge {
+  border: 1px solid rgba(32, 75, 55, 0.14);
+  background: rgba(255, 255, 255, 0.56);
+  color: #2b3b31;
+}
+
+.filterChipActive {
+  border: 1px solid transparent;
+  background: #204b37;
+  color: #f7f3eb;
+}
+
+.warningBanner {
+  position: relative;
+  z-index: 1;
+  width: min(1220px, calc(100% - 3rem));
+  margin: 1rem auto 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid #9d5a16;
+  border-radius: 0 18px 18px 0;
+  background: rgba(244, 222, 190, 0.75);
+  color: #6d4317;
+}
+
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(310px, 0.75fr);
+  gap: 1.25rem;
+  padding: 1.4rem 0 3rem;
+}
+
+.primaryColumn,
+.sideColumn {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.answerPanel,
+.resultsPanel,
+.sideCard {
+  padding: 1.35rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panelKicker {
+  color: #65796a;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.panelMeta {
+  color: #365341;
+  font-size: 0.78rem;
+}
+
+.answerText {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.35;
+}
+
+.citationCard,
+.resultCard {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(32, 75, 55, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.56);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.citationCard strong,
+.resultCard strong,
+.tagCard strong,
+.traceItem strong,
+.sideCard h2 {
+  display: block;
+}
+
+.citationCard span,
+.resultCard p,
+.tagCard p,
+.sourceSummary,
+.sourceBody,
+.traceItem p {
+  color: #48594d;
+  line-height: 1.6;
+}
+
+.resultGrid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.resultCardHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.sideCard h2 {
+  margin: 0 0 0.65rem;
+  font-family: "Fraunces", serif;
+  font-size: 1.55rem;
+}
+
+.sourceSummary {
+  margin: 0 0 0.9rem;
+  font-weight: 700;
+}
+
+.sourceBody {
+  margin: 0 0 1rem;
+}
+
+.metadataList span {
+  color: #5e6f62;
+  font-size: 0.78rem;
+}
+
+.tagCard {
+  border-radius: 18px;
+  background: rgba(226, 234, 225, 0.65);
+  padding: 0.95rem;
+}
+
+.tagCard span {
+  color: #5c6d60;
+  font-size: 0.8rem;
+}
+
+.traceList {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.traceItem {
+  border-left: 2px solid rgba(32, 75, 55, 0.18);
+  padding-left: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .controlDeck,
+  .workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .heroText h1 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .controlDeck,
+  .workbench {
+    width: min(100% - 1.5rem, 1220px);
+  }
+
+  .pageShell {
+    padding-bottom: 2rem;
+  }
+
+  .heroText h1 {
+    font-size: 2.8rem;
+  }
+}
