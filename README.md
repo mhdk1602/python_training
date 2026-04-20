@@ -1,5 +1,7 @@
 <p align="center">
-  <img src=".github/assets/readme-hero.svg" alt="Data Engineering with Python hero banner" width="100%">
+  <a href="#start-here">
+    <img src=".github/assets/readme-hero.svg" alt="Data Engineering with Python hero banner" width="100%">
+  </a>
 </p>
 
 <div align="center">
@@ -12,54 +14,56 @@
 [![Jupyter](https://img.shields.io/badge/Jupyter-41_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Quick Start](#quick-start) • [Build Arc](#build-arc) • [Roadmap](#learning-roadmap) • [Repository Structure](#repository-structure)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape)
 
 </div>
 
-I built this repo the way I wish technical training had been handed to me: not as isolated syntax drills, but as a sequence of systems that keep accumulating weight. You start with Python and data modeling, move into APIs and frontend work, ship a stock platform, and finish by building a retrieval lab that can ingest content, tag it, index it, and answer with citations.
+I built this repo as a cumulative sequence. The early notebooks teach Python, data modeling, storage, processing, and streaming. Later chapters stop talking in abstractions and force those ideas into two concrete surfaces: a trading product and a retrieval system with citations, traces, and bounded tools.
 
-Some chapters teach primitives. The later ones teach assembly.
+> One notebook spine. Two applied systems. Six tracks that keep compounding.
 
-## What Lives Here
+## Start Here
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <strong>Notebook spine</strong><br>
-      41 notebooks across Python, data engineering, embeddings, LLMs, data quality, and retrieval systems.<br><br>
-      <code>notebooks/</code>
+    <td width="33%" valign="top" align="center">
+      <a href="streamlit-app/">
+        <img src=".github/assets/entry-streamlit.svg" alt="Streamlit dashboard entry card" width="100%">
+      </a>
+      <br><br>
+      <strong><a href="streamlit-app/">Streamlit Dashboard</a></strong><br>
+      Fastest payoff. Open the teaching surface without Docker.<br><br>
+      <a href="#option-a-streamlit-dashboard-no-docker">Run guide</a>
     </td>
-    <td width="50%" valign="top">
-      <strong>Applied system A</strong><br>
-      A stock trading product with Next.js, GraphQL, Flask, Postgres, and Anthropic-backed analysis.<br><br>
-      <code>react-app/</code> · <code>flask-app/</code> · <code>postgres/</code>
+    <td width="33%" valign="top" align="center">
+      <a href="react-app/">
+        <img src=".github/assets/entry-platform.svg" alt="Full stack platform entry card" width="100%">
+      </a>
+      <br><br>
+      <strong><a href="react-app/">Full Stack Platform</a></strong><br>
+      See the system as a product: UI, API, database, and orchestration.<br><br>
+      <a href="#option-b-full-stack-docker-platform">Run guide</a>
     </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <strong>Applied system B</strong><br>
-      A Chapter 10 retrieval lab with source adapters, tagging, Chroma, local-first answers, and bounded agents.<br><br>
-      <code>chapter-10-rag-lab/</code>
-    </td>
-    <td width="50%" valign="top">
-      <strong>Fast path for learners</strong><br>
-      Streamlit dashboard, Docker stack, generated notebooks, and direct routes into the parts worth studying first.<br><br>
-      <code>streamlit-app/</code> · <code>docker-compose.yaml</code>
+    <td width="33%" valign="top" align="center">
+      <a href="chapter-10-rag-lab/">
+        <img src=".github/assets/entry-retrieval.svg" alt="Retrieval lab entry card" width="100%">
+      </a>
+      <br><br>
+      <strong><a href="chapter-10-rag-lab/">Retrieval Lab</a></strong><br>
+      Modern capstone: adapters, tagging, vector search, citations, and bounded agents.<br><br>
+      <a href="#option-c-retrieval-systems-capstone">Run guide</a>
     </td>
   </tr>
 </table>
 
-## Build Arc
+## Repository Shape
 
-<p align="center">
-  <img src=".github/assets/architecture-map.svg" alt="Repository architecture map" width="100%">
-</p>
-
-The repo has two end states on purpose.
-
-- The trading platform teaches how data products behave once users, APIs, and persistence are all in the room.
-- The retrieval lab teaches how to turn raw content into answerable, inspectable evidence rather than another chat wrapper.
-- Chapter 10 uses NPS as the worked example, but the contracts stay generic so learners can swap the source without rewriting retrieval.
+| Layer | What it teaches | Where to go |
+|:------|:----------------|:------------|
+| **Notebook spine** | Python, schema design, storage, processing, streaming, embeddings, LLMs, and quality checks. | [`notebooks/`](notebooks/) |
+| **Applied system A** | A trading product with Next.js, Flask, Hasura, Postgres, Streamlit, and the Ask Warren analysis surface. | [`react-app/`](react-app/) · [`flask-app/`](flask-app/) · [`streamlit-app/`](streamlit-app/) |
+| **Applied system B** | A retrieval lab with source adapters, normalization, tagging, chunking, Chroma, FastAPI answers, and bounded agents. | [`chapter-10-rag-lab/`](chapter-10-rag-lab/) · [`react-app/pages/chapter-10.tsx`](react-app/pages/chapter-10.tsx) |
+| **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
 
@@ -75,10 +79,6 @@ The repo has two end states on purpose.
 ---
 
 ## Quick Start
-
-<p align="center">
-  <img src=".github/assets/start-paths.svg" alt="Choose your entry point" width="100%">
-</p>
 
 If you only have thirty minutes, do the Streamlit route. If you want the repo as a system, run the Docker stack. If you care about retrieval, citations, and agent boundaries, jump straight to Chapter 10.
 

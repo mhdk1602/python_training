@@ -1,0 +1,19 @@
+<svg width="360" height="220" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Full stack platform entry card</title>
+  <desc id="desc">A cream editorial card for the full stack platform path.</desc>
+  <defs>
+    <linearGradient id="bg" x1="22" y1="14" x2="338" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7EE"/>
+      <stop offset="1" stop-color="#EEF3EB"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="124" height="28" rx="14" fill="#E6ECE5"/>
+  <text x="40" y="43" fill="#607166" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="0.12em">SYSTEM VIEW</text>
+  <text x="24" y="94" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Full Stack</text>
+  <text x="24" y="128" fill="#1F2F26" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Platform</text>
+  <text x="24" y="160" fill="#55675C" font-family="Inter, Arial, sans-serif" font-size="16">Next.js, Flask, Hasura, Postgres,</text>
+  <text x="24" y="184" fill="#55675C" font-family="Inter, Arial, sans-serif" font-size="16">and the shape of a real product.</text>
+  <rect x="234" y="162" width="102" height="32" rx="16" fill="#24553F"/>
+  <text x="285" y="183" fill="#F7F3EA" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="0.1em">OPEN FOLDER</text>
+</svg>
