@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Engineering with Python</title>
+  <meta
+    name="description"
+    content="A project-first data engineering curriculum that moves from Python fundamentals to a trading platform and a retrieval lab with grounded answers."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/pages.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark">DE</span>
+        <span class="brand-copy">
+          <strong>Data Engineering with Python</strong>
+          <span>project-first training repository</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#start">Start</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#systems">Systems</a>
+        <a href="#run">Run</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero panel" data-reveal>
+        <div class="hero-copy">
+          <div class="eyebrow-row">
+            <span class="eyebrow">PUBLIC GITHUB PAGES</span>
+            <span class="status-pill">live from a public repo</span>
+          </div>
+          <h1>Data engineering, taught through shipped systems.</h1>
+          <p class="hero-lead">
+            This repo starts with Python, schemas, storage, processing, and streaming. It ends with two serious builds: a trading platform and a retrieval lab that tags content, indexes it, and answers with citations.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#start">Choose a path</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">Open repository</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value" data-count="41">41</span>
+              <span class="metric-label">notebooks</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value" data-count="2">2</span>
+              <span class="metric-label">applied systems</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value" data-count="10">10</span>
+              <span class="metric-label">chapters</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-aside">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Applied System A</p>
+            <h2>Stock Trading Platform</h2>
+            <p>Next.js, Flask, Hasura, Postgres, a Streamlit teaching surface, and market analysis through Ask Warren.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Applied System B</p>
+            <h2>Retrieval Lab</h2>
+            <p>Source adapters, content tagging, Chroma-backed retrieval, FastAPI answers, trace rails, and bounded agents.</p>
+          </div>
+          <div class="orbital-notes" aria-hidden="true">
+            <span>Python</span>
+            <span>GraphQL</span>
+            <span>Embeddings</span>
+            <span>Retrieval</span>
+            <span>FastAPI</span>
+            <span>Next.js</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">START HERE</p>
+          <h2>Three ways into the repo.</h2>
+          <p>Pick the surface that matches your attention span. Each path leads back into the same notebook spine.</p>
+        </div>
+
+        <div class="entry-grid">
+          <a class="entry-card entry-card-green" href="https://github.com/mhdk1602/python_training/tree/main/streamlit-app" target="_blank" rel="noreferrer">
+            <span class="entry-label">Fastest payoff</span>
+            <h3>Streamlit Dashboard</h3>
+            <p>Open the teaching surface without Docker. Good if you want immediate interaction, market views, and a guided UI.</p>
+            <span class="entry-link">Open folder</span>
+          </a>
+
+          <a class="entry-card entry-card-cream" href="https://github.com/mhdk1602/python_training/tree/main/react-app" target="_blank" rel="noreferrer">
+            <span class="entry-label">System view</span>
+            <h3>Full Stack Platform</h3>
+            <p>See the repo as a product: frontend, API, data model, orchestration, and the shape of a real application.</p>
+            <span class="entry-link">Open folder</span>
+          </a>
+
+          <a class="entry-card entry-card-sand" href="https://github.com/mhdk1602/python_training/tree/main/chapter-10-rag-lab" target="_blank" rel="noreferrer">
+            <span class="entry-label">Modern capstone</span>
+            <h3>Retrieval Lab</h3>
+            <p>Go straight to content adapters, tagging, vector search, citations, and bounded agents.</p>
+            <span class="entry-link">Open folder</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="curriculum" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">CURRICULUM ARC</p>
+          <h2>From foundations to systems.</h2>
+          <p>The sequence is cumulative. The later chapters only make sense because the earlier ones teach the contracts underneath them.</p>
+        </div>
+
+        <div class="chapter-river">
+          <article class="chapter-card">
+            <span class="chapter-range">00–05</span>
+            <h3>Foundations</h3>
+            <p>Python, data modeling, storage, processing, and streaming.</p>
+            <a href="https://github.com/mhdk1602/python_training/tree/main/notebooks" target="_blank" rel="noreferrer">Browse notebooks</a>
+          </article>
+
+          <article class="chapter-card">
+            <span class="chapter-range">06</span>
+            <h3>APIs and frontend</h3>
+            <p>REST, GraphQL, Postgres, Hasura, and the first real product surface.</p>
+            <a href="https://github.com/mhdk1602/python_training/tree/main/notebooks/06-apis-and-frontend" target="_blank" rel="noreferrer">Open chapter</a>
+          </article>
+
+          <article class="chapter-card">
+            <span class="chapter-range">07–08</span>
+            <h3>Embeddings and LLMs</h3>
+            <p>Text comparison, embeddings, Anthropic setup, and LangChain-era tooling.</p>
+            <a href="https://github.com/mhdk1602/python_training/tree/main/notebooks/08-genai-llms" target="_blank" rel="noreferrer">Open chapter</a>
+          </article>
+
+          <article class="chapter-card">
+            <span class="chapter-range">09</span>
+            <h3>Quality and validation</h3>
+            <p>Checks, dbt, and the discipline that keeps the rest of the stack honest.</p>
+            <a href="https://github.com/mhdk1602/python_training/tree/main/notebooks/09-data-quality" target="_blank" rel="noreferrer">Open chapter</a>
+          </article>
+
+          <article class="chapter-card chapter-card-featured">
+            <span class="chapter-range">10</span>
+            <h3>Retrieval systems and agents</h3>
+            <p>A practical capstone: ingest content, normalize it, tag it, chunk it, index it, retrieve it, and answer with evidence.</p>
+            <a href="https://github.com/mhdk1602/python_training/tree/main/notebooks/10-retrieval-systems-and-agents" target="_blank" rel="noreferrer">Open capstone</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="systems" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">APPLIED SYSTEMS</p>
+          <h2>Two builds, two different forms of rigor.</h2>
+          <p>One teaches product architecture. The other teaches grounded retrieval. Both are concrete enough to expose weak assumptions.</p>
+        </div>
+
+        <div class="systems-grid">
+          <article class="system-panel system-panel-dark">
+            <p class="system-kicker">System A</p>
+            <h3>Stock Trading Platform</h3>
+            <ul>
+              <li>Next.js dashboard and Streamlit teaching layer</li>
+              <li>Flask API, Hasura GraphQL, Postgres, SQLite support</li>
+              <li>Ask Warren for market analysis and portfolio views</li>
+            </ul>
+            <div class="system-links">
+              <a href="https://github.com/mhdk1602/python_training/tree/main/react-app" target="_blank" rel="noreferrer">Frontend</a>
+              <a href="https://github.com/mhdk1602/python_training/tree/main/flask-app" target="_blank" rel="noreferrer">API</a>
+              <a href="https://github.com/mhdk1602/python_training/tree/main/streamlit-app" target="_blank" rel="noreferrer">Streamlit</a>
+            </div>
+          </article>
+
+          <article class="system-panel system-panel-light">
+            <p class="system-kicker">System B</p>
+            <h3>Retrieval Lab</h3>
+            <ul>
+              <li>Generic source adapter contract with NPS as the worked example</li>
+              <li>Normalization, rule-assisted and model-assisted tagging</li>
+              <li>Chroma retrieval, FastAPI answers, citations, and bounded tools</li>
+            </ul>
+            <div class="system-links">
+              <a href="https://github.com/mhdk1602/python_training/tree/main/chapter-10-rag-lab" target="_blank" rel="noreferrer">Lab code</a>
+              <a href="https://github.com/mhdk1602/python_training/tree/main/chapter-10-rag-lab/docs" target="_blank" rel="noreferrer">Docs</a>
+              <a href="https://github.com/mhdk1602/python_training/blob/main/react-app/pages/chapter-10.tsx" target="_blank" rel="noreferrer">Demo route</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="run" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">RUN IT</p>
+          <h2>Fast ways to get your hands on it.</h2>
+          <p>No abstraction here. These are the entry commands that matter.</p>
+        </div>
+
+        <div class="run-grid">
+          <article class="run-card">
+            <h3>Streamlit</h3>
+            <pre><code>git clone https://github.com/mhdk1602/python_training.git
+cd python_training/streamlit-app
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+          </article>
+
+          <article class="run-card">
+            <h3>Full stack</h3>
+            <pre><code>git clone https://github.com/mhdk1602/python_training.git
+cd python_training
+docker compose up -d</code></pre>
+          </article>
+
+          <article class="run-card">
+            <h3>Chapter 10</h3>
+            <pre><code>cd python_training/chapter-10-rag-lab
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
+uvicorn main:app --reload --port 8001</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block section-block-tight" data-reveal>
+        <div class="closing-panel">
+          <div>
+            <p class="eyebrow">KEEP READING</p>
+            <h2>The repo still matters.</h2>
+            <p>This site is the front door. The real substance is still in the notebooks, the code, and the build decisions underneath them.</p>
+          </div>
+          <div class="closing-actions">
+            <a class="button button-primary" href="https://github.com/mhdk1602/python_training/blob/main/README.md" target="_blank" rel="noreferrer">Read the README</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">Open GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>mhdk1602 / python_training</p>
+      <p>GitHub Pages, public repository, editorial rebuild.</p>
+    </footer>
+  </div>
+
+  <script src="site-assets/pages.js"></script>
+</body>
+</html>
