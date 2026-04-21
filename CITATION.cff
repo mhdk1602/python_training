@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If this repository helps your teaching, learning, or research, please cite it as follows."
+title: "Data Engineering with Python"
+type: software
+authors:
+  - family-names: "Hari"
+    given-names: "Dinesh"
+repository-code: "https://github.com/mhdk1602/python_training"
+url: "https://mhdk1602.github.io/python_training/"
+abstract: "Project-first data engineering training repository covering Python fundamentals, data modeling, storage, processing, streaming, APIs, frontend work, embeddings, large language models, and retrieval systems."
+keywords:
+  - "data engineering"
+  - "python"
+  - "retrieval augmented generation"
+  - "vector search"
+  - "education"
+license: "MIT"
+version: "1.0.0"
+date-released: "2026-04-21"
