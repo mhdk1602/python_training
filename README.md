@@ -11,16 +11,16 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-41_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-46_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html)
 
 </div>
 
-I built this repo as a cumulative sequence. The early notebooks teach Python, data modeling, storage, processing, and streaming. Later chapters stop talking in abstractions and force those ideas into two concrete surfaces: a trading product and a retrieval system with citations, traces, and bounded tools.
+I built this repo as a cumulative sequence. The early notebooks teach Python, data modeling, storage, processing, and streaming. Later chapters stop talking in abstractions and force those ideas into two concrete surfaces: a trading product and a retrieval system with citations, traces, and bounded tools. The newest material adds an advanced lens on MDM, governance, fractals, and pattern recognition.
 
-> One notebook spine. Two applied systems. Six tracks that keep compounding.
+> One notebook spine. Two applied systems. One advanced lens that asks harder questions about scale, structure, and governance.
 
 ## Start Here
 
@@ -63,6 +63,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Notebook spine** | Python, schema design, storage, processing, streaming, embeddings, LLMs, and quality checks. | [`notebooks/`](notebooks/) |
 | **Applied system A** | A trading product with Next.js, Flask, Hasura, Postgres, Streamlit, and the Ask Warren analysis surface. | [`react-app/`](react-app/) · [`flask-app/`](flask-app/) · [`streamlit-app/`](streamlit-app/) |
 | **Applied system B** | A retrieval lab with source adapters, normalization, tagging, chunking, Chroma, FastAPI answers, and bounded agents. | [`chapter-10-rag-lab/`](chapter-10-rag-lab/) · [`react-app/pages/chapter-10.tsx`](react-app/pages/chapter-10.tsx) |
+| **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, and data governance. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -73,7 +74,8 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Backend and APIs** | REST endpoints, GraphQL layers, Docker orchestration | 3, 6 |
 | **Frontend and UI** | a Next.js dashboard and a Streamlit teaching surface | 6 |
 | **GenAI and retrieval** | embeddings, vector search, grounded answers, bounded agents | 7–8, 10 |
-| **Data quality** | validation checks and dbt models | 9 |
+| **Data quality** | validation checks, dbt models, and control discipline | 9 |
+| **MDM and governance** | golden records, stewardship, reference domains, hierarchy control | 9.3, 11 |
 | **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
@@ -81,6 +83,8 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 ## Quick Start
 
 If you only have thirty minutes, do the Streamlit route. If you want the repo as a system, run the Docker stack. If you care about retrieval, citations, and agent boundaries, jump straight to Chapter 10.
+
+If you want the sharpest conceptual extension after that, open the public fractal studio. It is the fastest way into the new MDM, governance, and pattern-recognition material.
 
 ### Prerequisites
 
@@ -142,7 +146,15 @@ pip install jupyter
 jupyter notebook
 ```
 
-Chapters 0-5 and 7-10 are self-contained. Chapter 6 requires Docker services (Option B).
+Chapters 0-5 and 7-11 are self-contained. Chapter 6 requires Docker services (Option B).
+
+### Option D: Public Fractal Studio
+
+No local setup required. This is the interactive front door for the new advanced material.
+
+- Live page: [mhdk1602.github.io/python_training/fractals-governance.html](https://mhdk1602.github.io/python_training/fractals-governance.html)
+- Notebook path: [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/)
+- Primer first: [`9.3 Master Data Management and Governance.ipynb`](notebooks/09-data-quality/9.3%20Master%20Data%20Management%20and%20Governance.ipynb)
 
 ## If You Like To Learn By...
 
@@ -151,6 +163,7 @@ Chapters 0-5 and 7-10 are self-contained. Chapter 6 requires Docker services (Op
 | **Shipping something quickly** | `streamlit-app/` | Chapter 6, then Chapter 8 |
 | **Understanding architecture** | Docker stack + `react-app/` | Chapter 6, then Chapter 9 |
 | **Modern GenAI systems** | `chapter-10-rag-lab/` | Chapters 7, 8, and 10 together |
+| **Research-oriented advanced work** | public fractal studio + Chapter 11 notebooks | 9.3, then 11 |
 | **Working from first principles** | Chapters 0–5 notebooks | then whichever product surface you want to dissect |
 
 ---
@@ -312,12 +325,13 @@ From GPT-4 fundamentals to building an Anthropic-powered chatbot with LangChain.
 
 <br>
 
-Validation frameworks and implementing data quality checks with dbt.
+Validation frameworks, implementing data quality checks with dbt, and a primer on master data management and governance.
 
 | # | Topic | Notebook |
 |---|-------|----------|
 | 9.1 | Importance, Techniques & Frameworks | [9.1 Data Quality and Validation.ipynb](notebooks/09-data-quality/9.1%20Data%20Quality%20and%20Validation.ipynb) |
 | 9.2 | Data Quality with dbt | [9.2 DQ - Dbt.ipynb](notebooks/09-data-quality/9.2%20DQ%20-%20Dbt.ipynb) |
+| 9.3 | Master Data Management and Governance | [9.3 Master Data Management and Governance.ipynb](notebooks/09-data-quality/9.3%20Master%20Data%20Management%20and%20Governance.ipynb) |
 
 **Sub-project:** `dbt/dbt_dq/` -- dbt project with NYC taxi data models and custom quality tests.
 
@@ -342,6 +356,24 @@ Build a full retrieval stack with generic contracts, NPS as the worked example, 
 
 **Sub-project:** `chapter-10-rag-lab/` -- FastAPI retrieval lab with source adapters, content tagging, local-first embeddings, grounded answers, and a bounded agent.  
 **Demo route:** `react-app/pages/chapter-10.tsx`
+
+</details>
+
+<details>
+<summary><b>Chapter 11: Fractals, Pattern Recognition, and Governance</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~6 hours</code></summary>
+
+<br>
+
+An advanced lens that starts with Mandelbrot intuition, moves into fractal descriptors for pattern recognition, and ends with a bounded framework for MDM and governance.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 11.1 | Fractals and the Mandelbrot Set | [11.1 Fractals and the Mandelbrot Set.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.1%20Fractals%20and%20the%20Mandelbrot%20Set.ipynb) |
+| 11.2 | Fractal Features for Pattern Recognition | [11.2 Fractal Features for Pattern Recognition.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.2%20Fractal%20Features%20for%20Pattern%20Recognition.ipynb) |
+| 11.3 | Fractals, MDM, and Data Governance | [11.3 Fractals, MDM, and Data Governance.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.3%20Fractals%2C%20MDM%2C%20and%20Data%20Governance.ipynb) |
+
+**Public studio:** [mhdk1602.github.io/python_training/fractals-governance.html](https://mhdk1602.github.io/python_training/fractals-governance.html)  
+**Primer first:** `9.3 Master Data Management and Governance.ipynb`
 
 </details>
 
@@ -381,8 +413,9 @@ python_training/
     06-apis-and-frontend/      # REST, GraphQL, NextJS, chatbot
     07-text-and-embeddings/    # Fuzzy matching, TF-IDF, Elasticsearch
     08-genai-llms/             # GPT-4, Anthropic, LangChain
-    09-data-quality/           # Validation frameworks, dbt
+    09-data-quality/           # Validation frameworks, dbt, MDM, governance
     10-retrieval-systems-and-agents/ # Retrieval systems, tagging, vector stores, agents
+    11-fractals-pattern-recognition-governance/ # Mandelbrot, pattern recognition, governance
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
@@ -397,6 +430,7 @@ python_training/
   react-app/                   # NextJS stock trading dashboard
   flask-app/                   # Flask API + "Ask Warren" chatbot
   chapter-10-rag-lab/          # FastAPI retrieval lab + sample data + docs
+  fractals-governance.html     # Public interactive Mandelbrot + governance teaching page
   postgres/                    # Database Dockerfile & init scripts
   dbt/                         # dbt data quality project
   GraphQL Server/              # Standalone Node.js GraphQL server

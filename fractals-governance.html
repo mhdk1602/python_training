@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fractals, Pattern Recognition, and Governance</title>
+  <meta
+    name="description"
+    content="An interactive Mandelbrot explorer and teaching surface connecting fractals, pattern recognition, MDM, and scale-sensitive data governance."
+  >
+  <meta property="og:title" content="Fractals, Pattern Recognition, and Governance">
+  <meta property="og:description" content="Zoom into the Mandelbrot set, then trace the same ideas into pattern recognition, MDM, and data governance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/fractals-governance.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta property="og:image:alt" content="Fractals and governance teaching page from the Data Engineering with Python repository.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fractals, Pattern Recognition, and Governance">
+  <meta name="twitter:description" content="An interactive Mandelbrot explorer and teaching surface for pattern recognition, MDM, and governance.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/fractals.css">
+</head>
+<body>
+  <div class="fractal-shell">
+    <header class="fractal-header">
+      <a class="fractal-brand" href="index.html">
+        <span class="brand-mark">FR</span>
+        <span class="brand-copy">
+          <strong>Fractals and Governance</strong>
+          <span>advanced teaching studio</span>
+        </span>
+      </a>
+      <nav class="fractal-nav" aria-label="Primary">
+        <a href="#explorer">Explorer</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#scale-lens">Scale Lens</a>
+        <a href="#path">Notebook Path</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">ADVANCED NOTEBOOK CLUSTER</p>
+          <h1>Fractals, pattern recognition, and scale-sensitive governance.</h1>
+          <p class="hero-lead">
+            Start with the Mandelbrot set because it makes recursion, boundary sensitivity, and scale visible. Then move into pattern recognition, MDM, and governance, where the real question is not whether enterprise data is literally fractal, but whether some enterprise objects exhibit enough multi-scale regularity to justify fractal descriptors.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#explorer">Launch explorer</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/11-fractals-pattern-recognition-governance" target="_blank" rel="noreferrer">Open chapter folder</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">4</span>
+              <span class="metric-label">teaching artifacts added</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">advanced notebooks</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">1</span>
+              <span class="metric-label">MDM primer before it</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why Mandelbrot first</p>
+            <h2>The boundary does the teaching.</h2>
+            <p>Recursion is simple. The boundary is not. That is why it works as the front door into scale-sensitive reasoning.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Why governance first</p>
+            <h2>Math needs an enterprise object.</h2>
+            <p>Without MDM, stewardship, hierarchies, and authority, the governance half of the topic feels clever but ungrounded.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="explorer" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">INTERACTIVE EXPLORER</p>
+          <h2>Zoom into the boundary.</h2>
+          <p>Click the canvas to zoom in. Shift-click to zoom out. Use the presets when you want the page to take you somewhere interesting quickly.</p>
+        </div>
+
+        <div class="explorer-grid">
+          <div class="canvas-panel">
+            <canvas id="mandelbrot-canvas" width="900" height="560" aria-label="Interactive Mandelbrot explorer"></canvas>
+            <div class="canvas-caption">
+              <span>Click to zoom in</span>
+              <span>Shift-click to zoom out</span>
+              <span id="render-status">Rendering...</span>
+            </div>
+          </div>
+
+          <aside class="control-panel">
+            <div class="control-block">
+              <p class="control-label">Presets</p>
+              <div class="preset-grid">
+                <button class="preset-button is-active" data-preset="main">Main set</button>
+                <button class="preset-button" data-preset="seahorse">Seahorse valley</button>
+                <button class="preset-button" data-preset="elephant">Elephant valley</button>
+                <button class="preset-button" data-preset="mini">Mini-brot</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="iter-range">Iterations <span id="iter-value">220</span></label>
+              <input id="iter-range" type="range" min="120" max="520" step="20" value="220">
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Palette</p>
+              <div class="palette-row">
+                <button class="palette-button is-active" data-palette="ember">Ember</button>
+                <button class="palette-button" data-palette="moss">Moss</button>
+                <button class="palette-button" data-palette="night">Night</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Live readout</p>
+              <dl class="stat-list">
+                <div><dt>Center</dt><dd id="stat-center">-0.7500, 0.0000</dd></div>
+                <div><dt>Window</dt><dd id="stat-width">3.5000</dd></div>
+                <div><dt>Boundary density</dt><dd id="stat-boundary">--</dd></div>
+                <div><dt>Mean escape</dt><dd id="stat-escape">--</dd></div>
+              </dl>
+            </div>
+
+            <div class="control-block theory-note">
+              <p class="control-label">What to look for</p>
+              <p>As the window narrows, the visual field changes but the structural roughness persists. That persistence across scale is the conceptual bridge into fractal descriptors.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="concepts" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">FROM MATH TO FEATURES</p>
+          <h2>The four ideas that matter.</h2>
+          <p>The point is not to worship the image. The point is to learn what kinds of descriptors become useful once scale itself becomes part of the problem.</p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <h3>Recursion</h3>
+            <p>A very small rule can generate structural complexity that is not obvious from the rule alone.</p>
+          </article>
+          <article class="concept-card">
+            <h3>Boundary sensitivity</h3>
+            <p>Tiny changes near a critical threshold can push a point from bounded behavior into escape.</p>
+          </article>
+          <article class="concept-card">
+            <h3>Scale</h3>
+            <p>What matters is not only the shape, but how the shape behaves as the observation window changes.</p>
+          </article>
+          <article class="concept-card">
+            <h3>Descriptors</h3>
+            <p>Fractal dimension, lacunarity, Hurst-style features, and graph coverings translate those ideas into measurable signals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scale-lens" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">SCALE LENS</p>
+          <h2>How the enterprise version should be taught.</h2>
+          <p>The governance argument only works if the learner can move from field to enterprise without losing the object being governed.</p>
+        </div>
+
+        <div class="lens-grid">
+          <div class="lens-rail" role="tablist" aria-label="Scale lens">
+            <button class="lens-button is-active" data-scale="field">Field</button>
+            <button class="lens-button" data-scale="record">Record</button>
+            <button class="lens-button" data-scale="entity">Entity</button>
+            <button class="lens-button" data-scale="domain">Domain</button>
+            <button class="lens-button" data-scale="enterprise">Enterprise</button>
+          </div>
+
+          <div class="lens-visual" aria-hidden="true">
+            <div class="lens-layer layer-field is-active"></div>
+            <div class="lens-layer layer-record"></div>
+            <div class="lens-layer layer-entity"></div>
+            <div class="lens-layer layer-domain"></div>
+            <div class="lens-layer layer-enterprise"></div>
+          </div>
+
+          <article class="lens-copy">
+            <p class="lens-kicker" id="lens-kicker">Field scale</p>
+            <h3 id="lens-title">Start with one governed attribute.</h3>
+            <p id="lens-body">Examples: null bursts in customer email, inconsistent country codes, unstable product labels, or missing effective dates. At this level the work is about definitions, allowed values, and validation rules.</p>
+            <ul id="lens-points">
+              <li>good candidates: missingness pockets, code drift, sparsity</li>
+              <li>governance move: define a standard and enforce it</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">WHY THE ORDER MATTERS</p>
+          <h2>MDM first, then fractals.</h2>
+          <p>Students need enterprise semantics before they can do anything serious with a scale-sensitive analytical framework.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="path-step">9.3</span>
+            <h3>Master Data Management and Governance</h3>
+            <p>Golden records, reference data, survivorship, hierarchy control, stewardship, authority.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-step">11.1–11.2</span>
+            <h3>Fractal intuition and descriptors</h3>
+            <p>Mandelbrot, scale, box-counting, lacunarity, and pattern-recognition features.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-step">11.3</span>
+            <h3>Scale-sensitive governance</h3>
+            <p>Duplicate clusters, hierarchy irregularity, lineage graphs, stewardship triage, bounded claims.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="path" class="section-block section-block-tight" data-reveal>
+        <div class="closing-panel">
+          <div>
+            <p class="eyebrow">NOTEBOOK PATH</p>
+            <h2>Open the tracked teaching materials.</h2>
+            <p>The notebooks are the formal teaching spine. This page is the front door.</p>
+          </div>
+          <div class="closing-links">
+            <a class="button button-primary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/09-data-quality/9.3%20Master%20Data%20Management%20and%20Governance.ipynb" target="_blank" rel="noreferrer">Open 9.3</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/11-fractals-pattern-recognition-governance" target="_blank" rel="noreferrer">Open Chapter 11</a>
+            <a class="button button-secondary" href="index.html">Back to home</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="site-assets/fractals.js"></script>
+</body>
+</html>
