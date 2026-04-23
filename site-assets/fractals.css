@@ -347,8 +347,16 @@ input {
   gap: 24px;
 }
 
+.case-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 24px;
+}
+
 .canvas-panel,
 .control-panel,
+.case-panel,
+.case-notes,
 .closing-panel,
 .lens-grid {
   border-radius: var(--radius-lg);
@@ -383,6 +391,19 @@ input {
   display: grid;
   gap: 18px;
   padding: 20px;
+}
+
+.case-panel,
+.case-notes {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.case-notes {
+  align-content: start;
 }
 
 .control-block {
@@ -454,6 +475,113 @@ input[type="range"] {
 .stat-list dd {
   margin: 0;
   font-weight: 700;
+}
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.case-stat {
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.case-stat-value {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.case-stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cluster-board {
+  display: grid;
+  gap: 14px;
+}
+
+.cluster-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cluster-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cluster-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cluster-score {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cluster-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.record-pill {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 104px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(239, 206, 138, 0.12), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(239, 206, 138, 0.14);
+}
+
+.record-pill strong {
+  font-size: 0.92rem;
+}
+
+.record-pill span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.record-pill.is-unstable {
+  background: linear-gradient(135deg, rgba(239, 143, 138, 0.14), rgba(255, 255, 255, 0.06));
+  border-color: rgba(239, 143, 138, 0.22);
+}
+
+.review-panel {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.review-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.review-panel ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .theory-note {
@@ -589,13 +717,15 @@ input[type="range"] {
 @media (max-width: 1040px) {
   .hero-grid,
   .explorer-grid,
+  .case-grid,
   .lens-grid,
   .concept-grid,
   .path-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-metrics {
+  .hero-metrics,
+  .case-stats {
     grid-template-columns: 1fr;
   }
 

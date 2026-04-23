@@ -37,6 +37,7 @@
         <a href="#explorer">Explorer</a>
         <a href="#concepts">Concepts</a>
         <a href="#scale-lens">Scale Lens</a>
+        <a href="#case-study">Case Study</a>
         <a href="#path">Notebook Path</a>
         <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
@@ -56,11 +57,11 @@
           </div>
           <div class="hero-metrics">
             <article class="metric-card">
-              <span class="metric-value">4</span>
+              <span class="metric-value">5</span>
               <span class="metric-label">teaching artifacts added</span>
             </article>
             <article class="metric-card">
-              <span class="metric-value">3</span>
+              <span class="metric-value">4</span>
               <span class="metric-label">advanced notebooks</span>
             </article>
             <article class="metric-card">
@@ -233,6 +234,52 @@
         </div>
       </section>
 
+      <section id="case-study" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">ENTERPRISE CASE STUDY</p>
+          <h2>Duplicate clusters at the merge boundary.</h2>
+          <p>Move the threshold by a few points and the entity can change shape. That is the kind of boundary sensitivity governance actually cares about.</p>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-panel">
+            <div class="control-block">
+              <label class="control-label" for="threshold-range">Merge threshold <span id="threshold-value">0.86</span></label>
+              <input id="threshold-range" type="range" min="82" max="94" step="2" value="86">
+            </div>
+
+            <div class="case-stats">
+              <article class="case-stat">
+                <span class="case-stat-value" id="case-clusters">--</span>
+                <span class="case-stat-label">clusters</span>
+              </article>
+              <article class="case-stat">
+                <span class="case-stat-value" id="case-largest">--</span>
+                <span class="case-stat-label">largest cluster</span>
+              </article>
+              <article class="case-stat">
+                <span class="case-stat-value" id="case-review">--</span>
+                <span class="case-stat-label">records to review</span>
+              </article>
+            </div>
+
+            <div class="cluster-board" id="cluster-board" aria-live="polite"></div>
+          </div>
+
+          <aside class="case-notes">
+            <div class="signal-card signal-card-light">
+              <p class="signal-label">Why this matters</p>
+              <h2>Stewardship starts where the threshold stops being boring.</h2>
+              <p>Clean clusters should not consume human time. The unstable cluster should. A small threshold shift that changes membership is a practical sign that the golden record is not yet epistemically settled.</p>
+            </div>
+            <div class="theory-note">
+              <p class="control-label">Notebook pairing</p>
+              <p>Use this page with `11.4 Enterprise Case Study - Duplicate Clusters.ipynb`. The notebook explains the logic in Python. The page makes the decision surface visible.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
       <section id="path" class="section-block section-block-tight" data-reveal>
         <div class="closing-panel">
           <div>
@@ -243,6 +290,7 @@
           <div class="closing-links">
             <a class="button button-primary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/09-data-quality/9.3%20Master%20Data%20Management%20and%20Governance.ipynb" target="_blank" rel="noreferrer">Open 9.3</a>
             <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/11-fractals-pattern-recognition-governance" target="_blank" rel="noreferrer">Open Chapter 11</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/11-fractals-pattern-recognition-governance/11.4%20Enterprise%20Case%20Study%20-%20Duplicate%20Clusters.ipynb" target="_blank" rel="noreferrer">Open 11.4</a>
             <a class="button button-secondary" href="index.html">Back to home</a>
           </div>
         </div>

@@ -11,7 +11,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-46_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-47_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
 [Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html)
@@ -63,7 +63,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Notebook spine** | Python, schema design, storage, processing, streaming, embeddings, LLMs, and quality checks. | [`notebooks/`](notebooks/) |
 | **Applied system A** | A trading product with Next.js, Flask, Hasura, Postgres, Streamlit, and the Ask Warren analysis surface. | [`react-app/`](react-app/) · [`flask-app/`](flask-app/) · [`streamlit-app/`](streamlit-app/) |
 | **Applied system B** | A retrieval lab with source adapters, normalization, tagging, chunking, Chroma, FastAPI answers, and bounded agents. | [`chapter-10-rag-lab/`](chapter-10-rag-lab/) · [`react-app/pages/chapter-10.tsx`](react-app/pages/chapter-10.tsx) |
-| **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, and data governance. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
+| **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, governance, and duplicate-cluster instability. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -76,6 +76,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **GenAI and retrieval** | embeddings, vector search, grounded answers, bounded agents | 7–8, 10 |
 | **Data quality** | validation checks, dbt models, and control discipline | 9 |
 | **MDM and governance** | golden records, stewardship, reference domains, hierarchy control | 9.3, 11 |
+| **Research casework** | threshold-sensitive duplicate clusters and governed entity resolution | 11.4 |
 | **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
@@ -84,7 +85,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 
 If you only have thirty minutes, do the Streamlit route. If you want the repo as a system, run the Docker stack. If you care about retrieval, citations, and agent boundaries, jump straight to Chapter 10.
 
-If you want the sharpest conceptual extension after that, open the public fractal studio. It is the fastest way into the new MDM, governance, and pattern-recognition material.
+If you want the sharpest conceptual extension after that, open the public fractal studio. It is the fastest way into the new MDM, governance, pattern-recognition, and duplicate-cluster case-study material.
 
 ### Prerequisites
 
@@ -163,7 +164,7 @@ No local setup required. This is the interactive front door for the new advanced
 | **Shipping something quickly** | `streamlit-app/` | Chapter 6, then Chapter 8 |
 | **Understanding architecture** | Docker stack + `react-app/` | Chapter 6, then Chapter 9 |
 | **Modern GenAI systems** | `chapter-10-rag-lab/` | Chapters 7, 8, and 10 together |
-| **Research-oriented advanced work** | public fractal studio + Chapter 11 notebooks | 9.3, then 11 |
+| **Research-oriented advanced work** | public fractal studio + Chapter 11 notebooks | 9.3, then 11.1–11.4 |
 | **Working from first principles** | Chapters 0–5 notebooks | then whichever product surface you want to dissect |
 
 ---
@@ -360,17 +361,18 @@ Build a full retrieval stack with generic contracts, NPS as the worked example, 
 </details>
 
 <details>
-<summary><b>Chapter 11: Fractals, Pattern Recognition, and Governance</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~6 hours</code></summary>
+<summary><b>Chapter 11: Fractals, Pattern Recognition, and Governance</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~8 hours</code></summary>
 
 <br>
 
-An advanced lens that starts with Mandelbrot intuition, moves into fractal descriptors for pattern recognition, and ends with a bounded framework for MDM and governance.
+An advanced lens that starts with Mandelbrot intuition, moves into fractal descriptors for pattern recognition, and ends with a bounded framework plus a concrete duplicate-cluster case study for MDM and governance.
 
 | # | Topic | Notebook |
 |---|-------|----------|
 | 11.1 | Fractals and the Mandelbrot Set | [11.1 Fractals and the Mandelbrot Set.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.1%20Fractals%20and%20the%20Mandelbrot%20Set.ipynb) |
 | 11.2 | Fractal Features for Pattern Recognition | [11.2 Fractal Features for Pattern Recognition.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.2%20Fractal%20Features%20for%20Pattern%20Recognition.ipynb) |
 | 11.3 | Fractals, MDM, and Data Governance | [11.3 Fractals, MDM, and Data Governance.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.3%20Fractals%2C%20MDM%2C%20and%20Data%20Governance.ipynb) |
+| 11.4 | Enterprise Case Study - Duplicate Clusters | [11.4 Enterprise Case Study - Duplicate Clusters.ipynb](notebooks/11-fractals-pattern-recognition-governance/11.4%20Enterprise%20Case%20Study%20-%20Duplicate%20Clusters.ipynb) |
 
 **Public studio:** [mhdk1602.github.io/python_training/fractals-governance.html](https://mhdk1602.github.io/python_training/fractals-governance.html)  
 **Primer first:** `9.3 Master Data Management and Governance.ipynb`

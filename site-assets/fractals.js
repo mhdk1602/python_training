@@ -74,6 +74,29 @@ const lensContent = {
   },
 };
 
+const caseRecords = {
+  R1: { name: "Acme Health", source: "crm" },
+  R2: { name: "ACME Health Inc", source: "erp" },
+  R3: { name: "Acme Health", source: "support" },
+  R4: { name: "Northwind Labs", source: "crm" },
+  R5: { name: "Northwind Laboratories", source: "erp" },
+  R6: { name: "North Wind Labs", source: "partner" },
+  R7: { name: "Riverstone Foods", source: "crm" },
+  R8: { name: "River Stone Food Group", source: "support" },
+};
+
+const caseEdges = [
+  { left: "R1", right: "R2", score: 0.94 },
+  { left: "R1", right: "R3", score: 0.89 },
+  { left: "R2", right: "R3", score: 0.85 },
+  { left: "R4", right: "R5", score: 0.96 },
+  { left: "R4", right: "R6", score: 0.84 },
+  { left: "R5", right: "R6", score: 0.82 },
+  { left: "R7", right: "R8", score: 0.87 },
+];
+
+const caseThresholds = [0.82, 0.84, 0.86, 0.88, 0.9, 0.94];
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -97,6 +120,12 @@ const statCenter = document.getElementById("stat-center");
 const statWidth = document.getElementById("stat-width");
 const statBoundary = document.getElementById("stat-boundary");
 const statEscape = document.getElementById("stat-escape");
+const thresholdRange = document.getElementById("threshold-range");
+const thresholdValue = document.getElementById("threshold-value");
+const caseClusters = document.getElementById("case-clusters");
+const caseLargest = document.getElementById("case-largest");
+const caseReview = document.getElementById("case-review");
+const clusterBoard = document.getElementById("cluster-board");
 
 let state = {
   centerX: presets.main.centerX,
@@ -293,3 +322,127 @@ document.querySelectorAll(".lens-button").forEach((button) => {
 });
 
 renderMandelbrot();
+
+function buildClusters(threshold) {
+  const ids = Object.keys(caseRecords);
+  const parent = Object.fromEntries(ids.map((id) => [id, id]));
+
+  const find = (id) => {
+    while (parent[id] !== id) {
+      parent[id] = parent[parent[id]];
+      id = parent[id];
+    }
+    return id;
+  };
+
+  const union = (left, right) => {
+    const leftRoot = find(left);
+    const rightRoot = find(right);
+    if (leftRoot !== rightRoot) {
+      parent[rightRoot] = leftRoot;
+    }
+  };
+
+  caseEdges.forEach((edge) => {
+    if (edge.score >= threshold) {
+      union(edge.left, edge.right);
+    }
+  });
+
+  const clusters = new Map();
+  ids.forEach((id) => {
+    const root = find(id);
+    if (!clusters.has(root)) {
+      clusters.set(root, []);
+    }
+    clusters.get(root).push(id);
+  });
+
+  return Array.from(clusters.values()).sort((a, b) => b.length - a.length || a[0].localeCompare(b[0]));
+}
+
+function clusterSignature(recordId) {
+  return caseThresholds
+    .map((threshold) => {
+      const clusters = buildClusters(threshold);
+      const clusterIndex = clusters.findIndex((cluster) => cluster.includes(recordId));
+      return `C${clusterIndex + 1}`;
+    })
+    .join("|");
+}
+
+const unstableRecords = Object.keys(caseRecords).filter((recordId) => {
+  const signature = clusterSignature(recordId).split("|");
+  return new Set(signature).size > 1;
+});
+
+function relevantScoreRange(cluster) {
+  const values = caseEdges
+    .filter((edge) => cluster.includes(edge.left) || cluster.includes(edge.right))
+    .map((edge) => edge.score);
+
+  if (!values.length) {
+    return "isolated";
+  }
+
+  return `${Math.min(...values).toFixed(2)}–${Math.max(...values).toFixed(2)}`;
+}
+
+function renderCaseStudy() {
+  if (!thresholdRange || !clusterBoard) {
+    return;
+  }
+
+  const threshold = Number(thresholdRange.value) / 100;
+  const clusters = buildClusters(threshold);
+  const largestCluster = Math.max(...clusters.map((cluster) => cluster.length));
+  const visibleReviewSet = new Set(
+    unstableRecords.filter((recordId) => {
+      const cluster = clusters.find((entry) => entry.includes(recordId));
+      return cluster && cluster.length > 1;
+    })
+  );
+
+  thresholdValue.textContent = threshold.toFixed(2);
+  caseClusters.textContent = String(clusters.length);
+  caseLargest.textContent = String(largestCluster);
+  caseReview.textContent = String(visibleReviewSet.size);
+
+  const clusterCards = clusters
+    .map((cluster, index) => {
+      const members = cluster
+        .map((recordId) => {
+          const record = caseRecords[recordId];
+          const unstable = visibleReviewSet.has(recordId) ? " is-unstable" : "";
+          return `<div class="record-pill${unstable}"><strong>${recordId}</strong><span>${record.name}</span><span>${record.source}</span></div>`;
+        })
+        .join("");
+
+      return `
+        <section class="cluster-card">
+          <header>
+            <h3>Cluster C${index + 1}</h3>
+            <span class="cluster-score">score band ${relevantScoreRange(cluster)}</span>
+          </header>
+          <div class="cluster-members">${members}</div>
+        </section>
+      `;
+    })
+    .join("");
+
+  const reviewItems = Array.from(visibleReviewSet)
+    .map((recordId) => `<li><strong>${recordId}</strong> changes cluster membership across nearby thresholds.</li>`)
+    .join("");
+
+  clusterBoard.innerHTML = `
+    ${clusterCards}
+    <section class="review-panel">
+      <h3>Stewardship queue</h3>
+      ${reviewItems ? `<ul>${reviewItems}</ul>` : "<p>No unstable records at this threshold.</p>"}
+    </section>
+  `;
+}
+
+thresholdRange?.addEventListener("input", renderCaseStudy);
+
+renderCaseStudy();
