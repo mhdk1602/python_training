@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Embeddings to Vector Stores</title>
+  <meta
+    name="description"
+    content="An interactive bridge page showing how embeddings become vector search and then retrieval-ready results."
+  >
+  <meta property="og:title" content="Embeddings to Vector Stores">
+  <meta property="og:description" content="Move a query through embedding space, watch nearest neighbors change, and see why metadata filters matter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/embeddings-bridge.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Embeddings to Vector Stores">
+  <meta name="twitter:description" content="An interactive bridge page for embeddings, vector stores, and retrieval.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/embeddings-bridge.css">
+</head>
+<body>
+  <div class="bridge-shell">
+    <header class="bridge-header">
+      <a class="bridge-brand" href="index.html">
+        <span class="brand-mark">VS</span>
+        <span class="brand-copy">
+          <strong>Embeddings to Vector Stores</strong>
+          <span>bridge studio</span>
+        </span>
+      </a>
+      <nav class="bridge-nav" aria-label="Primary">
+        <a href="#map">Map</a>
+        <a href="#bridge">Bridge</a>
+        <a href="#path">Notebook Path</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">MISSING BRIDGE FILLED</p>
+          <h1>From embeddings to vector stores to retrieval-ready results.</h1>
+          <p class="hero-lead">
+            The repo already taught embeddings and later built a retrieval system. What it did not show cleanly enough was the middle: how vectors become an index, how metadata changes the candidate pool, and how ranked results become citation-ready payloads.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#map">Open the map</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/07-text-and-embeddings" target="_blank" rel="noreferrer">Open Chapter 7</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">2</span>
+              <span class="metric-label">bridge notebooks added</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">1</span>
+              <span class="metric-label">interactive map</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">concept steps</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Assessment</p>
+            <h2>The repo covered the endpoints, not the middle.</h2>
+            <p>Chapter 7 taught embeddings. Chapter 10 built retrieval. The contract between them needed a dedicated explanation.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">What this page does</p>
+            <h2>Show ranking, then show filtered ranking.</h2>
+            <p>Move the query, change the filter, adjust top-k, and watch the candidate pool and nearest neighbors update live.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="map" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">EMBEDDING MAP</p>
+          <h2>Drag the query through the space.</h2>
+          <p>The circles are chunk embeddings. The gold point is the query. The results panel shows raw semantic ranking beside the filtered ranking.</p>
+        </div>
+
+        <div class="map-grid">
+          <div class="map-panel">
+            <svg id="embedding-map" viewBox="0 0 700 440" role="img" aria-label="Embedding map with draggable query"></svg>
+            <div class="map-caption">
+              <span>Drag the gold query point</span>
+              <span>Dimmed points are excluded by the active filter</span>
+            </div>
+          </div>
+
+          <aside class="control-panel">
+            <div class="control-block">
+              <p class="control-label">Query presets</p>
+              <div class="chip-row">
+                <button class="chip-button is-active" data-query="parks">accessible trail</button>
+                <button class="chip-button" data-query="finance">portfolio risk</button>
+                <button class="chip-button" data-query="governance">golden record</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="domain-filter">Metadata filter</label>
+              <select id="domain-filter">
+                <option value="all">all domains</option>
+                <option value="parks">parks</option>
+                <option value="finance">finance</option>
+                <option value="governance">governance</option>
+              </select>
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="topk-range">Top k <span id="topk-value">3</span></label>
+              <input id="topk-range" type="range" min="1" max="5" step="1" value="3">
+            </div>
+
+            <div class="metric-strip">
+              <article class="mini-metric">
+                <span id="candidate-count">--</span>
+                <small>filtered candidates</small>
+              </article>
+              <article class="mini-metric">
+                <span id="semantic-top">--</span>
+                <small>top semantic hit</small>
+              </article>
+              <article class="mini-metric">
+                <span id="filtered-top">--</span>
+                <small>top filtered hit</small>
+              </article>
+            </div>
+          </aside>
+        </div>
+
+        <div class="result-grid">
+          <section class="result-panel">
+            <header>
+              <p class="signal-label">Semantic only</p>
+              <h3>Nearest neighbors before filtering</h3>
+            </header>
+            <div id="semantic-results" class="result-list"></div>
+          </section>
+          <section class="result-panel">
+            <header>
+              <p class="signal-label">Filtered</p>
+              <h3>Nearest neighbors after metadata</h3>
+            </header>
+            <div id="filtered-results" class="result-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="bridge" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">THE BRIDGE</p>
+          <h2>Three things the old sequence left implicit.</h2>
+          <p>These are the concepts that learners need in hand before Chapter 10 becomes straightforward.</p>
+        </div>
+
+        <div class="bridge-grid">
+          <article class="bridge-card">
+            <h3>Embeddings are not retrieval</h3>
+            <p>An embedding is just a vector until it stays attached to a chunk, an ID, and metadata.</p>
+          </article>
+          <article class="bridge-card">
+            <h3>Vector stores are contracts</h3>
+            <p>The backend matters less than the contract: insert vectors, search by similarity, preserve metadata, return ranked results.</p>
+          </article>
+          <article class="bridge-card">
+            <h3>Ranking is not enough</h3>
+            <p>To become retrieval, the result still needs a snippet, a parent document, and enough structure to support filtering and later citation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="path" class="section-block section-block-tight" data-reveal>
+        <div class="closing-panel">
+          <div>
+            <p class="eyebrow">NOTEBOOK PATH</p>
+            <h2>Use the bridge notebooks before Chapter 10.</h2>
+            <p>The new sequence is simple: embeddings, vector stores, retrieval bridge, then the retrieval capstone.</p>
+          </div>
+          <div class="closing-links">
+            <a class="button button-primary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/07-text-and-embeddings/7.4%20Vector%20Stores%20and%20Similarity%20Search.ipynb" target="_blank" rel="noreferrer">Open 7.4</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/07-text-and-embeddings/7.5%20Chunking%2C%20Metadata%2C%20and%20Retrieval%20Bridges.ipynb" target="_blank" rel="noreferrer">Open 7.5</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/10-retrieval-systems-and-agents" target="_blank" rel="noreferrer">Open Chapter 10</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="site-assets/embeddings-bridge.js"></script>
+</body>
+</html>
