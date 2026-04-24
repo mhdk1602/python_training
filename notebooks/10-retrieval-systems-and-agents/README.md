@@ -2,6 +2,7 @@
 
 These notebooks form the applied retrieval capstone:
 
+- `10.0 Retrieval Evaluation, Hybrid Search, and Reranking.ipynb`
 - `10.1 System Frame.ipynb`
 - `10.2 Source Adapters and Ingestion.ipynb`
 - `10.3 Content Normalization and Tagging.ipynb`

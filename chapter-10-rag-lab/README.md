@@ -59,6 +59,7 @@ The API will be available at `http://localhost:8001`, and the demo surface at `h
 
 | Chapter | Deliverable | Files |
 |---|---|---|
+| 10.0 | retrieval evaluation, hybrid search, reranking | `notebooks/10-retrieval-systems-and-agents/10.0 Retrieval Evaluation, Hybrid Search, and Reranking.ipynb` |
 | 10.1 | system frame, contracts, glossary | `docs/system-memo.md`, `notebooks/10-retrieval-systems-and-agents/10.1 System Frame.ipynb` |
 | 10.2 | source adapters and ingestion | `rag_lab/adapters.py`, `rag_lab/service.py` |
 | 10.3 | normalization and tagging | `rag_lab/normalizer.py`, `rag_lab/tagging.py` |

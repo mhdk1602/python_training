@@ -11,7 +11,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-49_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-50_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
 [Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html)
@@ -74,7 +74,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Python and data engineering** | data pipelines, schema thinking, storage patterns | 0–5 |
 | **Backend and APIs** | REST endpoints, GraphQL layers, Docker orchestration | 3, 6 |
 | **Frontend and UI** | a Next.js dashboard and a Streamlit teaching surface | 6 |
-| **GenAI and retrieval** | embeddings, vector search, grounded answers, bounded agents | 7.1–7.5, 8, 10 |
+| **GenAI and retrieval** | embeddings, vector search, retrieval evaluation, grounded answers, bounded agents | 7.1–7.5, 8, 10 |
 | **Data quality** | validation checks, dbt models, and control discipline | 9 |
 | **MDM and governance** | golden records, stewardship, reference domains, hierarchy control | 9.3, 11 |
 | **Research casework** | threshold-sensitive duplicate clusters and governed entity resolution | 11.4 |
@@ -130,6 +130,8 @@ docker compose up -d
 ### Option C: Retrieval Systems Capstone
 
 Run the Chapter 10 retrieval lab with its own FastAPI service and the dedicated Next.js teaching surface.
+
+Start with `10.0` if you want the cleanest introduction to hybrid search, reranking, and retrieval evaluation before the larger capstone system.
 
 ```bash
 cd python_training/chapter-10-rag-lab
@@ -356,10 +358,11 @@ Validation frameworks, implementing data quality checks with dbt, and a primer o
 
 <br>
 
-Build a full retrieval stack with generic contracts, NPS as the worked example, and a separate modern UI for tracing answers back to evidence.
+Build a full retrieval stack with generic contracts, NPS as the worked example, and a separate modern UI for tracing answers back to evidence. The chapter now opens with a retrieval-evaluation prelude so ranking quality is explicit before answer synthesis starts.
 
 | # | Topic | Notebook |
 |---|-------|----------|
+| 10.0 | Retrieval Evaluation, Hybrid Search, and Reranking | [10.0 Retrieval Evaluation, Hybrid Search, and Reranking.ipynb](notebooks/10-retrieval-systems-and-agents/10.0%20Retrieval%20Evaluation%2C%20Hybrid%20Search%2C%20and%20Reranking.ipynb) |
 | 10.1 | System Frame: From Raw Content to Answer | [10.1 System Frame.ipynb](notebooks/10-retrieval-systems-and-agents/10.1%20System%20Frame.ipynb) |
 | 10.2 | Source Adapters and Ingestion | [10.2 Source Adapters and Ingestion.ipynb](notebooks/10-retrieval-systems-and-agents/10.2%20Source%20Adapters%20and%20Ingestion.ipynb) |
 | 10.3 | Content Normalization and Tagging | [10.3 Content Normalization and Tagging.ipynb](notebooks/10-retrieval-systems-and-agents/10.3%20Content%20Normalization%20and%20Tagging.ipynb) |
