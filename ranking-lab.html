@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ranking Lab</title>
+  <meta
+    name="description"
+    content="An interactive ranking lab for semantic search, lexical overlap, hybrid scoring, and reranking."
+  >
+  <meta property="og:title" content="Ranking Lab">
+  <meta property="og:description" content="Adjust semantic and lexical weights, add reranking bonuses, and watch retrieval winners change live.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/ranking-lab.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ranking Lab">
+  <meta name="twitter:description" content="An interactive retrieval ranking lab for hybrid search and reranking.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/ranking-lab.css">
+</head>
+<body>
+  <div class="rank-shell">
+    <header class="rank-header">
+      <a class="rank-brand" href="embeddings-bridge.html">
+        <span class="brand-mark">RL</span>
+        <span class="brand-copy">
+          <strong>Ranking Lab</strong>
+          <span>retrieval scoring studio</span>
+        </span>
+      </a>
+      <nav class="rank-nav" aria-label="Primary">
+        <a href="#lab">Lab</a>
+        <a href="#flow">Flow</a>
+        <a href="#path">Notebook Path</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">RETRIEVAL PRELUDE</p>
+          <h1>Watch the winner change before the answer exists.</h1>
+          <p class="hero-lead">
+            This page is the missing scoring surface between vector search and grounded answers. Adjust semantic weight, lexical overlap, metadata bonuses, and reranking logic. The result is immediate: different chunks rise or fall before any prose is generated.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#lab">Open the lab</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/10-retrieval-systems-and-agents/10.0%20Retrieval%20Evaluation%2C%20Hybrid%20Search%2C%20and%20Reranking.ipynb" target="_blank" rel="noreferrer">Open 10.0</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">4</span>
+              <span class="metric-label">ranking stages</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">query presets</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">1</span>
+              <span class="metric-label">prelude notebook</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why this page exists</p>
+            <h2>Ranking deserves its own room.</h2>
+            <p>The earlier repo had embeddings and later had answers. What it needed in between was a visible scoring process that could be inspected, tuned, and argued with.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">What to watch</p>
+            <h2>Top-1 can look fine while top-3 stays weak.</h2>
+            <p>That is why the page shows stage winners and the full candidate board together. You need both to judge whether retrieval is actually improving.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="lab" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">INTERACTIVE LAB</p>
+          <h2>Blend semantic, lexical, and rerank signals.</h2>
+          <p>Use the query presets to change the scenario. Then adjust the weights and see how the top result, top-3 precision, and full ranking shift.</p>
+        </div>
+
+        <div class="lab-grid">
+          <aside class="control-panel">
+            <div class="control-block">
+              <p class="control-label">Query preset</p>
+              <div class="chip-row">
+                <button class="chip-button is-active" data-query="parks">accessible stop</button>
+                <button class="chip-button" data-query="finance">portfolio risk</button>
+                <button class="chip-button" data-query="governance">golden record</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="semantic-range">Semantic weight <span id="semantic-value">0.70</span></label>
+              <input id="semantic-range" type="range" min="0.1" max="0.9" step="0.05" value="0.7">
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="lexical-range">Lexical weight <span id="lexical-value">0.30</span></label>
+              <input id="lexical-range" type="range" min="0.1" max="0.9" step="0.05" value="0.3">
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="rerank-range">Rerank bonus scale <span id="rerank-value">1.00</span></label>
+              <input id="rerank-range" type="range" min="0" max="1.5" step="0.05" value="1">
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="domain-filter">Metadata filter</label>
+              <select id="domain-filter">
+                <option value="all">all domains</option>
+                <option value="parks">parks</option>
+                <option value="finance">finance</option>
+                <option value="governance">governance</option>
+              </select>
+            </div>
+
+            <div class="metric-strip">
+              <article class="mini-metric">
+                <span id="semantic-winner">--</span>
+                <small>semantic winner</small>
+              </article>
+              <article class="mini-metric">
+                <span id="hybrid-winner">--</span>
+                <small>hybrid winner</small>
+              </article>
+              <article class="mini-metric">
+                <span id="rerank-winner">--</span>
+                <small>rerank winner</small>
+              </article>
+            </div>
+          </aside>
+
+          <div class="stage-panel">
+            <div class="stage-ribbon">
+              <div class="stage-pill">
+                <span class="stage-name">Semantic</span>
+                <strong id="semantic-precision">--</strong>
+                <small>precision@3</small>
+              </div>
+              <div class="stage-pill">
+                <span class="stage-name">Hybrid</span>
+                <strong id="hybrid-precision">--</strong>
+                <small>precision@3</small>
+              </div>
+              <div class="stage-pill">
+                <span class="stage-name">Reranked</span>
+                <strong id="rerank-precision">--</strong>
+                <small>precision@3</small>
+              </div>
+            </div>
+
+            <div id="candidate-board" class="candidate-board"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="flow" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">WHAT WE HAVE ESTABLISHED</p>
+          <h2>The repo now has a full path from vectors to grounded answers.</h2>
+          <p>These are no longer disconnected topics. They now form a teaching sequence with visible handoffs.</p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <h3>Embeddings</h3>
+            <p>Vectors encode position in a learned space, but they are not retrieval by themselves.</p>
+          </article>
+          <article class="flow-card">
+            <h3>Vector stores</h3>
+            <p>Vectors need IDs, metadata, and a search contract so ranking stays attached to something usable.</p>
+          </article>
+          <article class="flow-card">
+            <h3>Retrieval evaluation</h3>
+            <p>Semantic, lexical, hybrid, and rerank stages should be inspectable before the answer layer hides mistakes.</p>
+          </article>
+          <article class="flow-card">
+            <h3>Grounded answers</h3>
+            <p>Only after ranking is credible does citation-backed answer synthesis become worth trusting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="path" class="section-block section-block-tight" data-reveal>
+        <div class="closing-panel">
+          <div>
+            <p class="eyebrow">NEXT PATH</p>
+            <h2>Use this with the bridge notebooks and Chapter 10.</h2>
+            <p>The recommended path is `7.4`, `7.5`, `10.0`, then the rest of Chapter 10.</p>
+          </div>
+          <div class="closing-links">
+            <a class="button button-primary" href="embeddings-bridge.html">Back to embeddings bridge</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/10-retrieval-systems-and-agents/10.0%20Retrieval%20Evaluation%2C%20Hybrid%20Search%2C%20and%20Reranking.ipynb" target="_blank" rel="noreferrer">Open 10.0</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/10-retrieval-systems-and-agents" target="_blank" rel="noreferrer">Open Chapter 10</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="site-assets/ranking-lab.js"></script>
+</body>
+</html>
