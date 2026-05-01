@@ -26,3 +26,7 @@ node_modules/
 # Streamlit
 streamlit-app/portfolio.db
 streamlit-app/.venv/
+
+# Chapter-12 local venv (Fractal Graphs)
+.venv-ch12/
+notebooks/12-fractal-graphs/.venv/

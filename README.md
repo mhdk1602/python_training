@@ -11,10 +11,10 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-50_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-58_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html)
 
 </div>
 
@@ -65,6 +65,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Applied system A** | A trading product with Next.js, Flask, Hasura, Postgres, Streamlit, and the Ask Warren analysis surface. | [`react-app/`](react-app/) · [`flask-app/`](flask-app/) · [`streamlit-app/`](streamlit-app/) |
 | **Applied system B** | A retrieval lab with source adapters, normalization, tagging, chunking, Chroma, FastAPI answers, and bounded agents. | [`chapter-10-rag-lab/`](chapter-10-rag-lab/) · [`react-app/pages/chapter-10.tsx`](react-app/pages/chapter-10.tsx) |
 | **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, governance, and duplicate-cluster instability. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
+| **Fractal graphs studio** | Eight notebooks and an interactive page that walk three bridges: visibility graphs from time series, box-covering on networks, and lineage as a stewardship object. Closes with the failure-modes notebook. | [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/) · [`fractal-graphs.html`](fractal-graphs.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -77,7 +78,9 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **GenAI and retrieval** | embeddings, vector search, retrieval evaluation, grounded answers, bounded agents | 7.1–7.5, 8, 10 |
 | **Data quality** | validation checks, dbt models, and control discipline | 9 |
 | **MDM and governance** | golden records, stewardship, reference domains, hierarchy control | 9.3, 11 |
-| **Research casework** | threshold-sensitive duplicate clusters and governed entity resolution | 11.4 |
+| **Research casework** | threshold-sensitive duplicate clusters and governed entity resolution | 11.4, 12.6 |
+| **Network science** | visibility graphs, box-covering on networks, skeleton extraction, renormalization | 12.1–12.4 |
+| **Lineage and stewardship** | data lineage as a graph, fault propagation, blast-radius descriptors | 12.5 |
 | **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
@@ -169,6 +172,14 @@ No local setup required. This is the new bridge between the embeddings notebooks
 - Live page: [mhdk1602.github.io/python_training/embeddings-bridge.html](https://mhdk1602.github.io/python_training/embeddings-bridge.html)
 - Bridge notebooks: [`7.4 Vector Stores and Similarity Search.ipynb`](notebooks/07-text-and-embeddings/7.4%20Vector%20Stores%20and%20Similarity%20Search.ipynb) and [`7.5 Chunking, Metadata, and Retrieval Bridges.ipynb`](notebooks/07-text-and-embeddings/7.5%20Chunking%2C%20Metadata%2C%20and%20Retrieval%20Bridges.ipynb)
 
+### Option F: Fractal Graphs Studio
+
+The Chapter 12 front door. Three working labs: a visibility-graph builder you can drag-edit, a box-covering visualizer with a stable-vs-unstable slope readout, and a lineage-risk panel that ranks stewardship priorities by blast radius.
+
+- Live page: [mhdk1602.github.io/python_training/fractal-graphs.html](https://mhdk1602.github.io/python_training/fractal-graphs.html)
+- Notebook path: [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/)
+- Reads after Chapter 11. Requires `networkx`, `python-louvain`, `powerlaw` (chapter-local `requirements.txt`)
+
 ## If You Like To Learn By...
 
 | Learning style | Start here | Then go next |
@@ -178,6 +189,7 @@ No local setup required. This is the new bridge between the embeddings notebooks
 | **Modern GenAI systems** | `chapter-10-rag-lab/` | Chapters 7, 8, and 10 together |
 | **Understanding vector search** | public embeddings bridge + Chapter 7 notebooks | 7.1–7.5, then 10 |
 | **Research-oriented advanced work** | public fractal studio + Chapter 11 notebooks | 9.3, then 11.1–11.4 |
+| **Network science and graph fractals** | public fractal-graphs studio + Chapter 12 notebooks | 11, then 12.0–12.7 |
 | **Working from first principles** | Chapters 0–5 notebooks | then whichever product surface you want to dissect |
 
 ---
@@ -395,6 +407,31 @@ An advanced lens that starts with Mandelbrot intuition, moves into fractal descr
 
 </details>
 
+<details>
+<summary><b>Chapter 12: Fractal Graphs</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~10 hours</code></summary>
+
+<br>
+
+A graph-theoretic extension of Chapter 11. Three formal bridges (time series to graph, image to graph, governance to graph), eight notebooks, and a public studio page with three interactive labs. The closing notebook names the four failure modes so the descriptors do not get oversold.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 12.0 | Why Graphs Deserve a Fractal Lens | [12.0 Why Graphs Deserve a Fractal Lens.ipynb](notebooks/12-fractal-graphs/12.0%20Why%20Graphs%20Deserve%20a%20Fractal%20Lens.ipynb) |
+| 12.1 | Graphs as the Next Geometry | [12.1 Graphs as the Next Geometry.ipynb](notebooks/12-fractal-graphs/12.1%20Graphs%20as%20the%20Next%20Geometry.ipynb) |
+| 12.2 | Visibility Graphs from Time Series | [12.2 Visibility Graphs from Time Series.ipynb](notebooks/12-fractal-graphs/12.2%20Visibility%20Graphs%20from%20Time%20Series.ipynb) |
+| 12.3 | Box Covering on Graphs | [12.3 Box Covering on Graphs.ipynb](notebooks/12-fractal-graphs/12.3%20Box%20Covering%20on%20Graphs.ipynb) |
+| 12.4 | Skeletons, Hubs, and Renormalization | [12.4 Skeletons, Hubs, and Renormalization.ipynb](notebooks/12-fractal-graphs/12.4%20Skeletons%2C%20Hubs%2C%20and%20Renormalization.ipynb) |
+| 12.5 | Lineage Graphs and Fault Propagation | [12.5 Lineage Graphs and Fault Propagation.ipynb](notebooks/12-fractal-graphs/12.5%20Lineage%20Graphs%20and%20Fault%20Propagation.ipynb) |
+| 12.6 | Entity Resolution Revisited as a Graph | [12.6 Entity Resolution Revisited as a Graph.ipynb](notebooks/12-fractal-graphs/12.6%20Entity%20Resolution%20Revisited%20as%20a%20Graph.ipynb) |
+| 12.7 | When Fractal Descriptors Mislead on Graphs | [12.7 When Fractal Descriptors Mislead on Graphs.ipynb](notebooks/12-fractal-graphs/12.7%20When%20Fractal%20Descriptors%20Mislead%20on%20Graphs.ipynb) |
+
+**Public studio:** [mhdk1602.github.io/python_training/fractal-graphs.html](https://mhdk1602.github.io/python_training/fractal-graphs.html)  
+**Reads after:** Chapter 11.  
+**Chapter-local deps:** `networkx>=3.2`, `python-louvain>=0.16`, `powerlaw>=1.5` ([`requirements.txt`](notebooks/12-fractal-graphs/requirements.txt))  
+**Citations grounding the chapter:** Song-Havlin-Makse (2005), Lacasa et al. (2008), Skums-Bunimovich (2020), Hari (2026, Zenodo).
+
+</details>
+
 ---
 
 ## Tech Stack
@@ -434,6 +471,7 @@ python_training/
     09-data-quality/           # Validation frameworks, dbt, MDM, governance
     10-retrieval-systems-and-agents/ # Retrieval systems, tagging, vector stores, agents
     11-fractals-pattern-recognition-governance/ # Mandelbrot, pattern recognition, governance
+    12-fractal-graphs/         # Fractal graphs: visibility, box-covering, lineage, ER upgrade
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
@@ -449,6 +487,7 @@ python_training/
   flask-app/                   # Flask API + "Ask Warren" chatbot
   chapter-10-rag-lab/          # FastAPI retrieval lab + sample data + docs
   fractals-governance.html     # Public interactive Mandelbrot + governance teaching page
+  fractal-graphs.html          # Public interactive fractal-graphs studio (three labs)
   postgres/                    # Database Dockerfile & init scripts
   dbt/                         # dbt data quality project
   GraphQL Server/              # Standalone Node.js GraphQL server
