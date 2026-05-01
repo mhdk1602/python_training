@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fractal Graphs Studio</title>
+  <meta
+    name="description"
+    content="An interactive teaching surface for visibility graphs, box-covering on networks, and lineage-graph risk analysis."
+  >
+  <meta property="og:title" content="Fractal Graphs Studio">
+  <meta property="og:description" content="Three interactive labs that link fractals and graphs: visibility, box-covering, and lineage risk.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/fractal-graphs.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta property="og:image:alt" content="Fractal Graphs studio page from the Data Engineering with Python repository.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fractal Graphs Studio">
+  <meta name="twitter:description" content="Visibility graphs, box-covering on networks, and lineage-graph risk in three interactive labs.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/fractal-graphs.css">
+</head>
+<body>
+  <div class="graphs-shell">
+    <header class="graphs-header">
+      <a class="graphs-brand" href="index.html">
+        <span class="brand-mark">FG</span>
+        <span class="brand-copy">
+          <strong>Fractal Graphs</strong>
+          <span>advanced teaching studio</span>
+        </span>
+      </a>
+      <nav class="graphs-nav" aria-label="Primary">
+        <a href="#visibility">Visibility</a>
+        <a href="#box-covering">Box covering</a>
+        <a href="#lineage">Lineage risk</a>
+        <a href="#path">Notebook path</a>
+        <a href="fractals-governance.html">Fractals studio</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">CHAPTER 12 STUDIO</p>
+          <h1>Fractals on graphs, taught through three working labs.</h1>
+          <p class="hero-lead">
+            Chapter 11 used pictures and time series. Most enterprise objects worth governing are graphs already: lineage, entity match, hierarchy, dependency. This page walks across the same scale-sensitive descriptors on a different geometry. Sketch a series and see its visibility graph. Pick a network and see its box covers. Click a lineage node and see what breaks downstream.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#visibility">Open the labs</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/12-fractal-graphs" target="_blank" rel="noreferrer">Open chapter folder</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">8</span>
+              <span class="metric-label">notebooks in the cluster</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">interactive labs</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">2</span>
+              <span class="metric-label">canonical bridges</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why visibility graphs</p>
+            <h2>A time series is a graph in disguise.</h2>
+            <p>The visibility map sees what DFA never quite shows. Periodic series become regular graphs. Random series become exponential graphs. Fractal series become scale-free.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Why box covering</p>
+            <h2>The same idea as 11.1, on a different geometry.</h2>
+            <p>Box-counting on a graph uses shortest-path distance instead of pixel grid. The slope means something only when it stays stable across scales.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="visibility" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 1: VISIBILITY GRAPH</p>
+          <h2>Sketch a series. Watch the graph form.</h2>
+          <p>The bars on the left are your series. The graph on the right links any two bars whose tops can see each other without an intermediate bar blocking the line of sight. Toggle a preset, drag a bar, or randomize.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="series-canvas" viewBox="0 0 720 320" role="img" aria-label="Time series sketch panel"></svg>
+            <div class="canvas-caption">
+              <span>Drag a bar to reshape the series</span>
+              <span id="series-status">ready</span>
+            </div>
+          </div>
+
+          <div class="lab-canvas-panel">
+            <svg id="vg-canvas" viewBox="0 0 720 320" role="img" aria-label="Visibility graph view"></svg>
+            <div class="canvas-caption">
+              <span>Edges connect bars with line-of-sight</span>
+              <span id="vg-status"></span>
+            </div>
+          </div>
+
+          <aside class="lab-side">
+            <div class="control-block">
+              <p class="control-label">Series presets</p>
+              <div class="preset-grid">
+                <button class="preset-button is-active" data-series="periodic">Periodic</button>
+                <button class="preset-button" data-series="random">Random</button>
+                <button class="preset-button" data-series="trend">With trend</button>
+                <button class="preset-button" data-series="fbm">fBm-like</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Live readout</p>
+              <dl class="stat-list">
+                <div><dt>Bars</dt><dd id="vg-stat-n">--</dd></div>
+                <div><dt>Edges</dt><dd id="vg-stat-edges">--</dd></div>
+                <div><dt>Mean degree</dt><dd id="vg-stat-mean">--</dd></div>
+                <div><dt>Max degree (hub)</dt><dd id="vg-stat-max">--</dd></div>
+                <div><dt>Regime guess</dt><dd id="vg-stat-regime">--</dd></div>
+              </dl>
+            </div>
+
+            <div class="control-block theory-note">
+              <p class="control-label">What to look for</p>
+              <p>The periodic preset gives a regular graph. The random preset gives short-tailed degrees. The fBm-like preset produces a long tail. The trend preset moves hub mass toward one end of the series.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="box-covering" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 2: BOX COVERING</p>
+          <h2>Pick a network. Watch boxes light up at every scale.</h2>
+          <p>For each box size, every node belongs to exactly one box. The number of boxes shrinks as the box size grows. The slope of the log-log fit is the box dimension. The fit is only meaningful when the slope stays stable across multiple box sizes.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="bc-canvas" viewBox="0 0 720 420" role="img" aria-label="Network with box-cover overlay"></svg>
+            <div class="canvas-caption">
+              <span>Each color is one box at the current size</span>
+              <span id="bc-status"></span>
+            </div>
+          </div>
+
+          <div class="lab-canvas-panel">
+            <svg id="bc-fit" viewBox="0 0 720 420" role="img" aria-label="Box-cover log-log fit"></svg>
+            <div class="canvas-caption">
+              <span>log-log fit of box count vs box size</span>
+              <span id="bc-fit-status"></span>
+            </div>
+          </div>
+
+          <aside class="lab-side">
+            <div class="control-block">
+              <p class="control-label">Network</p>
+              <div class="preset-grid">
+                <button class="preset-button is-active" data-network="sierpinski">Sierpinski-like</button>
+                <button class="preset-button" data-network="hsf">Hierarchical SF</button>
+                <button class="preset-button" data-network="karate">Karate club</button>
+                <button class="preset-button" data-network="er">Erdos-Renyi</button>
+              </div>
+            </div>
+
+            <div class="control-block">
+              <label class="control-label" for="bc-l-range">Box size l_B <span id="bc-l-value">2</span></label>
+              <input id="bc-l-range" type="range" min="1" max="6" step="1" value="2">
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Live readout</p>
+              <dl class="stat-list">
+                <div><dt>Nodes</dt><dd id="bc-stat-n">--</dd></div>
+                <div><dt>Edges</dt><dd id="bc-stat-e">--</dd></div>
+                <div><dt>Boxes at l_B</dt><dd id="bc-stat-boxes">--</dd></div>
+                <div><dt>Slope d_B</dt><dd id="bc-stat-d">--</dd></div>
+                <div><dt>Stability</dt><dd id="bc-stat-stab">--</dd></div>
+              </dl>
+            </div>
+
+            <div class="control-block theory-note">
+              <p class="control-label">What to look for</p>
+              <p>The Sierpinski-like network reproduces an analytical d_B near 1.59. The hierarchical scale-free model gives a clean slope. The Karate club is too small to publish a fractal claim. The Erdos-Renyi run shows a slope that drifts when you change the box-size range.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="lineage" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 3: LINEAGE RISK</p>
+          <h2>Click a node. See what fails downstream.</h2>
+          <p>Sources sit on the left. Exposures sit on the right. Click any node to inject a defect. The page colors every downstream node it touches and ranks the top-five stewardship priorities by blast-radius spread.</p>
+        </div>
+
+        <div class="lab-grid lab-grid-two">
+          <div class="lab-canvas-panel lab-canvas-tall">
+            <svg id="lineage-canvas" viewBox="0 0 720 480" role="img" aria-label="Lineage DAG with defect propagation"></svg>
+            <div class="canvas-caption">
+              <span>Click a node to inject a defect</span>
+              <span id="lineage-status"></span>
+            </div>
+          </div>
+
+          <aside class="lab-side lab-side-tall">
+            <div class="control-block">
+              <p class="control-label">Defect at</p>
+              <p id="lineage-defect" class="defect-readout">none</p>
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Live readout</p>
+              <dl class="stat-list">
+                <div><dt>Touched nodes</dt><dd id="lineage-stat-touched">--</dd></div>
+                <div><dt>Reach across boxes</dt><dd id="lineage-stat-boxes">--</dd></div>
+                <div><dt>Blast score</dt><dd id="lineage-stat-blast">--</dd></div>
+              </dl>
+            </div>
+
+            <div class="control-block">
+              <p class="control-label">Stewardship priority</p>
+              <ol id="lineage-priority" class="priority-list"></ol>
+            </div>
+
+            <div class="control-block theory-note">
+              <p class="control-label">What to look for</p>
+              <p>A staging node with descendants spread across many marts and exposures has a higher blast score than one whose descendants concentrate in a single downstream cluster. That is the structural difference governance should reward with attention.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">CHAPTER MAP</p>
+          <h2>Three bridges. Eight notebooks. One bounded claim.</h2>
+          <p>The chapter does not try to prove enterprise data is fractal. It asks where graph descriptors buy you something ordinary statistics cannot, and it names the failure modes when the descriptors stop being trustworthy.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="path-step">12.0–12.1</span>
+            <h3>Why graphs deserve a fractal lens</h3>
+            <p>The framing notebook and the NetworkX primer. The 11.4 union-find work re-expressed as connected components on a thresholded match graph.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-step">12.2–12.4</span>
+            <h3>Two formal bridges</h3>
+            <p>Visibility graphs (time series to graph). Box covering on graphs (image to graph). Skeleton extraction and renormalization (the test for self-similar structure).</p>
+          </article>
+          <article class="path-card">
+            <span class="path-step">12.5–12.7</span>
+            <h3>Enterprise translation, then the honesty notebook</h3>
+            <p>Lineage and fault propagation. Entity resolution upgraded with graph descriptors. Four named failure modes that close the cluster.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="path" class="section-block section-block-tight" data-reveal>
+        <div class="closing-panel">
+          <div>
+            <p class="eyebrow">NOTEBOOK PATH</p>
+            <h2>Open the tracked teaching materials.</h2>
+            <p>The notebooks are the formal teaching spine. This page is the front door.</p>
+          </div>
+          <div class="closing-links">
+            <a class="button button-primary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/12-fractal-graphs/12.2%20Visibility%20Graphs%20from%20Time%20Series.ipynb" target="_blank" rel="noreferrer">Open 12.2</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/12-fractal-graphs/12.3%20Box%20Covering%20on%20Graphs.ipynb" target="_blank" rel="noreferrer">Open 12.3</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/blob/main/notebooks/12-fractal-graphs/12.6%20Entity%20Resolution%20Revisited%20as%20a%20Graph.ipynb" target="_blank" rel="noreferrer">Open 12.6</a>
+            <a class="button button-secondary" href="fractals-governance.html">Fractals studio</a>
+            <a class="button button-secondary" href="index.html">Back to home</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="site-assets/fractal-graphs.js"></script>
+</body>
+</html>
