@@ -67,7 +67,7 @@ I am not claiming enterprise data is fractal. I am asking whether selected enter
 
 - Song, C., Havlin, S., and Makse, H. A. (2005). Self-similarity of complex networks. *Nature* 433, 392-395. https://www.nature.com/articles/nature03248
 - Skums, P., and Bunimovich, L. (2020). Graph fractal dimension and the structure of fractal networks. *Journal of Complex Networks* 8(4). https://pmc.ncbi.nlm.nih.gov/articles/PMC7673317/
-- Hari, D. (2026). Static and Temporal Fractal Coupling Between Volatility and Trading Volume. *Zenodo*. https://doi.org/10.5281/zenodo.19611544
+- Malemapti Hari, D. (2026). Static and Temporal Fractal Coupling Between Volatility and Trading Volume. *Zenodo*. https://doi.org/10.5281/zenodo.19611544
 
 ## Failure note
 
@@ -323,7 +323,7 @@ The result inherits structure from the series. Periodic series produce regular g
 - Lacasa, L., Luque, B., Ballesteros, F., Luque, J., and Nuno, J. C. (2008). From time series to complex networks: the visibility graph. *PNAS* 105(13), 4972-4975. https://www.pnas.org/doi/full/10.1073/pnas.0709247105
 - Lacasa, L., Luque, B., Luque, J., and Nuno, J. C. (2009). The visibility graph: a new method for estimating the Hurst exponent of fractional Brownian motion. *EPL* 86, 30001. https://arxiv.org/abs/0901.0888
 - Luque, B., Lacasa, L., Ballesteros, F., and Luque, J. (2009). Horizontal visibility graphs: exact results for random time series. *Phys. Rev. E* 80, 046103.
-- Hari, D. (2026). Static and Temporal Fractal Coupling Between Volatility and Trading Volume. *Zenodo*. https://doi.org/10.5281/zenodo.19611544
+- Malemapti Hari, D. (2026). Static and Temporal Fractal Coupling Between Volatility and Trading Volume. *Zenodo*. https://doi.org/10.5281/zenodo.19611544
 
 ## Failure note
 
@@ -529,7 +529,7 @@ The visibility-graph degree distribution captures the regime of the underlying s
 
 The horizontal-visibility variant matches its closed-form prediction `(1/3) * (2/3)^(k-2)` for i.i.d. random series almost exactly. That closed form is one of the cleanest sanity checks the field has.
 
-## Connection to the Hari (2026) coupling work
+## Connection to the Malemapti Hari (2026) coupling work
 
 The published research used DFA on volatility and volume to detect cross-fractal coupling. The visibility graph is an alternative path to the same Hurst signal: build the graph, fit the degree exponent, recover an estimate of H. On returns this is faster than DFA and exposes additional graph-theoretic descriptors (clustering, small-world index, betweenness) that DFA alone cannot.
 

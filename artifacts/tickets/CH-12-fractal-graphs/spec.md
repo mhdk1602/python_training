@@ -15,7 +15,7 @@
 3. **Why this is the right path:**
    - `notebooks/11/11.3` already cites Song-Havlin-Makse (2005), Skums-Bunimovich (2020), and Fronczak et al. (2024). The Chapter 11 supporting reading list is a Chapter 12 syllabus that has not been written yet.
    - The string `networkx` does not appear in any committed notebook. Graph theory is conspicuously absent for a curriculum that already has lineage graphs, entity-resolution graphs, and dbt DAGs scattered across other chapters.
-   - The author's own `fractal-pv-coupling` paper (Hari, 2026) studies Hurst-style fractal coupling on time series. The visibility graph reframes that exact research as graph-theoretic and lets the chapter inherit a published, citable provenance instead of starting from a toy example.
+   - The author's own `fractal-pv-coupling` paper (Malemapti Hari, 2026) studies Hurst-style fractal coupling on time series. The visibility graph reframes that exact research as graph-theoretic and lets the chapter inherit a published, citable provenance instead of starting from a toy example.
 
 ---
 
@@ -156,7 +156,7 @@ These are the references each notebook will quote. Each appears in cell 1 of the
 - **[9]** Nagy, M. (2021). *Comparative analysis of box-covering algorithms for fractal networks.* Applied Network Science 6:73. https://link.springer.com/article/10.1007/s41109-021-00410-6
 - **[10]** Fronczak, P., Fronczak, A., & Bujok, M. (2024). *Fractal complex networks.* Scientific Reports. https://www.nature.com/articles/s41598-024-59765-2
 - **[11]** *End-to-end framework for data lineage analysis covering link pattern recognition, fault diagnosis, and early warning.* Scientific Reports (2025). https://nature.com/articles/s41598-025-34522-1
-- **[12]** Hari, D. (2026). *Static and Temporal Fractal Coupling Between Volatility and Trading Volume.* Zenodo. https://doi.org/10.5281/zenodo.19611544
+- **[12]** Malemapti Hari, D. (2026). *Static and Temporal Fractal Coupling Between Volatility and Trading Volume.* Zenodo. https://doi.org/10.5281/zenodo.19611544
 - **[13]** Lopes, R., & Betrouni, N. (2009). *Fractal and multifractal analysis: A review.* Medical Image Analysis 13, 634–649. https://pubmed.ncbi.nlm.nih.gov/19535282/ (carry-over from 11.1 and 11.2)
 - **[14]** Hagberg, A., Schult, D., & Swart, P. (2008). *Exploring network structure, dynamics, and function using NetworkX.* (NetworkX reference for the implementation chapter.)
 

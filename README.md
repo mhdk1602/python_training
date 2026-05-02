@@ -428,7 +428,7 @@ A graph-theoretic extension of Chapter 11. Three formal bridges (time series to 
 **Public studio:** [mhdk1602.github.io/python_training/fractal-graphs.html](https://mhdk1602.github.io/python_training/fractal-graphs.html)  
 **Reads after:** Chapter 11.  
 **Chapter-local deps:** `networkx>=3.2`, `python-louvain>=0.16`, `powerlaw>=1.5` ([`requirements.txt`](notebooks/12-fractal-graphs/requirements.txt))  
-**Citations grounding the chapter:** Song-Havlin-Makse (2005), Lacasa et al. (2008), Skums-Bunimovich (2020), Hari (2026, Zenodo).
+**Citations grounding the chapter:** Song-Havlin-Makse (2005), Lacasa et al. (2008), Skums-Bunimovich (2020), Malemapti Hari (2026, Zenodo).
 
 </details>
 

@@ -3,8 +3,8 @@ message: "If this repository helps your teaching, learning, or research, please 
 title: "Data Engineering with Python"
 type: software
 authors:
-  - family-names: "Hari"
-    given-names: "Dinesh"
+  - family-names: "Malemapti Hari"
+    given-names: "Dineshkumar"
 repository-code: "https://github.com/mhdk1602/python_training"
 url: "https://mhdk1602.github.io/python_training/"
 abstract: "Project-first data engineering training repository covering Python fundamentals, data modeling, storage, processing, streaming, APIs, frontend work, embeddings, large language models, and retrieval systems."

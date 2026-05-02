@@ -16,7 +16,7 @@ This document translates the spec into ordered work items. P### are implementati
 - **D2 (Q002):** Ship Karate club graph (NetworkX built-in) and a synthetic lineage subgraph. No external downloads at notebook runtime.
 - **D3 (Q003):** Build all three studio panels: Visibility Graph Lab, Box-Covering Lab, Lineage Risk Lab.
 - **D4 (Q004):** Multifractal analysis out of scope for v1. Forward pointer in 12.7.
-- **D5 (Q005):** Cite Hari (2026, Zenodo) in 12.2 cell 1. Algorithm is self-contained.
+- **D5 (Q005):** Cite Malemapti Hari (2026, Zenodo) in 12.2 cell 1. Algorithm is self-contained.
 
 ---
 
@@ -28,7 +28,7 @@ This document translates the spec into ordered work items. P### are implementati
 | **P002** | Create the notebook generator script at `scripts/generate_chapter_12_notebooks.py`. Mirror the conventions in `chapter-10-rag-lab/scripts/generate_notebooks.py`. | N002, S007 | W002 |
 | **P003** | Author 12.0 (preface) cells: blockquote header, framing markdown, one teaser code cell rendering Karate club with NetworkX, closing assignment. | F001, S001, C001 | W003 |
 | **P004** | Author 12.1 (graphs primer) cells: minimum graph language, rebuild 11.4 records and scores as a NetworkX graph, connected-components walk-through, degree histogram on Karate club. | F001, C002 | W003 |
-| **P005** | Author 12.2 (visibility graph) cells: O(n²) visibility kernel, three-regime demonstration (sin, uniform random, fBm at H ∈ {0.3, 0.5, 0.7}), Hurst-vs-α reproduction figure. Cell 1 cites Hari (2026). | F002, F003, F004, C003 | W003 |
+| **P005** | Author 12.2 (visibility graph) cells: O(n²) visibility kernel, three-regime demonstration (sin, uniform random, fBm at H ∈ {0.3, 0.5, 0.7}), Hurst-vs-α reproduction figure. Cell 1 cites Malemapti Hari (2026). | F002, F003, F004, C003 | W003 |
 | **P006** | Author 12.3 (box covering on graphs) cells: auxiliary-graph builder, greedy-coloring `box_cover`, `estimate_d_B`, three reference networks (Sierpinski-like, (u,v)-flower, hierarchical SHM), one real network (Karate), one non-fractal control (Erdős-Rényi). | F005, F006, C004 | W003 |
 | **P007** | Author 12.4 (skeleton + renormalization) cells: skeleton extractor (max-betweenness spanning), renormalize one fractal and one non-fractal, side-by-side coarse-grained adjacency. | F007, C005 | W003 |
 | **P008** | Author 12.5 (lineage and propagation) cells: synthetic DAG builder, defect propagation, blast-radius descriptor, dbt manifest soft-import. | F009, C006 | W003 |
