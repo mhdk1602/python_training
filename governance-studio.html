@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fractal Governance Studio</title>
+  <meta
+    name="description"
+    content="An interactive teaching surface for multi-scale governance pressure fields, the decoupling lens, and the regulation translation cascade."
+  >
+  <meta property="og:title" content="Fractal Governance Studio">
+  <meta property="og:description" content="Three interactive labs that braid institutional theory, fractal-graph descriptors, and AI governance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/governance-studio.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta property="og:image:alt" content="Fractal Governance studio page from the Data Engineering with Python repository.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fractal Governance Studio">
+  <meta name="twitter:description" content="Multi-scale pressure fields, decoupling lens, and the regulation cascade in three interactive labs.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/governance-studio.css">
+</head>
+<body>
+  <div class="gov-shell">
+    <header class="gov-header">
+      <a class="gov-brand" href="index.html">
+        <span class="brand-mark">FG</span>
+        <span class="brand-copy">
+          <strong>Fractal Governance</strong>
+          <span>multi-scale interactive studio</span>
+        </span>
+      </a>
+      <nav class="gov-nav" aria-label="Primary">
+        <a href="#pressure">Pressure field</a>
+        <a href="#decoupling">Decoupling lens</a>
+        <a href="#cascade">Regulation cascade</a>
+        <a href="#path">Notebook path</a>
+        <a href="fractal-graphs.html">Fractal graphs</a>
+        <a href="fractals-governance.html">Fractals studio</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">CHAPTER 13 STUDIO</p>
+          <h1>Governance, AI, and fractals braided through three working labs.</h1>
+          <p class="hero-lead">
+            Institutional theory predicts pressure dynamics that operate at multiple scales. Network science gives us multi-scale graph descriptors. AI is the new pressure environment that intensifies all three classical isomorphic mechanisms. This page connects the three. Sketch a pressure field across five scales and see the dominant mechanism shift. Toggle a decoupling scenario and watch formal and operational drift apart. Edit a regulation cascade and see translation drift compound from regulator to practitioner.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#pressure">Open the labs</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/13-fractal-governance" target="_blank" rel="noreferrer">Open chapter folder</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">9</span>
+              <span class="metric-label">notebooks in the cluster</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">interactive labs</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">research streams braided</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why pressure fields</p>
+            <h2>Institutional pressures live at multiple scales.</h2>
+            <p>A regulation operates strongest at the firm scale. A peer benchmark operates strongest at the firm and division scale. A professional code operates strongest at the practitioner scale. The single-number compliance score collapses this structure.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Why drift matters</p>
+            <h2>Translation compounds.</h2>
+            <p>A regulation does not arrive at the practitioner intact. It cascades through firm policy, engagement SOP, and practitioner action. Each step drifts. By the time the cascade reaches the keyboard, the regulatory intent may be unrecognizable.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="pressure" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 1: MULTI-SCALE PRESSURE FIELD</p>
+          <h2>Sketch a pressure field. Watch the dominant mechanism shift across scales.</h2>
+          <p>The radar on the right shows the pressure vector at the selected scale. The slider walks through five scales (field, firm, division, team, practitioner). Edit the values directly to construct a field that matches your environment, or load a preset.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="pressure-canvas" viewBox="0 0 720 380" role="img" aria-label="Pressure field heatmap"></svg>
+            <div class="canvas-caption">
+              <span>Click a cell to edit; drag to set intensity</span>
+              <span id="pressure-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label">Scale focus</label>
+              <input id="scale-slider" type="range" min="0" max="4" step="1" value="0" aria-label="Scale slider">
+              <div class="scale-readout" id="scale-readout">field</div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Preset</label>
+              <div class="button-row">
+                <button class="chip" data-preset="finance" type="button">Financial-services consulting firm</button>
+                <button class="chip" data-preset="university" type="button">Public university IT</button>
+                <button class="chip" data-preset="startup" type="button">Early-stage AI startup</button>
+              </div>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Coercive (regulation, mandate)</span>
+                <span class="readout-value" id="coercive-readout">0.00</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Mimetic (peers, benchmarking)</span>
+                <span class="readout-value" id="mimetic-readout">0.00</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Normative (profession, ethics)</span>
+                <span class="readout-value" id="normative-readout">0.00</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Dominant mechanism</span>
+                <span class="readout-value" id="dominant-readout">--</span>
+              </div>
+            </div>
+            <svg id="radar-canvas" viewBox="0 0 320 320" role="img" aria-label="Pressure radar at the selected scale"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="decoupling" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 2: THE DECOUPLING LENS</p>
+          <h2>Two signals; one decoupling dimension.</h2>
+          <p>The dotted line on the left is the formal signal (policy, charter, public commitment). The solid line on the right is the operational signal (what actually happens). Drag any value on either side. The decoupling-dimension readout updates in real time. Three pre-loaded scenarios seed the lens with characteristic decoupling shapes.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="decoupling-canvas" viewBox="0 0 720 320" role="img" aria-label="Formal vs operational signals across scales"></svg>
+            <div class="canvas-caption">
+              <span>Drag a column on either side to reshape the signal</span>
+              <span id="decoupling-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label">Scenario preset</label>
+              <div class="button-row">
+                <button class="chip" data-scenario="theatre" type="button">Compliance theatre (top-scale decoupling)</button>
+                <button class="chip" data-scenario="execution" type="button">Execution gap (bottom-scale decoupling)</button>
+                <button class="chip" data-scenario="pervasive" type="button">Pervasive decoupling</button>
+                <button class="chip" data-scenario="aligned" type="button">Aligned (control)</button>
+              </div>
+            </div>
+            <div class="readout-grid">
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Decoupling dimension</span>
+                <span class="readout-value" id="dim-readout">0.00</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Per-scale RMSE</span>
+                <span class="readout-value" id="rmse-readout">--</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Locus (highest divergence)</span>
+                <span class="readout-value" id="locus-readout">--</span>
+              </div>
+            </div>
+            <p class="signal-note">The dimension summarizes the field; the locus tells you where to act.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cascade" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 3: REGULATION TRANSLATION CASCADE</p>
+          <h2>Edit any layer. Drift recomputes. The waterfall animates.</h2>
+          <p>A regulation is not delivered to a practitioner. It cascades through firm policy, engagement SOP, and practitioner action. Each layer is an editable text box. Drift between adjacent layers is computed via TF-IDF-style cosine similarity. Three preset cascades (DORA, EU AI Act, DAMA-DMBOK) load with one click.</p>
+        </div>
+
+        <div class="cascade-grid">
+          <div class="cascade-controls">
+            <div class="control-group">
+              <label class="control-label">Cascade preset</label>
+              <div class="button-row">
+                <button class="chip" data-cascade="dora" type="button">DORA Article 9</button>
+                <button class="chip" data-cascade="aiact" type="button">EU AI Act Article 10</button>
+                <button class="chip" data-cascade="dama" type="button">DAMA-DMBOK</button>
+              </div>
+            </div>
+            <div class="cascade-summary">
+              <span class="readout-label">Total drift (sum of edge drifts)</span>
+              <span class="readout-value" id="total-drift">0.00</span>
+            </div>
+          </div>
+          <div class="cascade-stack" id="cascade-stack" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="path" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">CHAPTER 13 NOTEBOOK PATH</p>
+          <h2>Each lab has a notebook behind it.</h2>
+          <p>The studio is the surface. The chapter is where the apparatus is implemented and the failure modes are named.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="path-tag">13.0</span>
+            <h3>Why governance needs a fractal lens</h3>
+            <p>Frames the chapter, names the three streams, sets the bounded claim.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">13.1 - 13.2</span>
+            <h3>Pressure field and decoupling</h3>
+            <p>The PressureVector type, the multi-scale decomposition, and the decoupling dimension.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">13.3 - 13.4</span>
+            <h3>Knowledge graph and visibility graphs</h3>
+            <p>Apply Chapter 12's box-covering and visibility-graph descriptors to governance corpora and time series.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">13.5</span>
+            <h3>AI as subject and agent</h3>
+            <p>Provenance graph for an LLM, plus an Anthropic-backed parser with deterministic mock fallback.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">13.6</span>
+            <h3>Translation cascade</h3>
+            <p>Regulation through firm, SOP, and practitioner with TF-IDF-based drift.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">13.7 - 13.8</span>
+            <h3>Capstone and the failure modes</h3>
+            <p>Build a diagnostic for your own environment. Then read the four failure modes before you ship anything.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="gov-footer">
+        <p>
+          Chapter 13 of <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">python_training</a>.
+          Built on the Chapter 11 fractal lens and the Chapter 12 fractal-graph apparatus.
+          Methodological provenance: Malemapti Hari (2026, Zenodo).
+        </p>
+      </footer>
+    </main>
+  </div>
+  <script src="site-assets/governance-studio.js"></script>
+</body>
+</html>
