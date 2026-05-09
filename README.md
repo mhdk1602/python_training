@@ -11,10 +11,10 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-58_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-67_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html)
 
 </div>
 
@@ -66,6 +66,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Applied system B** | A retrieval lab with source adapters, normalization, tagging, chunking, Chroma, FastAPI answers, and bounded agents. | [`chapter-10-rag-lab/`](chapter-10-rag-lab/) · [`react-app/pages/chapter-10.tsx`](react-app/pages/chapter-10.tsx) |
 | **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, governance, and duplicate-cluster instability. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
 | **Fractal graphs studio** | Eight notebooks and an interactive page that walk three bridges: visibility graphs from time series, box-covering on networks, and lineage as a stewardship object. Closes with the failure-modes notebook. | [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/) · [`fractal-graphs.html`](fractal-graphs.html) |
+| **Fractal governance studio** | Nine notebooks and an interactive page that braid institutional theory, fractal-graph descriptors, and AI governance. Multi-scale pressure fields, the decoupling lens, the regulation cascade, and an Anthropic-backed parser with mock fallback. | [`notebooks/13-fractal-governance/`](notebooks/13-fractal-governance/) · [`governance-studio.html`](governance-studio.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -81,6 +82,8 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Research casework** | threshold-sensitive duplicate clusters and governed entity resolution | 11.4, 12.6 |
 | **Network science** | visibility graphs, box-covering on networks, skeleton extraction, renormalization | 12.1–12.4 |
 | **Lineage and stewardship** | data lineage as a graph, fault propagation, blast-radius descriptors | 12.5 |
+| **Institutional theory in code** | multi-scale pressure fields, decoupling dimension, translation cascade with TF-IDF drift | 13.1–13.6 |
+| **AI as subject and agent** | provenance graph for an LLM and an Anthropic-backed parser with mock fallback | 13.5 |
 | **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
@@ -180,6 +183,14 @@ The Chapter 12 front door. Three working labs: a visibility-graph builder you ca
 - Notebook path: [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/)
 - Reads after Chapter 11. Requires `networkx`, `python-louvain`, `powerlaw` (chapter-local `requirements.txt`)
 
+### Option G: Fractal Governance Studio
+
+The Chapter 13 front door. Three labs braid institutional theory, fractal-graph descriptors, and AI governance: a multi-scale pressure field with five scales and a dominant-mechanism radar, a decoupling lens that scores per-scale RMSE between formal and operational signals, and a regulation translation cascade that recomputes drift between adjacent layers as you edit them.
+
+- Live page: [mhdk1602.github.io/python_training/governance-studio.html](https://mhdk1602.github.io/python_training/governance-studio.html)
+- Notebook path: [`notebooks/13-fractal-governance/`](notebooks/13-fractal-governance/)
+- Reads after Chapters 11 and 12. Requires `networkx`, `python-louvain`, `scikit-learn`, optional `anthropic` (chapter-local `requirements.txt`)
+
 ## If You Like To Learn By...
 
 | Learning style | Start here | Then go next |
@@ -190,6 +201,7 @@ The Chapter 12 front door. Three working labs: a visibility-graph builder you ca
 | **Understanding vector search** | public embeddings bridge + Chapter 7 notebooks | 7.1–7.5, then 10 |
 | **Research-oriented advanced work** | public fractal studio + Chapter 11 notebooks | 9.3, then 11.1–11.4 |
 | **Network science and graph fractals** | public fractal-graphs studio + Chapter 12 notebooks | 11, then 12.0–12.7 |
+| **Institutional theory in code** | public governance studio + Chapter 13 notebooks | 11, 12, then 13.0–13.8 |
 | **Working from first principles** | Chapters 0–5 notebooks | then whichever product surface you want to dissect |
 
 ---
@@ -432,6 +444,32 @@ A graph-theoretic extension of Chapter 11. Three formal bridges (time series to 
 
 </details>
 
+<details>
+<summary><b>Chapter 13: Fractal Governance</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~12 hours</code></summary>
+
+<br>
+
+Three research streams (institutional theory, fractal-graph descriptors, AI governance) braided in code. Nine notebooks build a multi-scale pressure-field model, a decoupling-dimension measure, a governance knowledge graph, visibility-graph signatures of governance time series, an Anthropic-backed parser with deterministic mock fallback, a regulation translation cascade, a printable capstone diagnostic, and an honesty closer that names four failure modes.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 13.0 | Why Governance Needs a Fractal Lens | [13.0 Why Governance Needs a Fractal Lens.ipynb](notebooks/13-fractal-governance/13.0%20Why%20Governance%20Needs%20a%20Fractal%20Lens.ipynb) |
+| 13.1 | The Multi-Scale Pressure Field | [13.1 The Multi-Scale Pressure Field.ipynb](notebooks/13-fractal-governance/13.1%20The%20Multi-Scale%20Pressure%20Field.ipynb) |
+| 13.2 | Decoupling as Multi-Scale Decoherence | [13.2 Decoupling as Multi-Scale Decoherence.ipynb](notebooks/13-fractal-governance/13.2%20Decoupling%20as%20Multi-Scale%20Decoherence.ipynb) |
+| 13.3 | The Governance Knowledge Graph | [13.3 The Governance Knowledge Graph.ipynb](notebooks/13-fractal-governance/13.3%20The%20Governance%20Knowledge%20Graph.ipynb) |
+| 13.4 | Visibility Graphs of Governance Time Series | [13.4 Visibility Graphs of Governance Time Series.ipynb](notebooks/13-fractal-governance/13.4%20Visibility%20Graphs%20of%20Governance%20Time%20Series.ipynb) |
+| 13.5 | AI as Governance Subject and Agent | [13.5 AI as Governance Subject and Agent.ipynb](notebooks/13-fractal-governance/13.5%20AI%20as%20Governance%20Subject%20and%20Agent.ipynb) |
+| 13.6 | The Translation Cascade | [13.6 The Translation Cascade.ipynb](notebooks/13-fractal-governance/13.6%20The%20Translation%20Cascade.ipynb) |
+| 13.7 | Capstone Lab: Build Your Own Governance Pressure Map | [13.7 Capstone Lab.ipynb](notebooks/13-fractal-governance/13.7%20Capstone%20Lab.ipynb) |
+| 13.8 | When the Visualization Lies | [13.8 When the Visualization Lies.ipynb](notebooks/13-fractal-governance/13.8%20When%20the%20Visualization%20Lies.ipynb) |
+
+**Public studio:** [mhdk1602.github.io/python_training/governance-studio.html](https://mhdk1602.github.io/python_training/governance-studio.html)  
+**Reads after:** Chapters 11 and 12.  
+**Chapter-local deps:** `networkx>=3.2`, `python-louvain>=0.16`, `scikit-learn>=1.3`, `scipy`, optional `anthropic>=0.25` ([`requirements.txt`](notebooks/13-fractal-governance/requirements.txt))  
+**Citations grounding the chapter:** DiMaggio and Powell (1983), Meyer and Rowan (1977), Scott (2008), Greenwood et al. (2011), Birkstedt et al. (2023), Mäntymäki et al. (2022), Papagiannidis et al. (2025), Longpre et al. (2024), Skums and Bunimovich (2020), Lacasa et al. (2008), Malemapti Hari (2026, Zenodo).
+
+</details>
+
 ---
 
 ## Tech Stack
@@ -472,6 +510,7 @@ python_training/
     10-retrieval-systems-and-agents/ # Retrieval systems, tagging, vector stores, agents
     11-fractals-pattern-recognition-governance/ # Mandelbrot, pattern recognition, governance
     12-fractal-graphs/         # Fractal graphs: visibility, box-covering, lineage, ER upgrade
+    13-fractal-governance/     # Multi-scale pressure fields, decoupling, AI subject+agent, translation cascade
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
@@ -488,6 +527,7 @@ python_training/
   chapter-10-rag-lab/          # FastAPI retrieval lab + sample data + docs
   fractals-governance.html     # Public interactive Mandelbrot + governance teaching page
   fractal-graphs.html          # Public interactive fractal-graphs studio (three labs)
+  governance-studio.html       # Public interactive fractal-governance studio (three labs)
   postgres/                    # Database Dockerfile & init scripts
   dbt/                         # dbt data quality project
   GraphQL Server/              # Standalone Node.js GraphQL server
