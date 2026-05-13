@@ -38,3 +38,4 @@ notebooks/13-fractal-governance/.venv/
 # Chapter-14 local venv (Fractal Indexing)
 .venv-ch14/
 notebooks/14-fractal-indexing/.venv/
+notebooks/14-fractal-indexing/clustered_parquet/
