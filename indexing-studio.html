@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fractal Indexing Studio</title>
+  <meta
+    name="description"
+    content="Three interactive labs that make the fractal mathematics inside modern indexes visible: Hilbert and Z-order curve animator, multi-index race track, and an HNSW search climber."
+  >
+  <meta property="og:title" content="Fractal Indexing Studio">
+  <meta property="og:description" content="Watch Hilbert and Z-order curves trace through a grid. Race four index types on the same query. Watch an HNSW search descend the hierarchy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/indexing-studio.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta property="og:image:alt" content="Fractal Indexing studio page from the Data Engineering with Python repository.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fractal Indexing Studio">
+  <meta name="twitter:description" content="Hilbert and Z-order curve animator, an index race track, and an HNSW climber.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/indexing-studio.css">
+</head>
+<body>
+  <div class="ix-shell">
+    <header class="ix-header">
+      <a class="ix-brand" href="index.html">
+        <span class="brand-mark">FI</span>
+        <span class="brand-copy">
+          <strong>Fractal Indexing</strong>
+          <span>Hilbert, Z-order, HNSW</span>
+        </span>
+      </a>
+      <nav class="ix-nav" aria-label="Primary">
+        <a href="#curves">Curve animator</a>
+        <a href="#race">Index race</a>
+        <a href="#hnsw">HNSW climber</a>
+        <a href="#path">Notebook path</a>
+        <a href="governance-studio.html">Governance studio</a>
+        <a href="fractal-graphs.html">Fractal graphs</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">CHAPTER 14 STUDIO</p>
+          <h1>The indexes you ship every day are fractal. Watch the math draw.</h1>
+          <p class="hero-lead">
+            Apache Iceberg added Hilbert curve clustering in 2025. Delta Lake's Liquid Clustering reports up to 10x query acceleration. Uber's H3 and Google's S2 are hierarchical fractal subdivisions. HNSW is a hierarchical small-world graph. Most engineers who use these indexes have never seen the curve trace through a grid. This page fixes that. Three labs make the locality property, the page-pruning win, and the HNSW scale separation visible at the speed of a click.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#curves">Open the labs</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/14-fractal-indexing" target="_blank" rel="noreferrer">Open chapter folder</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">9</span>
+              <span class="metric-label">notebooks in the cluster</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">interactive labs</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">10x</span>
+              <span class="metric-label">production speedup target</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why the curves matter</p>
+            <h2>Locality is a fractal property.</h2>
+            <p>A space-filling curve maps the 2D grid to a 1D order. Hilbert and Z-order are both fractals: the curve at scale 2N is built by recursively placing four scaled copies of the curve at scale N. That recursion is what gives them their locality. Two cells that are close in the grid land close on the curve, on average. Storage engines cash that property in as fewer pages read per query.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Why HNSW belongs here</p>
+            <h2>The vector index is a small-world graph.</h2>
+            <p>HNSW assigns each point to a layer with exponentially decaying probability. The result is a hierarchy with fractal degree distribution and logarithmic search complexity. The same Watts-Strogatz, Barabasi, and Song-Havlin-Makse machinery applies. Vector databases ship HNSW as a black box; this lab opens it.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="curves" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 1: CURVE TRACE ANIMATOR</p>
+          <h2>Watch a Hilbert or Z-order curve fill a 32 x 32 grid. Drag the query rectangle.</h2>
+          <p>Pick a curve. Pick a speed. Drag the green rectangle anywhere on the grid. The page-fetch counters update in real time and show how many "tiles" each ordering forces a query to read. Hilbert wins on average; the gap is bigger for small queries.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="curve-canvas" viewBox="0 0 720 540" role="img" aria-label="Space-filling curve animator"></svg>
+            <div class="canvas-caption">
+              <span>Drag the green rectangle. Click PLAY to retrace.</span>
+              <span id="curve-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label">Curve type</label>
+              <div class="button-row">
+                <button class="chip chip-active" data-curve="hilbert" type="button">Hilbert</button>
+                <button class="chip" data-curve="zorder" type="button">Z-order</button>
+                <button class="chip" data-curve="row" type="button">Row-major</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="curve-speed">Animation speed</label>
+              <input id="curve-speed" type="range" min="1" max="50" step="1" value="14" aria-label="Animation speed">
+              <div class="scale-readout"><span id="curve-speed-readout">14</span> cells per second</div>
+            </div>
+            <div class="control-group">
+              <button id="curve-play" class="chip chip-active" type="button">Play / Pause</button>
+              <button id="curve-restart" class="chip" type="button">Restart trace</button>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Pages touched (this curve)</span>
+                <span class="readout-value" id="curve-pages">0</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Pages touched (row-major)</span>
+                <span class="readout-value" id="curve-pages-row">0</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Pages saved vs row-major</span>
+                <span class="readout-value" id="curve-savings">0%</span>
+              </div>
+            </div>
+            <p class="signal-note">Each "page" holds 16 contiguous curve cells (a 16-cell run). Production engines tune this to thousands of rows; the savings ratio is the same.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="race" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 2: INDEX RACE TRACK</p>
+          <h2>5,000 random points. Four indexes. One query box. Watch them race.</h2>
+          <p>Drag the query rectangle anywhere on the canvas. The bar chart on the right updates instantly with pages-fetched and points-returned for each ordering. Use the skew slider to redistribute the points; Hilbert and Z-order pull farther ahead as skew increases.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="race-canvas" viewBox="0 0 720 480" role="img" aria-label="Multi-index race"></svg>
+            <div class="canvas-caption">
+              <span>Drag the green box. Click REGENERATE to draw new points.</span>
+              <span id="race-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label" for="race-skew">Distribution skew</label>
+              <input id="race-skew" type="range" min="0" max="100" step="1" value="60" aria-label="Distribution skew">
+              <div class="scale-readout"><span id="race-skew-readout">60</span> on a 0 (uniform) to 100 (heavy clusters) scale</div>
+            </div>
+            <div class="control-group">
+              <button id="race-regenerate" class="chip chip-active" type="button">Regenerate points</button>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Points in query box</span>
+                <span class="readout-value" id="race-points">0</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Best index for this query</span>
+                <span class="readout-value" id="race-winner">--</span>
+              </div>
+            </div>
+            <svg id="race-chart" viewBox="0 0 320 220" role="img" aria-label="Pages read by index type"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="hnsw" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 3: HNSW CLIMBER</p>
+          <h2>Watch a search descend through the layers.</h2>
+          <p>Click anywhere on the canvas to drop a query point. The HNSW search starts at the top layer and descends one layer per step. Visited nodes flash. The visit-count panel on the right shows why the descent is logarithmic instead of linear. Use the M slider to rebuild the graph with denser or sparser connections.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="hnsw-canvas" viewBox="0 0 720 540" role="img" aria-label="HNSW search visualization"></svg>
+            <div class="canvas-caption">
+              <span>Click anywhere to drop a query.</span>
+              <span id="hnsw-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label" for="hnsw-m">Graph degree M</label>
+              <input id="hnsw-m" type="range" min="2" max="12" step="1" value="5" aria-label="Graph degree">
+              <div class="scale-readout">M = <span id="hnsw-m-readout">5</span> (production HNSW defaults to 16)</div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="hnsw-n">Total points</label>
+              <input id="hnsw-n" type="range" min="40" max="200" step="10" value="80" aria-label="Number of points">
+              <div class="scale-readout"><span id="hnsw-n-readout">80</span> points across all layers</div>
+            </div>
+            <div class="control-group">
+              <button id="hnsw-rebuild" class="chip chip-active" type="button">Rebuild graph</button>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Layers built</span>
+                <span class="readout-value" id="hnsw-layers">0</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Visited nodes</span>
+                <span class="readout-value" id="hnsw-visits">0</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Speedup vs brute force</span>
+                <span class="readout-value" id="hnsw-speedup">--</span>
+              </div>
+            </div>
+            <p class="signal-note">Brute force checks every point. HNSW checks roughly log(N) per layer. The speedup grows with N.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="path" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">CHAPTER 14 NOTEBOOK PATH</p>
+          <h2>Each lab has notebooks behind it.</h2>
+          <p>The studio is the surface. The chapter is where the algorithms are built and the failure modes are named.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="path-tag">14.0</span>
+            <h3>Why indexes are already fractal</h3>
+            <p>Frames the chapter. Three production examples (Iceberg, Liquid Clustering, HNSW). One-paragraph history.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">14.1 - 14.2</span>
+            <h3>Curves, locality, and Hilbert R-tree</h3>
+            <p>Build Z-order and Hilbert in NumPy. Reproduce Kamel-Faloutsos (1994) Hilbert R-tree bulk loading.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">14.3</span>
+            <h3>Fractal dimension as a selectivity oracle</h3>
+            <p>Reproduce the 1994 Faloutsos selectivity formula. Beat the uniform predictor by an order of magnitude on skewed data.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">14.4</span>
+            <h3>HNSW as a small-world index</h3>
+            <p>Pure-Python HNSW. Visualize layer assignment. Connect to Watts-Strogatz, Barabasi, Song-Havlin-Makse.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">14.5 - 14.6</span>
+            <h3>DuckDB clustering and Hurst-aware partitioning</h3>
+            <p>Run Liquid Clustering at home. Drive time-series chunk boundaries by the Hurst exponent of the stream.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">14.7 - 14.8</span>
+            <h3>Capstone and the failure modes</h3>
+            <p>Recommend an index for your workload. Then read the four failure modes before you ship anything.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="ix-footer">
+        <p>
+          Chapter 14 of <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">python_training</a>.
+          Reuses the fractal apparatus from Chapter 11 and the graph-theoretic apparatus from Chapter 12.
+          Methodological provenance for the Hurst-exponent work in 14.6: Malemapti Hari (2026, <a href="https://doi.org/10.5281/zenodo.19611544" target="_blank" rel="noreferrer">Zenodo</a>).
+          Classical fractal-indexing apparatus: Kamel and Faloutsos (1994); Faloutsos and Kamel (1994); Malkov and Yashunin (2018, arXiv:1603.09320).
+        </p>
+      </footer>
+    </main>
+  </div>
+  <script src="site-assets/indexing-studio.js"></script>
+</body>
+</html>
