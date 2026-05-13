@@ -34,3 +34,7 @@ notebooks/12-fractal-graphs/.venv/
 # Chapter-13 local venv (Fractal Governance)
 .venv-ch13/
 notebooks/13-fractal-governance/.venv/
+
+# Chapter-14 local venv (Fractal Indexing)
+.venv-ch14/
+notebooks/14-fractal-indexing/.venv/
