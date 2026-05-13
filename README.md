@@ -14,7 +14,7 @@
 [![Jupyter](https://img.shields.io/badge/Jupyter-67_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html) • [Indexing Studio](https://mhdk1602.github.io/python_training/indexing-studio.html)
 
 </div>
 
@@ -67,6 +67,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Advanced lens** | A new notebook cluster and public interactive page on Mandelbrot intuition, fractal descriptors, pattern recognition, MDM, governance, and duplicate-cluster instability. | [`notebooks/11-fractals-pattern-recognition-governance/`](notebooks/11-fractals-pattern-recognition-governance/) · [`fractals-governance.html`](fractals-governance.html) |
 | **Fractal graphs studio** | Eight notebooks and an interactive page that walk three bridges: visibility graphs from time series, box-covering on networks, and lineage as a stewardship object. Closes with the failure-modes notebook. | [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/) · [`fractal-graphs.html`](fractal-graphs.html) |
 | **Fractal governance studio** | Nine notebooks and an interactive page that braid institutional theory, fractal-graph descriptors, and AI governance. Multi-scale pressure fields, the decoupling lens, the regulation cascade, and an Anthropic-backed parser with mock fallback. | [`notebooks/13-fractal-governance/`](notebooks/13-fractal-governance/) · [`governance-studio.html`](governance-studio.html) |
+| **Fractal indexing studio** | Nine notebooks and an interactive page that show why the indexes you ship every day are fractal. Hilbert and Z-order curves built in NumPy, the Faloutsos selectivity oracle revived, a tiny pure-Python HNSW, a DuckDB Liquid Clustering benchmark, and Hurst-driven time-series partitioning. | [`notebooks/14-fractal-indexing/`](notebooks/14-fractal-indexing/) · [`indexing-studio.html`](indexing-studio.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -84,6 +85,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Lineage and stewardship** | data lineage as a graph, fault propagation, blast-radius descriptors | 12.5 |
 | **Institutional theory in code** | multi-scale pressure fields, decoupling dimension, translation cascade with TF-IDF drift | 13.1–13.6 |
 | **AI as subject and agent** | provenance graph for an LLM and an Anthropic-backed parser with mock fallback | 13.5 |
+| **Fractal indexing engineering** | Hilbert and Z-order curves, Hilbert R-tree bulk loading, fractal-dimension selectivity, HNSW small-world, Liquid Clustering, Hurst-aware partitioning | 14.1–14.7 |
 | **Finance casework** | market data views, portfolio summaries, AI-assisted analysis | 6, 8 |
 
 ---
@@ -190,6 +192,14 @@ The Chapter 13 front door. Three labs braid institutional theory, fractal-graph 
 - Live page: [mhdk1602.github.io/python_training/governance-studio.html](https://mhdk1602.github.io/python_training/governance-studio.html)
 - Notebook path: [`notebooks/13-fractal-governance/`](notebooks/13-fractal-governance/)
 - Reads after Chapters 11 and 12. Requires `networkx`, `python-louvain`, `scikit-learn`, optional `anthropic` (chapter-local `requirements.txt`)
+
+### Option H: Fractal Indexing Studio
+
+The Chapter 14 front door for engineers. Three labs make the fractal mathematics inside production indexes visible. Animate a Hilbert or Z-order curve through a 32x32 grid and drag a query rectangle to see the page-fetch counter change. Race four orderings (row-major, Z-order, Hilbert, R-tree) on 5,000 skewed points with a draggable query box. Drop a query into a tiny HNSW and watch the search descend layer by layer.
+
+- Live page: [mhdk1602.github.io/python_training/indexing-studio.html](https://mhdk1602.github.io/python_training/indexing-studio.html)
+- Notebook path: [`notebooks/14-fractal-indexing/`](notebooks/14-fractal-indexing/)
+- Reads independently of Chapters 11-13 (engineers welcome). Requires `numpy`, `pandas`, `scipy`, `networkx`, `rtree`, `duckdb`, `pyarrow` (chapter-local `requirements.txt`)
 
 ## If You Like To Learn By...
 
@@ -470,6 +480,32 @@ Three research streams (institutional theory, fractal-graph descriptors, AI gove
 
 </details>
 
+<details>
+<summary><b>Chapter 14: Fractal Indexing</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~10 hours</code></summary>
+
+<br>
+
+The indexes you ship every day are fractal, the apparatus to reason about them is older than the production code, and the connection is rarely made explicit. Nine notebooks build Z-order and Hilbert curves in pure NumPy, reproduce the Kamel-Faloutsos (1994) Hilbert R-tree bulk loading and the Faloutsos-Kamel (1994) fractal-dimension selectivity formula, build a tiny pure-Python HNSW that exposes the small-world / scale-free structure, run a DuckDB Liquid Clustering benchmark on a laptop, drive time-series chunk boundaries by the Hurst exponent of the stream, and close with four named failure modes.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 14.0 | Why Indexes Are Already Fractal | [14.0 Why Indexes Are Already Fractal.ipynb](notebooks/14-fractal-indexing/14.0%20Why%20Indexes%20Are%20Already%20Fractal.ipynb) |
+| 14.1 | Space-Filling Curves: Z-order, Hilbert, and Locality | [14.1 Space-Filling Curves.ipynb](notebooks/14-fractal-indexing/14.1%20Space-Filling%20Curves.ipynb) |
+| 14.2 | Hilbert R-tree Bulk Loading | [14.2 Hilbert R-tree Bulk Loading.ipynb](notebooks/14-fractal-indexing/14.2%20Hilbert%20R-tree%20Bulk%20Loading.ipynb) |
+| 14.3 | Fractal Dimension as a Selectivity Oracle | [14.3 Fractal Dimension as a Selectivity Oracle.ipynb](notebooks/14-fractal-indexing/14.3%20Fractal%20Dimension%20as%20a%20Selectivity%20Oracle.ipynb) |
+| 14.4 | HNSW as a Hierarchical Small-World Index | [14.4 HNSW as a Hierarchical Small-World Index.ipynb](notebooks/14-fractal-indexing/14.4%20HNSW%20as%20a%20Hierarchical%20Small-World%20Index.ipynb) |
+| 14.5 | Liquid Clustering at Home (DuckDB Z-order vs Hilbert) | [14.5 Liquid Clustering at Home.ipynb](notebooks/14-fractal-indexing/14.5%20Liquid%20Clustering%20at%20Home.ipynb) |
+| 14.6 | Adaptive Chunking by Hurst Exponent | [14.6 Adaptive Chunking by Hurst Exponent.ipynb](notebooks/14-fractal-indexing/14.6%20Adaptive%20Chunking%20by%20Hurst%20Exponent.ipynb) |
+| 14.7 | Capstone: Build Your Own Fractal Index for Your Workload | [14.7 Capstone Build Your Own Fractal Index.ipynb](notebooks/14-fractal-indexing/14.7%20Capstone%20Build%20Your%20Own%20Fractal%20Index.ipynb) |
+| 14.8 | When the Speedup Is a Lie | [14.8 When the Speedup Is a Lie.ipynb](notebooks/14-fractal-indexing/14.8%20When%20the%20Speedup%20Is%20a%20Lie.ipynb) |
+
+**Public studio:** [mhdk1602.github.io/python_training/indexing-studio.html](https://mhdk1602.github.io/python_training/indexing-studio.html)  
+**Reads independently** of Chapters 11-13 (engineers welcome).  
+**Chapter-local deps:** `numpy`, `pandas`, `scipy`, `matplotlib`, `networkx`, `rtree`, `duckdb`, `pyarrow` ([`requirements.txt`](notebooks/14-fractal-indexing/requirements.txt))  
+**Citations grounding the chapter:** Kamel and Faloutsos (1994), Faloutsos and Kamel (1994), Belussi and Faloutsos (1995), Korn-Pagel-Faloutsos (2001), Malkov and Yashunin (2018, arXiv:1603.09320), Apache Iceberg PR #5824, Delta Lake 3.0 release notes, Banerjee (2026, Medium), Malemapti Hari (2026, Zenodo).
+
+</details>
+
 ---
 
 ## Tech Stack
@@ -511,6 +547,7 @@ python_training/
     11-fractals-pattern-recognition-governance/ # Mandelbrot, pattern recognition, governance
     12-fractal-graphs/         # Fractal graphs: visibility, box-covering, lineage, ER upgrade
     13-fractal-governance/     # Multi-scale pressure fields, decoupling, AI subject+agent, translation cascade
+    14-fractal-indexing/       # Hilbert/Z-order curves, Hilbert R-tree, fractal selectivity, HNSW, Liquid Clustering, Hurst chunking
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
@@ -527,7 +564,8 @@ python_training/
   chapter-10-rag-lab/          # FastAPI retrieval lab + sample data + docs
   fractals-governance.html     # Public interactive Mandelbrot + governance teaching page
   fractal-graphs.html          # Public interactive fractal-graphs studio (three labs)
-  governance-studio.html       # Public interactive fractal-governance studio (three labs)
+  governance-studio.html       # Public Chapter 13 fractal-governance studio (three labs)
+  indexing-studio.html         # Public Chapter 14 fractal-indexing studio (three labs)
   postgres/                    # Database Dockerfile & init scripts
   dbt/                         # dbt data quality project
   GraphQL Server/              # Standalone Node.js GraphQL server
