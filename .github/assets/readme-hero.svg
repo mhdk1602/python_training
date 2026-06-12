@@ -1,90 +1,93 @@
 <svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Python training repository hero</title>
-  <desc id="desc">An editorial banner showing the repository's progression from foundations to a stock platform and a retrieval lab.</desc>
+  <desc id="desc">A night-sky banner showing the repository's progression from foundations to a stock platform, a retrieval lab, and a fractal research wing.</desc>
   <defs>
-    <linearGradient id="bg" x1="120" y1="40" x2="1060" y2="600" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F4EDE1"/>
-      <stop offset="1" stop-color="#E5EFE7"/>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#62e6ff"/>
+      <stop offset="50%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#f471b5"/>
     </linearGradient>
-    <linearGradient id="stock" x1="730" y1="116" x2="1056" y2="258" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#24553F"/>
-      <stop offset="1" stop-color="#3E6A50"/>
+    <linearGradient id="curveStroke" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#62e6ff">
+        <animate attributeName="stop-color" values="#62e6ff;#a78bfa;#62e6ff" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#f471b5">
+        <animate attributeName="stop-color" values="#f471b5;#ffc46b;#f471b5" dur="9s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
-    <filter id="shadow" x="76" y="74" width="1048" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#49614F" flood-opacity="0.12"/>
-    </filter>
+    <radialGradient id="glowViolet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#62e6ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#62e6ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#97a3c4" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <clipPath id="frame">
+      <rect width="1200" height="640" rx="28"/>
+    </clipPath>
   </defs>
 
-  <rect width="1200" height="640" rx="34" fill="url(#bg)"/>
-  <g opacity="0.14">
-    <path d="M76 111H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 159H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 207H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 255H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 303H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 351H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 399H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 447H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 495H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M76 543H1124" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M156 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M294 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M432 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M570 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M708 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M846 70V570" stroke="#24553F" stroke-width="1.4"/>
-    <path d="M984 70V570" stroke="#24553F" stroke-width="1.4"/>
-  </g>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="640" fill="#04060d"/>
+    <rect width="1200" height="640" fill="url(#grid)"/>
+    <ellipse cx="160" cy="-60" rx="560" ry="340" fill="url(#glowViolet)"/>
+    <ellipse cx="1060" cy="700" rx="520" ry="320" fill="url(#glowCyan)"/>
 
-  <g filter="url(#shadow)">
-    <rect x="78" y="78" width="1044" height="484" rx="30" fill="#FBF8F1" stroke="#2B4D3D" stroke-opacity="0.12"/>
-  </g>
+    <g fill="#a7b4ff">
+      <circle cx="120" cy="520" r="1.6" opacity="0.6"><animate attributeName="opacity" values="0.6;0.12;0.6" dur="3.4s" repeatCount="indefinite"/></circle>
+      <circle cx="300" cy="80" r="1.4" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="4.2s" begin="0.7s" repeatCount="indefinite"/></circle>
+      <circle cx="540" cy="560" r="1.8" opacity="0.55"><animate attributeName="opacity" values="0.55;0.14;0.55" dur="2.9s" begin="1.3s" repeatCount="indefinite"/></circle>
+      <circle cx="690" cy="70" r="1.3" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.7s" begin="0.4s" repeatCount="indefinite"/></circle>
+      <circle cx="760" cy="540" r="1.5" opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.2s" begin="1.8s" repeatCount="indefinite"/></circle>
+      <circle cx="1150" cy="90" r="1.6" opacity="0.55"><animate attributeName="opacity" values="0.55;0.12;0.55" dur="4.5s" begin="1s" repeatCount="indefinite"/></circle>
+      <circle cx="80" cy="160" r="1.3" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.9s" begin="2.2s" repeatCount="indefinite"/></circle>
+    </g>
 
-  <rect x="118" y="118" width="144" height="32" rx="16" fill="#E2EADF"/>
-  <text x="190" y="139" fill="#24553F" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0.12em">PROJECT-FIRST</text>
+    <path d="M850 430 L850 390 L890 390 L890 430 L930 430 L970 430 L970 390 L930 390 L930 350 L970 350 L970 310 L930 310 L890 310 L890 350 L850 350 L850 310 L850 270 L890 270 L890 230 L850 230 L850 190 L850 150 L890 150 L890 190 L930 190 L930 150 L970 150 L970 190 L970 230 L930 230 L930 270 L970 270 L1010 270 L1050 270 L1050 230 L1010 230 L1010 190 L1010 150 L1050 150 L1050 190 L1090 190 L1090 150 L1130 150 L1130 190 L1130 230 L1090 230 L1090 270 L1130 270 L1130 310 L1130 350 L1090 350 L1090 310 L1050 310 L1010 310 L1010 350 L1050 350 L1050 390 L1010 390 L1010 430 L1050 430 L1090 430 L1090 390 L1130 390 L1130 430"
+          stroke="url(#curveStroke)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"
+          pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000" opacity="0.92">
+      <animate attributeName="stroke-dashoffset" values="1000;0;0;1000" keyTimes="0;0.55;0.82;1" dur="16s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="850" cy="430" r="5.5" fill="#62e6ff"/>
+    <text x="990" y="478" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#5b6886" letter-spacing="2">HILBERT · ORDER 3</text>
 
-  <text x="118" y="210" fill="#1C2D24" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">
-    Data Engineering
-  </text>
-  <text x="118" y="278" fill="#1C2D24" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">
-    with Python
-  </text>
-  <text x="118" y="336" fill="#415549" font-family="Inter, Arial, sans-serif" font-size="24">
-    From Python basics to shipped data products:
-  </text>
-  <text x="118" y="372" fill="#415549" font-family="Inter, Arial, sans-serif" font-size="24">
-    a stock platform, a Streamlit dashboard,
-  </text>
-  <text x="118" y="408" fill="#415549" font-family="Inter, Arial, sans-serif" font-size="24">
-    and a retrieval lab with grounded answers.
-  </text>
+    <g font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+      <text x="84" y="150" font-size="15" font-weight="600" letter-spacing="6" fill="#62e6ff">PROJECT-FIRST TRAINING REPOSITORY</text>
+      <text x="84" y="225" font-size="60" font-weight="800" fill="#e9edfb" letter-spacing="-1">Data Engineering</text>
+      <text x="84" y="295" font-size="60" font-weight="800" fill="#e9edfb" letter-spacing="-1">with <tspan fill="#a78bfa">Python</tspan></text>
+      <rect x="86" y="318" width="380" height="5" rx="2.5" fill="url(#brand)">
+        <animate attributeName="width" values="0;380" dur="1.6s" fill="freeze"/>
+      </rect>
+      <text x="84" y="368" font-size="22" fill="#c7d0ec">From fundamentals to a trading platform, a retrieval lab</text>
+      <text x="84" y="400" font-size="22" fill="#c7d0ec">with grounded answers, and a fractal research wing.</text>
 
-  <line x1="674" y1="126" x2="674" y2="510" stroke="#24553F" stroke-opacity="0.12" stroke-width="2"/>
-  <text x="730" y="140" fill="#6A7A70" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">BUILT TOWARD TWO SURFACES</text>
+      <g font-size="14" font-weight="600">
+        <rect x="84" y="436" width="150" height="38" rx="19" fill="none" stroke="#62e6ff" stroke-opacity="0.45"/>
+        <text x="159" y="460" text-anchor="middle" fill="#62e6ff">75 notebooks</text>
+        <rect x="246" y="436" width="140" height="38" rx="19" fill="none" stroke="#a78bfa" stroke-opacity="0.5"/>
+        <text x="316" y="460" text-anchor="middle" fill="#a78bfa">16 chapters</text>
+        <rect x="398" y="436" width="200" height="38" rx="19" fill="none" stroke="#f471b5" stroke-opacity="0.45"/>
+        <text x="498" y="460" text-anchor="middle" fill="#f471b5">6 browser studios</text>
+        <rect x="610" y="436" width="180" height="38" rx="19" fill="none" stroke="#ffc46b" stroke-opacity="0.45"/>
+        <text x="700" y="460" text-anchor="middle" fill="#ffc46b">2 applied systems</text>
+      </g>
 
-  <g>
-    <rect x="118" y="462" width="168" height="62" rx="18" fill="#244B37"/>
-    <text x="148" y="488" fill="#F7F3EA" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">50 NOTEBOOKS</text>
-    <text x="148" y="511" fill="#F7F3EA" font-family="Inter, Arial, sans-serif" font-size="14">8 learning tracks</text>
+      <g font-size="16" font-weight="600">
+        <text x="84" y="540" fill="#97a3c4">foundations</text>
+        <text x="222" y="540" fill="#5b6886">›</text>
+        <text x="248" y="540" fill="#97a3c4">systems</text>
+        <text x="345" y="540" fill="#5b6886">›</text>
+        <text x="371" y="540" fill="#97a3c4">retrieval</text>
+        <text x="466" y="540" fill="#5b6886">›</text>
+        <text x="492" y="540" fill="url(#brand)">research</text>
+      </g>
+      <text x="84" y="586" font-family="'Courier New', monospace" font-size="13" fill="#5b6886" letter-spacing="2">mhdk1602.github.io/python_training</text>
+    </g>
 
-    <rect x="304" y="462" width="188" height="62" rx="18" fill="#F4E3C7"/>
-    <text x="398" y="488" fill="#6B4E25" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">2 APPLIED SURFACES</text>
-    <text x="398" y="511" fill="#6B4E25" font-family="Inter, Arial, sans-serif" font-size="14" text-anchor="middle">trading + retrieval</text>
-  </g>
-
-  <g transform="translate(730 164)">
-    <rect width="330" height="132" rx="28" fill="url(#stock)"/>
-    <text x="28" y="36" fill="#F8F4EC" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM A</text>
-    <text x="28" y="72" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Stock Trading</text>
-    <text x="28" y="102" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Platform</text>
-    <text x="28" y="122" fill="#D8E6DD" font-family="Inter, Arial, sans-serif" font-size="15">Next.js · GraphQL · Flask · Postgres</text>
-  </g>
-
-  <g transform="translate(730 326)">
-    <rect width="330" height="148" rx="28" fill="#FFFDF7" stroke="#24553F" stroke-opacity="0.12"/>
-    <text x="28" y="38" fill="#5B6B60" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.12em">APPLIED SYSTEM B</text>
-    <text x="28" y="80" fill="#1C2D24" font-family="Georgia, 'Times New Roman', serif" font-size="29" font-weight="700">Retrieval Lab</text>
-    <text x="28" y="112" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="16">FastAPI, tagging, Chroma, citations,</text>
-    <text x="28" y="136" fill="#43574A" font-family="Inter, Arial, sans-serif" font-size="16">traceable answers, bounded agents.</text>
+    <rect x="1" y="1" width="1198" height="638" rx="27" fill="none" stroke="#97a3c4" stroke-opacity="0.18"/>
   </g>
 </svg>
