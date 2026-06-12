@@ -39,3 +39,5 @@ notebooks/13-fractal-governance/.venv/
 .venv-ch14/
 notebooks/14-fractal-indexing/.venv/
 notebooks/14-fractal-indexing/clustered_parquet/
+# Python build artifacts
+*.egg-info/
