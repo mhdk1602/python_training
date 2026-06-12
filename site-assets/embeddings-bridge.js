@@ -17,8 +17,8 @@ const queryPresets = {
 };
 
 const domainColors = {
-  parks: "#8fd2ae",
-  finance: "#efce89",
+  parks: "#83dcc4",
+  finance: "#ffc46b",
   governance: "#a2b8ff",
 };
 
@@ -133,8 +133,8 @@ function renderMap() {
       const isFiltered = filteredIds.has(point.id);
       return `
         <g>
-          <circle cx="${x}" cy="${y}" r="${isFiltered ? 11 : isSemantic ? 9 : 7}" fill="${domainColors[point.domain]}" opacity="${dimmed ? 0.18 : 0.88}" stroke="${isFiltered ? "#fff7df" : "#0e1116"}" stroke-width="${isFiltered ? 3 : 1.5}"></circle>
-          <text x="${x + 12}" y="${y + 4}" fill="${dimmed ? "rgba(255,255,255,0.22)" : "#e8efe9"}" font-size="12" font-family="Manrope, sans-serif">${point.id}</text>
+          <circle cx="${x}" cy="${y}" r="${isFiltered ? 11 : isSemantic ? 9 : 7}" fill="${domainColors[point.domain]}" opacity="${dimmed ? 0.18 : 0.88}" stroke="${isFiltered ? "#fff1dd" : "#04060d"}" stroke-width="${isFiltered ? 3 : 1.5}"></circle>
+          <text x="${x + 12}" y="${y + 4}" fill="${dimmed ? "rgba(255,255,255,0.22)" : "#e2e8fc"}" font-size="12" font-family="Manrope, sans-serif">${point.id}</text>
         </g>
       `;
     })
@@ -148,8 +148,8 @@ function renderMap() {
     <text x="56" y="394" fill="rgba(255,255,255,0.48)" font-size="12" font-family="Manrope, sans-serif">left/right latent direction</text>
     <text x="540" y="68" fill="rgba(255,255,255,0.48)" font-size="12" font-family="Manrope, sans-serif">top/bottom latent direction</text>
     ${pointMarkup}
-    <circle id="query-handle" cx="${queryPosition.x}" cy="${queryPosition.y}" r="13" fill="#efce89" stroke="#fff7df" stroke-width="4" style="cursor: grab;"></circle>
-    <text x="${queryPosition.x + 16}" y="${queryPosition.y + 4}" fill="#fff7df" font-size="13" font-family="Manrope, sans-serif">${state.queryLabel}</text>
+    <circle id="query-handle" cx="${queryPosition.x}" cy="${queryPosition.y}" r="13" fill="#ffc46b" stroke="#fff1dd" stroke-width="4" style="cursor: grab;"></circle>
+    <text x="${queryPosition.x + 16}" y="${queryPosition.y + 4}" fill="#fff1dd" font-size="13" font-family="Manrope, sans-serif">${state.queryLabel}</text>
   `;
 
   const handle = document.getElementById("query-handle");

@@ -29,9 +29,9 @@ function clamp(v, lo, hi) {
 const SCALES = ["field", "firm", "division", "team", "practitioner"];
 const MECHANISMS = ["coercive", "mimetic", "normative"];
 const MECH_COLOURS = {
-  coercive: "#c46b6b",
-  mimetic: "#6e8db4",
-  normative: "#2b5a43",
+  coercive: "#ef6a85",
+  mimetic: "#62b6ff",
+  normative: "#6d4fe0",
 };
 
 const PRESSURE_PRESETS = {
@@ -78,9 +78,9 @@ function renderPressureHeatmap() {
       const y = padY + i * cellH;
       const fill = pressureColour(value, MECHANISMS[i]);
       const isActive = j === activeScale;
-      const stroke = isActive ? "rgba(247,242,231,0.85)" : "rgba(255,255,255,0.06)";
+      const stroke = isActive ? "rgba(238, 242, 255,0.85)" : "rgba(255,255,255,0.06)";
       svgInner += `<rect class="heatmap-cell${isActive ? " is-active" : ""}" data-i="${i}" data-j="${j}" x="${x + 2}" y="${y + 2}" width="${cellW - 4}" height="${cellH - 4}" fill="${fill}" stroke="${stroke}" rx="6"/>`;
-      const labelColour = value < 0.55 ? "#0e1116" : "#f7f2e7";
+      const labelColour = value < 0.55 ? "#04060d" : "#eef2ff";
       svgInner += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 4}" text-anchor="middle" font-size="13" fill="${labelColour}" font-weight="600">${value.toFixed(2)}</text>`;
     }
   }
@@ -88,7 +88,7 @@ function renderPressureHeatmap() {
   // Y-axis (mechanism labels).
   for (let i = 0; i < MECHANISMS.length; i += 1) {
     const y = padY + i * cellH + cellH / 2 + 4;
-    svgInner += `<text x="${padX - 14}" y="${y}" text-anchor="end" class="dec-axis-label" font-size="13" fill="#afbbb3">${MECHANISMS[i]}</text>`;
+    svgInner += `<text x="${padX - 14}" y="${y}" text-anchor="end" class="dec-axis-label" font-size="13" fill="#97a3c4">${MECHANISMS[i]}</text>`;
     svgInner += `<rect x="${padX - 8}" y="${padY + i * cellH + cellH / 2 - 4}" width="6" height="8" fill="${MECH_COLOURS[MECHANISMS[i]]}" rx="1"/>`;
   }
 
@@ -100,7 +100,7 @@ function renderPressureHeatmap() {
   }
 
   // Title.
-  svgInner += `<text x="${W / 2}" y="24" text-anchor="middle" font-size="13" fill="#efce8a" font-weight="700" letter-spacing="2">PRESSURE FIELD INTENSITY (0..1)</text>`;
+  svgInner += `<text x="${W / 2}" y="24" text-anchor="middle" font-size="13" fill="#ffc46b" font-weight="700" letter-spacing="2">PRESSURE FIELD INTENSITY (0..1)</text>`;
 
   svg.innerHTML = svgInner;
 
@@ -210,14 +210,14 @@ function renderRadar() {
 
   // Vertices.
   points.forEach(([x, y], i) => {
-    inner += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="${MECH_COLOURS[MECHANISMS[i]]}" stroke="#f7f2e7" stroke-width="1.5"/>`;
+    inner += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="${MECH_COLOURS[MECHANISMS[i]]}" stroke="#eef2ff" stroke-width="1.5"/>`;
   });
 
   // Centre label with the dominant mechanism at this scale.
   const dominantIdx = values.indexOf(Math.max(...values));
   const dominantText = values[dominantIdx] > 0 ? MECHANISMS[dominantIdx] : "balanced";
-  inner += `<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="Fraunces, serif" font-size="22" fill="#f7f2e7">${SCALES[activeScale]}</text>`;
-  inner += `<text x="${cx}" y="${cy + 28}" text-anchor="middle" font-size="11" fill="#afbbb3" letter-spacing="2">DOMINANT: ${dominantText.toUpperCase()}</text>`;
+  inner += `<text x="${cx}" y="${cy + 6}" text-anchor="middle" font-family="Syne, sans-serif" font-size="22" fill="#eef2ff">${SCALES[activeScale]}</text>`;
+  inner += `<text x="${cx}" y="${cy + 28}" text-anchor="middle" font-size="11" fill="#97a3c4" letter-spacing="2">DOMINANT: ${dominantText.toUpperCase()}</text>`;
 
   svg.innerHTML = inner;
 }

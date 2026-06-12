@@ -90,7 +90,7 @@ function renderSeries() {
     const x = padX + i * barW;
     const barH = value * usableH;
     const y = H - padY - barH;
-    inner += `<rect class="series-bar" data-index="${i}" x="${x + 1}" y="${y}" width="${Math.max(barW - 2, 2)}" height="${barH}" fill="#efce8a" rx="2"></rect>`;
+    inner += `<rect class="series-bar" data-index="${i}" x="${x + 1}" y="${y}" width="${Math.max(barW - 2, 2)}" height="${barH}" fill="#ffc46b" rx="2"></rect>`;
   });
   svg.innerHTML = inner;
 
@@ -134,7 +134,7 @@ function renderVisibilityGraph() {
   for (const [a, b] of edges) {
     const pa = positions[a];
     const pb = positions[b];
-    edgeLines += `<line x1="${pa.x}" y1="${pa.y}" x2="${pb.x}" y2="${pb.y}" stroke="rgba(239,206,138,0.32)" stroke-width="0.8"/>`;
+    edgeLines += `<line x1="${pa.x}" y1="${pa.y}" x2="${pb.x}" y2="${pb.y}" stroke="rgba(255, 196, 107,0.32)" stroke-width="0.8"/>`;
   }
 
   const degrees = series.map(() => 0);
@@ -147,7 +147,7 @@ function renderVisibilityGraph() {
   let nodes = "";
   positions.forEach((pos, i) => {
     const r = 4 + 12 * (degrees[i] / Math.max(maxDeg, 1));
-    nodes += `<circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="#d17a00" stroke="#fbe6b3" stroke-width="0.8"/>`;
+    nodes += `<circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="#ff8a3d" stroke="#ffe2ae" stroke-width="0.8"/>`;
   });
 
   svg.innerHTML = `<rect x="0" y="0" width="${W}" height="${H}" fill="rgba(255,255,255,0.01)"/>${edgeLines}${nodes}`;
@@ -352,7 +352,7 @@ function drawBoxCover() {
 
   // Coloring at the active box size.
   const coloring = boxCover(nodeStrs, adj, bcState.lb);
-  const palette = ["#efce8a", "#9ab0a3", "#d17a00", "#c46b6b", "#6e8db4", "#b59ad1", "#f0b67f", "#5fa8a3", "#9d7e57", "#6f8a72"];
+  const palette = ["#ffc46b", "#94a3c8", "#ff8a3d", "#ef6a85", "#62b6ff", "#b59af1", "#ffb454", "#5ad8c8", "#b98e54", "#5a628c"];
   const colorOf = (id) => palette[coloring[id] % palette.length];
 
   // Layout via simple force-style (deterministic spring iterations).
@@ -410,7 +410,7 @@ function drawBoxCover() {
 
   let circles = "";
   for (const id of nodeStrs) {
-    circles += `<circle cx="${positions[id].x}" cy="${positions[id].y}" r="6" fill="${colorOf(id)}" stroke="#173326" stroke-width="0.6"/>`;
+    circles += `<circle cx="${positions[id].x}" cy="${positions[id].y}" r="6" fill="${colorOf(id)}" stroke="#312a6e" stroke-width="0.6"/>`;
   }
 
   svg.innerHTML = `<rect x="0" y="0" width="${W}" height="${H}" fill="rgba(255,255,255,0.01)"/>${edgeLines}${circles}`;
@@ -448,10 +448,10 @@ function drawBoxCover() {
   fitSvgInner += `<text x="${padX}" y="${FH - 14}" fill="rgba(255,255,255,0.55)" font-size="12">log(1 / l)</text>`;
   fitSvgInner += `<text x="6" y="${padY + 4}" fill="rgba(255,255,255,0.55)" font-size="12">log(N_B)</text>`;
   // line of best fit
-  fitSvgInner += `<line x1="${sx(xMin)}" y1="${sy(slope * xMin + intercept)}" x2="${sx(xMax)}" y2="${sy(slope * xMax + intercept)}" stroke="#d17a00" stroke-width="1.6"/>`;
+  fitSvgInner += `<line x1="${sx(xMin)}" y1="${sy(slope * xMin + intercept)}" x2="${sx(xMax)}" y2="${sy(slope * xMax + intercept)}" stroke="#ff8a3d" stroke-width="1.6"/>`;
   // points
   xs.forEach((x, i) => {
-    fitSvgInner += `<circle cx="${sx(x)}" cy="${sy(ys[i])}" r="6" fill="#efce8a" stroke="#173326"/>`;
+    fitSvgInner += `<circle cx="${sx(x)}" cy="${sy(ys[i])}" r="6" fill="#ffc46b" stroke="#312a6e"/>`;
     fitSvgInner += `<text x="${sx(x) + 8}" y="${sy(ys[i]) + 4}" fill="rgba(255,255,255,0.55)" font-size="11">l=${lValues[i]}, N_B=${counts[i]}</text>`;
   });
   fitSvg.innerHTML = fitSvgInner;
@@ -583,7 +583,7 @@ function renderLineage() {
   const H = 480;
   const layerOrder = ["source", "staging", "mart", "exposure"];
   const layerX = { source: 80, staging: 280, mart: 480, exposure: 640 };
-  const layerColor = { source: "#efce8a", staging: "#9ab0a3", mart: "#d17a00", exposure: "#173326" };
+  const layerColor = { source: "#ffc46b", staging: "#94a3c8", mart: "#ff8a3d", exposure: "#312a6e" };
 
   const positions = {};
   layerOrder.forEach((layer) => {
@@ -600,7 +600,7 @@ function renderLineage() {
   for (const u of Object.keys(lineage.adjOut)) {
     for (const v of lineage.adjOut[u] || []) {
       const lit = touched.has(u) && touched.has(v);
-      edgeStr += `<line x1="${positions[u].x}" y1="${positions[u].y}" x2="${positions[v].x}" y2="${positions[v].y}" stroke="${lit ? '#d17a00' : 'rgba(255,255,255,0.18)'}" stroke-width="${lit ? 1.6 : 0.8}"/>`;
+      edgeStr += `<line x1="${positions[u].x}" y1="${positions[u].y}" x2="${positions[v].x}" y2="${positions[v].y}" stroke="${lit ? '#ff8a3d' : 'rgba(255,255,255,0.18)'}" stroke-width="${lit ? 1.6 : 0.8}"/>`;
     }
   }
 
@@ -608,8 +608,8 @@ function renderLineage() {
   for (const layer of layerOrder) {
     for (const n of lineage.layers[layer]) {
       const lit = touched.has(n);
-      const fill = lit ? "#d17a00" : layerColor[layer];
-      const stroke = activeDefect === n ? "#fbe6b3" : "#173326";
+      const fill = lit ? "#ff8a3d" : layerColor[layer];
+      const stroke = activeDefect === n ? "#ffe2ae" : "#312a6e";
       nodeStr += `<g class="lineage-node" data-node="${n}">`;
       nodeStr += `<circle cx="${positions[n].x}" cy="${positions[n].y}" r="${lit ? 14 : 10}" fill="${fill}" stroke="${stroke}" stroke-width="${activeDefect === n ? 2 : 0.8}"/>`;
       nodeStr += `<text x="${positions[n].x + 16}" y="${positions[n].y + 4}" fill="rgba(255,255,255,0.78)" font-size="11">${n}</text>`;

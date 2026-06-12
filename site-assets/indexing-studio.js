@@ -113,8 +113,8 @@ const CURVE_PATHS = {
   row: rowMajorPath(CURVE_N),
 };
 const CURVE_COLOURS = {
-  hilbert: "#1e40af",
-  zorder: "#d97706",
+  hilbert: "#4f7cff",
+  zorder: "#ff9d2e",
   row: "#a3a3a3",
 };
 
@@ -208,11 +208,11 @@ function renderCurve() {
   const queryGroup = makeSvg("g", { id: "curve-query", style: "cursor: move" });
   queryGroup.appendChild(makeSvg("rect", {
     x: qx, y: qy, width: qw, height: qh,
-    fill: "rgba(22,163,74,0.18)", stroke: "#16a34a", "stroke-width": 2,
+    fill: "rgba(34, 201, 122,0.18)", stroke: "#22c97a", "stroke-width": 2,
     rx: 3, "stroke-dasharray": "4 3",
   }));
   queryGroup.appendChild(makeSvg("circle", {
-    cx: qx + qw, cy: qy + qh, r: 5, fill: "#16a34a",
+    cx: qx + qw, cy: qy + qh, r: 5, fill: "#22c97a",
   }));
   curveCanvas.appendChild(queryGroup);
 
@@ -221,10 +221,10 @@ function renderCurve() {
   const legendY = CURVE_OY + 10;
   const legend = makeSvg("g", {});
   const labels = [
-    { name: "Hilbert curve", c: "#1e40af" },
-    { name: "Z-order curve", c: "#d97706" },
+    { name: "Hilbert curve", c: "#4f7cff" },
+    { name: "Z-order curve", c: "#ff9d2e" },
     { name: "Row-major", c: "#a3a3a3" },
-    { name: "Query rectangle", c: "#16a34a" },
+    { name: "Query rectangle", c: "#22c97a" },
   ];
   labels.forEach((lbl, idx) => {
     legend.appendChild(makeSvg("rect", {
@@ -232,7 +232,7 @@ function renderCurve() {
     }));
     const t = makeSvg("text", {
       x: legendX + 18, y: legendY + idx * 22 + 10,
-      fill: "#afbbb3", "font-size": 11,
+      fill: "#97a3c4", "font-size": 11,
     });
     t.textContent = lbl.name;
     legend.appendChild(t);
@@ -489,7 +489,7 @@ function renderRace() {
   for (const [x, y] of racePoints) {
     const [cx, cy] = racePosToCanvas(x, y);
     raceCanvas.appendChild(makeSvg("circle", {
-      cx, cy, r: 1.2, fill: "#6e8db4", opacity: 0.55,
+      cx, cy, r: 1.2, fill: "#62b6ff", opacity: 0.55,
     }));
   }
   // Query rect
@@ -497,16 +497,16 @@ function renderRace() {
   const [qcx1, qcy1] = racePosToCanvas(raceQuery.cx + raceQuery.w / 2, raceQuery.cy + raceQuery.h / 2);
   raceCanvas.appendChild(makeSvg("rect", {
     x: qcx0, y: qcy0, width: qcx1 - qcx0, height: qcy1 - qcy0,
-    fill: "rgba(22,163,74,0.16)", stroke: "#16a34a", "stroke-width": 2,
+    fill: "rgba(34, 201, 122,0.16)", stroke: "#22c97a", "stroke-width": 2,
     "stroke-dasharray": "4 3", style: "cursor: move",
   }));
   raceCanvas.appendChild(makeSvg("circle", {
-    cx: qcx1, cy: qcy1, r: 5, fill: "#16a34a", style: "cursor: nwse-resize",
+    cx: qcx1, cy: qcy1, r: 5, fill: "#22c97a", style: "cursor: nwse-resize",
   }));
 
   // Compute counters
   const labels = ["rowmajor", "zorder", "hilbert", "rtree"];
-  const colors = { rowmajor: "#a3a3a3", zorder: "#d97706", hilbert: "#1e40af", rtree: "#16a34a" };
+  const colors = { rowmajor: "#a3a3a3", zorder: "#ff9d2e", hilbert: "#4f7cff", rtree: "#22c97a" };
   const niceNames = { rowmajor: "Row-major", zorder: "Z-order", hilbert: "Hilbert", rtree: "R-tree (Y-sorted)" };
 
   const stats = {};
@@ -538,19 +538,19 @@ function renderRace() {
       opacity: label === best ? 1 : 0.7,
     }));
     const lblText = makeSvg("text", {
-      x: 6, y: y + barH / 2 + 4, fill: "#edf1ec", "font-size": 11, "font-weight": 600,
+      x: 6, y: y + barH / 2 + 4, fill: "#e9edfb", "font-size": 11, "font-weight": 600,
     });
     lblText.textContent = niceNames[label];
     raceChart.appendChild(lblText);
     const valText = makeSvg("text", {
-      x: padL + w + 6, y: y + barH / 2 + 4, fill: "#afbbb3", "font-size": 11,
+      x: padL + w + 6, y: y + barH / 2 + 4, fill: "#97a3c4", "font-size": 11,
     });
     valText.textContent = v + " / " + stats[label].total;
     raceChart.appendChild(valText);
   });
 
   const titleText = makeSvg("text", {
-    x: padL, y: 16, fill: "#efce8a", "font-size": 11, "letter-spacing": "0.18em",
+    x: padL, y: 16, fill: "#ffc46b", "font-size": 11, "letter-spacing": "0.18em",
   });
   titleText.textContent = "PAGES READ (LOWER IS BETTER)";
   raceChart.appendChild(titleText);
@@ -710,7 +710,7 @@ function searchHnsw(q) {
 
 function renderHnsw() {
   hnswCanvas.innerHTML = "";
-  const layerColors = ["#1e40af", "#6e8db4", "#c46b6b", "#d97706", "#efce8a"];
+  const layerColors = ["#4f7cff", "#62b6ff", "#ef6a85", "#ff9d2e", "#ffc46b"];
 
   // Edges (bottom layer, faded)
   Object.entries(hnswGraph[0] || {}).forEach(([i, nbrs]) => {
@@ -720,7 +720,7 @@ function renderHnsw() {
         const b = hnswPoints[j];
         hnswCanvas.appendChild(makeSvg("line", {
           x1: a[0], y1: a[1], x2: b[0], y2: b[1],
-          stroke: "rgba(110,141,180,0.2)", "stroke-width": 0.5,
+          stroke: "rgba(98, 182, 255,0.2)", "stroke-width": 0.5,
         }));
       }
     });
@@ -746,7 +746,7 @@ function renderHnsw() {
   hnswVisited.forEach((n) => {
     const [x, y] = hnswPoints[n];
     hnswCanvas.appendChild(makeSvg("circle", {
-      cx: x, cy: y, r: 9, fill: "none", stroke: "#efce8a", "stroke-width": 1.5, opacity: 0.85,
+      cx: x, cy: y, r: 9, fill: "none", stroke: "#ffc46b", "stroke-width": 1.5, opacity: 0.85,
     }));
   });
 
@@ -756,7 +756,7 @@ function renderHnsw() {
     const b = hnswPoints[hnswPath[i + 1].node];
     hnswCanvas.appendChild(makeSvg("line", {
       x1: a[0], y1: a[1], x2: b[0], y2: b[1],
-      stroke: "#efce8a", "stroke-width": 2.5, "stroke-linecap": "round",
+      stroke: "#ffc46b", "stroke-width": 2.5, "stroke-linecap": "round",
     }));
   }
 
@@ -773,11 +773,11 @@ function renderHnsw() {
   if (hnswQuery) {
     hnswCanvas.appendChild(makeSvg("circle", {
       cx: hnswQuery[0], cy: hnswQuery[1], r: 9,
-      fill: "#16a34a", stroke: "#fff", "stroke-width": 2,
+      fill: "#22c97a", stroke: "#fff", "stroke-width": 2,
     }));
     const t = makeSvg("text", {
       x: hnswQuery[0] + 12, y: hnswQuery[1] + 4,
-      fill: "#16a34a", "font-size": 11, "font-weight": 700,
+      fill: "#22c97a", "font-size": 11, "font-weight": 700,
     });
     t.textContent = "query";
     hnswCanvas.appendChild(t);
@@ -794,7 +794,7 @@ function renderHnsw() {
     }));
     const t = makeSvg("text", {
       x: legendX + 14, y: legendY + (hnswMaxLayer - L) * 24 + 4,
-      fill: "#afbbb3", "font-size": 11,
+      fill: "#97a3c4", "font-size": 11,
     });
     const count = Object.keys(hnswGraph[L] || {}).length;
     t.textContent = "layer " + L + ": " + count + " nodes";

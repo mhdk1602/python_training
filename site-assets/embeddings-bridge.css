@@ -1,12 +1,12 @@
 :root {
-  --bg: #0f1318;
-  --cream: #f6efe3;
-  --moss: #28523e;
-  --moss-deep: #173529;
-  --sand: #efce89;
-  --ink: #17221b;
-  --text: #edf1ec;
-  --muted: #aab6ae;
+  --bg: #04060d;
+  --cream: #eef2ff;
+  --moss: #6d4fe0;
+  --moss-deep: #312a6e;
+  --sand: #ffc46b;
+  --ink: #070a14;
+  --text: #e9edfb;
+  --muted: #97a3c4;
   --line: rgba(255, 255, 255, 0.08);
   --shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
   --radius-xl: 32px;
@@ -28,9 +28,9 @@ body {
   min-width: 320px;
   font-family: "Manrope", system-ui, sans-serif;
   background:
-    radial-gradient(circle at 12% 10%, rgba(239, 206, 137, 0.14), transparent 24%),
-    radial-gradient(circle at 84% 8%, rgba(40, 82, 62, 0.2), transparent 22%),
-    linear-gradient(180deg, #0f1318 0%, #0a0e12 100%);
+    radial-gradient(circle at 12% 10%, rgba(255, 196, 107, 0.14), transparent 24%),
+    radial-gradient(circle at 84% 8%, rgba(124, 92, 255, 0.2), transparent 22%),
+    linear-gradient(180deg, #04060d 0%, #04060d 100%);
   color: var(--text);
 }
 
@@ -77,7 +77,7 @@ select {
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(15, 19, 24, 0.76);
+  background: rgba(4, 6, 13, 0.76);
   backdrop-filter: blur(18px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
 }
@@ -94,7 +94,7 @@ select {
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--sand) 0%, #d9af63 100%);
+  background: linear-gradient(135deg, var(--sand) 0%, #f0b35e 100%);
   color: var(--ink);
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -145,12 +145,12 @@ select {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: 28px;
   padding: 42px;
-  border: 1px solid rgba(246, 239, 227, 0.12);
+  border: 1px solid rgba(238, 242, 255, 0.12);
   border-radius: var(--radius-xl);
   background:
-    radial-gradient(circle at 12% 14%, rgba(239, 206, 137, 0.18), transparent 24%),
-    radial-gradient(circle at 88% 12%, rgba(40, 82, 62, 0.18), transparent 20%),
-    linear-gradient(135deg, rgba(246, 239, 227, 0.96), rgba(226, 235, 228, 0.94));
+    radial-gradient(circle at 12% 14%, rgba(255, 196, 107, 0.18), transparent 24%),
+    radial-gradient(circle at 88% 12%, rgba(124, 92, 255, 0.18), transparent 20%),
+    linear-gradient(135deg, rgba(238, 242, 255, 0.96), rgba(238, 242, 255, 0.94));
   color: var(--ink);
   box-shadow: var(--shadow);
 }
@@ -170,13 +170,13 @@ select {
 }
 
 .eyebrow {
-  background: rgba(40, 82, 62, 0.12);
+  background: rgba(124, 92, 255, 0.12);
   color: var(--moss-deep);
 }
 
 .signal-label {
-  background: rgba(239, 206, 137, 0.12);
-  color: #f2dca7;
+  background: rgba(255, 196, 107, 0.12);
+  color: #ffd99b;
 }
 
 .hero-copy h1,
@@ -184,7 +184,7 @@ select {
 .signal-card h2,
 .closing-panel h2 {
   margin: 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Syne", system-ui, sans-serif;
   font-weight: 700;
   line-height: 0.96;
   letter-spacing: -0.04em;
@@ -223,12 +223,12 @@ select {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--moss) 0%, #43715b 100%);
-  color: #f8f4ec;
+  background: linear-gradient(135deg, var(--moss) 0%, #4f46a8 100%);
+  color: #eef2ff;
 }
 
 .button-secondary {
-  border-color: rgba(23, 34, 27, 0.12);
+  border-color: rgba(7, 10, 20, 0.12);
   background: rgba(255, 255, 255, 0.46);
   color: var(--ink);
 }
@@ -269,14 +269,14 @@ select {
 
 .metric-value,
 .mini-metric span {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Syne", system-ui, sans-serif;
   font-size: 2rem;
   line-height: 1;
 }
 
 .metric-label,
 .mini-metric small {
-  color: #5b6b60;
+  color: #5a628c;
 }
 
 .hero-rail {
@@ -291,24 +291,24 @@ select {
 }
 
 .signal-card-dark {
-  background: linear-gradient(155deg, #1f3f31 0%, #2d5b45 100%);
-  color: #f8f4ec;
+  background: linear-gradient(155deg, #312a6e 0%, #6d4fe0 100%);
+  color: #eef2ff;
 }
 
 .signal-card-dark .signal-label {
-  background: rgba(246, 239, 227, 0.16);
-  color: #dfe8e1;
+  background: rgba(238, 242, 255, 0.16);
+  color: #dbe3fb;
 }
 
 .signal-card-light {
   background: rgba(255, 255, 255, 0.52);
   color: var(--ink);
-  border-color: rgba(23, 34, 27, 0.08);
+  border-color: rgba(7, 10, 20, 0.08);
 }
 
 .signal-card-light .signal-label {
-  background: rgba(40, 82, 62, 0.12);
-  color: #456151;
+  background: rgba(124, 92, 255, 0.12);
+  color: #4f46a8;
 }
 
 .section-heading {
@@ -348,8 +348,8 @@ select {
   width: 100%;
   height: auto;
   background:
-    radial-gradient(circle at 18% 20%, rgba(239, 206, 137, 0.08), transparent 28%),
-    linear-gradient(180deg, #071016 0%, #111722 100%);
+    radial-gradient(circle at 18% 20%, rgba(255, 196, 107, 0.08), transparent 28%),
+    linear-gradient(180deg, #030509 0%, #0a0f1e 100%);
 }
 
 .map-caption {
@@ -373,8 +373,8 @@ select {
 }
 
 .control-label {
-  background: rgba(239, 206, 137, 0.12);
-  color: #f2dca7;
+  background: rgba(255, 196, 107, 0.12);
+  color: #ffd99b;
 }
 
 .chip-row {
@@ -394,8 +394,8 @@ select {
 }
 
 .chip-button.is-active {
-  background: rgba(239, 206, 137, 0.16);
-  border-color: rgba(239, 206, 137, 0.28);
+  background: rgba(255, 196, 107, 0.16);
+  border-color: rgba(255, 196, 107, 0.28);
 }
 
 select,

@@ -1,15 +1,15 @@
 :root {
-  --bg: #0e1116;
-  --bg-soft: #141920;
+  --bg: #04060d;
+  --bg-soft: #0a0f1e;
   --panel: rgba(255, 255, 255, 0.05);
-  --cream: #f7f2e7;
-  --mist: #e2ebe4;
-  --sand: #efce8a;
-  --moss: #2b5a43;
-  --moss-deep: #173326;
-  --ink: #16211a;
-  --text: #edf1ec;
-  --muted: #afbbb3;
+  --cream: #eef2ff;
+  --mist: #dbe3fb;
+  --sand: #ffc46b;
+  --moss: #6d4fe0;
+  --moss-deep: #312a6e;
+  --ink: #070a14;
+  --text: #e9edfb;
+  --muted: #97a3c4;
   --line: rgba(255, 255, 255, 0.08);
   --shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
   --radius-xl: 32px;
@@ -17,24 +17,24 @@
   --radius-md: 18px;
   --max: 1240px;
 
-  --regime-periodic: #efce8a;
-  --regime-random: #9ab0a3;
-  --regime-fractal: #d17a00;
-  --regime-trend: #c46b6b;
+  --regime-periodic: #ffc46b;
+  --regime-random: #94a3c8;
+  --regime-fractal: #ff8a3d;
+  --regime-trend: #ef6a85;
 
-  --layer-source: #efce8a;
-  --layer-staging: #9ab0a3;
-  --layer-mart: #d17a00;
-  --layer-exposure: #173326;
+  --layer-source: #ffc46b;
+  --layer-staging: #94a3c8;
+  --layer-mart: #ff8a3d;
+  --layer-exposure: #312a6e;
 
-  --box-palette-1: #efce8a;
-  --box-palette-2: #9ab0a3;
-  --box-palette-3: #d17a00;
-  --box-palette-4: #c46b6b;
-  --box-palette-5: #6e8db4;
-  --box-palette-6: #b59ad1;
-  --box-palette-7: #f0b67f;
-  --box-palette-8: #5fa8a3;
+  --box-palette-1: #ffc46b;
+  --box-palette-2: #94a3c8;
+  --box-palette-3: #ff8a3d;
+  --box-palette-4: #ef6a85;
+  --box-palette-5: #62b6ff;
+  --box-palette-6: #b59af1;
+  --box-palette-7: #ffb454;
+  --box-palette-8: #5ad8c8;
 }
 
 * {
@@ -50,9 +50,9 @@ body {
   min-width: 320px;
   font-family: "Manrope", system-ui, sans-serif;
   background:
-    radial-gradient(circle at 12% 12%, rgba(239, 206, 138, 0.13), transparent 22%),
-    radial-gradient(circle at 88% 4%, rgba(43, 90, 67, 0.22), transparent 22%),
-    linear-gradient(180deg, #0e1116 0%, #090c10 100%);
+    radial-gradient(circle at 12% 12%, rgba(255, 196, 107, 0.13), transparent 22%),
+    radial-gradient(circle at 88% 4%, rgba(124, 92, 255, 0.22), transparent 22%),
+    linear-gradient(180deg, #04060d 0%, #030509 100%);
   color: var(--text);
 }
 
@@ -98,7 +98,7 @@ input {
   padding: 14px 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(14, 17, 22, 0.86);
+  background: rgba(4, 6, 13, 0.86);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
 }
@@ -116,7 +116,7 @@ input {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #efce8a, #d17a00);
+  background: linear-gradient(135deg, #ffc46b, #ff8a3d);
   color: var(--ink);
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -129,7 +129,7 @@ input {
 }
 
 .brand-copy strong {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: 1.05rem;
 }
 
@@ -189,7 +189,7 @@ main {
 }
 
 .hero-copy h1 {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: clamp(2.1rem, 4.4vw, 3.2rem);
   line-height: 1.05;
   margin: 12px 0 18px;
@@ -222,7 +222,7 @@ main {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #efce8a, #d17a00);
+  background: linear-gradient(135deg, #ffc46b, #ff8a3d);
   color: var(--ink);
 }
 
@@ -256,7 +256,7 @@ main {
 
 .metric-value {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: 2.1rem;
   color: var(--cream);
 }
@@ -281,14 +281,14 @@ main {
 }
 
 .signal-card-dark {
-  background: linear-gradient(140deg, rgba(23, 51, 38, 0.8), rgba(43, 90, 67, 0.45));
-  border-color: rgba(157, 200, 178, 0.18);
+  background: linear-gradient(140deg, rgba(49, 42, 110, 0.8), rgba(124, 92, 255, 0.45));
+  border-color: rgba(167, 180, 255, 0.18);
 }
 
 .signal-card-light {
-  background: linear-gradient(140deg, rgba(247, 242, 231, 0.92), rgba(247, 242, 231, 0.78));
+  background: linear-gradient(140deg, rgba(238, 242, 255, 0.92), rgba(238, 242, 255, 0.78));
   color: var(--ink);
-  border-color: rgba(220, 196, 156, 0.4);
+  border-color: rgba(255, 214, 158, 0.4);
 }
 
 .signal-card-light p,
@@ -310,7 +310,7 @@ main {
 }
 
 .signal-card h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: 1.45rem;
   margin: 0 0 12px;
   line-height: 1.15;
@@ -339,7 +339,7 @@ main {
 }
 
 .section-heading h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: clamp(1.65rem, 3vw, 2.3rem);
   margin: 4px 0 8px;
   line-height: 1.05;
@@ -367,7 +367,7 @@ main {
   gap: 10px;
   padding: 18px;
   border-radius: var(--radius-md);
-  background: rgba(9, 12, 16, 0.7);
+  background: rgba(3, 5, 9, 0.7);
   border: 1px solid var(--line);
 }
 
@@ -442,14 +442,14 @@ main {
 }
 
 .preset-button.is-active {
-  background: rgba(239, 206, 138, 0.18);
-  border-color: rgba(239, 206, 138, 0.55);
-  color: #fbe6b3;
+  background: rgba(255, 196, 107, 0.18);
+  border-color: rgba(255, 196, 107, 0.55);
+  color: #ffe2ae;
 }
 
 input[type="range"] {
   width: 100%;
-  accent-color: #efce8a;
+  accent-color: #ffc46b;
 }
 
 .stat-list {
@@ -475,8 +475,8 @@ input[type="range"] {
 }
 
 .theory-note {
-  background: linear-gradient(140deg, rgba(43, 90, 67, 0.32), rgba(23, 51, 38, 0.58));
-  border-color: rgba(157, 200, 178, 0.18);
+  background: linear-gradient(140deg, rgba(124, 92, 255, 0.32), rgba(49, 42, 110, 0.58));
+  border-color: rgba(167, 180, 255, 0.18);
 }
 
 .theory-note p {
@@ -500,7 +500,7 @@ input[type="range"] {
 }
 
 .path-card h3 {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   margin: 0 0 12px;
   font-size: 1.25rem;
 }
@@ -516,15 +516,15 @@ input[type="range"] {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(239, 206, 138, 0.14);
-  color: #f2dca7;
+  background: rgba(255, 196, 107, 0.14);
+  color: #ffd99b;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   margin-bottom: 14px;
 }
 
 .defect-readout {
-  font-family: "Fraunces", serif;
+  font-family: "Syne", serif;
   font-size: 1.4rem;
   margin: 0;
   color: var(--cream);
