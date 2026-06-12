@@ -11,7 +11,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-67_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-76_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Site](https://img.shields.io/badge/GitHub_Pages-live-7C5CFF?style=flat-square&logo=githubpages&logoColor=white)](https://mhdk1602.github.io/python_training/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
 [Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html) • [Indexing Studio](https://mhdk1602.github.io/python_training/indexing-studio.html)
@@ -508,6 +509,21 @@ The indexes you ship every day are fractal, the apparatus to reason about them i
 
 ---
 
+## Roadmap: Chapters On The Bench
+
+Chapters 11-14 proved out a pattern: nine notebooks, three browser labs, one capstone, and a closing notebook that names the failure modes. The next four chapters apply that same pattern to the production-infrastructure gaps the curriculum still has. Order reflects dependency, not priority.
+
+| Chapter | Working title | What it teaches | Why it belongs here |
+|:--------|:--------------|:----------------|:--------------------|
+| **15** | Orchestration as Asset Graphs | Dagster software-defined assets, sensors, backfills, retry semantics, and how a dbt project becomes one node in a larger asset graph. | The repo has pipelines but no scheduler. Asset-oriented orchestration also reuses the lineage vocabulary Chapter 12 already built. |
+| **16** | Data Contracts and Change Capture | Log-based CDC (Debezium pattern), schema evolution, Pydantic and dbt contract tests, and what breaks downstream when a producer ships a silent type change. | Quality checks in Chapter 9 are consumer-side. Contracts move enforcement to the producer boundary, which is where governance actually has leverage. |
+| **17** | Lakehouse Internals | Iceberg and Delta table formats: snapshots, manifests, time travel, compaction, and clustering. Includes a hands-on bridge to 14.5, since Iceberg's Hilbert clustering is the production face of the math in Chapter 14. | The repo benchmarks Liquid Clustering in DuckDB but never opens the table format underneath it. |
+| **18** | Observability and Governance Telemetry | Freshness, volume, and distribution monitors; OpenLineage events; data SLAs; and how monitoring signals become evidence in a governance regime. | This closes the loop with Chapter 13: decoupling between formal policy and operational practice is measurable, and this chapter builds the instruments. |
+
+Each proposed chapter gets a public studio page like the existing six. Suggestions and PRs against this roadmap are welcome; open an issue with the chapter number in the title.
+
+---
+
 ## Tech Stack
 
 <div align="center">
@@ -577,12 +593,7 @@ python_training/
 
 ## Contributing
 
-Contributions are welcome. If you find an error in a notebook, want to add exercises, or have ideas for new chapters:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-topic`)
-3. Make your changes following the content standards in `.cursor/rules/research-entity.mdc`
-4. Submit a pull request
+Contributions are welcome: notebook fixes, new exercises, studio improvements, or a case for one of the [roadmap chapters](#roadmap-chapters-on-the-bench). See [CONTRIBUTING.md](CONTRIBUTING.md) for the content standards and workflow.
 
 ---
 
