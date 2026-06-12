@@ -8,10 +8,11 @@
 
 # Data Engineering with Python
 
+[![CI](https://github.com/mhdk1602/python_training/actions/workflows/ci.yml/badge.svg)](https://github.com/mhdk1602/python_training/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-76_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-75_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![Site](https://img.shields.io/badge/GitHub_Pages-live-7C5CFF?style=flat-square&logo=githubpages&logoColor=white)](https://mhdk1602.github.io/python_training/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 

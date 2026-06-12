@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  repo-checks:
+    name: notebooks and site links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate notebooks are well-formed
+        run: python3 scripts/validate_notebooks.py
+      - name: Check site links resolve
+        run: python3 scripts/check_site_links.py
+
+  rag-lab-tests:
+    name: chapter 10 retrieval lab
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: chapter-10-rag-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: chapter-10-rag-lab/pyproject.toml
+      - name: Install
+        run: pip install -e '.[dev]'
+      - name: Test
+        run: pytest tests/ -q
