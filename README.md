@@ -12,11 +12,11 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-24553F?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Next.js](https://img.shields.io/badge/Next.js-14-1C2D24?style=flat-square&logo=nextdotjs&logoColor=white)](react-app/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Chapter_10-0E8A6A?style=flat-square&logo=fastapi&logoColor=white)](chapter-10-rag-lab/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-75_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-84_Notebooks-EA7A1F?style=flat-square&logo=jupyter&logoColor=white)](notebooks/)
 [![Site](https://img.shields.io/badge/GitHub_Pages-live-7C5CFF?style=flat-square&logo=githubpages&logoColor=white)](https://mhdk1602.github.io/python_training/)
 [![License](https://img.shields.io/badge/License-MIT-6F7F72?style=flat-square)](LICENSE)
 
-[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html) • [Indexing Studio](https://mhdk1602.github.io/python_training/indexing-studio.html)
+[Start Here](#start-here) • [Quick Start](#quick-start) • [Roadmap](#learning-roadmap) • [Repository Shape](#repository-shape) • [Embeddings Bridge](https://mhdk1602.github.io/python_training/embeddings-bridge.html) • [Fractal Studio](https://mhdk1602.github.io/python_training/fractals-governance.html) • [Fractal Graphs](https://mhdk1602.github.io/python_training/fractal-graphs.html) • [Governance Studio](https://mhdk1602.github.io/python_training/governance-studio.html) • [Indexing Studio](https://mhdk1602.github.io/python_training/indexing-studio.html) • [Orchestration Studio](https://mhdk1602.github.io/python_training/orchestration-studio.html)
 
 </div>
 
@@ -70,6 +70,7 @@ I built this repo as a cumulative sequence. The early notebooks teach Python, da
 | **Fractal graphs studio** | Eight notebooks and an interactive page that walk three bridges: visibility graphs from time series, box-covering on networks, and lineage as a stewardship object. Closes with the failure-modes notebook. | [`notebooks/12-fractal-graphs/`](notebooks/12-fractal-graphs/) · [`fractal-graphs.html`](fractal-graphs.html) |
 | **Fractal governance studio** | Nine notebooks and an interactive page that braid institutional theory, fractal-graph descriptors, and AI governance. Multi-scale pressure fields, the decoupling lens, the regulation cascade, and an Anthropic-backed parser with mock fallback. | [`notebooks/13-fractal-governance/`](notebooks/13-fractal-governance/) · [`governance-studio.html`](governance-studio.html) |
 | **Fractal indexing studio** | Nine notebooks and an interactive page that show why the indexes you ship every day are fractal. Hilbert and Z-order curves built in NumPy, the Faloutsos selectivity oracle revived, a tiny pure-Python HNSW, a DuckDB Liquid Clustering benchmark, and Hurst-driven time-series partitioning. | [`notebooks/14-fractal-indexing/`](notebooks/14-fractal-indexing/) · [`indexing-studio.html`](indexing-studio.html) |
+| **Orchestration studio** | Nine notebooks and an interactive page that build a pure-Python asset-graph orchestrator: topological materialization, idempotent backfills, sensors and freshness, the repo's real dbt models parsed into a DAG, retries and blast radius, a Dagster mapping, and the failure-mode closer. | [`notebooks/15-orchestration/`](notebooks/15-orchestration/) · [`orchestration-studio.html`](orchestration-studio.html) |
 | **Teaching contract** | The repo uses NPS as the Chapter 10 worked example, but the retrieval interfaces stay generic so learners can swap the source. | [`chapter-10-rag-lab/README.md`](chapter-10-rag-lab/README.md) |
 
 ## Tracks At A Glance
@@ -514,14 +515,15 @@ The indexes you ship every day are fractal, the apparatus to reason about them i
 
 Chapters 11-14 proved out a pattern: nine notebooks, three browser labs, one capstone, and a closing notebook that names the failure modes. The next four chapters apply that same pattern to the production-infrastructure gaps the curriculum still has. Order reflects dependency, not priority.
 
+**Chapter 15 has shipped.** The notebooks live in [`notebooks/15-orchestration/`](notebooks/15-orchestration/) and the [Orchestration Studio](https://mhdk1602.github.io/python_training/orchestration-studio.html) is live. It builds a tiny asset-graph orchestrator from scratch (topological materialization, idempotent backfills, sensors, the repo's own dbt graph parsed into a DAG, retries, and the Chapter 12 blast radius), then maps every concept onto Dagster. The three remaining chapters are still on the bench:
+
 | Chapter | Working title | What it teaches | Why it belongs here |
 |:--------|:--------------|:----------------|:--------------------|
-| **15** | Orchestration as Asset Graphs | Dagster software-defined assets, sensors, backfills, retry semantics, and how a dbt project becomes one node in a larger asset graph. | The repo has pipelines but no scheduler. Asset-oriented orchestration also reuses the lineage vocabulary Chapter 12 already built. |
 | **16** | Data Contracts and Change Capture | Log-based CDC (Debezium pattern), schema evolution, Pydantic and dbt contract tests, and what breaks downstream when a producer ships a silent type change. | Quality checks in Chapter 9 are consumer-side. Contracts move enforcement to the producer boundary, which is where governance actually has leverage. |
 | **17** | Lakehouse Internals | Iceberg and Delta table formats: snapshots, manifests, time travel, compaction, and clustering. Includes a hands-on bridge to 14.5, since Iceberg's Hilbert clustering is the production face of the math in Chapter 14. | The repo benchmarks Liquid Clustering in DuckDB but never opens the table format underneath it. |
 | **18** | Observability and Governance Telemetry | Freshness, volume, and distribution monitors; OpenLineage events; data SLAs; and how monitoring signals become evidence in a governance regime. | This closes the loop with Chapter 13: decoupling between formal policy and operational practice is measurable, and this chapter builds the instruments. |
 
-Each proposed chapter gets a public studio page like the existing six. Suggestions and PRs against this roadmap are welcome; open an issue with the chapter number in the title.
+Each chapter gets a public studio page like the existing seven. Suggestions and PRs against this roadmap are welcome; open an issue with the chapter number in the title.
 
 ---
 
@@ -565,6 +567,7 @@ python_training/
     12-fractal-graphs/         # Fractal graphs: visibility, box-covering, lineage, ER upgrade
     13-fractal-governance/     # Multi-scale pressure fields, decoupling, AI subject+agent, translation cascade
     14-fractal-indexing/       # Hilbert/Z-order curves, Hilbert R-tree, fractal selectivity, HNSW, Liquid Clustering, Hurst chunking
+    15-orchestration/          # Asset-graph orchestrator, partitions, backfills, sensors, dbt graph, blast radius, Dagster bridge
     bonus/                     # Advent of Code, extra exercises
   data/
     input_files/               # Sample datasets for exercises
