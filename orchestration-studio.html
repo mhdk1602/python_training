@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orchestration Studio</title>
+  <meta
+    name="description"
+    content="Three interactive labs that make orchestration concrete: materialize an asset graph in dependency order, backfill missing partitions idempotently, and watch a failure's blast radius propagate."
+  >
+  <meta property="og:title" content="Orchestration Studio">
+  <meta property="og:description" content="Materialize an asset graph in topological order, backfill partitions without redoing work, and trace the blast radius of a failed asset.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdk1602.github.io/python_training/orchestration-studio.html">
+  <meta property="og:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <meta property="og:image:alt" content="Orchestration studio page from the Data Engineering with Python repository.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orchestration Studio">
+  <meta name="twitter:description" content="Asset-graph materializer, backfill grid, and blast-radius explorer.">
+  <meta name="twitter:image" content="https://mhdk1602.github.io/python_training/site-assets/social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-assets/orchestration-studio.css">
+</head>
+<body>
+  <div class="og-shell">
+    <header class="og-header">
+      <a class="og-brand" href="index.html">
+        <span class="brand-mark">OG</span>
+        <span class="brand-copy">
+          <strong>Orchestration</strong>
+          <span>asset graphs, backfills, blast radius</span>
+        </span>
+      </a>
+      <nav class="og-nav" aria-label="Primary">
+        <a href="#materialize">Materializer</a>
+        <a href="#backfill">Backfill</a>
+        <a href="#blast">Blast radius</a>
+        <a href="indexing-studio.html">Indexing</a>
+        <a href="governance-studio.html">Governance</a>
+        <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid" data-reveal>
+        <div class="hero-copy">
+          <p class="eyebrow">CHAPTER 15 STUDIO</p>
+          <h1>Orchestration is just materializing a graph, in the right order.</h1>
+          <p class="hero-lead">
+            Cron runs scripts on a clock. An orchestrator runs an asset graph: it knows what depends on what, builds in dependency order, skips work already done, and tells you exactly what breaks when one node fails. These three labs make each of those ideas visible. They are the browser face of a 150-line pure-Python orchestrator built from scratch in Chapter 15.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#materialize">Open the labs</a>
+            <a class="button button-secondary" href="https://github.com/mhdk1602/python_training/tree/main/notebooks/15-orchestration" target="_blank" rel="noreferrer">Open chapter folder</a>
+          </div>
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <span class="metric-value">9</span>
+              <span class="metric-label">notebooks in the chapter</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">interactive labs</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-value">~150</span>
+              <span class="metric-label">lines of pure Python</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-rail">
+          <div class="signal-card signal-card-dark">
+            <p class="signal-label">Why a graph, not a schedule</p>
+            <h2>Dependency order is the whole game.</h2>
+            <p>A schedule says "run at 2am". A graph says "build positions after price_history, which comes after market_data". The orchestrator topologically sorts the graph and materializes in that order, so nothing is ever built on a missing input. This is the asset model Dagster is built on, and the same DAG Chapter 12 used for lineage.</p>
+          </div>
+          <div class="signal-card signal-card-light">
+            <p class="signal-label">Why blast radius matters</p>
+            <h2>One failure, a measured cost.</h2>
+            <p>When an asset fails, its downstream descendants cannot be trusted. The set of those descendants is its blast radius, the exact descriptor Chapter 12 built to rank lineage risk. It is also the number that should decide your on-call priority: fail the source and everything breaks; fail a leaf and nothing downstream does.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="materialize" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 1: ASSET GRAPH MATERIALIZER</p>
+          <h2>Click Materialize and watch the wave sweep the graph in dependency order.</h2>
+          <p>This is the trading platform's data flow as an asset graph. Hit Materialize: each node goes idle, then running, then materialized, but only once all of its upstreams are done. A node cannot jump ahead of its dependencies. That ordering, computed by a topological sort, is the core of every orchestrator.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="mat-canvas" viewBox="0 0 760 420" role="img" aria-label="Asset graph materializer"></svg>
+            <div class="canvas-caption">
+              <span>Click MATERIALIZE to run the graph. RESET to re-arm.</span>
+              <span class="status" id="mat-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <div class="button-row">
+                <button id="mat-run" class="chip chip-active" type="button">Materialize</button>
+                <button id="mat-reset" class="chip" type="button">Reset</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="mat-speed">Step speed</label>
+              <input id="mat-speed" type="range" min="200" max="1400" step="100" value="650" aria-label="Step speed">
+              <div class="scale-readout"><span id="mat-speed-readout">650</span> ms per node</div>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Materialized</span>
+                <span class="readout-value" id="mat-done">0 / 7</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Currently building</span>
+                <span class="readout-value" id="mat-current">--</span>
+              </div>
+            </div>
+            <div class="legend">
+              <span><i style="background:#2b3450"></i>idle</span>
+              <span><i style="background:#ffc46b"></i>running</span>
+              <span><i style="background:#22c97a"></i>materialized</span>
+            </div>
+            <p class="signal-note">Built from notebook 15.1. The order is a Kahn topological sort: start from sources, peel inward, never run a node before its upstreams.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="backfill" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 2: BACKFILL AND PARTITIONS</p>
+          <h2>Fill the missing partitions. Then run it again and watch it do nothing.</h2>
+          <p>Each row is an asset; each column is a day. Filled cells are already materialized. Pick a date range and click Backfill: only the missing cells fill, in dependency order, top to bottom per day. Run the same backfill a second time and every cell is skipped. That no-op is idempotency, the property cron never had.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="bf-canvas" viewBox="0 0 760 320" role="img" aria-label="Backfill partition grid"></svg>
+            <div class="canvas-caption">
+              <span>Set the range, then click BACKFILL. RESET randomizes the starting state.</span>
+              <span class="status" id="bf-status">ready</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <label class="control-label" for="bf-start">Backfill from day</label>
+              <input id="bf-start" type="range" min="1" max="12" step="1" value="1" aria-label="Backfill start day">
+              <div class="scale-readout">day <span id="bf-start-readout">1</span></div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="bf-end">Backfill to day</label>
+              <input id="bf-end" type="range" min="1" max="12" step="1" value="12" aria-label="Backfill end day">
+              <div class="scale-readout">day <span id="bf-end-readout">12</span></div>
+            </div>
+            <div class="control-group">
+              <div class="button-row">
+                <button id="bf-run" class="chip chip-active" type="button">Backfill range</button>
+                <button id="bf-reset" class="chip" type="button">Reset state</button>
+              </div>
+            </div>
+            <div class="readout-grid">
+              <div class="readout">
+                <span class="readout-label">Materialized this run</span>
+                <span class="readout-value" id="bf-new">0</span>
+              </div>
+              <div class="readout">
+                <span class="readout-label">Skipped (already done)</span>
+                <span class="readout-value" id="bf-skip">0</span>
+              </div>
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Coverage</span>
+                <span class="readout-value" id="bf-coverage">0%</span>
+              </div>
+            </div>
+            <p class="signal-note">Built from notebook 15.2. A materialization log records every (asset, day) pair, so a rerun over a complete range is a guaranteed no-op.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="blast" class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">LAB 3: FAILURE BLAST RADIUS</p>
+          <h2>Fail a node. Watch everything downstream go dark.</h2>
+          <p>Same graph as Lab 1. Click any node to fail it. It turns red; its downstream descendants turn grey, because an orchestrator will not build an asset on a failed input. The panel reports the blast radius: the count and names of everything skipped. Toggle retries to see a transient failure absorbed before it propagates.</p>
+        </div>
+
+        <div class="lab-grid">
+          <div class="lab-canvas-panel">
+            <svg id="blast-canvas" viewBox="0 0 760 420" role="img" aria-label="Failure blast radius"></svg>
+            <div class="canvas-caption">
+              <span>Click a node to fail it. RESET to recover the graph.</span>
+              <span class="status" id="blast-status">click a node</span>
+            </div>
+          </div>
+          <div class="lab-control-panel">
+            <div class="control-group">
+              <div class="button-row">
+                <button id="blast-reset" class="chip chip-active" type="button">Reset graph</button>
+                <button id="blast-retry" class="chip" type="button">Retries: off</button>
+              </div>
+            </div>
+            <div class="readout-grid">
+              <div class="readout readout-emphasis">
+                <span class="readout-label">Blast radius</span>
+                <span class="readout-value" id="blast-count">0</span>
+              </div>
+            </div>
+            <ul class="blast-list" id="blast-list">
+              <li><span>click a node to fail it</span><span class="tag">idle</span></li>
+            </ul>
+            <div class="legend">
+              <span><i style="background:#22c97a"></i>ok</span>
+              <span><i style="background:#ef6a85"></i>failed</span>
+              <span><i style="background:#49506e"></i>skipped</span>
+            </div>
+            <p class="signal-note">Built from notebook 15.5. The blast radius equals the graph descendants of the failed node, the Chapter 12 lineage-risk descriptor, computed live.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">CHAPTER 15 NOTEBOOK PATH</p>
+          <h2>Each lab has notebooks behind it.</h2>
+          <p>The studio is the surface. The chapter builds the orchestrator from scratch, points it at the repo's own dbt project and trading platform, maps it to Dagster, and names the failure modes.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="path-tag">15.0 - 15.1</span>
+            <h3>From cron to a tiny asset graph</h3>
+            <p>The four failures of cron. Then `AssetGraph`, topological materialization, and cycle detection in pure Python.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">15.2 - 15.3</span>
+            <h3>Partitions, backfills, sensors</h3>
+            <p>Idempotent backfills over a date range. A polling sensor and a freshness policy on a simulated clock.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">15.4</span>
+            <h3>The repo's dbt project as a graph</h3>
+            <p>Parse the real `dbt/dbt_dq` models for ref() edges and orchestrate them. Lineage and orchestration, the same DAG.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">15.5</span>
+            <h3>Failure, retries, blast radius</h3>
+            <p>Skip-on-failure, a retry policy, and the Chapter 12 blast-radius descriptor applied to a live run.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">15.6 - 15.7</span>
+            <h3>Dagster bridge and the capstone</h3>
+            <p>Every toy concept mapped to the real Dagster API. Then the trading platform's data, orchestrated by day.</p>
+          </article>
+          <article class="path-card">
+            <span class="path-tag">15.8</span>
+            <h3>When the schedule lies</h3>
+            <p>Silent partial failure, sensor storms, backfill thundering herd, and retries masking a data bug. Read before you ship.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="og-footer">
+        <p>
+          Chapter 15 of <a href="https://github.com/mhdk1602/python_training" target="_blank" rel="noreferrer">python_training</a>.
+          The asset-graph framing and the blast-radius descriptor reuse the lineage apparatus from Chapter 12.
+          The production tool this chapter maps onto is <a href="https://dagster.io" target="_blank" rel="noreferrer">Dagster</a> and its software-defined assets.
+        </p>
+      </footer>
+    </main>
+  </div>
+  <script src="site-assets/orchestration-studio.js"></script>
+</body>
+</html>
