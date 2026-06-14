@@ -41,3 +41,7 @@ notebooks/14-fractal-indexing/.venv/
 notebooks/14-fractal-indexing/clustered_parquet/
 # Python build artifacts
 *.egg-info/
+
+# Chapter-15 local venv (Orchestration)
+.venv-ch15/
+notebooks/15-orchestration/.venv/
