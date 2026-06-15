@@ -509,6 +509,32 @@ The indexes you ship every day are fractal, the apparatus to reason about them i
 
 </details>
 
+<details>
+<summary><b>Chapter 15: Orchestration as Asset Graphs</b>&nbsp;&nbsp;<code>Advanced</code>&nbsp;&nbsp;<code>~8 hours</code></summary>
+
+<br>
+
+Cron runs scripts on a clock; an orchestrator materializes an asset graph in dependency order, skips work already done, and tells you what breaks when a node fails. Nine notebooks build a tiny pure-Python asset-graph orchestrator from scratch (topological materialization, idempotent backfills, sensors and freshness on a simulated clock), parse the repo's own `dbt/dbt_dq` models into a DAG, add skip-on-failure with retries and the Chapter 12 blast radius, map every concept onto Dagster, orchestrate the trading platform's data by trading day, and close with four named failure modes.
+
+| # | Topic | Notebook |
+|---|-------|----------|
+| 15.0 | From Cron to Asset Graphs | [15.0 From Cron to Asset Graphs.ipynb](notebooks/15-orchestration/15.0%20From%20Cron%20to%20Asset%20Graphs.ipynb) |
+| 15.1 | A Tiny Asset Graph From Scratch | [15.1 A Tiny Asset Graph From Scratch.ipynb](notebooks/15-orchestration/15.1%20A%20Tiny%20Asset%20Graph%20From%20Scratch.ipynb) |
+| 15.2 | Partitions and Backfills | [15.2 Partitions and Backfills.ipynb](notebooks/15-orchestration/15.2%20Partitions%20and%20Backfills.ipynb) |
+| 15.3 | Sensors and Freshness | [15.3 Sensors and Freshness.ipynb](notebooks/15-orchestration/15.3%20Sensors%20and%20Freshness.ipynb) |
+| 15.4 | Wrapping the dbt Project as Assets | [15.4 Wrapping the dbt Project as Assets.ipynb](notebooks/15-orchestration/15.4%20Wrapping%20the%20dbt%20Project%20as%20Assets.ipynb) |
+| 15.5 | Failure, Retries, and Blast Radius | [15.5 Failure, Retries, and Blast Radius.ipynb](notebooks/15-orchestration/15.5%20Failure%2C%20Retries%2C%20and%20Blast%20Radius.ipynb) |
+| 15.6 | From Our Toy to Dagster | [15.6 From Our Toy to Dagster.ipynb](notebooks/15-orchestration/15.6%20From%20Our%20Toy%20to%20Dagster.ipynb) |
+| 15.7 | Capstone: Orchestrate the Trading Platform's Data | [15.7 Capstone Orchestrate the Trading Platform.ipynb](notebooks/15-orchestration/15.7%20Capstone%20Orchestrate%20the%20Trading%20Platform.ipynb) |
+| 15.8 | When the Schedule Lies | [15.8 When the Schedule Lies.ipynb](notebooks/15-orchestration/15.8%20When%20the%20Schedule%20Lies.ipynb) |
+
+**Public studio:** [mhdk1602.github.io/python_training/orchestration-studio.html](https://mhdk1602.github.io/python_training/orchestration-studio.html)  
+**Reads independently** of Chapters 11-14; connects to Chapter 9 (the dbt project) and Chapter 12 (lineage and blast radius).  
+**Chapter-local deps:** `numpy`, `networkx`, `matplotlib`, `pandas` ([`requirements.txt`](notebooks/15-orchestration/requirements.txt))  
+**Grounding:** Dagster software-defined assets (the production analogue mapped in 15.6); Airflow and Prefect compared in the same notebook; the asset-graph framing reuses the Chapter 12 lineage apparatus.
+
+</details>
+
 ---
 
 ## Roadmap: Chapters On The Bench
