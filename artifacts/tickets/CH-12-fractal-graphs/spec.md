@@ -1,4 +1,4 @@
-# Chapter 12 — Fractal Graphs: From Time Series to Networks to Lineage
+# Chapter 12 - Fractal Graphs: From Time Series to Networks to Lineage
 
 > **Ticket:** CH-12-fractal-graphs
 > **Author:** mhdk1602
@@ -30,61 +30,61 @@
 
 ---
 
-## S — Success criteria
+## S: Success criteria
 
-- **S001 — Read by a self-taught engineer.** A reader who has done Chapters 0–9 and Chapter 11 should be able to finish Chapter 12 without reaching for a graph-theory textbook. The chapter teaches the graph language it needs.
-- **S002 — Bounded claims.** The chapter must keep the Chapter 11 epistemic discipline. No notebook should suggest "enterprise data is fractal." Every fractal claim about a graph must be tested against scale stability, finite-size effects, and at least one independent estimator.
-- **S003 — Two bridges land.** Visibility graph (time series → graph) and box-covering (image → graph) both produce a working measurement on real or realistic data, not only on toy fractal models.
-- **S004 — Enterprise translation works without metaphor.** Lineage and entity-resolution sections produce decisions a steward could act on, not lyrical analogies.
-- **S005 — Studio page parity.** `fractal-graphs.html` matches the visual and interactive register of `fractals-governance.html` and `embeddings-bridge.html`. Same shell, same Manrope/Fraunces type, same eyebrow-section idiom.
-- **S006 — Reuse over re-derivation.** The chapter pulls from existing repo material (Chapter 11.4 records, dbt manifest in `dbt/dbt_dq/`, Chapter 7 embedding chunks) before inventing new toy data.
-- **S007 — Failure-aware.** Every notebook closes with at least one explicit failure mode and one stewardship implication, matching the Chapter 11 voice.
-
----
-
-## F — Functional requirements
-
-- **F001 — NetworkX foundation.** Teach the minimum graph language the rest of the chapter needs: nodes, edges, paths, distance, neighborhoods, connected components, and degree distribution. Connect this to Chapter 11.4's union-find by re-expressing it as connected components on a thresholded match graph.
-- **F002 — Visibility graph algorithm.** Implement the Lacasa-Luque-Ballesteros-Luque-Nuño (2008) visibility criterion in NumPy + NetworkX. Show the three-regime result: periodic series → regular graph, random → exponential degree distribution, fractal → power-law degree distribution.
-- **F003 — Hurst-to-degree-exponent mapping.** Reproduce the Lacasa-Luque (2009) result that the visibility-graph degree exponent of fBm tracks the Hurst exponent H linearly. Use the author's own fractal-pv-coupling DFA estimator (or a stripped reimplementation) on a real return series for the demonstration.
-- **F004 — Horizontal visibility variant.** Add the horizontal visibility graph (Luque et al., 2009) as a contrast: simpler, analytically tractable, gives a clean separator between random and chaotic series.
-- **F005 — Graph box-covering.** Implement greedy-coloring box-covering on the auxiliary graph using `networkx.greedy_color`. Validate against three reference networks with known dimension: deterministic Sierpinski graph, (u,v)-flower, and a Song-Havlin-Makse hierarchical scale-free model.
-- **F006 — Box-covering on real networks.** Run the same estimator on a real or realistic network (Karate, Les Mis co-appearance, or a sampled subgraph from `dbt/dbt_dq/` lineage) and inspect whether the log–log slope is stable across the feasible box-size range.
-- **F007 — Skeleton extraction and renormalization.** Build the Goh-Salvi-Kahng-Kim (2006) skeleton (the spanning tree of high-betweenness edges or maximum-spanning by edge multiplicity) and run two iterations of box renormalization to show how a fractal network coarse-grains to a self-similar sub-graph.
-- **F008 — Graph fractal dimension via communities.** Implement the Skums-Bunimovich (2020) framing: estimate fractality from the overlap pattern between densely connected communities. Use Louvain or Leiden community detection and quantify pairwise overlap. Compare the community-overlap dimension to the box-covering dimension on the same graph.
-- **F009 — Lineage as a fractal-aware governance object.** Build a synthetic data lineage DAG (sources → staging → marts → exposures), inject defects at leaf nodes, propagate downstream, and compute a "blast radius across box scales" risk descriptor. Optionally parse `dbt/dbt_dq/target/manifest.json` if it exists to use the real lineage from Chapter 9.
-- **F010 — Entity resolution upgrade.** Re-express Chapter 11.4's records and pairwise scores as a NetworkX graph. At each threshold, compute (a) connected components (the existing membership signature), (b) local box dimension per cluster, (c) community overlap per cluster, (d) skeleton ratio per cluster. Define the new instability score as the dispersion of these graph descriptors across thresholds, not just membership flips.
-- **F011 — Epistemic guardrails.** A dedicated notebook on when fractal-on-graph claims fail: small-N effects, treelike structures with clean box-covers but no real fractality, trend-induced visibility-graph artifacts, slope-without-stability claims.
-- **F012 — Studio page.** `fractal-graphs.html` with three interactive panels: Visibility Graph Lab, Box-Covering Lab, Lineage Risk Lab. Mirror the existing `fractals-governance.html` shell, navigation, and design tokens.
+- **S001: Read by a self-taught engineer.** A reader who has done Chapters 0–9 and Chapter 11 should be able to finish Chapter 12 without reaching for a graph-theory textbook. The chapter teaches the graph language it needs.
+- **S002: Bounded claims.** The chapter must keep the Chapter 11 epistemic discipline. No notebook should suggest "enterprise data is fractal." Every fractal claim about a graph must be tested against scale stability, finite-size effects, and at least one independent estimator.
+- **S003: Two bridges land.** Visibility graph (time series → graph) and box-covering (image → graph) both produce a working measurement on real or realistic data, not only on toy fractal models.
+- **S004: Enterprise translation works without metaphor.** Lineage and entity-resolution sections produce decisions a steward could act on, not lyrical analogies.
+- **S005: Studio page parity.** `fractal-graphs.html` matches the visual and interactive register of `fractals-governance.html` and `embeddings-bridge.html`. Same shell, same Manrope/Fraunces type, same eyebrow-section idiom.
+- **S006: Reuse over re-derivation.** The chapter pulls from existing repo material (Chapter 11.4 records, dbt manifest in `dbt/dbt_dq/`, Chapter 7 embedding chunks) before inventing new toy data.
+- **S007: Failure-aware.** Every notebook closes with at least one explicit failure mode and one stewardship implication, matching the Chapter 11 voice.
 
 ---
 
-## N — Non-functional requirements
+## F: Functional requirements
 
-- **N001 — Voice.** Match the Chapter 11 register. Bounded claims. "I am not claiming X. I am asking whether Y." No grandiose vocabulary, no em-dash overuse, no triplet rule-of-three reflex.
-- **N002 — Notebook cell-shape contract.** Every notebook follows the existing template: header blockquote, title, "## Outputs", "## Supporting reading", "## Failure note", "## How I would debug this", code, "## Reading the result", "## Where this can go wrong", "## Exercise" or "## Assignment".
-- **N003 — Local-first.** Everything runs on a laptop without GPU or paid APIs. Box-covering is NP-hard so we cap problem sizes and disclose the cap.
-- **N004 — Determinism.** All stochastic notebooks seed `numpy.random.default_rng(7)` (existing convention from 11.2) so results are reproducible across runs and CI.
-- **N005 — Dependency restraint.** Add `networkx` and `python-louvain` (or `leidenalg` if a wheel is available) to `requirements.txt`. Do not add `igraph`, `graph-tool`, or anything that needs system-level compilation.
-- **N006 — Studio page weight.** No bundler, no React. Hand-written HTML + CSS + vanilla JS, matching the four existing studio pages. Total page weight under 200 KB excluding fonts.
-- **N007 — Citation discipline.** Every notebook lists its supporting reading in cell 1. Studio page links to the same canonical reference list. No citation appears without being read by the author.
-- **N008 — Backwards compatibility.** Chapter 12 must not modify Chapter 11 contracts. The renamed concept "graph coverings" already mentioned in 11.1 stays as a forward reference; Chapter 12 supplies the formal definition.
-
----
-
-## E — Edge cases and failure modes
-
-- **E001 — Tiny graphs return any slope.** A graph with N < 50 nodes will fit a "fractal dimension" by accident. Notebooks must filter for N ≥ a threshold before publishing a slope, and the `12.7` notebook demonstrates the false positive directly.
-- **E002 — Trees fool box-covering.** A pure tree has a clean N_B(l_B) ∝ l_B^{-d_B} relationship without satisfying the Skums-Bunimovich community-overlap criterion. Treat box-covering as necessary not sufficient.
-- **E003 — Trend in time series.** A linear trend skews the visibility graph degree distribution toward high-degree hubs at the trend extremes. The visibility notebook must detrend or work on returns, not on raw price.
-- **E004 — Disconnected components.** Box-covering distance is undefined across disconnected components. The notebook must run per-component and either aggregate carefully or flag the largest component.
-- **E005 — Threshold flips that do not move the graph.** The duplicate-cluster upgrade must distinguish threshold changes that flip a record's component from threshold changes that only re-weight an edge. The new instability score should weight component changes more heavily.
-- **E006 — Greedy coloring is not optimal.** All numerical d_B values are approximations. Notebooks must report `d_B ≈` not `d_B =` and mention the NP-hardness in the same cell as the result.
-- **E007 — Power-law fits hallucinate.** Fitting `log P(k) = -α log k + c` on a short tail will return an α that means nothing. Use the Clauset-Shalizi-Newman maximum-likelihood approach or at minimum require a multi-decade tail before publishing α.
+- **F001: NetworkX foundation.** Teach the minimum graph language the rest of the chapter needs: nodes, edges, paths, distance, neighborhoods, connected components, and degree distribution. Connect this to Chapter 11.4's union-find by re-expressing it as connected components on a thresholded match graph.
+- **F002: Visibility graph algorithm.** Implement the Lacasa-Luque-Ballesteros-Luque-Nuño (2008) visibility criterion in NumPy + NetworkX. Show the three-regime result: periodic series → regular graph, random → exponential degree distribution, fractal → power-law degree distribution.
+- **F003: Hurst-to-degree-exponent mapping.** Reproduce the Lacasa-Luque (2009) result that the visibility-graph degree exponent of fBm tracks the Hurst exponent H linearly. Use the author's own fractal-pv-coupling DFA estimator (or a stripped reimplementation) on a real return series for the demonstration.
+- **F004: Horizontal visibility variant.** Add the horizontal visibility graph (Luque et al., 2009) as a contrast: simpler, analytically tractable, gives a clean separator between random and chaotic series.
+- **F005: Graph box-covering.** Implement greedy-coloring box-covering on the auxiliary graph using `networkx.greedy_color`. Validate against three reference networks with known dimension: deterministic Sierpinski graph, (u,v)-flower, and a Song-Havlin-Makse hierarchical scale-free model.
+- **F006: Box-covering on real networks.** Run the same estimator on a real or realistic network (Karate, Les Mis co-appearance, or a sampled subgraph from `dbt/dbt_dq/` lineage) and inspect whether the log–log slope is stable across the feasible box-size range.
+- **F007: Skeleton extraction and renormalization.** Build the Goh-Salvi-Kahng-Kim (2006) skeleton (the spanning tree of high-betweenness edges or maximum-spanning by edge multiplicity) and run two iterations of box renormalization to show how a fractal network coarse-grains to a self-similar sub-graph.
+- **F008: Graph fractal dimension via communities.** Implement the Skums-Bunimovich (2020) framing: estimate fractality from the overlap pattern between densely connected communities. Use Louvain or Leiden community detection and quantify pairwise overlap. Compare the community-overlap dimension to the box-covering dimension on the same graph.
+- **F009: Lineage as a fractal-aware governance object.** Build a synthetic data lineage DAG (sources → staging → marts → exposures), inject defects at leaf nodes, propagate downstream, and compute a "blast radius across box scales" risk descriptor. Optionally parse `dbt/dbt_dq/target/manifest.json` if it exists to use the real lineage from Chapter 9.
+- **F010: Entity resolution upgrade.** Re-express Chapter 11.4's records and pairwise scores as a NetworkX graph. At each threshold, compute (a) connected components (the existing membership signature), (b) local box dimension per cluster, (c) community overlap per cluster, (d) skeleton ratio per cluster. Define the new instability score as the dispersion of these graph descriptors across thresholds, not just membership flips.
+- **F011: Epistemic guardrails.** A dedicated notebook on when fractal-on-graph claims fail: small-N effects, treelike structures with clean box-covers but no real fractality, trend-induced visibility-graph artifacts, slope-without-stability claims.
+- **F012: Studio page.** `fractal-graphs.html` with three interactive panels: Visibility Graph Lab, Box-Covering Lab, Lineage Risk Lab. Mirror the existing `fractals-governance.html` shell, navigation, and design tokens.
 
 ---
 
-## C — Components (notebook spine)
+## N: Non-functional requirements
+
+- **N001: Voice.** Match the Chapter 11 register. Bounded claims. "I am not claiming X. I am asking whether Y." No grandiose vocabulary, no em-dash overuse, no triplet rule-of-three reflex.
+- **N002: Notebook cell-shape contract.** Every notebook follows the existing template: header blockquote, title, "## Outputs", "## Supporting reading", "## Failure note", "## How I would debug this", code, "## Reading the result", "## Where this can go wrong", "## Exercise" or "## Assignment".
+- **N003: Local-first.** Everything runs on a laptop without GPU or paid APIs. Box-covering is NP-hard so we cap problem sizes and disclose the cap.
+- **N004: Determinism.** All stochastic notebooks seed `numpy.random.default_rng(7)` (existing convention from 11.2) so results are reproducible across runs and CI.
+- **N005: Dependency restraint.** Add `networkx` and `python-louvain` (or `leidenalg` if a wheel is available) to `requirements.txt`. Do not add `igraph`, `graph-tool`, or anything that needs system-level compilation.
+- **N006: Studio page weight.** No bundler, no React. Hand-written HTML + CSS + vanilla JS, matching the four existing studio pages. Total page weight under 200 KB excluding fonts.
+- **N007: Citation discipline.** Every notebook lists its supporting reading in cell 1. Studio page links to the same canonical reference list. No citation appears without being read by the author.
+- **N008: Backwards compatibility.** Chapter 12 must not modify Chapter 11 contracts. The renamed concept "graph coverings" already mentioned in 11.1 stays as a forward reference; Chapter 12 supplies the formal definition.
+
+---
+
+## E: Edge cases and failure modes
+
+- **E001: Tiny graphs return any slope.** A graph with N < 50 nodes will fit a "fractal dimension" by accident. Notebooks must filter for N ≥ a threshold before publishing a slope, and the `12.7` notebook demonstrates the false positive directly.
+- **E002: Trees fool box-covering.** A pure tree has a clean N_B(l_B) ∝ l_B^{-d_B} relationship without satisfying the Skums-Bunimovich community-overlap criterion. Treat box-covering as necessary not sufficient.
+- **E003: Trend in time series.** A linear trend skews the visibility graph degree distribution toward high-degree hubs at the trend extremes. The visibility notebook must detrend or work on returns, not on raw price.
+- **E004: Disconnected components.** Box-covering distance is undefined across disconnected components. The notebook must run per-component and either aggregate carefully or flag the largest component.
+- **E005: Threshold flips that do not move the graph.** The duplicate-cluster upgrade must distinguish threshold changes that flip a record's component from threshold changes that only re-weight an edge. The new instability score should weight component changes more heavily.
+- **E006: Greedy coloring is not optimal.** All numerical d_B values are approximations. Notebooks must report `d_B ≈` not `d_B =` and mention the NP-hardness in the same cell as the result.
+- **E007: Power-law fits hallucinate.** Fitting `log P(k) = -α log k + c` on a short tail will return an α that means nothing. Use the Clauset-Shalizi-Newman maximum-likelihood approach or at minimum require a multi-decade tail before publishing α.
+
+---
+
+## C: Components (notebook spine)
 
 | ID | File | Title | Aim |
 |---|---|---|---|
@@ -101,43 +101,43 @@
 
 ---
 
-## M — Data models
+## M: Data models
 
-- **M001 — Time series record.** `{timestamp: datetime, value: float}` minimum; the visibility notebook works on a `numpy.ndarray` of values plus an implicit integer index.
-- **M002 — Graph object.** Standard NetworkX `Graph` for undirected (entity resolution, visibility), `DiGraph` for lineage.
-- **M003 — Box-cover record.** `{box_size: int, n_boxes: int, members: list[set[node_id]]}` per estimation step.
-- **M004 — Fractality summary.** `{graph_id: str, n_nodes: int, n_edges: int, d_B: float, d_B_r2: float, alpha_visibility: Optional[float], skeleton_ratio: float, modularity: float, community_overlap_score: float, fractal_claim: Literal["plausible","not_supported","insufficient_data"]}`.
-- **M005 — Lineage node.** `{node_id: str, layer: Literal["source","staging","mart","exposure"], owner: str, defect_state: bool}`.
-- **M006 — Stewardship record.** Reuse Chapter 11.4 `records`, `scores` schema verbatim. Add `cluster_id_at_threshold: dict[float, str]`, `local_box_dim_at_threshold: dict[float, float]`, `community_overlap_at_threshold: dict[float, float]`.
-
----
-
-## D — Dependencies
-
-- **D001 — Existing.** `numpy`, `pandas`, `matplotlib`, `scipy`, `jupyter`. All already required by the repo.
-- **D002 — Add.** `networkx>=3.2` (graph operations and `greedy_color`), `python-louvain` or `leidenalg` (community detection), `powerlaw` (Clauset-Shalizi-Newman fits, optional but recommended for F003 and F011-E007).
-- **D003 — Optional.** `dbt-core` parsed `manifest.json` if Chapter 9's dbt project has been compiled. The 12.5 notebook should soft-import and fall back to the synthetic lineage if the manifest is absent.
-- **D004 — Studio page.** No new dependencies. Reuse the existing static-site idiom.
+- **M001: Time series record.** `{timestamp: datetime, value: float}` minimum; the visibility notebook works on a `numpy.ndarray` of values plus an implicit integer index.
+- **M002: Graph object.** Standard NetworkX `Graph` for undirected (entity resolution, visibility), `DiGraph` for lineage.
+- **M003: Box-cover record.** `{box_size: int, n_boxes: int, members: list[set[node_id]]}` per estimation step.
+- **M004: Fractality summary.** `{graph_id: str, n_nodes: int, n_edges: int, d_B: float, d_B_r2: float, alpha_visibility: Optional[float], skeleton_ratio: float, modularity: float, community_overlap_score: float, fractal_claim: Literal["plausible","not_supported","insufficient_data"]}`.
+- **M005: Lineage node.** `{node_id: str, layer: Literal["source","staging","mart","exposure"], owner: str, defect_state: bool}`.
+- **M006: Stewardship record.** Reuse Chapter 11.4 `records`, `scores` schema verbatim. Add `cluster_id_at_threshold: dict[float, str]`, `local_box_dim_at_threshold: dict[float, float]`, `community_overlap_at_threshold: dict[float, float]`.
 
 ---
 
-## R — Risks
+## D: Dependencies
 
-- **R001 — Box-covering compute.** Real networks at N ≈ 10⁴ already strain greedy coloring on a laptop. Mitigation: cap N at 2000 in published notebooks; cache pairwise distances; document the cap in the failure note.
-- **R002 — Power-law overclaiming.** Visibility-graph degree distributions tempt over-confident α fits. Mitigation: F011-E007; use `powerlaw` package and report goodness-of-fit p-values where possible.
-- **R003 — Studio-page maintenance.** Each new HTML page widens the surface area of the GitHub Pages site. Mitigation: factor a shared CSS partial into `site-assets/` so design tokens move once.
-- **R004 — Reader fatigue.** Chapter 12 is the third "advanced lens" notebook cluster after 10 and 11. Mitigation: 12.0 is short, answer-first, and explicitly tells readers which two notebooks to read if they only have one hour (12.2 and 12.6).
-- **R005 — Citation freshness.** Fractal-network research has moved since 2005; the chapter must include at least one 2024–2025 citation (Fronczak et al., or the Nature Sci-Reports lineage GNN paper).
+- **D001: Existing.** `numpy`, `pandas`, `matplotlib`, `scipy`, `jupyter`. All already required by the repo.
+- **D002: Add.** `networkx>=3.2` (graph operations and `greedy_color`), `python-louvain` or `leidenalg` (community detection), `powerlaw` (Clauset-Shalizi-Newman fits, optional but recommended for F003 and F011-E007).
+- **D003: Optional.** `dbt-core` parsed `manifest.json` if Chapter 9's dbt project has been compiled. The 12.5 notebook should soft-import and fall back to the synthetic lineage if the manifest is absent.
+- **D004: Studio page.** No new dependencies. Reuse the existing static-site idiom.
 
 ---
 
-## Q — Open questions
+## R: Risks
 
-- **Q001 —** Should Chapter 12 absorb a renamed Chapter 11.4 (so the duplicate-cluster work lives in 12.6 only), or keep 11.4 as the procedural primer and 12.6 as the graph-aware sequel? Default proposal: keep both. 11.4 remains the union-find introduction; 12.6 adds the graph descriptors.
-- **Q002 —** Do we ship a real-network demonstration inside the repo, or link out? Default proposal: ship the Karate club graph (NetworkX built-in) and one sampled lineage subgraph. No external downloads in CI.
-- **Q003 —** Is the visibility-graph studio panel worth the build cost? It is the most novel of the three panels. Default proposal: ship it; reuse the SVG drag idiom from `embeddings-bridge.html`.
-- **Q004 —** Should the chapter include multifractal analysis (MFDFA on graphs / multifractal scaling of node-strength)? Default proposal: out of scope for v1; mention as a forward pointer in 12.7.
-- **Q005 —** How do we cross-promote the `fractal-pv-coupling` paper without making the curriculum dependent on a private preprint? Default proposal: cite the public Zenodo DOI in 12.2 and treat the algorithm reimplementation as self-contained.
+- **R001: Box-covering compute.** Real networks at N ≈ 10⁴ already strain greedy coloring on a laptop. Mitigation: cap N at 2000 in published notebooks; cache pairwise distances; document the cap in the failure note.
+- **R002: Power-law overclaiming.** Visibility-graph degree distributions tempt over-confident α fits. Mitigation: F011-E007; use `powerlaw` package and report goodness-of-fit p-values where possible.
+- **R003: Studio-page maintenance.** Each new HTML page widens the surface area of the GitHub Pages site. Mitigation: factor a shared CSS partial into `site-assets/` so design tokens move once.
+- **R004: Reader fatigue.** Chapter 12 is the third "advanced lens" notebook cluster after 10 and 11. Mitigation: 12.0 is short, answer-first, and explicitly tells readers which two notebooks to read if they only have one hour (12.2 and 12.6).
+- **R005: Citation freshness.** Fractal-network research has moved since 2005; the chapter must include at least one 2024–2025 citation (Fronczak et al., or the Nature Sci-Reports lineage GNN paper).
+
+---
+
+## Q: Open questions
+
+- **Q001** Should Chapter 12 absorb a renamed Chapter 11.4 (so the duplicate-cluster work lives in 12.6 only), or keep 11.4 as the procedural primer and 12.6 as the graph-aware sequel? Default proposal: keep both. 11.4 remains the union-find introduction; 12.6 adds the graph descriptors.
+- **Q002** Do we ship a real-network demonstration inside the repo, or link out? Default proposal: ship the Karate club graph (NetworkX built-in) and one sampled lineage subgraph. No external downloads in CI.
+- **Q003** Is the visibility-graph studio panel worth the build cost? It is the most novel of the three panels. Default proposal: ship it; reuse the SVG drag idiom from `embeddings-bridge.html`.
+- **Q004** Should the chapter include multifractal analysis (MFDFA on graphs / multifractal scaling of node-strength)? Default proposal: out of scope for v1; mention as a forward pointer in 12.7.
+- **Q005** How do we cross-promote the `fractal-pv-coupling` paper without making the curriculum dependent on a private preprint? Default proposal: cite the public Zenodo DOI in 12.2 and treat the algorithm reimplementation as self-contained.
 
 ---
 
@@ -162,11 +162,11 @@ These are the references each notebook will quote. Each appears in cell 1 of the
 
 ---
 
-## Appendix A — Notebook cell-by-cell sketches
+## Appendix A: Notebook cell-by-cell sketches
 
 The cell-level sketches below are not the final cells. They are the seeding plan that `plan.md` will translate into P###/W###/K###/X### with concrete tests. The voice and headings already match the Chapter 11.x contract.
 
-### 12.0 — Why Graphs Deserve a Fractal Lens (preface)
+### 12.0: Why Graphs Deserve a Fractal Lens (preface)
 
 Cell 0 (blockquote header):
 ```
@@ -177,14 +177,14 @@ Cell 1 (markdown title and frame):
 
 - The answer first: Chapter 11 worked on pictures and time series. Real enterprise objects (lineage, entity resolution, hierarchies, microservice dependencies) are graphs. The graph is not a metaphor; it is the data structure those objects already live in. Box-counting still applies, just on a different geometry.
 - Set the bounded claim explicitly. Quote 11.3: "I am not claiming that enterprise data is fractal in the literal mathematical sense." The same discipline applies to graphs.
-- One paragraph: the three bridges this chapter walks across — time series → graph (12.2), image → graph (12.3), governance → graph (12.5–12.6).
+- One paragraph: the three bridges this chapter walks across: time series → graph (12.2), image → graph (12.3), governance → graph (12.5–12.6).
 - Outputs section. Failure note. "How I would debug this."
 
 Cell 2 (code, optional): a one-cell teaser. Render Karate-club graph with NetworkX, color nodes by community, and overlay the box-cover at l_B = 3. Just to set the visual register.
 
 Cell 3 (markdown): assignment. "Pick one graph in your enterprise (lineage, dependency, entity match, knowledge). Write down its node type, edge type, and the boundary you currently use to decide if two records are the same entity. We will return to your example in 12.5 and 12.6."
 
-### 12.1 — Graphs as the Next Geometry
+### 12.1: Graphs as the Next Geometry
 
 Outputs:
 - a NetworkX primer that does not condescend
@@ -219,7 +219,7 @@ Reading: connect this back to the 11.4 union-find. "What we wrote as parent[] po
 
 Where this can go wrong: edge weights are not yet used. Connected components ignores them. We will fix this when local box dimension enters the picture in 12.6.
 
-### 12.2 — Visibility Graphs from Time Series
+### 12.2: Visibility Graphs from Time Series
 
 Outputs:
 - a NumPy implementation of the Lacasa visibility criterion
@@ -263,7 +263,7 @@ Real-data cell: pull SPY daily returns via `yfinance` (already a project depende
 
 Failure note: "If you fit α on a degree distribution with fewer than two decades of support, you have a slope, not a power law."
 
-### 12.3 — Box Covering on Graphs
+### 12.3: Box Covering on Graphs
 
 Outputs:
 - a working greedy-coloring box-covering function
@@ -308,7 +308,7 @@ Reference networks:
 
 Reading: "If your graph passes the slope test on log–log but fails the stability test across feasible box-size ranges, what you have is small-world plus finite size, not fractality."
 
-### 12.4 — Skeletons, Hubs, and Renormalization
+### 12.4: Skeletons, Hubs, and Renormalization
 
 Outputs:
 - a skeleton extractor (max-spanning by edge betweenness)
@@ -331,7 +331,7 @@ def renormalize(g: nx.Graph, l_b: int) -> nx.Graph:
 
 Cell on Goh-Salvi-Kahng-Kim skeleton: extract max-betweenness spanning subgraph; show the skeleton recovers the recursive backbone.
 
-### 12.5 — Lineage Graphs and Fault Propagation
+### 12.5: Lineage Graphs and Fault Propagation
 
 Outputs:
 - a synthetic lineage DAG with named layers (sources → staging → marts → exposures)
@@ -380,7 +380,7 @@ else:
     real_lineage = synthetic_lineage()
 ```
 
-### 12.6 — Entity Resolution Revisited as a Graph
+### 12.6: Entity Resolution Revisited as a Graph
 
 Outputs:
 - the 11.4 records and scores re-expressed as a NetworkX graph
@@ -416,7 +416,7 @@ New instability score: standard deviation of `d_B_local` across thresholds, plus
 
 Reading: the 11.4 page asked "did membership change?" The 12.6 upgrade asks "did the cluster reorganize structurally?" That is the better question. Membership change is a downstream symptom of structural reorganization.
 
-### 12.7 — When Fractal Descriptors Mislead on Graphs
+### 12.7: When Fractal Descriptors Mislead on Graphs
 
 Four worked failure modes, one per section:
 
@@ -429,7 +429,7 @@ Closing assignment: "Pick the graph from your 12.0 assignment. Run two independe
 
 ---
 
-## Appendix B — Studio page mockup (`fractal-graphs.html`)
+## Appendix B: Studio page mockup (`fractal-graphs.html`)
 
 Visual idiom: same shell, navigation, hero block, and section cadence as `fractals-governance.html`. Three interactive panels.
 
@@ -441,17 +441,17 @@ Visual idiom: same shell, navigation, hero block, and section cadence as `fracta
   - "Why visibility graphs": "A time series is a graph in disguise. The visibility map exposes the structure."
   - "Why box-covering": "Box-counting on a graph is the same idea as Chapter 11.1, on a different geometry."
 
-### Panel 1 — Visibility Graph Lab
+### Panel 1: Visibility Graph Lab
 - Left: a small SVG canvas where the user can sketch a series with the mouse, or pick a preset (sine, random, fBm with H slider, real returns).
 - Right: the visibility graph rendered live, plus a degree-distribution panel with a fitted α and (when relevant) the matching DFA Hurst estimate on the same sketch.
 - The point: see periodic → regular, random → exponential, fractal → power-law happen in real time.
 
-### Panel 2 — Box-Covering Lab
+### Panel 2: Box-Covering Lab
 - Top: graph picker (Sierpinski, (u,v)-flower, Erdős-Rényi, hierarchical SHM, Karate club, "your edgelist").
 - Middle: animation that lights up boxes at each l_B from 1 upward; counts update; log-log plot fits a slope live.
 - Bottom: stability indicator. Green when slope is stable across at least three decades of l_B; amber otherwise; red when the slope is not statistically distinguishable from the random reference.
 
-### Panel 3 — Lineage Risk Lab
+### Panel 3: Lineage Risk Lab
 - Left: small interactive DAG (sources → staging → marts → exposures). Click any node to inject a defect.
 - Right: heatmap of blast radius across box scales; stewardship priority table updates live.
 - A second toggle: "real dbt manifest" if the studio finds a compiled manifest in the repo, otherwise the synthetic DAG.

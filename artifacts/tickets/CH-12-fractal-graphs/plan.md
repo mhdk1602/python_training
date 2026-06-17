@@ -1,4 +1,4 @@
-# Chapter 12 — Fractal Graphs: Plan
+# Chapter 12 - Fractal Graphs: Plan
 
 > **Ticket:** CH-12-fractal-graphs
 > **Author:** mhdk1602
@@ -20,7 +20,7 @@ This document translates the spec into ordered work items. P### are implementati
 
 ---
 
-## P — Implementation steps
+## P: Implementation steps
 
 | ID | Step | Implements (spec IDs) | Files touched |
 |---|---|---|---|
@@ -43,11 +43,11 @@ This document translates the spec into ordered work items. P### are implementati
 | **P017** | Update `.cursor/rules/research-entity.mdc` to add `notebooks/12-fractal-graphs/`. | N008 | W009 |
 | **P018** | Cross-link studio pages: add a Fractal Graphs link to the nav of `fractals-governance.html` and `embeddings-bridge.html` and `ranking-lab.html`. | S005 | W010 |
 | **P019** | Smoke checks: all eight notebooks execute end-to-end; the studio page loads without console errors; HTML validates; nav links resolve. | K001–K003 | W003, W004 |
-| **P020** | Commit and push in five logical chunks (X001–X005). | — | — |
+| **P020** | Commit and push in five logical chunks (X001–X005). | n/a | n/a |
 
 ---
 
-## W — File changes
+## W: File changes
 
 | ID | Path | Type | Notes |
 |---|---|---|---|
@@ -65,17 +65,17 @@ This document translates the spec into ordered work items. P### are implementati
 
 ---
 
-## K — Testing checkpoints
+## K: Testing checkpoints
 
-- **K001 — Notebook execution.** All eight notebooks run end-to-end with a fresh venv that has only the packages from W001. Run via `jupyter nbconvert --to notebook --execute --inplace` for each notebook. Any cell that produces a non-deterministic seed must use `np.random.default_rng(7)`.
-- **K002 — Studio page sanity.** Open `fractal-graphs.html` locally with a static server; confirm the three labs load, the visibility graph reacts to series-edits, the box-covering animation cycles, and the lineage panel responds to clicks. No console errors.
-- **K003 — Cross-page links.** Every nav link, README link, and studio cross-link resolves on disk and through GitHub Pages routing.
-- **K004 — Lint posture.** No new linter errors in HTML or JS. README markdown renders cleanly on GitHub.
-- **K005 — Citation correctness.** Every reference in the spec source-of-truth list appears at least once in a notebook cell 1, exactly as written.
+- **K001: Notebook execution.** All eight notebooks run end-to-end with a fresh venv that has only the packages from W001. Run via `jupyter nbconvert --to notebook --execute --inplace` for each notebook. Any cell that produces a non-deterministic seed must use `np.random.default_rng(7)`.
+- **K002: Studio page sanity.** Open `fractal-graphs.html` locally with a static server; confirm the three labs load, the visibility graph reacts to series-edits, the box-covering animation cycles, and the lineage panel responds to clicks. No console errors.
+- **K003: Cross-page links.** Every nav link, README link, and studio cross-link resolves on disk and through GitHub Pages routing.
+- **K004: Lint posture.** No new linter errors in HTML or JS. README markdown renders cleanly on GitHub.
+- **K005: Citation correctness.** Every reference in the spec source-of-truth list appears at least once in a notebook cell 1, exactly as written.
 
 ---
 
-## X — Commit points
+## X: Commit points
 
 | ID | Scope | Files | Suggested message |
 |---|---|---|---|
@@ -91,11 +91,11 @@ After X005: `git push origin main`.
 
 ## Risks during execution
 
-- **Re001 — `python-louvain` install friction on Apple Silicon.** Fallback: notebooks must guard the import with `try/except ImportError` and degrade to a stub partition (single community) when the package is absent. The chapter does not require Louvain to read.
-- **Re002 — `powerlaw` dependency tree.** `powerlaw` pulls in `mpmath`. If this fails, fallback is the `np.polyfit` slope with a documented goodness-of-fit warning.
-- **Re003 — fBm generator.** `numpy` does not ship a fractional Brownian motion generator. We implement Hosking's method or use the Davies-Harte algorithm in a small helper inside 12.2. No new dependencies.
-- **Re004 — Karate club rendering.** NetworkX 3.x removed `nx.info()`. Use `g.number_of_nodes()` and `g.number_of_edges()` directly.
-- **Re005 — Visibility graph compute time.** O(n²) is acceptable up to n ≈ 1500. Notebooks cap n at 1024 and document the cap.
+- **Re001: `python-louvain` install friction on Apple Silicon.** Fallback: notebooks must guard the import with `try/except ImportError` and degrade to a stub partition (single community) when the package is absent. The chapter does not require Louvain to read.
+- **Re002: `powerlaw` dependency tree.** `powerlaw` pulls in `mpmath`. If this fails, fallback is the `np.polyfit` slope with a documented goodness-of-fit warning.
+- **Re003: fBm generator.** `numpy` does not ship a fractional Brownian motion generator. We implement Hosking's method or use the Davies-Harte algorithm in a small helper inside 12.2. No new dependencies.
+- **Re004: Karate club rendering.** NetworkX 3.x removed `nx.info()`. Use `g.number_of_nodes()` and `g.number_of_edges()` directly.
+- **Re005: Visibility graph compute time.** O(n²) is acceptable up to n ≈ 1500. Notebooks cap n at 1024 and document the cap.
 
 ---
 

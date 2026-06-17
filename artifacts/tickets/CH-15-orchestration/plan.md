@@ -1,4 +1,4 @@
-# CH-15 Orchestration as Asset Graphs — Implementation Plan
+# CH-15 Orchestration as Asset Graphs - Implementation Plan
 
 **Spec:** [spec.md](./spec.md)
 **Style anchors:** Chapter 13 plan, Chapter 14 plan

@@ -1,4 +1,4 @@
-# CH-14 Fractal Indexing — Implementation Plan
+# CH-14 Fractal Indexing - Implementation Plan
 
 **Spec:** [spec.md](./spec.md)
 **Research plan:** [non-git-files/fractal-indexing-research-plan.md](../../../../non-git-files/fractal-indexing-research-plan.md)

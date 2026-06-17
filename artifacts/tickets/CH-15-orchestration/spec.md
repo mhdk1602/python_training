@@ -3,7 +3,7 @@
 **Owner:** Dineshkumar Malemapti Hari
 **Status:** Draft (proceed to plan and implementation)
 **Created:** 2026-06-14
-**Connects to:** Chapter 9 (data quality, the existing `dbt/dbt_dq` project), Chapter 12 (lineage as a graph, blast-radius descriptors), the trading platform (Applied System A), and the roadmap entry in the root README ("Chapter 15 — Orchestration as Asset Graphs").
+**Connects to:** Chapter 9 (data quality, the existing `dbt/dbt_dq` project), Chapter 12 (lineage as a graph, blast-radius descriptors), the trading platform (Applied System A), and the roadmap entry in the root README ("Chapter 15: Orchestration as Asset Graphs").
 **Roadmap line:** the first of the four production-infrastructure chapters proposed in the README roadmap (15 orchestration, 16 contracts and CDC, 17 lakehouse internals, 18 governance telemetry).
 
 ## Context
