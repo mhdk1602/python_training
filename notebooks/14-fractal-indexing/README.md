@@ -1,4 +1,4 @@
-# Chapter 14: Fractal Indexing — Hilbert, Z-order, and the Hidden Math of Modern Storage
+# Chapter 14: Fractal Indexing (Hilbert, Z-order, and the Hidden Math of Modern Storage)
 
 **Audience:** practitioners and curious engineers who want to understand the math underneath the indexes they already use. **Prerequisites:** comfort with NumPy, basic SQL, and a willingness to read a log-log plot. The HNSW notebook (14.4) assumes you have heard of approximate nearest neighbors but does not assume you have implemented one.
 
@@ -66,7 +66,7 @@ The studio is vanilla JS so it works directly from `file://` without a backend.
 
 Cite this chapter as part of the repository:
 
-> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 14 — Fractal Indexing*. https://github.com/mhdk1602/python_training
+> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 14: Fractal Indexing*. https://github.com/mhdk1602/python_training
 
 The methodological provenance for the Hurst-exponent work in notebook 14.6 runs through:
 

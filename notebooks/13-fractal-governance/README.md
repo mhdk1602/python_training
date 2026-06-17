@@ -1,4 +1,4 @@
-# Chapter 13: Fractal Governance — Pressure Fields, AI Mediation, and the Visualization Layer
+# Chapter 13: Fractal Governance (Pressure Fields, AI Mediation, and the Visualization Layer)
 
 **Audience:** practitioners and researchers who already worked through Chapters 11 and 12. **Prerequisites:** the fractal apparatus from Chapter 11 and the graph-theoretic apparatus from Chapter 12, with a comfort level of "I can read NetworkX code and a log-log plot without flinching." Optional: an Anthropic API key for the parser exercises in 13.5 and 13.7.
 
@@ -60,7 +60,7 @@ The interactive surface lives at `governance-studio.html` (top-level) and reuses
 
 Cite this chapter as part of the repository:
 
-> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 13 — Fractal Governance*. https://github.com/mhdk1602/python_training
+> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 13: Fractal Governance*. https://github.com/mhdk1602/python_training
 
 The methodological provenance for the visibility-graph and DFA work runs through:
 

@@ -1,4 +1,4 @@
-# Chapter 12 — Fractal Graphs
+# Chapter 12: Fractal Graphs
 
 > Advanced lens. Reads after Chapter 11. Walks across three bridges the curriculum has been pointing at: time series → graph (visibility), image → graph (box-covering), governance → graph (lineage and entity resolution).
 

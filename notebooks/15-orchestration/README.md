@@ -1,4 +1,4 @@
-# Chapter 15: Orchestration as Asset Graphs — From Cron to Idempotent Materialization
+# Chapter 15: Orchestration as Asset Graphs (From Cron to Idempotent Materialization)
 
 **Audience:** data engineers who have a pile of scripts on a cron schedule and have started to feel the pain. **Prerequisites:** comfort with Python functions and dictionaries, a little NetworkX, and a willingness to think about a pipeline as a graph rather than a sequence. No prior orchestrator experience assumed.
 
@@ -73,7 +73,7 @@ The studio is vanilla JS, so it works directly from `file://` with no backend.
 
 Cite this chapter as part of the repository:
 
-> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 15 — Orchestration as Asset Graphs*. https://github.com/mhdk1602/python_training
+> Malemapti Hari, D. (2026). *Data Engineering with Python: Project-First Training Repository, Chapter 15: Orchestration as Asset Graphs*. https://github.com/mhdk1602/python_training
 
 The asset-graph framing and the blast-radius descriptor connect to:
 

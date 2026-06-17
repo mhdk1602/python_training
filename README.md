@@ -629,7 +629,7 @@ Contributions are welcome: notebook fixes, new exercises, studio improvements, o
 
 ## About
 
-Built and maintained by [mhdk1602](https://github.com/mhdk1602). This repository started as internal training materials for data engineering and has grown into a comprehensive, practice-first curriculum spanning data systems, frontend delivery, GenAI workflows, retrieval systems, and applied finance.
+Built and maintained by [mhdk1602](https://github.com/mhdk1602). This repository started as internal training materials for data engineering and has grown into a practice-first curriculum spanning data systems, frontend delivery, GenAI workflows, retrieval systems, and applied finance.
 
 <div align="center">
 
